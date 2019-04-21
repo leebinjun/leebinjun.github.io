@@ -59,9 +59,9 @@ $ hexo s
 
 ``` bash
 deploy:
- type: git
- repo:git@github.com:your_github_user_name/your_github_user_name.github.io.git
- branch: master
+  type: git
+  repo:git@github.com:your_github_user_name/your_github_user_name.github.io.git
+  branch: master
 ```
 
 生成 ssh key
@@ -133,12 +133,13 @@ $ hexo d      //部署网站到设定的仓库
 
 
 
-## 更换主题
+## 主题
 
 ### 挑选主题
 * Themes | Hexo https://hexo.io/themes/
 * Themes · hexojs/hexo Wiki https://github.com/hexojs/hexo/wiki/Themes
 
+## 添加主题
 复制主题到themes目录下
 ``` bash
 cd themes && git clone https://github.com/maochunguang/black-blue(主题地址)
@@ -160,4 +161,17 @@ hexo s
 确认后上传到github，通过 用户名.github.io 访问查看最终效果
 ``` bash
 hexo d
+```
+
+## 插入图片
+
+### 设置
+配置blog\\_config.yml
+
+``` bash
+post_asset_folder: true
+```
+安装插件
+``` bash
+npm install hexo-asset-image --save
 ```
