@@ -1,9 +1,11 @@
 ---
 title: 树莓派3b 编译安装OpenCV-4.0.0 for Python3
 date: 2019-04-20 21:14:22
-tags: opencv raspberry python
+tags: 
+  - opencv
+  - raspberry
+  - python
 ---
-
 
 ## 准备
 
