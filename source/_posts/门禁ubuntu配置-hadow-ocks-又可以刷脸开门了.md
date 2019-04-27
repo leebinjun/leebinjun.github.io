@@ -4,7 +4,7 @@ date: 2019-04-27 23:30:03
 tags:
 ---
 
-* Shadowsocks - A secure socks5 proxy </b>http://shadowsocks.org/en/index.html
+* Shadowsocks - A secure socks5 proxy </br>http://shadowsocks.org/en/index.html
 
 ### 安装
 ``` bash
