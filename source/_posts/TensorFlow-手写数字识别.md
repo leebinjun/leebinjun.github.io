@@ -2,6 +2,7 @@
 title: TensorFlow 手写数字识别
 date: 2019-04-26 10:13:08
 tags:
+  - tensorflow
 ---
 
 ## tensorflow基础
