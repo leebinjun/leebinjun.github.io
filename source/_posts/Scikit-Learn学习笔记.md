@@ -2,7 +2,7 @@
 title: Scikit-Learn学习笔记
 date: 2019-05-02 20:56:38
 tags:
-  - tensorflow
+  - sklearn
 ---
 
 ## 选择学习方法
@@ -88,7 +88,7 @@ y_iris.shape
 
 ## Sklearn评估器API
 ### 步骤 
-* (1)选择模型类;  
+(1)选择模型类;  
 (2)配置模型超参数(hyperparameter);  
 (3)整理数据，获取特征矩阵和目标数组;  
 (4)调用模型实例的fit()方法对数据进行拟合;  
