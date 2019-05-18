@@ -105,9 +105,8 @@ shunya@hikey970:~$ df -h
 * Ubuntu 使用Gparted工具扩大第一分区方法步骤 - zalebool - 博客园 </br>https://www.cnblogs.com/zalebool/p/5814907.html
 
 
-
-
-
+# 编译安装opencv4.0.0
+## 准备
 
 查看ip
 ``` bash
@@ -127,7 +126,7 @@ $ python
 $ sudo apt-get update
 $ sudo apt-get upgrade
 ```
-
+### 相关依赖
 ``` bash
 $ sudo apt-get install build-essential cmake pkg-config
 $ sudo apt-get install libjpeg-dev libtiff5-dev  libpng-dev
@@ -149,15 +148,53 @@ $ sudo apt --fix-broken install
 $ sudo apt-get --purge remove libjpeg62-turbo-dev
 $ wget http://launchpadlibrarian.net/152841589/libjpeg8_8c-2ubuntu8_arm64.deb
 $ sudo dpkg -i libjpeg8_8c-2ubuntu8_arm64.deb
-$  wget http://launchpadlibrarian.net/376191785/libjasper1_1.900.1-debian1-2.4ubuntu1.2_arm64.deb
+$ wget http://launchpadlibrarian.net/376191785/libjasper1_1.900.1-debian1-2.4ubuntu1.2_arm64.deb
 $ sudo dpkg -i libjasper1_1.900.1-debian1-2.4ubuntu1.2_arm64.deb
 $ wget http://launchpadlibrarian.net/376191781/libjasper-dev_1.900.1-debian1-2.4ubuntu1.2_arm64.deb
 $ sudo dpkg -i libjasper-dev_1.900.1-debian1-2.4ubuntu1.2_arm64.deb
 ```
 
 
+### 下载opencv源码
+``` bash
+$ cd Workplace/opencv/
+$ wget https://github.com/opencv/opencv/archive/4.0.0.zip
+$ unzip 4.0.0.zip
+$ wget https://github.com/opencv/opencv_contrib/archive/4.0.0.zip
+$ unzip 4.0.0.zip
+```
+下载比较慢，建议提前下好后上传
 
 
+
+### 设置编译环境
+安装cmake-qt-gui，使用图形界面  
+使用MobaXterm时，CMake界面可以弹出  
+``` bash
+$ mkdir build
+$ cd build/
+$ sudo apt-get install cmake-qt-gui
+$ cmake-gui
+```
+
+选择源文件路径，编译文件夹选择刚才新建的build文件夹
+点击左下角Configure，默认Generator为Unix Makefile，完成后界面变红
+
+然后查找OPENCV_EXTRA_MODULES_PATH项，将OpenCV_Contrib-4.0.0/modules的路径填进去，点击左下角Configure，如图
+<img src="Hikey970使用记录\01.png" height=300 width=600 >
+
+开启python接口选项，注意PYTHON3的参数，路径没有问题BUILD_opencv_python3会自动生成。  
+勾选INSTALL_PYTHON_EXMAPLES
+再次点击Configure
+<img src="Hikey970使用记录\03.png" height=300 width=600 >
+
+
+生成编译文件时，face_landmark_model.dat可能下载不了，所以提前将其下载，并放入./cache/data/文件夹下，重命名为7505c44ca4eb54b4ab1e4777cb96ac05-face_landmark_model.dat
+* face_landmark_model.dat 下载地址</br>https://raw.githubusercontent.com/opencv/opencv_3rdparty/8afa57abc8229d611c4937165d20e2a2d9fc5a12/face_landmark_model.dat
+
+<img src="Hikey970使用记录\02.png" height=150 width=510 >
+
+然后就可以生成编译文件了，点击Generate
 
 ### 调整SWAP分区
 
@@ -185,40 +222,10 @@ $ sudo mkswap swap
 $ sudo swapon swap 
 $ htop
 ```
-可以在htop中看到swap分区大小为4GB，完成
+可以在htop中看到swap分区大小为4GB，完成  
 注意每次reboot后swap分区不会自动挂载
 
-
-### 设置编译环境
-安装cmake-qt-gui，使用图形界面
-``` bash
-$ cd Documents/opencv-4.0.0/
-$ mkdir build
-$ cd build/
-$ sudo apt-get install cmake-qt-gui
-$ (venv) pi@raspberrypi:~/Documents/opencv-4.0.0/build $ cmake-gui
-```
-
-选择源文件路径，编译文件夹选择刚才新建的build文件夹
-点击左下角Configure，默认Generator为Unix Makefile，完成后界面变红
-
-然后查找OPENCV_EXTRA_MODULES_PATH项，将OpenCV_Contrib-4.0.0/modules的路径填进去，点击左下角Configure，如图
-<img src="Hikey970使用记录\01.png" height=300 width=600 >
-
-开启python接口选项，注意PYTHON3的参数，路径没有问题BUILD_opencv_python3会自动生成。  
-勾选INSTALL_PYTHON_EXMAPLES
-再次点击Configure
-<img src="Hikey970使用记录\03.png" height=300 width=600 >
-
-
-生成编译文件时，face_landmark_model.dat可能下载不了，所以提前将其下载，并放入./cache/data/文件夹下，重命名为7505c44ca4eb54b4ab1e4777cb96ac05-face_landmark_model.dat
-* face_landmark_model.dat 下载地址</br>https://raw.githubusercontent.com/opencv/opencv_3rdparty/8afa57abc8229d611c4937165d20e2a2d9fc5a12/face_landmark_model.dat
-
-<img src="Hikey970使用记录\02.png" height=150 width=510 >
-
-然后就可以生成编译文件了，点击Generate
-
-### 编译
+## 编译
 确定一下swap分区
 ``` bash
 $ htop
