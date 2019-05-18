@@ -29,7 +29,7 @@ $ sudo dd if=/dev/zero of=swap bs=1M count=2048
 装载新的swap文件
 ``` bash
 $ sudo mkswap swap 
-$ sudo swapopen swap 
+$ sudo swapon swap 
 ```
 可以在htop中看到新的swap分区大小为2GB，完成
 

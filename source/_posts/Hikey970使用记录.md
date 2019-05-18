@@ -4,6 +4,12 @@ date: 2019-05-12 11:16:12
 tags:
   - Hikey970
 ---
+** {{ title }}：** <Excerpt in index | 首页摘要>
+hello world!
+ubuntu16.04下烧写lebian系统
+<!-- more -->
+<The rest of contents | 余下全文>
+
 
 # ubuntu16.04下烧写lebian系统
 ## 准备 
@@ -93,13 +99,173 @@ shunya@hikey970:~$ df -h
 
 
 
-
-
-
-
-
 ## 参考资料
 * 引言 · Hikey 970 开发板使用教程 </br>https://doc.bwbot.org/en/books-online/hikey970-doc/
 * hikey970学习-005 update image guide 镜像升级指南 - Mingyong_Zhuang的技术博客 - CSDN博客 </br>https://blog.csdn.net/qqqzmy/article/details/82667142
 * Ubuntu 使用Gparted工具扩大第一分区方法步骤 - zalebool - 博客园 </br>https://www.cnblogs.com/zalebool/p/5814907.html
 
+
+
+
+
+
+查看ip
+``` bash
+$ ip addr
+```
+
+调整系统默认python版本
+``` bash
+$ sudo update-alternatives --install /usr/bin/python python /usr/bin/python2.7 1
+$ sudo update-alternatives --install /usr/bin/python python /usr/bin/python3.5 2
+$ update-alternatives --config python
+$ python
+```
+
+电源管理中关屏保
+``` bash
+$ sudo apt-get update
+$ sudo apt-get upgrade
+```
+
+``` bash
+$ sudo apt-get install build-essential cmake pkg-config
+$ sudo apt-get install libjpeg-dev libtiff5-dev  libpng-dev
+$ sudo apt-get install libavcodec-dev libavformat-dev libswscale-dev libv4l-dev
+$ sudo apt-get install libxvidcore-dev libx264-dev
+$ sudo apt-get install libgtk2.0-dev
+$ sudo apt-get install libatlas-base-dev gfortran
+$ sudo apt-get install python3-dev
+```
+
+
+``` bash
+$ sudo apt-get install libjasper-dev
+```
+libjasper-dev安装可能会报错，原因是Arm64架构的版本目前还没有被 Debian官方收录，可以直接下载deb文件安装，注意相关依赖。
+
+``` bash
+$ sudo apt --fix-broken install
+$ sudo apt-get --purge remove libjpeg62-turbo-dev
+$ wget http://launchpadlibrarian.net/152841589/libjpeg8_8c-2ubuntu8_arm64.deb
+$ sudo dpkg -i libjpeg8_8c-2ubuntu8_arm64.deb
+$  wget http://launchpadlibrarian.net/376191785/libjasper1_1.900.1-debian1-2.4ubuntu1.2_arm64.deb
+$ sudo dpkg -i libjasper1_1.900.1-debian1-2.4ubuntu1.2_arm64.deb
+$ wget http://launchpadlibrarian.net/376191781/libjasper-dev_1.900.1-debian1-2.4ubuntu1.2_arm64.deb
+$ sudo dpkg -i libjasper-dev_1.900.1-debian1-2.4ubuntu1.2_arm64.deb
+```
+
+
+
+
+
+### 调整SWAP分区
+
+``` bash
+$ cd /var && ls
+```
+创建一个swap文件,如果已经有swap就卸载它
+``` bash
+$ sudo swapoff swap 
+```
+删除swap虚拟内存文件:
+``` bash
+$ rm /var/swap
+```
+使用dd命令创建一个文件，of后面跟你需要创建swap的位置
+``` bash
+$ sudo dd if=/dev/zero of=swap bs=1M count=4096
+```
+格式化为swap文件
+``` bash
+$ sudo mkswap swap 
+```
+装载新的swap文件
+``` bash
+$ sudo swapon swap 
+$ htop
+```
+可以在htop中看到swap分区大小为4GB，完成
+注意每次reboot后swap分区不会自动挂载
+
+
+### 设置编译环境
+安装cmake-qt-gui，使用图形界面
+``` bash
+$ cd Documents/opencv-4.0.0/
+$ mkdir build
+$ cd build/
+$ sudo apt-get install cmake-qt-gui
+$ (venv) pi@raspberrypi:~/Documents/opencv-4.0.0/build $ cmake-gui
+```
+
+选择源文件路径，编译文件夹选择刚才新建的build文件夹
+点击左下角Configure，默认Generator为Unix Makefile，完成后界面变红
+
+然后查找OPENCV_EXTRA_MODULES_PATH项，将OpenCV_Contrib-4.0.0/modules的路径填进去，点击左下角Configure，如图
+<img src="Hikey970使用记录\01.png" height=300 width=600 >
+
+开启python接口选项，注意PYTHON3的参数，路径没有问题BUILD_opencv_python3会自动生成。  
+勾选INSTALL_PYTHON_EXMAPLES
+再次点击Configure
+<img src="Hikey970使用记录\03.png" height=300 width=600 >
+
+
+生成编译文件时，face_landmark_model.dat可能下载不了，所以提前将其下载，并放入./cache/data/文件夹下，重命名为7505c44ca4eb54b4ab1e4777cb96ac05-face_landmark_model.dat
+* face_landmark_model.dat 下载地址</br>https://raw.githubusercontent.com/opencv/opencv_3rdparty/8afa57abc8229d611c4937165d20e2a2d9fc5a12/face_landmark_model.dat
+
+<img src="Hikey970使用记录\02.png" height=150 width=510 >
+
+然后就可以生成编译文件了，点击Generate
+
+### 编译
+确定一下swap分区
+``` bash
+$ htop
+```
+
+键入下述命令开始编译
+``` bash
+$ sudo make -j4
+```
+安装
+``` bash
+$ sudo make install 
+$ sudo ldconfig
+```
+因编译后的库文件cv2.so生成位置为~/Workplace/opencv/opencv-4.0.0/build /lib/python3/cv2.cpython-35m-aarch64-linux-gnu.so
+，这将导致该模块在Python3中无法import进来，将其拷贝到python3的第三方库文件夹dist-packages下
+``` bash
+$ sudo cp /usr/local/python/cv2/python-3.5/cv2.cpython-35m-arm-linux-gnueabihf.so /usr/local/lib/python3.5/dist-packages
+$ cd /usr/local/lib/python3.5/dist-packages/
+$ ls
+```
+
+ImportError: numpy.core.multiarray failed to import  
+出现这个错误的原因是numpy的版本太低了
+``` bash
+$ pip3 install -U numpy
+```
+import cv2 没有报错，则安装正常
+<img src="Hikey970使用记录/04.png" height=100 width=600>
+
+
+### 参考资料
+* face_landmark_model.dat 下载地址 - dspeia的博客 - CSDN博客 </br>https://blog.csdn.net/qq_34806812/article/details/82501999
+* hikey970学习-011 hikey970上安装opencv - Mingyong_Zhuang的技术博客 - CSDN博客</br>https://blog.csdn.net/qqqzmy/article/details/82855377
+
+
+
+### 创建虚拟环境
+
+``` bash
+$ pip3 install virtualenv
+$ virtualenv
+-bash: virtualenv: command not found
+$ sudo apt-get install python-virtualenv
+$ virtualenv
+-bash: virtualenv: command not found
+$ sudo find / -name virtualenv
+$ /home/shunya/.local/bin/virtualenv py35 -p /usr/bin/python3
+$ source ~/python-env/py35/bin/activate
+```

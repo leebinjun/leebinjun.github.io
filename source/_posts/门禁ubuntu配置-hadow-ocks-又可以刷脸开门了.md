@@ -3,8 +3,12 @@ title: '门禁ubuntu配置$hadow$ocks,又可以刷脸开门了'
 date: 2019-04-27 23:30:03
 tags:
 ---
-
+** {{ title }}：** <Excerpt in index | 首页摘要>
 * Shadowsocks - A secure socks5 proxy </br>http://shadowsocks.org/en/index.html
+
+<!-- more -->
+<The rest of contents | 余下全文>
+
 
 ### 安装
 ``` bash

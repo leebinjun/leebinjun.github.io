@@ -4,12 +4,16 @@ date: 2019-05-02 20:56:38
 tags:
   - sklearn
 ---
+** {{ title }}：** <Excerpt in index | 首页摘要>
 
 ## 选择学习方法
 Sklearn官网提供了一个流程图
 <div align=center>
 <img src = "Scikit-Learn学习笔记\machine_learning_map.png" width=600 height=300>
 </div>
+<!-- more -->
+<The rest of contents | 余下全文>
+
 
 ## 通用学习模式
 ### 导入模块
