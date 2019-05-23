@@ -5,274 +5,32 @@ tags:
   - Hikey970
 ---
 ** {{ title }}：** <Excerpt in index | 首页摘要>
-hello world!
-ubuntu16.04下烧写lebian系统
+hello hikey!
+Hikey970使用记录一：ubuntu16.04下烧写lebian系统  
+Hikey970使用记录二：编译安装opencv4.0.0  
+Hikey970使用记录三：USB转串口驱动安装  
 <!-- more -->
 <The rest of contents | 余下全文>
 
+Hikey970使用记录一：[ubuntu16.04下烧写lebian系统](https://leebinjun.github.io/2019/05/22/Hikey970%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%95%E4%B8%80%EF%BC%9Aubuntu16-04%E4%B8%8B%E7%83%A7%E5%86%99lebian%E7%B3%BB%E7%BB%9F/)
 
-# ubuntu16.04下烧写lebian系统
-## 准备 
-* hikey970 开发板
-* 开发板电源 12V2A
-* ubuntu16.04 主机
-* type-C 数据线
+Hikey970使用记录二：[编译安装opencv4.0.0](https://leebinjun.github.io/2019/05/22/Hikey970%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%95%E4%BA%8C%EF%BC%9A%E7%BC%96%E8%AF%91%E5%AE%89%E8%A3%85opencv4-0-0/)  
+
+Hikey970使用记录三：[USB转串口驱动安装](https://leebinjun.github.io/2019/05/22/Hikey970%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%95%E4%B8%89%EF%BC%9AUSB%E8%BD%AC%E4%B8%B2%E5%8F%A3%E9%A9%B1%E5%8A%A8%E5%AE%89%E8%A3%85/)
 
 
-## 安装
-
-安装安卓fastboot  
+## 问题记录 
+### apt-get 安装时出现dpkg: error processing package XXX的问题
 ``` bash
-$ sudo apt-get install android-tools-adb
-$ sudo apt-get install android-tools-fastboot
+$ sudo mv /var/lib/dpkg/info/ /var/lib/dpkg/info_backup/
+$ sudo mkdir /var/lib/dpkg/info/
 ```
+* Ubuntu在apt-get 安装时出现dpkg: error processing package XXX的问题 - tnaig的博客 - CSDN博客 </br>https://blog.csdn.net/tnaig/article/details/78497792
 
 
-## 下载镜像  
-* LeMaker | The Single Board Computers Community</br> http://www.lemaker.org/product-hikey970-download-86.html
+* Linux应用环境实战13：我该如何备份系统 - ichsonx的专栏 - CSDN博客 </br>https://blog.csdn.net/ichsonx/article/details/49387855
 
-``` bash
-$ cd Workplace/
-$ mkdir hikey970work
-$ cd hikey970work/
-$ wget http://mirror.lemaker.org/hikey970-lebian-9.tar.gz
-$ tar -xzvf hikey970-lebian-9.tar.gz
-$ cd hikey970-lebian-9/
-```
+### hub集线器和MobaXterm终端的冲突
+hikey970的USB口有限，插上hub集线器(鼠标、键盘、摄像头)，终端会掉线。  
+应该是供电问题，hub最好单独供电。
 
-版本的镜像有语法错误，要进行修改一下三个文件
-* flash-all-binaries.sh
-* flash-minimum-binaries.sh
-* /binaries/recovery-flash.sh
-``` bash
-$ cat flash-all-binaries.sh
-    #/bin/bash
-    ...
-$ vim flash-all-binaries.sh
-    #!/bin/bash
-    ...
-```
-
-## 烧写
-先把板子上的开关1-4拨为On Off On Off  
-连接typeC线到板子上(注意是HDMI和USB口中间的那个typec口，而不是debug口)  
-开发板上电
-
-``` bash
-~/Workplace/hikey970work/hikey970-lebian-9$ sudo ./flash-all-binaries.sh
-```
-等待刷机完成(100s)
-
-## 刷入分区补丁
-
-默认的系统分区很小，所以需要打一个补丁
-* 分区补丁下载</br>https://www.bwbot.org/s/GWciA9
-从上面的的下载地址下载补丁，之后解压。 把解压后的内容复制到 hikey970-lebian-9 文件夹内，执行
-
-``` bash
-sudo fastboot flash boot boot-hikey970.uefi.2.img
-sudo fastboot flash userdata hikey970-lebian9-tf.img
-```
-
-## 启动系统
-断开板子的电源，然后把开关拨至on off off off。给板子连接上鼠标键盘网线和显示器。然后给板子上电。 等待系统启动完成。正常情况下应该可以看到登陆界面。用户名和密码都是shunya。
-
-## 调整分区
-
-运行下面的指令调整分区
-
-``` bash
-$ sudo resize2fs /dev/sdd15
-```
-
-这样能够把系统分区扩展到20G，剩下的需要用gparted扩展
-
-``` bash
-$ sudo apt-get install gparted
-$ sudo gparted-pkexec # 注意此指令只能再外接显示器的情况下才能运行
-```
-在GParted工具中，首先选择60G的硬盘，再点击未分配分区上一个分区进行resize，注意增加分区大小或者合并只能是相邻的分区，如果不是连续，发现中间有swap分区可先删除，然后把未分配的空间全部扩展到最后一个分区，最后应用就可以了。
-``` bash
-shunya@hikey970:~$ df -h
-```
-可以看到系统空间已经增大到50G了
-
-
-
-## 参考资料
-* 引言 · Hikey 970 开发板使用教程 </br>https://doc.bwbot.org/en/books-online/hikey970-doc/
-* hikey970学习-005 update image guide 镜像升级指南 - Mingyong_Zhuang的技术博客 - CSDN博客 </br>https://blog.csdn.net/qqqzmy/article/details/82667142
-* Ubuntu 使用Gparted工具扩大第一分区方法步骤 - zalebool - 博客园 </br>https://www.cnblogs.com/zalebool/p/5814907.html
-
-
-# 编译安装opencv4.0.0
-## 准备
-
-查看ip
-``` bash
-$ ip addr
-```
-
-调整系统默认python版本
-``` bash
-$ sudo update-alternatives --install /usr/bin/python python /usr/bin/python2.7 1
-$ sudo update-alternatives --install /usr/bin/python python /usr/bin/python3.5 2
-$ update-alternatives --config python
-$ python
-```
-
-电源管理中关屏保
-``` bash
-$ sudo apt-get update
-$ sudo apt-get upgrade
-```
-### 相关依赖
-``` bash
-$ sudo apt-get install build-essential cmake pkg-config
-$ sudo apt-get install libjpeg-dev libtiff5-dev  libpng-dev
-$ sudo apt-get install libavcodec-dev libavformat-dev libswscale-dev libv4l-dev
-$ sudo apt-get install libxvidcore-dev libx264-dev
-$ sudo apt-get install libgtk2.0-dev
-$ sudo apt-get install libatlas-base-dev gfortran
-$ sudo apt-get install python3-dev
-```
-
-
-``` bash
-$ sudo apt-get install libjasper-dev
-```
-libjasper-dev安装可能会报错，原因是Arm64架构的版本目前还没有被 Debian官方收录，可以直接下载deb文件安装，注意相关依赖。
-
-``` bash
-$ sudo apt --fix-broken install
-$ sudo apt-get --purge remove libjpeg62-turbo-dev
-$ wget http://launchpadlibrarian.net/152841589/libjpeg8_8c-2ubuntu8_arm64.deb
-$ sudo dpkg -i libjpeg8_8c-2ubuntu8_arm64.deb
-$ wget http://launchpadlibrarian.net/376191785/libjasper1_1.900.1-debian1-2.4ubuntu1.2_arm64.deb
-$ sudo dpkg -i libjasper1_1.900.1-debian1-2.4ubuntu1.2_arm64.deb
-$ wget http://launchpadlibrarian.net/376191781/libjasper-dev_1.900.1-debian1-2.4ubuntu1.2_arm64.deb
-$ sudo dpkg -i libjasper-dev_1.900.1-debian1-2.4ubuntu1.2_arm64.deb
-```
-
-
-### 下载opencv源码
-``` bash
-$ cd Workplace/opencv/
-$ wget https://github.com/opencv/opencv/archive/4.0.0.zip
-$ unzip 4.0.0.zip
-$ wget https://github.com/opencv/opencv_contrib/archive/4.0.0.zip
-$ unzip 4.0.0.zip
-```
-下载比较慢，建议提前下好后上传
-
-
-
-### 设置编译环境
-安装cmake-qt-gui，使用图形界面  
-使用MobaXterm时，CMake界面可以弹出  
-``` bash
-$ mkdir build
-$ cd build/
-$ sudo apt-get install cmake-qt-gui
-$ cmake-gui
-```
-
-选择源文件路径，编译文件夹选择刚才新建的build文件夹
-点击左下角Configure，默认Generator为Unix Makefile，完成后界面变红
-
-然后查找OPENCV_EXTRA_MODULES_PATH项，将OpenCV_Contrib-4.0.0/modules的路径填进去，点击左下角Configure，如图
-<img src="Hikey970使用记录\01.png" height=300 width=600 >
-
-开启python接口选项，注意PYTHON3的参数，路径没有问题BUILD_opencv_python3会自动生成。  
-勾选INSTALL_PYTHON_EXMAPLES
-再次点击Configure
-<img src="Hikey970使用记录\03.png" height=300 width=600 >
-
-
-生成编译文件时，face_landmark_model.dat可能下载不了，所以提前将其下载，并放入./cache/data/文件夹下，重命名为7505c44ca4eb54b4ab1e4777cb96ac05-face_landmark_model.dat
-* face_landmark_model.dat 下载地址</br>https://raw.githubusercontent.com/opencv/opencv_3rdparty/8afa57abc8229d611c4937165d20e2a2d9fc5a12/face_landmark_model.dat
-
-<img src="Hikey970使用记录\02.png" height=150 width=510 >
-
-然后就可以生成编译文件了，点击Generate
-
-### 调整SWAP分区
-
-``` bash
-$ cd /var && ls
-```
-创建一个swap文件,如果已经有swap就卸载它
-``` bash
-$ sudo swapoff swap 
-```
-删除swap虚拟内存文件:
-``` bash
-$ rm /var/swap
-```
-使用dd命令创建一个文件，of后面跟你需要创建swap的位置
-``` bash
-$ sudo dd if=/dev/zero of=swap bs=1M count=4096
-```
-格式化为swap文件
-``` bash
-$ sudo mkswap swap 
-```
-装载新的swap文件
-``` bash
-$ sudo swapon swap 
-$ htop
-```
-可以在htop中看到swap分区大小为4GB，完成  
-注意每次reboot后swap分区不会自动挂载
-
-## 编译
-确定一下swap分区
-``` bash
-$ htop
-```
-
-键入下述命令开始编译
-``` bash
-$ sudo make -j4
-```
-安装
-``` bash
-$ sudo make install 
-$ sudo ldconfig
-```
-因编译后的库文件cv2.so生成位置为~/Workplace/opencv/opencv-4.0.0/build /lib/python3/cv2.cpython-35m-aarch64-linux-gnu.so
-，这将导致该模块在Python3中无法import进来，将其拷贝到python3的第三方库文件夹dist-packages下
-``` bash
-$ sudo cp /usr/local/python/cv2/python-3.5/cv2.cpython-35m-arm-linux-gnueabihf.so /usr/local/lib/python3.5/dist-packages
-$ cd /usr/local/lib/python3.5/dist-packages/
-$ ls
-```
-
-ImportError: numpy.core.multiarray failed to import  
-出现这个错误的原因是numpy的版本太低了
-``` bash
-$ pip3 install -U numpy
-```
-import cv2 没有报错，则安装正常
-<img src="Hikey970使用记录/04.png" height=100 width=600>
-
-
-### 参考资料
-* face_landmark_model.dat 下载地址 - dspeia的博客 - CSDN博客 </br>https://blog.csdn.net/qq_34806812/article/details/82501999
-* hikey970学习-011 hikey970上安装opencv - Mingyong_Zhuang的技术博客 - CSDN博客</br>https://blog.csdn.net/qqqzmy/article/details/82855377
-
-
-
-### 创建虚拟环境
-
-``` bash
-$ pip3 install virtualenv
-$ virtualenv
--bash: virtualenv: command not found
-$ sudo apt-get install python-virtualenv
-$ virtualenv
--bash: virtualenv: command not found
-$ sudo find / -name virtualenv
-$ /home/shunya/.local/bin/virtualenv py35 -p /usr/bin/python3
-$ source ~/python-env/py35/bin/activate
-```

@@ -24,9 +24,17 @@ if __name__ == "__main__":
 
 
 
+``` bash
+import tkinter as tk
 
+root = tk.Tk()
 
+def func_loop():
+    func()
+    root.after(1, func_loop)
 
+root.loopmain()
+```
 
 
 * [译]深度神经网络的多任务学习概览(An Overview of Multi-task Learning in Deep Neural Networks) - Shuzi_rank - 博客园 </br>https://www.cnblogs.com/shuzirank/p/7141017.html
