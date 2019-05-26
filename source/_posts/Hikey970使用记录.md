@@ -34,3 +34,63 @@ $ sudo mkdir /var/lib/dpkg/info/
 hikey970的USB口有限，插上hub集线器(鼠标、键盘、摄像头)，终端会掉线。  
 应该是供电问题，hub最好单独供电。
 
+
+
+
+
+
+
+``` bash
+sudo pip3 install -i https://pypi.tuna.tsinghua.edu.cn/simple XXX
+```
+
+
+
+* Python 并行计算 - SoftStar的专栏 - CSDN博客</br>https://blog.csdn.net/u011532367/article/details/51008993
+
+``` bash
+$ sudo apt-get install opencl-dev
+$ pip3 install pybind11
+$ pip3 install pyopencl
+$ sudo apt-get install clinfo
+$ sudo clinfo
+```
+
+
+
+>>> import pyopencl as cl
+ImportError: No module named 'numpy.core._multiarray_umath'
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  numpy failed to initialize
+Aborted
+
+查看numpy的当前版本
+
+pip show numpy
+
+更新numpy的版本
+pip install --upgrade numpy
+或
+pip  install -i https://pypi.tuna.tsinghua.edu.cn/simple --upgrade numpy
+
+
+
+
+python - TensorFlow GPU比CPU更慢 - SegmentFault 思否 https://segmentfault.com/q/1010000012693363
+
+
+[GCC 6.3.0 20170516] on linux
+Type "help", "copyright", "credits" or "license" for more information.
+>>> import sys
+>>> sys.path.append("/home/shunya/.local/lib/python3.5/site-packages")
+>>> import cv2
+>>> print(cv2.ocl.haveOpenCL())
+[ INFO:0] Initialize OpenCL runtime...
+True
+>>> cv2.ocl.setUseOpenCL(True)
+>>> print(cv2.ocl.useOpenCL())
+True
+>>>
+
+https://discuss.96boards.org/search?q=opencl
+https://community.arm.com/cn/f/discussions/13001/hikey960-arm-gpu
