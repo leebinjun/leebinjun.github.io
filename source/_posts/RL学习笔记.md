@@ -60,9 +60,9 @@ Name: 4, dtype: float64
 
 
 
+* 深度增强学习（DRL）漫谈 - 从DQN到AlphaGo - 世事难料，保持低调 - CSDN博客</br>https://blog.csdn.net/jinzhuojun/article/details/52752561
 
-
-
+* 深度增强学习DDPG（Deep Deterministic Policy Gradient）算法源码走读 - 世事难料，保持低调 - CSDN博客 </br>https://blog.csdn.net/jinzhuojun/article/details/82556127
 
 
 

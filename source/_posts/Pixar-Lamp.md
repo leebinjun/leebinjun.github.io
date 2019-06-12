@@ -157,3 +157,8 @@ openpose实时多人2D姿态估计 - weixin_41441682的博客 - CSDN博客 https
 人体姿态估计综述（Human Pose Estimation Overview） - 青青韶华 - CSDN博客 https://blog.csdn.net/qq_36165459/article/details/78320535?locationNum=10&fps=1
 人体姿态估计（人体关键点检测）分类与经典方法分析（附GitHub地址） - ls83776736的博客 - CSDN博客 https://blog.csdn.net/ls83776736/article/details/87991515
 MPII Human Pose Database http://human-pose.mpi-inf.mpg.de/#results
+
+
+
+
+* #3 机械手臂从零开始 写动态环境 (机器学习实战 教程教学 tutorial) - YouTube</br>https://www.youtube.com/watch?v=T5QlePZ4s3U&list=PLXO45tsB95cL8HTAlqkrmKLN_VSjlq4J8&index=3

@@ -188,6 +188,6 @@ $ cd Workplace/pose/
 $ python main.py
 ```
 
-### 参考资料
+## 参考资料
 * face_landmark_model.dat 下载地址 - dspeia的博客 - CSDN博客 </br>https://blog.csdn.net/qq_34806812/article/details/82501999
 * hikey970学习-011 hikey970上安装opencv - Mingyong_Zhuang的技术博客 - CSDN博客</br>https://blog.csdn.net/qqqzmy/article/details/82855377

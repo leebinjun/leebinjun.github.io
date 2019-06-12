@@ -19,6 +19,10 @@ Hikey970使用记录二：[编译安装opencv4.0.0](https://leebinjun.github.io/
 Hikey970使用记录三：[USB转串口驱动安装](https://leebinjun.github.io/2019/05/22/Hikey970%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%95%E4%B8%89%EF%BC%9AUSB%E8%BD%AC%E4%B8%B2%E5%8F%A3%E9%A9%B1%E5%8A%A8%E5%AE%89%E8%A3%85/)
 
 
+Hikey970使用记录四：[python加载运行OpenCL](https://leebinjun.github.io/2019/06/08/Hikey970%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%95%E5%9B%9B%EF%BC%9Apython%E5%8A%A0%E8%BD%BD%E8%BF%90%E8%A1%8COpenCL/)
+
+
+
 ## 问题记录 
 ### apt-get 安装时出现dpkg: error processing package XXX的问题
 ``` bash
@@ -35,62 +39,15 @@ hikey970的USB口有限，插上hub集线器(鼠标、键盘、摄像头)，终�
 应该是供电问题，hub最好单独供电。
 
 
+## 常用指令 
 
+截图
+``` bash
+sudo apt-get install scrot
+sudo scrot
+```
 
-
-
-
+pip指定安装源安装
 ``` bash
 sudo pip3 install -i https://pypi.tuna.tsinghua.edu.cn/simple XXX
 ```
-
-
-
-* Python 并行计算 - SoftStar的专栏 - CSDN博客</br>https://blog.csdn.net/u011532367/article/details/51008993
-
-``` bash
-$ sudo apt-get install opencl-dev
-$ pip3 install pybind11
-$ pip3 install pyopencl
-$ sudo apt-get install clinfo
-$ sudo clinfo
-```
-
-
-
->>> import pyopencl as cl
-ImportError: No module named 'numpy.core._multiarray_umath'
-terminate called after throwing an instance of 'std::runtime_error'
-  what():  numpy failed to initialize
-Aborted
-
-查看numpy的当前版本
-
-pip show numpy
-
-更新numpy的版本
-pip install --upgrade numpy
-或
-pip  install -i https://pypi.tuna.tsinghua.edu.cn/simple --upgrade numpy
-
-
-
-
-python - TensorFlow GPU比CPU更慢 - SegmentFault 思否 https://segmentfault.com/q/1010000012693363
-
-
-[GCC 6.3.0 20170516] on linux
-Type "help", "copyright", "credits" or "license" for more information.
->>> import sys
->>> sys.path.append("/home/shunya/.local/lib/python3.5/site-packages")
->>> import cv2
->>> print(cv2.ocl.haveOpenCL())
-[ INFO:0] Initialize OpenCL runtime...
-True
->>> cv2.ocl.setUseOpenCL(True)
->>> print(cv2.ocl.useOpenCL())
-True
->>>
-
-https://discuss.96boards.org/search?q=opencl
-https://community.arm.com/cn/f/discussions/13001/hikey960-arm-gpu

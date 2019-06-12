@@ -3,6 +3,7 @@ title: 人生苦短，我用python
 date: 2019-05-16 23:56:01
 tags:
   - python
+  - jupyter notebook
 ---
 ** {{ title }}：** <Excerpt in index | 首页摘要>
 

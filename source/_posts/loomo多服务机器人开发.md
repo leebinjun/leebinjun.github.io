@@ -10,7 +10,7 @@ tags:
 ## 设计思路
 
 <div align=center>
-<img id="loomo" src = "loomo多服务机器人开发\设计思路-201905.png" width=1000 height=800>
+<img alt="design" src = "loomo多服务机器人开发\设计思路-201905.png" width=1000 height=800>
 </div>
 
 
