@@ -93,3 +93,69 @@ $ sudo vim ~/.jupyter/jupyter_notebook_config.py
 $ jupyter notebook --ip=0.0.0.0 --no-browser --allow-root
 ```
 
+## 一些加速技巧
+
+加速查找  
+``` bash
+data = (i**2+1 for i in range(1000000))
+%%time
+list_data = list(data)
+4535251 in list_data
+
+%%time
+set_data = set(data)
+4535251 in set_data
+```
+
+加速函数  
+``` bash
+%%time
+def fib(n):
+    return(1 if n in (1,2) else fib(n-1)+fib(n-2))
+fib(30)
+```
+* 用缓存机制加速递归函数  
+``` bash
+%%time
+from functools import lru_cache
+@lru_cache(100)
+def fib(n):
+    return(1 if n in (1,2) else fib(n-1)+fib(n-2))
+fib(30)
+```
+* 用循环机制代替递归函数  
+``` bash
+%%time
+def fib(n):
+    if n in (1,2):
+        return n
+    a, b = 1, 1
+    for i in range(2,n):
+        a, b = b, a+b
+    return b
+fib(30)
+```
+* 使用map代替推导式进行加速  
+``` bash 
+%%time
+alist = [i**2 for i in range(1000)]
+%%time
+alist = map(lambda x: x**2, range(1000))
+```
+* 使用filter代替推导式进行加速  
+``` bash 
+%%time
+alist = [i for i in range(1000) if i%7==0]
+%%time
+alist = filter(lambda x: x%7==0, range(1000))
+```
+
+使用np.where代替if  
+``` bash
+%%time
+relu = lambda x:np.where(x>0, x, 0)
+array_b = relu(array_a)
+```
+
+应用多线程加速IO密集型任务  
+应用多进程加速CPU密集型任务  
