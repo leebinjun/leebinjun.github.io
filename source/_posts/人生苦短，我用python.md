@@ -159,3 +159,9 @@ array_b = relu(array_a)
 
 应用多线程加速IO密集型任务  
 应用多进程加速CPU密集型任务  
+
+
+
+### 
+
+* 03-用Jupyter编写数学公式 - ds19991999的博客 - CSDN博客 </br>https://blog.csdn.net/ds19991999/article/details/81275580
