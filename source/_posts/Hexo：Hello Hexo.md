@@ -1,6 +1,6 @@
 ---
 title: Hexo：Hello Hexo
-date: 2019-06-22 22:30:18
+date: 2019-04-19 22:30:18
 tags:
   - hexo
 ---
@@ -181,4 +181,11 @@ post_asset_folder: true
 安装插件
 ``` bash
 npm install hexo-asset-image --save
+```
+
+html语法
+``` html
+<div align=center>
+<img alt="title" src = "path to xxx.png" width=999 height=999>
+</div>
 ```
