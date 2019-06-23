@@ -37,13 +37,13 @@ excerpt_link: more
 # 文章卡片右下角常驻链接，不需要请设置为false
 show_all_link: '展开全文'
 # 数学公式
-mathjax: false
+mathjax: true
 # 是否在新窗口打开链接
 open_in_new: false
 
 # 打赏
 # 打赏type设定：0-关闭打赏； 1-文章对应的md文件里有reward:true属性，才有打赏； 2-所有文章均有打赏
-reward_type: 2
+reward_type: 0
 # 打赏wording
 reward_wording: '谢谢你请我吃糖果'
 # 支付宝二维码图片地址，跟你设置头像的方式一样。比如：/assets/img/alipay.jpg
@@ -65,10 +65,10 @@ top: true
 # Miscellaneous
 baidu_analytics: ''
 google_analytics: ''
-favicon: /favicon.png
+favicon: /img/favicon.png
 
 #你的头像url
-avatar:
+avatar: /img/avatar.png
 
 #是否开启分享
 share_jia: true
@@ -78,7 +78,7 @@ share_jia: true
 #具体请参考wiki：https://github.com/litten/hexo-theme-yilia/wiki/
 
 #1、多说
-duoshuo: false
+duoshuo: true
 
 #2、网易云跟帖
 wangyiyun: false
@@ -120,11 +120,9 @@ smart_menu:
   aboutme: '关于我'
 
 friends:
-  友情链接1: http://localhost:4000/
-  友情链接2: http://localhost:4000/
-  友情链接3: http://localhost:4000/
-  友情链接4: http://localhost:4000/
-  友情链接5: http://localhost:4000/
-  友情链接6: http://localhost:4000/
+  Yingping's Blog: https://bye-lemon.github.io/  
+  paine1690's Blog: http://paine1690.github.io/
+  dong's Blog: https://haxisnake.github.io/
+  spground's Blog: https://spground.github.io/  
 
 aboutme: 很惭愧<br><br>只做了一点微小的工作<br>谢谢大家
