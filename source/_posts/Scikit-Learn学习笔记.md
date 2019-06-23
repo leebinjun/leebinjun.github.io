@@ -17,14 +17,14 @@ Sklearn官网提供了一个流程图
 
 ## 通用学习模式
 ### 导入模块
-``` bash
+``` python
 import numpy as np
 from sklearn import datasets
 from sklearn.cross_validation import train_test_split
 from sklearn.neighbors import KNeighborsClassifier
 ```
 ### 加载数据
-``` bash
+``` python
 iris = datasets.load_iris()
 iris_X = iris.data
 iris_y = iris.target 
@@ -32,11 +32,11 @@ print(iris_X[:2,:])
 print(iris_y)
 ```
 ### 划分训练集和测试集
-``` bash
+``` python
 X_train, X_test, y_train, y_test = train_test_split(iris_X, iris_y, test_size = 0.3)
 ```
 ### 创建模型，训练，预测
-``` bash
+``` python
 knn = KNeighborsClassifier()
 knn.fit(X_train, y_train)
 print(knn.predict(X_test))
@@ -45,7 +45,7 @@ print(y_test)
 ### 模型保存和加载
 * method 1: pickle
 
-``` bash
+``` python
 import pickle
 from sklearn.externals import joblib
 # save
@@ -58,7 +58,7 @@ with open('clf.pickle', 'rb') as f:
 
 * method 2: joblib
 
-``` bash
+``` python
 from sklearn.externals import joblib
 # save
 joblib.dump(model, 'clf.plk')
@@ -68,13 +68,14 @@ model2 = joblib.load('clf.plk')
 
 ## datasets数据库 
 ### sklearn.datasets
-* API Reference — scikit-learn 0.20.3 documentation</br>https://scikit-learn.org/stable/modules/classes.html#module-sklearn.datasets
+* API Reference — scikit-learn 0.20.3 documentation  
+https://scikit-learn.org/stable/modules/classes.html#module-sklearn.datasets
 
 ### Sklearn的数据表示
 * 数据表
 * 特征矩阵
 * 目标数组
-``` bash
+``` python
 # 用seaborn加载数据
 import seaborn as sns
 iris = sns.load_dataset('iris')
@@ -116,7 +117,10 @@ model.score
 
 
 ## 参考博客
-* jakevdp/PythonDataScienceHandbook: Python Data Science Handbook: full text in Jupyter Notebooks</br>https://github.com/jakevdp/PythonDataScienceHandbook  
-* 莫烦Python</br>https://morvanzhou.github.io/  
-* 使用sklearn做单机特征工程 - jasonfreak - 博客园</br>https://www.cnblogs.com/jasonfreak/p/5448385.html
+* jakevdp/PythonDataScienceHandbook: Python Data Science Handbook: full text in Jupyter Notebooks  
+https://github.com/jakevdp/PythonDataScienceHandbook  
+* 莫烦Python  
+https://morvanzhou.github.io/  
+* 使用sklearn做单机特征工程 - jasonfreak - 博客园  
+https://www.cnblogs.com/jasonfreak/p/5448385.html
 

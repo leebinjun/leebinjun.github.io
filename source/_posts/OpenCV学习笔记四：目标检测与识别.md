@@ -4,13 +4,16 @@ date: 2019-06-23 00:29:31
 tags:
   - opencv
 ---
-
+** {{ title }}：** <Excerpt in index | 首页摘要> 
 
 ### 目标检测和识别
 传统目标检测算法中的技术：  
 * 梯度直方图（Histogram of Oriented Gradient， HOG）  
 * 图像金字塔（image pyramid）  
 * 滑动窗口（sliding window）  
+
+<!-- more -->
+<The rest of contents | 余下全文>
 
 与特征检测算法不同，这些算法是互补的。如在梯度直方图（HOG）中会使用滑动窗口技术。
 
@@ -40,11 +43,11 @@ $$\alpha(x,y) = \tan^{-1}{(\frac{G_y(x,y)}{G_x(x,y)})} $$
 梯度直方图是在一个8*8的cell里面计算的。那么在8*8的cell里面就会有8*8*2=128个值，其中2包括了梯度强度和梯度方向。通过统计形成梯度直方图，128个值将会变成9个值，大大降低了计算量，同时又对光照等环境变化更加地鲁棒。  
 
 首先将0-180度分成9个bins，分别是0，20，40...160；然后根据梯度方向值的大小，将每一个像素点的梯度幅度值分配到相应的bin上；最终得到如下图所示的直方图，一个长度为9的数组。  
-![HOG02](./OpenCV学习笔记四：目标检测与识别/hog02.jpg)
+<img alt="HOG02" src="OpenCV学习笔记四：目标检测与识别/hog02.jpg">
 从上图可以看到，更多的点的梯度方向是倾向于0度和160度，也就是说这些点的梯度方向是向上或者向下，表明图像这个位置存在比较明显的横向边缘。因此HOG是对边角敏感的，由于这样的统计方法，也是对部分像素值变化不敏感的，所以能够适应不同的环境。   
 
 bin值的具体计算方法如下例： 
-![HOG01](./OpenCV学习笔记四：目标检测与识别/hog01.jpg)  
+<img alt="HOG01" src="OpenCV学习笔记四：目标检测与识别/hog01.jpg">  
 先看两个蓝色圈圈。因为蓝圈的方向是80度，大小是2，所以该点就投给80这个bin；  
 再看两个红色圈圈。因为红色圈圈的方向是10，大小是4，因为10距离0点为10，距离20点为也为10，那么有一半的大小是投给0这个bin，还有一半的大小投给20这个bin。  
 
@@ -68,7 +71,7 @@ bin值的具体计算方法如下例：
 在确定了上述的参数后，就可以计算出一个HOG描述子的维度了。
 
 
-``` c++
+``` cpp
 size_t HOGDescriptor::getDescriptorSize() const
 {
     CV_Assert(blockSize.width % cellSize.width == 0 &&
@@ -84,7 +87,7 @@ size_t HOGDescriptor::getDescriptorSize() const
 ```
 
 
-```python
+``` python
 import cv2
 import matplotlib.pyplot as plt
 
@@ -138,7 +141,7 @@ plt.imshow(cv2.cvtColor(img, cv2.COLOR_BGR2RGB))
 plt.show()
 ```
 
-![png](./OpenCV学习笔记四：目标检测与识别/output_4_0.png)
+<img src="OpenCV学习笔记四：目标检测与识别/output_4_0.png">
 
 
 ```python
@@ -244,7 +247,7 @@ plt.show()
 ```
 
 
-![png](./OpenCV学习笔记四：目标检测与识别/output_5_1.png)
+<img src="OpenCV学习笔记四：目标检测与识别/output_5_1.png">
 
 
 ### 图像金字塔

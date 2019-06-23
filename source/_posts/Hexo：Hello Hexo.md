@@ -153,7 +153,7 @@ cd themes && git clone https://github.com/maochunguang/black-blue(主题地址)
 ```
 
 配置blog\\_config.yml，修改对应主题目录名
-``` bash
+``` yml
 theme: 主题名称
 ```
 
@@ -175,7 +175,7 @@ hexo d
 ### 设置
 配置blog\\_config.yml
 
-``` bash
+``` yml
 post_asset_folder: true
 ```
 安装插件

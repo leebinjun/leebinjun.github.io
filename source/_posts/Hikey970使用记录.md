@@ -29,10 +29,12 @@ Hikey970使用记录四：[python加载运行OpenCL](https://leebinjun.github.io
 $ sudo mv /var/lib/dpkg/info/ /var/lib/dpkg/info_backup/
 $ sudo mkdir /var/lib/dpkg/info/
 ```
-* Ubuntu在apt-get 安装时出现dpkg: error processing package XXX的问题 - tnaig的博客 - CSDN博客 </br>https://blog.csdn.net/tnaig/article/details/78497792
+* Ubuntu在apt-get 安装时出现dpkg: error processing package XXX的问题 - tnaig的博客 - CSDN博客  
+https://blog.csdn.net/tnaig/article/details/78497792
 
 
-* Linux应用环境实战13：我该如何备份系统 - ichsonx的专栏 - CSDN博客 </br>https://blog.csdn.net/ichsonx/article/details/49387855
+* Linux应用环境实战13：我该如何备份系统 - ichsonx的专栏 - CSDN博客  
+https://blog.csdn.net/ichsonx/article/details/49387855
 
 ### hub集线器和MobaXterm终端的冲突
 hikey970的USB口有限，插上hub集线器(鼠标、键盘、摄像头)，终端会掉线。  

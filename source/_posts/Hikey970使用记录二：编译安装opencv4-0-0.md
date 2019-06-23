@@ -96,7 +96,8 @@ $ cmake-gui
 
 
 生成编译文件时，face_landmark_model.dat可能下载不了，所以提前将其下载，并放入./cache/data/文件夹下，重命名为7505c44ca4eb54b4ab1e4777cb96ac05-face_landmark_model.dat
-* face_landmark_model.dat 下载地址</br>https://raw.githubusercontent.com/opencv/opencv_3rdparty/8afa57abc8229d611c4937165d20e2a2d9fc5a12/face_landmark_model.dat
+* face_landmark_model.dat 下载地址  
+https://raw.githubusercontent.com/opencv/opencv_3rdparty/8afa57abc8229d611c4937165d20e2a2d9fc5a12/face_landmark_model.dat
 
 <img src="Hikey970使用记录二：编译安装opencv4-0-0\02.png" height=150 width=510 >
 
@@ -189,5 +190,7 @@ $ python main.py
 ```
 
 ## 参考资料
-* face_landmark_model.dat 下载地址 - dspeia的博客 - CSDN博客 </br>https://blog.csdn.net/qq_34806812/article/details/82501999
-* hikey970学习-011 hikey970上安装opencv - Mingyong_Zhuang的技术博客 - CSDN博客</br>https://blog.csdn.net/qqqzmy/article/details/82855377
+* face_landmark_model.dat 下载地址 - dspeia的博客 - CSDN博客  
+https://blog.csdn.net/qq_34806812/article/details/82501999
+* hikey970学习-011 hikey970上安装opencv - Mingyong_Zhuang的技术博客 - CSDN博客  
+https://blog.csdn.net/qqqzmy/article/details/82855377

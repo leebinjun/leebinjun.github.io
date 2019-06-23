@@ -26,7 +26,7 @@ tags:
 3. label_image.py，测试模型预测结果。
 
 ### 预处理
-``` bash
+``` python
 import os
 import cv2
 
@@ -52,9 +52,12 @@ for f in files:
 ```
 
 ### retrain
-* tensorflow/retrain.py at c565660e008cf666c582668cb0d0937ca86e71fb · tensorflow/tensorflow</br> https://github.com/tensorflow/tensorflow/blob/c565660e008cf666c582668cb0d0937ca86e71fb/tensorflow/examples/image_retraining/retrain.py
-源码分析
-* TensorFlow学习笔记：Inception_v3源码分析 - 简书 </br >https://www.jianshu.com/p/feecdcdef8a0
+* tensorflow/retrain.py at c565660e008cf666c582668cb0d0937ca86e71fb · tensorflow/tensorflow  
+https://github.com/tensorflow/tensorflow/blob/c565660e008cf666c582668cb0d0937ca86e71fb/tensorflow/examples/image_retraining/retrain.py
+
+源码分析  
+* TensorFlow学习笔记：Inception_v3源码分析 - 简书  
+https://www.jianshu.com/p/feecdcdef8a0
 ``` bash
 # By default: Inception v3
 python retrain.py
@@ -62,10 +65,11 @@ python retrain.py
 python retrain.py --image_dir ./daata --architecture mobilenet_1.0_224
 ```
 可以提前下载模型文件到./tmp/imagenet文件夹下。
-* Google AI Blog: MobileNets: Open-Source Models for Efficient On-Device Vision</br> https://ai.googleblog.com/2017/06/mobilenets-open-source-models-for.html
+* Google AI Blog: MobileNets: Open-Source Models for Efficient On-Device Vision  
+https://ai.googleblog.com/2017/06/mobilenets-open-source-models-for.html
 
 ### 测试
-``` bash
+``` python
 import tensorflow as tf
 import os
 import numpy as np
@@ -136,15 +140,16 @@ with tf.Session() as sess:
 ## 问题汇总
 ### 1. 使用mobileNet时 TypeError: Cannot interpret feed_dict key as Tensor: The name 'DecodeJpeg/contents:0' refers to a Tensor which does not exist. The operation, 'DecodeJpeg/contents', does not exist in the graph.
 
-* TypeError: Cannot interpret feed_dict key as Tensor: The name 'DecodeJpeg/contents:0' refers to a Tensor which does not exist. The operation, 'DecodeJpeg/contents', does not exist in the graph. · Issue #12250 · tensorflow/tensorflow </br>https://github.com/tensorflow/tensorflow/issues/12250
+* TypeError: Cannot interpret feed_dict key as Tensor: The name 'DecodeJpeg/contents:0' refers to a Tensor which does not exist. The operation, 'DecodeJpeg/contents', does not exist in the graph. · Issue #12250 · tensorflow/tensorflow  
+https://github.com/tensorflow/tensorflow/issues/12250
 
 打印图的参数名称
-``` bash
+``` python
 tensor_name_list = [tensor.name for tensor in tf.get_default_graph().as_graph_def().node]
 print(tensor_name_list)
 ```
 修改输入为第一个tensor的名称
-``` bash
+``` python
 # inceptionV3
 # image_data = tf.gfile.FastGFile(image_path, 'rb').read()
 # predictions = sess.run(softmax_tensor, {'DecodeJpeg/contents:0': image_data}) #图片格式是jpg格式
@@ -169,5 +174,6 @@ predictions = np.squeeze(predictions) #把结果转为1维数据
 
 ## 参考资料
 
-* 浅谈迁移学习图像分类 - weixin_33805743的博客 - CSDN博客 </br>https://blog.csdn.net/weixin_33805743/article/details/87426423
+* 浅谈迁移学习图像分类 - weixin_33805743的博客 - CSDN博客  
+https://blog.csdn.net/weixin_33805743/article/details/87426423
 

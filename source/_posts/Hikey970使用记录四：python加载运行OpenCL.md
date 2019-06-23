@@ -8,7 +8,8 @@ tags:
 ## 参考资料
 
 
-* Python 并行计算 - SoftStar的专栏 - CSDN博客</br>https://blog.csdn.net/u011532367/article/details/51008993
+* Python 并行计算 - SoftStar的专栏 - CSDN博客  
+https://blog.csdn.net/u011532367/article/details/51008993
 
 
 ## 安装
@@ -40,7 +41,7 @@ pip  install -i https://pypi.tuna.tsinghua.edu.cn/simple --upgrade numpy
 ```
 
 ## 参考资料
-* python - TensorFlow GPU比CPU更慢 - SegmentFault 思否 
+* python - TensorFlow GPU比CPU更慢 - SegmentFault 思否  
 https://segmentfault.com/q/1010000012693363
 * https://discuss.96boards.org/search?q=opencl
 * https://community.arm.com/cn/f/discussions/13001/hikey960-arm-gpu

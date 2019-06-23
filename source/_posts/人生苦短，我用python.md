@@ -18,7 +18,7 @@ Life is short, you need Python
 ## 迭代器
 迭代器（iterator）是一种对象，它能够用来遍历标准模板库容器中的部分或全部元素，每个迭代器对象代表容器中的确定的地址。
 
-``` bash
+``` python
 i = iter(range(10))
 next(i)
 ```
@@ -27,24 +27,24 @@ next(i)
 
 ## test
 Q1: 计算一年的第几天
-``` bash
+``` python
 import datetime
 res = datetime.date(year, month, day) - datetime.date(year-1, 12, 31)
 ```
 
 Q2: 找最小数
-``` bash
+``` python
 alist = list(map(int, input().split()))
 res = min(alist)
 ```
 
 Q3: 大于平均值的数的和
-``` bash
+``` python
 res = sum([i for i in alist if i > sum(alist)/len(alist)])
 ```
 
 Q4: 数列求和
-``` bash
+``` python
 res = sum([1/(i*2) for i in range(1, n)])
 ```
 
@@ -96,7 +96,7 @@ $ jupyter notebook --ip=0.0.0.0 --no-browser --allow-root
 ## 一些加速技巧
 
 加速查找  
-``` bash
+``` python
 data = (i**2+1 for i in range(1000000))
 %%time
 list_data = list(data)
@@ -108,14 +108,14 @@ set_data = set(data)
 ```
 
 加速函数  
-``` bash
+``` python
 %%time
 def fib(n):
     return(1 if n in (1,2) else fib(n-1)+fib(n-2))
 fib(30)
 ```
 * 用缓存机制加速递归函数  
-``` bash
+``` python
 %%time
 from functools import lru_cache
 @lru_cache(100)
@@ -124,7 +124,7 @@ def fib(n):
 fib(30)
 ```
 * 用循环机制代替递归函数  
-``` bash
+``` python
 %%time
 def fib(n):
     if n in (1,2):
@@ -136,14 +136,14 @@ def fib(n):
 fib(30)
 ```
 * 使用map代替推导式进行加速  
-``` bash 
+``` python 
 %%time
 alist = [i**2 for i in range(1000)]
 %%time
 alist = map(lambda x: x**2, range(1000))
 ```
 * 使用filter代替推导式进行加速  
-``` bash 
+``` python 
 %%time
 alist = [i for i in range(1000) if i%7==0]
 %%time
@@ -151,7 +151,7 @@ alist = filter(lambda x: x%7==0, range(1000))
 ```
 
 使用np.where代替if  
-``` bash
+``` python
 %%time
 relu = lambda x:np.where(x>0, x, 0)
 array_b = relu(array_a)
@@ -164,4 +164,5 @@ array_b = relu(array_a)
 
 ### 
 
-* 03-用Jupyter编写数学公式 - ds19991999的博客 - CSDN博客 </br>https://blog.csdn.net/ds19991999/article/details/81275580
+* 03-用Jupyter编写数学公式 - ds19991999的博客 - CSDN博客  
+https://blog.csdn.net/ds19991999/article/details/81275580

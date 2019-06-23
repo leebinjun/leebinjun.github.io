@@ -7,7 +7,8 @@ tags:
 ** {{ title }}：** <Excerpt in index | 首页摘要> 
 hello hikey!  
 USB转串口驱动安装    
-* 3. usb转串口驱动安装 · Hikey 970 开发板使用教程 </br>https://doc.bwbot.org/zh-cn/books-online/hikey970-doc/topic/485.html
+* 3. usb转串口驱动安装 · Hikey 970 开发板使用教程  
+https://doc.bwbot.org/zh-cn/books-online/hikey970-doc/topic/485.html
 <!-- more -->
 <The rest of contents | 余下全文>
 
@@ -129,5 +130,6 @@ $ sudo python serial_test.py
 
 
 ## 参考资料
-* 3. usb转串口驱动安装 · Hikey 970 开发板使用教程 </br>https://doc.bwbot.org/zh-cn/books-online/hikey970-doc/topic/485.html
+* 3. usb转串口驱动安装 · Hikey 970 开发板使用教程  
+https://doc.bwbot.org/zh-cn/books-online/hikey970-doc/topic/485.html
 

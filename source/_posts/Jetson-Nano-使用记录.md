@@ -7,7 +7,8 @@ tags:
 
 
 
-* balenaEtcher - Home </br>https://www.balena.io/etcher/
+* balenaEtcher - Home  
+https://www.balena.io/etcher/
 
 
 

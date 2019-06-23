@@ -5,17 +5,20 @@ tags:
   - tkinter
   - python
 ---
-
+** {{ title }}：** <Excerpt in index | 首页摘要>
 ## tkinter 可以使用的颜色
 
 <div align=center>
 <img src = "tkinter学习笔记/color.png" width=600 height=300>
 </div>
 
+<!-- more -->
+<The rest of contents | 余下全文>
+
 
 ## tkinter python（图形开发界面）
 Tkinter 是 Python 的标准 GUI 库。Python 使用 Tkinter 可以快速的创建 GUI 应用程序。Tk和Tkinter可以在大多数的Unix平台下使用，同样可以应用在Windows和Macintosh系统里。由于 Tkinter 是内置到 python 的安装包中、只要安装好 Python 之后就能 import Tkinter 库、而且 IDLE 也是用 Tkinter 编写而成、对于简单的图形界面 Tkinter 还是能应付自如。
-``` bash
+``` python
 #!/usr/bin/python
 # -*- coding: UTF-8 -*-
 import tkinter as tk
@@ -40,7 +43,7 @@ top.mainloop()
 
 ### 按键
 按钮组件用于在 Python 应用程序中添加按钮，按钮上可以放上文本或图像，按钮可用于监听用户行为，能够与一个 Python 函数关联，当按钮被按下时，自动调用该函数。
-``` bash
+``` python
 windows = tk.Tk()
 windows.title('hello')
 windows.geometry('200x100')
@@ -66,7 +69,7 @@ windows.mainloop()
 ```
 
 ### 画布
-``` bash
+``` python
 windows = tk.Tk()
 windows.title('hey')
 windows.geometry("200x200")
@@ -85,5 +88,7 @@ windows.mainloop()
 
 
 
-* Python Tkinter教程（GUI图形界面开发教程） </br>http://c.biancheng.net/python/tkinter/
-* Tkinter GUI 教程系列 | 莫烦Python </br>https://morvanzhou.github.io/tutorials/python-basic/tkinter/
+* Python Tkinter教程（GUI图形界面开发教程）  
+http://c.biancheng.net/python/tkinter/
+* Tkinter GUI 教程系列 | 莫烦Python  
+https://morvanzhou.github.io/tutorials/python-basic/tkinter/

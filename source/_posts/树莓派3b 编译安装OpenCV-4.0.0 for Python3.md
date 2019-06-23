@@ -112,8 +112,12 @@ $ ln -s /usr/local/lib/python3.5/dist-packages/cv2.so cv2.so
 
 ## 参考博客 
 
-* Raspberry Pi-树莓派搭建基于Python3和OpenCV实现的解魔方机器人-爱板网论坛 - 电子工程师学习交流园地</br>http://www.eeboard.com/bbs/thread-99451-1-1.html
-* 树莓派3b编译安装完整OpenCV-3.4.1 for Python3 - 爱板网经验频道 - Eeboard爱板网</br>https://jingyan.eeboard.com/article/76476
-* 树莓派安装opencv调用cv2时提示ModuleNotFoundError: NO module named 'cv'的解决方法 - Mrkinte的博客 - CSDN博客</br>https://blog.csdn.net/Mrkinte/article/details/85058507
-* Ubuntu 16.04: How to install OpenCV - PyImageSearch</br>https://www.pyimagesearch.com/2016/10/24/ubuntu-16-04-how-to-install-opencv/
+* Raspberry Pi-树莓派搭建基于Python3和OpenCV实现的解魔方机器人-爱板网论坛 - 电子工程师学习交流园地  
+http://www.eeboard.com/bbs/thread-99451-1-1.html
+* 树莓派3b编译安装完整OpenCV-3.4.1 for Python3 - 爱板网经验频道 - Eeboard爱板网  
+https://jingyan.eeboard.com/article/76476
+* 树莓派安装opencv调用cv2时提示ModuleNotFoundError: NO module named 'cv'的解决方法 - Mrkinte的博客 - CSDN博客  
+https://blog.csdn.net/Mrkinte/article/details/85058507
+* Ubuntu 16.04: How to install OpenCV - PyImageSearch  
+https://www.pyimagesearch.com/2016/10/24/ubuntu-16-04-how-to-install-opencv/
 

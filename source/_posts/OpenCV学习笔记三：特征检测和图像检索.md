@@ -2,10 +2,9 @@
 title: OpenCV学习笔记三：特征检测和图像检索
 date: 2019-06-23 00:08:00
 tags:
+  - opencv
 ---
-
-
-
+** {{ title }}：** <Excerpt in index | 首页摘要>
 ## 特征检测算法
 
 * Harris     角点检测
@@ -16,18 +15,17 @@ tags:
 * BRIEF      斑点检测
 * ORB (Oriented FAST and Rotated BRIEF)
 
+<!-- more -->
+<The rest of contents | 余下全文>
 
 ### Harris
 
 角点定义：如果某一点在任意方向的一个微小变动都会引起灰度很大的变化，那么这个点就称之为角点。  
 Harris角点检测的核心思想就是用一个局部窗口在图像上进行移动来判断灰度的变化，如果变化大于一个值那么就认为这个点是角点。  
 将窗口向各个方向移动$(u, v)$然后计算所有差异的总和。表达式如下 
-$$ f(x_1,x_2,\underbrace{\ldots}_{\rm ldots} ,x_n) = x_1^2 + x_2^2 + \underbrace{\cdots}_{\rm cdots} + x_n^2 $$
 
 $$
-E(u, v)= \underbrace{w(x, y)}_{\text { window function }} $$
-
- \underbrace{w(x, y)}_{\text { window function }}[\underbrace{I(x+u, y+v)}_{\text { shifted intensity }}-\underbrace{I(x, y)}_{\text { intensity }}]^{2}
+E(u, v)= \underbrace{w(x, y)}_{\text { window function }}[\underbrace{I(x+u, y+v)}_{\text { shifted intensity }}-\underbrace{I(x, y)}_{\text { intensity }}]^{2}
 $$
 
 窗口函数$w(x,y)$可以是正常的矩形窗口也可以是对每一个像素给予不同权重的高斯窗口。  角点检测中要使 $E(u,v)$ 的值最大。  
@@ -93,9 +91,7 @@ plt.imshow(img_corner)
 plt.subplots_adjust(bottom=.01, top=.99, left=.01, right=.99)
 ```
 
-
-![png](./OpenCV学习笔记三：特征检测和图像检索/output_2_0.png)
-
+<img src='OpenCV学习笔记三：特征检测和图像检索/output_2_0.png' >
 
 
 ```python
@@ -131,7 +127,7 @@ img_show = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
 plt.imshow(img_show)
 ```
 
-![png](./OpenCV学习笔记三：特征检测和图像检索/output_3_2.png)
+<img src="OpenCV学习笔记三：特征检测和图像检索/output_3_2.png">
 
 
 ### Shi-Tomasi 
@@ -166,7 +162,7 @@ plt.show()
 ```
 
 
-![png](./OpenCV学习笔记三：特征检测和图像检索/output_5_0.png)
+<img src="OpenCV学习笔记三：特征检测和图像检索/output_5_0.png">
 
 
 ### FAST
@@ -176,7 +172,7 @@ $$N = \sum_{x\, \forall \, circles(p)}|I(x)-I(p)|>\epsilon_d $$
 步骤：  
 1）在图像中任选一点$p$,假定其像素（亮度）值为$I_p$;  
 2）以$r$为半径画圆，覆盖$p$点周围的$M$个像素,如下图所示: $r=3， M=16$;  
-![FAST_samples](./OpenCV学习笔记三：特征检测和图像检索/FAST_samples.png)
+<img alt="FAST" src="OpenCV学习笔记三：特征检测和图像检索/FAST_samples.png">
 3）设定阈值$t$，如果这周围的16个像素中有连续的$N$个像素的像素值减去$I_p$大于$t$,或者有连续的$N$个像素都大于$I_p+t$,则认为$p$为角点。
 如果$t=0$，那么就可以理解为：有连续N个像素大于或小于$I_p$的灰度值。那么这个点就被判断为角点。  
 
@@ -200,8 +196,7 @@ s,& I_p-t < I_{p\to x} <  I_p + t  &(similar)\\
 b,&I_p+t \le I_{p\to x}  &(brighter)
 \end{cases}
 $$
-
-根据这些像素点的分类，特征向量 P 也被分为 3 个子集：$P_d$，$P_s$，$P_b$
+根据这些像素点的分类，特征向量$P$也被分为3个子集：$P_d$，$P_s$，$P_b$
 4. 定义一个新的布尔变量$K_p$ ，如果$p$是角点就设置为 Ture，如果不是就设置为 False。
 5. 使用ID3算法（决策树分类器）来查询每一个子集，递归计算所有子集直到熵为0；
 6. 将构建好的决策树运用于其他图像的快速的检测。
@@ -239,7 +234,7 @@ plt.imshow(img)
 plt.show()
 
 ```
-![png](./OpenCV学习笔记三：特征检测和图像检索/output_7_1.png)
+<img src="OpenCV学习笔记三：特征检测和图像检索/output_7_1.png">
 
 
 ### SIFT
@@ -252,11 +247,11 @@ plt.show()
 步骤：  
 1）构建高斯差分金字塔  
 通过减少采样来构成一组图像尺寸不同的图像金字塔，然后对这一组图像中的每一张图像使用具有不同方差$σ$的高斯卷积核构建出具有不同分辨率的图像金字塔（不同的尺度空间）,DoG就是这组具有不同分辨率的图像金字塔中相邻的两层之间的差值;  
-![DOG Pyramid](./OpenCV学习笔记三：特征检测和图像检索/DOG Pyramid.jpg)
+<img alt="DOG Pyramid" src = "OpenCV学习笔记三：特征检测和图像检索/DOG Pyramid.jpg">
 
 2）定位关键点  
 首先在尺度空间和二维平面中检测局部最大值$(x，y，σ)$,这表示在$σ$尺度中点$(x，y)$可能是一个关键点。为了寻找DoG函数的极值点，每一个像素点要和它所有的相邻点比较，看其是否比它的图像域和尺度域的相邻点大或者小。如下图所示，中间的检测点和它同尺度的8个相邻点和上下相邻尺度对应的9×2个点共26个点比较，以确保在尺度空间和二维图像空间都检测到极值点。   
-![sift_local_extrema](./OpenCV学习笔记三：特征检测和图像检索/sift_local_extrema.jpg)
+<img alt="sift_local_extrema" src="OpenCV学习笔记三：特征检测和图像检索/sift_local_extrema.jpg">  
 以上方法检测到的极值点是离散空间的极值点，通过拟合三维二次函数来精确确定关键点的位置和尺度，同时去除低对比度的关键点和不稳定的边缘响应点(因为DoG算子会产生较强的边缘响应)，以增强匹配稳定性、提高抗噪声能力。
 
 3）关键点描述符  
@@ -300,11 +295,11 @@ plt.show()
 ```
 
 
-![png](output_9_0.png)
+<img src="OpenCV学习笔记三：特征检测和图像检索/output_9_0.png">
 
 
 
-```python
+``` python
 kp, des = sift.detectAndCompute(gray,None)
 # print("kp:", kp)
 print("des' lenth:", len(des[0]))
@@ -328,7 +323,7 @@ print("des:", des)
     
 
 
-```python
+``` python
 import cv2
 import numpy as np
 from matplotlib import pyplot as plt
@@ -350,18 +345,14 @@ plt.imshow(img)
 plt.show()
 ```
 
-
-![png](output_11_0.png)
-
+<img src="OpenCV学习笔记三：特征检测和图像检索/output_11_0.png">
 
 ### SURF(Speeded-Up Robust Features)
 
 2006年，Bay和Ess等人基于SIFT算法的思路，提出了加速鲁棒特征（SURF）,该算法主要针对于SIFT算法速度太慢，计算量大的缺点，使用了近似Harr小波方法来提取特征点，这种方法就是基于Hessian行列式（DoH）的斑点特征检测方法。通过在不同的尺度上利用积分图像可以有效地计算出近似Harr小波值，简化了二阶微分模板的构建，搞高了尺度空间的特征检测的效率。  
 
 
-
-
-```python
+``` python
 import cv2
 import numpy as np
 from matplotlib import pyplot as plt
@@ -383,8 +374,7 @@ plt.imshow(img)
 plt.show()
 ```
 
-![png](./OpenCV学习笔记三：特征检测和图像检索/output_13_0.png)
-
+<img src="OpenCV学习笔记三：特征检测和图像检索/output_13_0.png">
 
 ### BRIEF
 
@@ -402,10 +392,7 @@ ORB特征是将FAST特征点的检测方法与BRIEF特征描述子结合起来�
 
 ORB特征具有旋转不变性，同时对噪声及透视仿射也具有不变性
 
-
-
-
-```python
+``` python
 import numpy as np
 import cv2
 import matplotlib.pyplot as plt
@@ -423,15 +410,11 @@ kp,des=orb.detectAndCompute(img,None)
 img2=cv2.drawKeypoints(img,kp,None,(0,255,0),flags=0)
 plt.imshow(img2)
 plt.show()
-
 ```
 
+<img src="OpenCV学习笔记三：特征检测和图像检索/output_16_0.png">
 
-![png](output_16_0.png)
-
-
-
-```python
+``` python
 import numpy as np
 import cv2
 import matplotlib.pyplot as plt
@@ -454,15 +437,11 @@ matches = sorted(matches, key=lambda x: x.distance)
 img3 = cv2.drawMatches(img1, kp1, img2, kp2, matches[:40], img2, flags=2)
 plt.imshow(img3)
 plt.show()
-
 ```
 
+<img src="OpenCV学习笔记三：特征检测和图像检索/output_17_0.png">
 
-![png](output_17_0.png)
-
-
-
-```python
+``` python
 import cv2
 import numpy as np
 import matplotlib.pyplot as plt
@@ -477,7 +456,6 @@ sift=cv2.xfeatures2d.SIFT_create()
 kp1,des1=sift.detectAndCompute(train,None)
 kp2,des2=sift.detectAndCompute(query,None)
 
-
 # find the keypoints and descriptors with SIFT
 kp1, des1 = sift.detectAndCompute(train,None)
 kp2, des2 = sift.detectAndCompute(query,None)
@@ -491,25 +469,20 @@ flann = cv2.FlannBasedMatcher(index_params,search_params)
 
 matches = flann.knnMatch(des1,des2,k=2)
 
-
 # Need to draw only good matches, so create a mask
 matchesMask = [[0,0] for i in range(len(matches))]
-
 
 # ratio test as per Lowe's paper
 for i,(m,n) in enumerate(matches):
 
-#如果第一个邻近距离比第二个邻近距离的0.7倍小，则保留
-
+    #如果第一个邻近距离比第二个邻近距离的0.7倍小，则保留
     if m.distance < 0.7*n.distance:
         matchesMask[i]=[1,0]
-
 
 draw_params = dict(matchColor = (0,255,0),
                    singlePointColor = (255,0,0),
                    matchesMask = matchesMask,
                    flags = 0)
-
 
 img3 = cv2.drawMatchesKnn(train,kp1,query,kp2,matches,None,**draw_params)
 plt.imshow(img3)
@@ -517,6 +490,4 @@ plt.show()
 
 ```
 
-
-![png](output_18_0.png)
-
+<img src = "OpenCV学习笔记三：特征检测和图像检索/output_18_0.png">

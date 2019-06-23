@@ -15,7 +15,7 @@ hexo d
 hexo的部署命令会自动生成站点文件进行git commit，将修改push到指定的remote branch一般是master中。  
 根据Hexo建站完成部署，其实我们的本地源文件都没有同步在github上。我在我的xxx.github.io仓库中创建了一个dev分支，用于管理源文件。  
 使用vscode注意修改.git文件夹中的config文件就可以了  
-``` bash
+``` conf
 [core]
 	repositoryformatversion = 0
 	filemode = false

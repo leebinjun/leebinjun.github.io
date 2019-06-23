@@ -26,7 +26,8 @@ $ sudo apt-get install android-tools-fastboot
 ```
 
 ## 下载镜像  
-* LeMaker | The Single Board Computers Community</br> http://www.lemaker.org/product-hikey970-download-86.html
+* LeMaker | The Single Board Computers Community  
+ http://www.lemaker.org/product-hikey970-download-86.html
 
 ``` bash
 $ cd Workplace/
@@ -133,9 +134,12 @@ $ sudo apt-get upgrade
 ```
 
 ## 参考资料
-* 引言 · Hikey 970 开发板使用教程 </br>https://doc.bwbot.org/en/books-online/hikey970-doc/
-* hikey970学习-005 update image guide 镜像升级指南 - Mingyong_Zhuang的技术博客 - CSDN博客 </br>https://blog.csdn.net/qqqzmy/article/details/82667142
-* Ubuntu 使用Gparted工具扩大第一分区方法步骤 - zalebool - 博客园 </br>https://www.cnblogs.com/zalebool/p/5814907.html
+* 引言 · Hikey 970 开发板使用教程  
+https://doc.bwbot.org/en/books-online/hikey970-doc/
+* hikey970学习-005 update image guide 镜像升级指南 - Mingyong_Zhuang的技术博客 - CSDN博客  
+https://blog.csdn.net/qqqzmy/article/details/82667142
+* Ubuntu 使用Gparted工具扩大第一分区方法步骤 - zalebool - 博客园  
+https://www.cnblogs.com/zalebool/p/5814907.html
 
 
 
