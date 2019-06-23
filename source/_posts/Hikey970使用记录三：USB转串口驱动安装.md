@@ -45,9 +45,9 @@ sudo apt-get install bc
 make menuconfig
 ```
 内核配置界面如下,Device Drivers-->USB Support --> USB Serial Converter Support 将其设置成M。编译内核module有两种模式，一种是直接编译到内核里面，另一种是编译成独立的.ko文件module。我们采用的是.ko的模式。这样不用重新编译内核更加方便。 继续进入此选项将想要编译的驱动设置成M，如果不清楚自己的型号可以全部设置成M 设置完成后选择保存，之后再退出此界面  
-<img src="Hikey970使用记录三：USB转串口驱动安装\01.png" witdh=600 height=300>
-<img src="Hikey970使用记录三：USB转串口驱动安装\02.png" witdh=600 height=300>
-<img src="Hikey970使用记录三：USB转串口驱动安装\03.png" witdh=600 height=300>
+<img src="Hikey970使用记录三：USB转串口驱动安装\01.png" witdh=1200 height=600>
+<img src="Hikey970使用记录三：USB转串口驱动安装\02.png" witdh=1200 height=600>
+<img src="Hikey970使用记录三：USB转串口驱动安装\03.png" witdh=1200 height=600>
 
 ## 编译驱动module
 ``` bash
@@ -88,7 +88,7 @@ $ lsmod
 ``` bash
 $ ls /dev/tty*
 ```
-<img src="Hikey970使用记录三：USB转串口驱动安装\04.png" witdh=600 height=300>
+<img src="Hikey970使用记录三：USB转串口驱动安装\04.png" witdh=1200 height=600>
   
 ## 自动加载驱动
 修改 /etc/modules文件 在其中加入想要加载的内核模块的名称，比如对于我的设备就是pl2303。文件内容如下  
