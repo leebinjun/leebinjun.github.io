@@ -95,7 +95,7 @@ https://www.thingiverse.com/thing:3709391
 
 10.买个琴箱，完成。
 
-<img alt="14" src="FDM3D打印电吉他琴体，制作电吉他/14.png">  
+<img alt="14" src="FDM3D打印电吉他琴体，制作电吉他/14.jpg">  
 
 ## 一些乐理知识
 
@@ -105,5 +105,6 @@ https://www.thingiverse.com/thing:3709391
 
 ## 其他
 
-* 3D打印电吉他 撩妹技能Get起来！|3D学堂|3D虎   http://www.3dhoo.com/news/xuetang/39430.html
+* 3D打印电吉他 撩妹技能Get起来！|3D学堂|3D虎  
+http://www.3dhoo.com/news/xuetang/39430.html
 
