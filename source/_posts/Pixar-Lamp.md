@@ -145,17 +145,26 @@ DPM算法采用了改进后的HOG特征，SVM分类器和滑动窗口（Sliding 
 
 
 
-##
-如何评价卡内基梅隆大学的开源项目 OpenPose？ - 知乎 https://www.zhihu.com/question/59750782
-CMU-Perceptual-Computing-Lab/openpose: OpenPose: Real-time multi-person keypoint detection library for body, face, hands, and foot estimation https://github.com/CMU-Perceptual-Computing-Lab/openpose
-人体姿态估计数据集整理（Pose Estimation/Keypoint） - 上善若水 - CSDN博客 https://blog.csdn.net/guo1988kui/article/details/84321581
-openpose实时多人2D姿态估计 - weixin_41441682的博客 - CSDN博客 https://blog.csdn.net/weixin_41441682/article/details/81357369#
-人体姿态估计资源大列表（Human Pose Estimation） - xiaolouhan的博客 - CSDN博客 https://blog.csdn.net/xiaolouhan/article/details/84321148
-新人求教如何从头学习人体姿态估计 - Ilovepose http://ilovepose.luohuank.xin/t/66
-论文解析与翻译：《Stacked Hourglass Networks for Human Pose Estimation》 - qq_38522972的博客 - CSDN博客 https://blog.csdn.net/qq_38522972/article/details/82958077
-人体姿态估计资源大列表（Human Pose Estimation） - weixin_38367817的博客 - CSDN博客 https://blog.csdn.net/weixin_38367817/article/details/86522569
-人体姿态估计综述（Human Pose Estimation Overview） - 青青韶华 - CSDN博客 https://blog.csdn.net/qq_36165459/article/details/78320535?locationNum=10&fps=1
-人体姿态估计（人体关键点检测）分类与经典方法分析（附GitHub地址） - ls83776736的博客 - CSDN博客 https://blog.csdn.net/ls83776736/article/details/87991515
+## 参考博客
+- 如何评价卡内基梅隆大学的开源项目 OpenPose？ - 知乎   
+https://www.zhihu.com/question/59750782
+- CMU-Perceptual-Computing-Lab/openpose: OpenPose: Real-time multi-person keypoint detection library for body, face, hands, and foot estimation   
+https://github.com/CMU-Perceptual-Computing-Lab/openpose
+- 人体姿态估计数据集整理（Pose Estimation/Keypoint） - 上善若水 - CSDN博客   
+https://blog.csdn.net/guo1988kui/article/details/84321581
+- openpose实时多人2D姿态估计 - weixin_41441682的博客 - CSDN博客   
+https://blog.csdn.net/weixin_41441682/article/details/81357369#
+- 人体姿态估计资源大列表（Human Pose Estimation） - xiaolouhan的博客 - CSDN博客   
+https://blog.csdn.net/xiaolouhan/article/details/84321148
+- 新人求教如何从头学习人体姿态估计 - Ilovepose http://ilovepose.luohuank.xin/t/66
+论文解析与翻译：《Stacked Hourglass Networks for Human Pose Estimation》 - qq_38522972的博客 - CSDN博客  
+https://blog.csdn.net/qq_38522972/article/details/82958077
+- 人体姿态估计资源大列表（Human Pose Estimation） - weixin_38367817的博客 - CSDN博客  
+https://blog.csdn.net/weixin_38367817/article/details/86522569
+- 人体姿态估计综述（Human Pose Estimation Overview） - 青青韶华 - CSDN博客   
+https://blog.csdn.net/qq_36165459/article/details/78320535?locationNum=10&fps=1
+- 人体姿态估计（人体关键点检测）分类与经典方法分析（附GitHub地址） - ls83776736的博客 - CSDN博客  
+https://blog.csdn.net/ls83776736/article/details/87991515
 MPII Human Pose Database http://human-pose.mpi-inf.mpg.de/#results
 
 

@@ -19,25 +19,13 @@ tags:
 
 
 
-
+``` bash
 (root) C:\Users\Administrator\Desktop\DQN-2048-master>python
 Python 3.6.3 |Anaconda, Inc.| (default, Oct 15 2017, 03:27:45) [MSC v.1900 64 bit (AMD64)] on win32
 Type "help", "copyright", "credits" or "license" for more information.
 >>> import pandas as pf
 >>> import pandas as pd
 >>> import numpy as np
->>> table = pd.DateFrame(np.random((3,4)), index=[2,4,6], columns=['a', 'c', 'd', 'd'])
-Traceback (most recent call last):
-  File "<stdin>", line 1, in <module>
-AttributeError: module 'pandas' has no attribute 'DateFrame'
->>> table = pd.DataFrame(np.random((3,4)), index=[2,4,6], columns=['a', 'c', 'd', 'd'])
-Traceback (most recent call last):
-  File "<stdin>", line 1, in <module>
-TypeError: 'module' object is not callable
->>> table = pd.DateFrame(np.random.random((3,4)), index=[2,4,6], columns=['a', 'c', 'd', 'd'])
-Traceback (most recent call last):
-  File "<stdin>", line 1, in <module>
-AttributeError: module 'pandas' has no attribute 'DateFrame'
 >>> table = pd.DataFrame(np.random.random((3,4)), index=[2,4,6], columns=['a', 'c', 'd', 'd'])
 >>> table
           a         c         d         d
@@ -57,7 +45,7 @@ Name: 4, dtype: float64
 'a'
 >>>
 
-
+```
 
 
 * 深度增强学习（DRL）漫谈 - 从DQN到AlphaGo - 世事难料，保持低调 - CSDN博客</br>https://blog.csdn.net/jinzhuojun/article/details/52752561
@@ -67,3 +55,4 @@ Name: 4, dtype: float64
 
 
 * 在Windows下使用OpenAI Gym - HelloGym - 止于至玄 - CSDN博客</br> https://blog.csdn.net/philthinker/article/details/79810249
+
