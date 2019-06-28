@@ -1,6 +1,6 @@
 ---
-title: 门禁人脸检测和识别二：人脸关键点和Delaunay三角剖分
-date: 2019-06-28 01:57:02
+title: 门禁人脸检测和识别三：Delaunay三角剖分和Voronoi图
+date: 2019-06-29 00:11:20
 tags:
   - opencv
 ---
@@ -40,7 +40,7 @@ Delaunay三角剖分定义为平面上的点集P是一种三角剖分，使得P�
   在二维平面中，每增加一个点三角形的数目都会大概增加2，边数增加3。可以说在二维上的Delaunay剖分中是一个线性规模的数据结构。但在三维的情况下这两个指标最多会达到平房的量级，更高维的空间的一般结论也会达到2^d量级。
  
  
-<img src="门禁人脸检测和识别二：人脸关键点和Delaunay三角剖分\opencv-delaunay-vornoi-subdiv-example.png">
+<img src="门禁人脸检测和识别三：Delaunay三角剖分和Voronoi图\opencv-delaunay-vornoi-subdiv-example.png">
 
 
 
@@ -121,7 +121,7 @@ plt.show()
 
 ```
 
-<img src="门禁人脸检测和识别二：人脸关键点和Delaunay三角剖分/output_4_0.png">
+<img src="门禁人脸检测和识别三：Delaunay三角剖分和Voronoi图\output_4_0.png">
 
 
 
@@ -154,7 +154,7 @@ __Bowyer-Watson算法__是根据上述两者算法相互补充改进得到的(�
 ### 判断点在三角形内
 
 
-<img src="门禁人脸检测和识别二：人脸关键点和Delaunay三角剖分/Trangle.png">
+<img src="门禁人脸检测和识别三：Delaunay三角剖分和Voronoi图\Trangle.png">
 
 #### 1. 点P和三顶点夹角和360
 连接点P和三角形的三个顶点得到三条线段PA，PB和PC，求出这三条线段与三角形各边的夹角，如果所有夹角之和为360度，那么点P在三角形内，否则不在，此法直观，但效率低下。
@@ -180,7 +180,7 @@ $$
 根据这个外心的坐标公式计算出外接圆的圆心坐标，就能得到圆的半径，从而判断出点P与外接圆的位置关系。
 
 #### 2.利用角度关系
-<img src="门禁人脸检测和识别二：人脸关键点和Delaunay三角剖分/P_Trangle.png">
+<img src="门禁人脸检测和识别三：Delaunay三角剖分和Voronoi图\P_Trangle.png">
 
 - step1 计算$∠P_0P_1P_2$和$∠P_0PP_2$的大小，两个角的大小在$[0,π]$范围内。  
     - step1.1 如果$∠P_0PP_2=0$，则点$P$不在圆内，结束；如果$∠P_0PP_2 = π$,则点$P$在圆内，结束。   
