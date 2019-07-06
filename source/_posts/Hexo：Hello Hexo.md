@@ -64,7 +64,8 @@ $ npm install
 $ hexo s
 ```
 浏览器访问：http://localhost:4000/ 
-按Ctrl+C停止</br> 
+按Ctrl+C停止  
+
 
 ### 配置到GitHub
 
@@ -86,7 +87,7 @@ $ 连按三次Enter
 其中ssh-keygen.exe在.\Git\usr\bin文件夹中  
 根据路径提示找到id_rsa.pub文件，拷贝公钥  
 进入github账户设置，在ssh and GPG keys中新增一个ssh key  
-把刚刚拷贝出来的公钥粘贴到key中，title放空就好</br>
+把刚刚拷贝出来的公钥粘贴到key中，title放空就好  
 
 验证ssh key
 ``` bash
