@@ -134,7 +134,7 @@ DPM算法采用了改进后的HOG特征，SVM分类器和滑动窗口（Sliding 
 * 2016
 
 
-### Efficient Concolutional Network
+#### Efficient Concolutional Network
 * 关注efficience
 * 2016
 

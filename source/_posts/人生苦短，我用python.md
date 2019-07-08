@@ -24,6 +24,32 @@ next(i)
 ```
 我们简单说迭代器就是访问集合元素，迭代器就是有一个next()方法的对象，而不是通过索引来计数的。
 
+### yield
+
+以生产者消费者模式为例
+``` python
+def consume():
+    while True:
+        # consumr协程等待接受数据
+        number = yield
+        print("开始消费", number)
+
+consumer = consume()
+# 让初始化状态的协程先执行起来，在yield处停止
+next(consumer)
+
+for num in range(100):
+    print("开始生产", num)
+    # 发送数据给consumer协程
+    consumer.send(num)
+```
+当协程执行到yield关键字时，会暂停在那一行，等到主线程调用send方法发送了数据，协程才会接到数据继续执行。但是，yield让协程暂停，和线程的阻塞是有本质区别的。协程的暂停完全由程序控制，线程的阻塞状态是由操作系统内核来进行切换。因此，协程的开销远远小于线程的开销。  
+
+* 漫画：什么是协程？  
+http://www.sohu.com/a/237171690_465221
+
+
+
 
 ## test
 Q1: 计算一年的第几天
@@ -159,6 +185,7 @@ array_b = relu(array_a)
 
 应用多线程加速IO密集型任务  
 应用多进程加速CPU密集型任务  
+
 
 
 
