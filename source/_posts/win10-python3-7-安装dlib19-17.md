@@ -58,6 +58,10 @@ pip install dlib
 方法二：下载dlib源代码，编译、安装
 * dlib C++ Library  
 http://dlib.net/
+``` bash
+python setup.py install
+```
+
 
 
 
