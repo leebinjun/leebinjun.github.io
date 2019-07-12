@@ -199,29 +199,41 @@ $$
 
 步骤：
 - 1.获取关键点列表
-> points = []  
-> points.append((x, y))
+``` python
+points = []  
+points.append((x, y))
+```
 - 2.定义要分区的矩形区间
-> img = cv2.imread("image.jpg");
-> size = img.shape
-> rect = (0, 0, size[1], size[0])
+``` python
+img = cv2.imread("image.jpg");
+size = img.shape
+rect = (0, 0, size[1], size[0])
+```
 - 3.创建Subdiv2D类的实例
-> subdiv  = cv2.Subdiv2D(rect)
+``` python
+subdiv  = cv2.Subdiv2D(rect)
+```
 - 4.使用subdiv.insert(point)插入点
-> for p in points :
->     subdiv.insert(p)
+``` python
+for p in points :
+    subdiv.insert(p)
+```
 - 5.使用subdiv.getTriangleList方法得到Delaunay三角剖分的三角形列表
-> triangleList = subdiv.getTriangleList();
-> for t in triangleList :
->     pt1 = (t[0], t[1])
->     pt2 = (t[2], t[3])
->     pt3 = (t[4], t[5])
+``` python
+triangleList = subdiv.getTriangleList();
+for t in triangleList :
+    pt1 = (t[0], t[1])
+    pt2 = (t[2], t[3])
+    pt3 = (t[4], t[5])
+```
 - 6.使用subdiv.getVoronoiFacetList方法得到Voronoi图形状和中心的列表
-> (facets, centers) = subdiv.getVoronoiFacetList([])
+``` python
+(facets, centers) = subdiv.getVoronoiFacetList([])
+```
 
+opencv示例代码
 
-
-```python
+``` python
 import cv2
 import numpy as np
 import random
