@@ -12,6 +12,23 @@ https://blog.csdn.net/qq_36893052/article/details/79860328
 <!-- more -->
 <The rest of contents | 余下全文>
 
+<html>
+<head>
+<meta charset="utf-8"> 
+<title>菜鸟教程(runoob.com)</title> 
+<script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js">
+</script>
+<script>
+$(document).ready(function(){
+    $(document).on('click', '.fold_hider', function(){
+        $('>.fold', this.parentNode).slideToggle();
+        $('>:first', this).toggleClass('open');
+    });
+    $("div.fold").css("display","none");
+});
+</script>
+</head>
+</html>
 
 
 ### Ubuntu16.04下环境配置
@@ -230,6 +247,12 @@ def relu(x):
 relu(D_hat**-1 * A_hat * X * W)
 ```
 
+<body>
+<div>
+    <div class="fold_hider">
+        <div class="close hider_title">点击显示/隐藏代码</div>
+    </div>
+    <div class="fold">
 
 ```python
 import networkx as nx
@@ -286,6 +309,9 @@ for i in range (34):
         # plt.scatter(np.array(output)[:,0],np.array(output)[:,1],label = 0:33)
 
 ```
+</div>
+</div>
+</body>
 
 
 ![png](Pixar-Lamp二：ST-GCN动作识别/output_33_0.png)
@@ -294,15 +320,14 @@ for i in range (34):
 这样的特征表征可以很好地将 Zachary 空手道俱乐部的两个社区划分开来。至此，我们甚至都没有开始训练模型。
 
 
-<!-- <script type="text/javascript" src='http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js'></script> -->
-<script src="http://libs.baidu.com/jquery/1.9.1/jquery.min.js"></script>
 
+<body>
 <div>
     <div class="fold_hider">
-        <div class="close hider_title">点击显示/隐藏代码hhh</div>
+        <div class="close hider_title">点击显示/隐藏代码</div>
     </div>
     <div class="fold">
-                ```python
+        ``` python
         from networkx import karate_club_graph,to_numpy_matrix
         import numpy as np
         import tensorflow as tf
@@ -420,8 +445,9 @@ for i in range (34):
             plt.pause(0.1)
             plt.cla()   
         ```
-    </div>
 </div>
+</div>
+</body>
 
 
 ![png](Pixar-Lamp二：ST-GCN动作识别/output_12_1.png)

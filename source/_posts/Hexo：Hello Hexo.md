@@ -198,3 +198,66 @@ html语法
 <img alt="title" src = "path to xxx.png" width=999 height=999>
 </div>
 ```
+
+
+## 代码折叠
+
+目前使用以下脚本  
+<html>
+<head>
+<meta charset="utf-8"> 
+<title>title_test</title> 
+<script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js">
+</script>
+<script>
+$(document).ready(function(){
+    $(document).on('click', '.fold_hider', function(){
+        $('>.fold', this.parentNode).slideToggle();
+        $('>:first', this).toggleClass('open');
+    });
+    $("div.fold").css("display","none");
+});
+</script>
+</head>
+<body>
+<div>
+    <div class="fold_hider">
+        <div class="close hider_title">点击显示/隐藏代码</div>
+    </div>
+    <div class="fold">
+        ``` html
+        <html>
+        <head>
+        <meta charset="utf-8"> 
+        <title>title_test</title> 
+        <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js">
+        </script>
+        <script>
+        $(document).ready(function(){
+            $(document).on('click', '.fold_hider', function(){
+                $('>.fold', this.parentNode).slideToggle();
+                $('>:first', this).toggleClass('open');
+            });
+            $("div.fold").css("display","none");
+        });
+        </script>
+        </head>
+        <body>
+        <div>
+            <div class="fold_hider">
+                <div class="close hider_title">点击显示/隐藏代码</div>
+            </div>
+            <div class="fold">
+                要隐藏的部分
+            </div>
+        </div>
+        </body>
+        </html>
+        ```
+    </div>
+</div>
+</body>
+</html>
+
+* 如何配置才能让hexo搭建的博客中的代码实现折叠功能？ - 知乎  
+https://www.zhihu.com/question/66271897

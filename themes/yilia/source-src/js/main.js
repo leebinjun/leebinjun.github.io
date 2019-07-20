@@ -11,17 +11,10 @@ import Aside from './aside'
 
 import {addLoadEvent} from './util'
 
-addLoadEvent(function() {
-	Share.init()
-	Viewer.init()
-	Aside.init()
-})
 
-$(document).ready(function(){
-    $(document).on('click', '.fold_hider', function(){
-        $('>.fold', this.parentNode).slideToggle();
-        $('>:first', this).toggleClass('open');
-    });
-    $("div.fold").css("display","none");
-});
+addLoadEvent(function() {
+    Share.init()
+    Viewer.init()
+    Aside.init()
+})
 
