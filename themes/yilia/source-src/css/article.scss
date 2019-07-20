@@ -328,3 +328,15 @@
     float: right;
   }
 }
+
+.hider_title{
+  font-family: "Microsoft Yahei";
+  cursor: pointer;
+}
+.close:after{
+  content: "▼";
+}
+.open:after{
+  content: "▲";
+}
+

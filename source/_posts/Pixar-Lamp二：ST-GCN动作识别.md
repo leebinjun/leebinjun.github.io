@@ -112,6 +112,7 @@ NetworkX提供了4种常见网络的建模方法:
 生成有5个节点的小世界网络，A是图的邻接矩阵。
 
 
+
 ```python
 import networkx as nx
 
@@ -293,140 +294,135 @@ for i in range (34):
 这样的特征表征可以很好地将 Zachary 空手道俱乐部的两个社区划分开来。至此，我们甚至都没有开始训练模型。
 
 
+<!-- <script type="text/javascript" src='http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js'></script> -->
+<script src="http://libs.baidu.com/jquery/1.9.1/jquery.min.js"></script>
+
+<div>
+    <div class="fold_hider">
+        <div class="close hider_title">点击显示/隐藏代码hhh</div>
+    </div>
+    <div class="fold">
+                ```python
+        from networkx import karate_club_graph,to_numpy_matrix
+        import numpy as np
+        import tensorflow as tf
+        import matplotlib.pyplot as plt
+
+        # step1: Data preparation
+        zkc = karate_club_graph()
+        order = sorted(list(zkc.nodes()))
+
+        NODE_SIZE = len(order)
+        #Adjacency matrix
+        A = to_numpy_matrix(zkc, nodelist=order)
+
+        #identity matrix
+        I = np.eye(zkc.number_of_nodes())
+
+        node_label = []
+        for i in range(34):
+            label = zkc.node[i]
+        #     node_label.append(np.random.randint(10)%4)
+            if label['club'] == 'Officer':
+                if np.random.randint(10)%2 == 0:
+                    node_label.append(1)       
+                else:
+                    node_label.append(3)
+            else:
+                if np.random.randint(10)%2 == 0:
+                    node_label.append(2)       
+                else:
+                    node_label.append(0)
+        
+
+
+        # step2:  Parameter Settings             
+        NODE_SIZE = 34
+        NODE_FEATURE_DIM = 34
+        HIDDEN_DIM1 = 10
+        num_classes = 4
+        training_epochs = 10000
+        step = 10
+        lr=0.1
+        
+        # step3: network define
+        X = tf.placeholder(tf.float32, shape=[NODE_SIZE, NODE_FEATURE_DIM])
+        Y = tf.placeholder(tf.int32, shape=[NODE_SIZE])
+        label = tf.one_hot(Y, num_classes)
+
+        adj = tf.placeholder(tf.float32, shape=[NODE_SIZE, NODE_SIZE])
+        weights = {"hidden1": tf.Variable(tf.random_normal(dtype=tf.float32, shape=[NODE_FEATURE_DIM, HIDDEN_DIM1]), name='w1'),
+                "hidden2": tf.Variable(tf.random_normal(dtype=tf.float32, shape=[HIDDEN_DIM1, num_classes]), name='w2')}
+        D_hat = tf.matrix_inverse(tf.matrix_diag(tf.reduce_sum(adj, axis=0)))
+
+        # GCN layer1
+        l1 = tf.matmul(tf.matmul(tf.matmul(D_hat, adj), X), weights['hidden1'])
+        # GCN layer2
+        output = tf.matmul(tf.matmul(tf.matmul(D_hat, adj), l1), weights['hidden2'])
 
 
 
-```python
-from networkx import karate_club_graph,to_numpy_matrix
-import numpy as np
-import tensorflow as tf
-import matplotlib.pyplot as plt
+        # step4:define loss func and train
+        loss = tf.reduce_sum(tf.nn.sigmoid_cross_entropy_with_logits(labels=label, logits=output))
+        train_op = tf.train.AdamOptimizer(learning_rate=lr).minimize(loss)
+        init_op = tf.global_variables_initializer()
+        feed_dict = {adj: A, X: I, Y: node_label}
 
 
-```
+        from mpl_toolkits.mplot3d import Axes3D  # 空间三维画图
+
+        plt.ion()
+        # 绘制散点图
+        fig = plt.figure()
+        ax = Axes3D(fig)
 
 
-```python
-# step1: Data preparation
-zkc = karate_club_graph()
-order = sorted(list(zkc.nodes()))
+        with tf.Session() as sess:
+            sess.run(init_op)
 
-NODE_SIZE = len(order)
-#Adjacency matrix
-A = to_numpy_matrix(zkc, nodelist=order)
-
-#identity matrix
-I = np.eye(zkc.number_of_nodes())
-
-node_label = []
-for i in range(34):
-    label = zkc.node[i]
-#     node_label.append(np.random.randint(10)%4)
-    if label['club'] == 'Officer':
-        if np.random.randint(10)%2 == 0:
-            node_label.append(1)       
-        else:
-            node_label.append(3)
-    else:
-        if np.random.randint(10)%2 == 0:
-            node_label.append(2)       
-        else:
-            node_label.append(0)
-```
+            for epoch in range(training_epochs):
+                c, _ = sess.run([loss, train_op], feed_dict)
+                if epoch % 1000 == 0:
+                    print(f'Epoch:{epoch} Loss {c}')
 
 
-```python
-# step2:  Parameter Settings             
-NODE_SIZE = 34
-NODE_FEATURE_DIM = 34
-HIDDEN_DIM1 = 10
-num_classes = 4
-training_epochs = 10000
-step = 10
-lr=0.1
+            represent = sess.run(output, feed_dict)
+            print(represent)
+            ax.scatter(represent[:, 0], represent[:, 1], represent[:, 2], s=200, c=node_label)
+            
+            # 添加坐标轴(顺序是Z, Y, X)
+            ax.set_zlabel('Z', fontdict={'size': 15, 'color': 'red'})
+            ax.set_ylabel('Y', fontdict={'size': 15, 'color': 'red'})
+            ax.set_xlabel('X', fontdict={'size': 15, 'color': 'red'})
+            plt.show()
+            
+            plt.scatter(represent[:, 0], represent[:, 1], s=200, c=node_label)
+            plt.pause(0.1)
+            plt.cla()
+            
+            plt.scatter(represent[:, 1], represent[:, 2], s=200, c=node_label)
+            plt.pause(0.1)
+            plt.cla()  
 
-```
+            plt.scatter(represent[:, 0], represent[:, 2], s=200, c=node_label)
+            plt.pause(0.1)
+            plt.cla()
+            
+            plt.scatter(represent[:, 0], represent[:, 3], s=200, c=node_label)
+            plt.pause(0.1)
+            plt.cla()
+            
+            plt.scatter(represent[:, 1], represent[:, 3], s=200, c=node_label)
+            plt.pause(0.1)
+            plt.cla()  
 
+            plt.scatter(represent[:, 2], represent[:, 3], s=200, c=node_label)
+            plt.pause(0.1)
+            plt.cla()   
+        ```
+    </div>
+</div>
 
-```python
-# step3: network define
-X = tf.placeholder(tf.float32, shape=[NODE_SIZE, NODE_FEATURE_DIM])
-Y = tf.placeholder(tf.int32, shape=[NODE_SIZE])
-label = tf.one_hot(Y, num_classes)
-
-adj = tf.placeholder(tf.float32, shape=[NODE_SIZE, NODE_SIZE])
-weights = {"hidden1": tf.Variable(tf.random_normal(dtype=tf.float32, shape=[NODE_FEATURE_DIM, HIDDEN_DIM1]), name='w1'),
-           "hidden2": tf.Variable(tf.random_normal(dtype=tf.float32, shape=[HIDDEN_DIM1, num_classes]), name='w2')}
-D_hat = tf.matrix_inverse(tf.matrix_diag(tf.reduce_sum(adj, axis=0)))
-
-# GCN layer1
-l1 = tf.matmul(tf.matmul(tf.matmul(D_hat, adj), X), weights['hidden1'])
-# GCN layer2
-output = tf.matmul(tf.matmul(tf.matmul(D_hat, adj), l1), weights['hidden2'])
-
-```
-
-
-```python
-# step4:define loss func and train
-loss = tf.reduce_sum(tf.nn.sigmoid_cross_entropy_with_logits(labels=label, logits=output))
-train_op = tf.train.AdamOptimizer(learning_rate=lr).minimize(loss)
-init_op = tf.global_variables_initializer()
-feed_dict = {adj: A, X: I, Y: node_label}
-
-
-from mpl_toolkits.mplot3d import Axes3D  # 空间三维画图
-
-plt.ion()
-# 绘制散点图
-fig = plt.figure()
-ax = Axes3D(fig)
-
-
-with tf.Session() as sess:
-    sess.run(init_op)
-
-    for epoch in range(training_epochs):
-        c, _ = sess.run([loss, train_op], feed_dict)
-        if epoch % 1000 == 0:
-            print(f'Epoch:{epoch} Loss {c}')
-
-
-    represent = sess.run(output, feed_dict)
-    print(represent)
-    ax.scatter(represent[:, 0], represent[:, 1], represent[:, 2], s=200, c=node_label)
-    
-    # 添加坐标轴(顺序是Z, Y, X)
-    ax.set_zlabel('Z', fontdict={'size': 15, 'color': 'red'})
-    ax.set_ylabel('Y', fontdict={'size': 15, 'color': 'red'})
-    ax.set_xlabel('X', fontdict={'size': 15, 'color': 'red'})
-    plt.show()
-    
-    plt.scatter(represent[:, 0], represent[:, 1], s=200, c=node_label)
-    plt.pause(0.1)
-    plt.cla()
-    
-    plt.scatter(represent[:, 1], represent[:, 2], s=200, c=node_label)
-    plt.pause(0.1)
-    plt.cla()  
-
-    plt.scatter(represent[:, 0], represent[:, 2], s=200, c=node_label)
-    plt.pause(0.1)
-    plt.cla()
-    
-    plt.scatter(represent[:, 0], represent[:, 3], s=200, c=node_label)
-    plt.pause(0.1)
-    plt.cla()
-    
-    plt.scatter(represent[:, 1], represent[:, 3], s=200, c=node_label)
-    plt.pause(0.1)
-    plt.cla()  
-
-    plt.scatter(represent[:, 2], represent[:, 3], s=200, c=node_label)
-    plt.pause(0.1)
-    plt.cla()
-    
-```
 
 ![png](Pixar-Lamp二：ST-GCN动作识别/output_12_1.png)
 
@@ -463,3 +459,5 @@ plt.show()
 
 
 ![png](Pixar-Lamp二：ST-GCN动作识别/output_13_0.png)
+
+
