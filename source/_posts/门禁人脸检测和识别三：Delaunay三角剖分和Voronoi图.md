@@ -4,7 +4,7 @@ date: 2019-06-29 00:11:20
 tags:
   - opencv
 ---
-** {{ title }}：** <Excerpt in index | 首页摘要>
+** {{ title }} ** <Excerpt in index | 首页摘要>
 
 ##  Voronoi diagram 维诺图 和 Delaunay Triangulation 德罗奈三角剖分
 

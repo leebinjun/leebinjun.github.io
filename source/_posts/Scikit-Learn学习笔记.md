@@ -4,7 +4,7 @@ date: 2019-05-02 20:56:38
 tags:
   - sklearn
 ---
-** {{ title }}：** <Excerpt in index | 首页摘要>
+** {{ title }} ** <Excerpt in index | 首页摘要>
 
 ## 选择学习方法
 Sklearn官网提供了一个流程图

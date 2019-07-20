@@ -5,7 +5,7 @@ tags:
   - python
   - jupyter notebook
 ---
-** {{ title }}：** <Excerpt in index | 首页摘要>
+** {{ title }} ** <Excerpt in index | 首页摘要>
 
 Life is short, you need Python 
 1989 年，为了打发无所事事的圣诞节假期，Guido 开始写 Python 语言的编译/解释器，Python这个名字来自他所喜欢的电视剧 Monty Python's Flying Circus (一部情景幽默剧)。两年后，Python 第一个版本终于问世。

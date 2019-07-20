@@ -4,7 +4,7 @@ date: 2019-05-12 11:16:12
 tags:
   - Hikey970
 ---
-** {{ title }}：** <Excerpt in index | 首页摘要>
+** {{ title }} ** <Excerpt in index | 首页摘要>
 hello hikey!
 Hikey970使用记录一：ubuntu16.04下烧写lebian系统  
 Hikey970使用记录二：编译安装opencv4.0.0  

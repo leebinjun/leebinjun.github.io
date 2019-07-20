@@ -4,7 +4,7 @@ date: 2019-06-23 00:08:00
 tags:
   - opencv
 ---
-** {{ title }}：** <Excerpt in index | 首页摘要>
+** {{ title }} ** <Excerpt in index | 首页摘要>
 ## 特征检测算法
 
 * Harris     角点检测

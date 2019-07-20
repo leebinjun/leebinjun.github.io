@@ -5,7 +5,7 @@ tags:
   - dlib
 ---
 
-** {{ title }}：** <Excerpt in index | 首页摘要>
+** {{ title }} ** <Excerpt in index | 首页摘要>
 
 最近使用了dlib识别人脸68个特征点，教研室的win7很早之前就装的dlib当时没遇到什么坑，回家里在win10上安装“大礼包”竟然把电脑弄蓝屏了，在此记录一下。  
 

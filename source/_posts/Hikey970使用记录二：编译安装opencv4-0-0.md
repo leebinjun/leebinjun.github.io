@@ -4,7 +4,7 @@ date: 2019-05-22 09:54:03
 tags:
   - Hikey970
 ---
-** {{ title }}：** <Excerpt in index | 首页摘要>
+** {{ title }} ** <Excerpt in index | 首页摘要>
 hello hikey!
 编译安装opencv4.0.0  
 <!-- more -->

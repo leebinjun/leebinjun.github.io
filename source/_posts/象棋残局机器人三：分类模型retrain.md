@@ -5,7 +5,7 @@ tags:
   - tensorflow
   - 迁移学习
 ---
-** {{ title }}：** <Excerpt in index | 首页摘要>
+** {{ title }} ** <Excerpt in index | 首页摘要>
 基于InceptionV3和mobileNet模型重新训练自己的图片分类模型。
 <!-- more -->
 <The rest of contents | 余下全文>

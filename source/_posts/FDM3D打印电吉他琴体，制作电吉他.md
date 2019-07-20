@@ -5,7 +5,7 @@ tags:
   - 3D打印
   - 吉他
 ---
-** {{ title }}：** <Excerpt in index | 首页摘要>
+** {{ title }} ** <Excerpt in index | 首页摘要>
 涉及制作一把电吉他：  
 琴体部分完全采用FDM3D打印制作……  
 ~~多图预警~~

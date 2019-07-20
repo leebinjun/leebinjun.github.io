@@ -2,7 +2,13 @@
 title: 使用VSCode编写LaTeX
 date: 2019-07-11 14:40:08
 tags:
+  - Latex
 ---
+** {{ title }} ** <Excerpt in index | 首页摘要>
+
+
+<!-- more -->
+<The rest of contents | 余下全文>
 
 ## 安装 texlive
 
@@ -12,12 +18,11 @@ http://tug.org/texlive/
 * LaTeX学习：Texlive 2019和TeX studio的安装及使用 - Mikchy的博客 - CSDN博客  
 https://blog.csdn.net/mikchy/article/details/94448707
 
-<img src="./使用VSCode编写LaTeX/00.png">
+<img src="使用VSCode编写LaTeX/00.png">
 
 安装时间很长，得一个多小时。
 
-<img src="./使用VSCode编写LaTeX/01.png">
-
+<img src="使用VSCode编写LaTeX/01.png">
 
 ## VScode安装插件
 

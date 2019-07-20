@@ -4,7 +4,7 @@ date: 2019-05-22 09:54:51
 tags:
   - Hikey970
 ---
-** {{ title }}：** <Excerpt in index | 首页摘要> 
+** {{ title }} ** <Excerpt in index | 首页摘要> 
 hello hikey!  
 USB转串口驱动安装    
 * 3. usb转串口驱动安装 · Hikey 970 开发板使用教程  

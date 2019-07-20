@@ -5,7 +5,7 @@ tags:
   - tkinter
   - python
 ---
-** {{ title }}：** <Excerpt in index | 首页摘要>
+** {{ title }} ** <Excerpt in index | 首页摘要>
 ## tkinter 可以使用的颜色
 
 <div align=center>

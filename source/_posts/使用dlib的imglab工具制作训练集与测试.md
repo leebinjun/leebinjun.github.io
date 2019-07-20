@@ -4,7 +4,7 @@ date: 2019-07-06 22:30:06
 tags:
   - dlib
 ---
-** {{ title }}：** <Excerpt in index | 首页摘要>
+** {{ title }} ** <Excerpt in index | 首页摘要>
 
 在使用dlib进行人脸识别和关键点检测的demo中，官方提供了训练好的数据：正脸检测器dlib.get_frontal_face_detector()
 和特征点的训练库shape_predictor_68_face_landmarks.dat，如果想对自己的图形进行识别和关键点检测，可以使用dlib自带的imglab数据库标准工具制作训练集，再通过dlib的官方代码训练出模型，最后对模型进行测试。

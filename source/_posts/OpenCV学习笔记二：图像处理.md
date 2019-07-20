@@ -4,7 +4,7 @@ date: 2019-06-22 21:58:29
 tags:
   - opencv
 ---
-** {{ title }}：** <Excerpt in index | 首页摘要> 
+** {{ title }} ** <Excerpt in index | 首页摘要> 
 
 粗略搬运，仅作个人笔记参考，有时间再美化，搬运自
 * [OpenCV-Python] OpenCV 中的图像处理 部分 IV (一) - _Undo - 博客园  

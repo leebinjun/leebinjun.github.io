@@ -4,7 +4,7 @@ date: 2019-06-23 00:29:31
 tags:
   - opencv
 ---
-** {{ title }}：** <Excerpt in index | 首页摘要> 
+** {{ title }} ** <Excerpt in index | 首页摘要> 
 
 ### 目标检测和识别
 传统目标检测算法中的技术：  

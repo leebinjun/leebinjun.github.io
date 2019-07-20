@@ -4,7 +4,7 @@ date: 2019-05-14 19:25:43
 tags:
   - python
 ---
-** {{ title }}：** <Excerpt in index | 首页摘要>
+** {{ title }} ** <Excerpt in index | 首页摘要>
 做个跳跳灯！
 <!-- more -->
 <The rest of contents | 余下全文>

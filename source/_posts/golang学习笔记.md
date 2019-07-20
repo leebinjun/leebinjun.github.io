@@ -4,7 +4,7 @@ date: 2019-06-25 19:15:09
 tags:
   -go
 ---
-** {{ title }}：** <Excerpt in index | 首页摘要>
+** {{ title }} ** <Excerpt in index | 首页摘要>
 hello go!
 
 Go 语言起源于 2007 年，并在 2009 年正式对外发布。

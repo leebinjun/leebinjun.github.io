@@ -4,7 +4,7 @@ date: 2019-05-22 09:53:43
 tags:
   - Hikey970
 ---
-** {{ title }}：** <Excerpt in index | 首页摘要>
+** {{ title }} ** <Excerpt in index | 首页摘要>
 hello hikey!
 ubuntu16.04下烧写lebian系统  
 <!-- more -->

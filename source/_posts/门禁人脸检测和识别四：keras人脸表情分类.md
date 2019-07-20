@@ -1,13 +1,15 @@
 ---
-title: 门禁人脸检测和识别三：keras人脸表情分类
+title: 门禁人脸检测和识别四：keras人脸表情分类
 date: 2019-07-11 10:23:58
 tags:
   - keras
 ---
-
+** {{ title }} ** <Excerpt in index | 首页摘要>
 
 * Keras:基于Python的深度学习库 - Keras中文文档  
 https://keras-cn.readthedocs.io/en/latest/
+<!-- more -->
+<The rest of contents | 余下全文>
 
 ### 人脸表情分类模型
 
@@ -61,4 +63,4 @@ plot_model(model, to_file='model.png',show_shapes=True)
 ```
 
 模型结构
-<img src="门禁人脸检测和识别三：keras人脸表情分类\model.png">
+<img src="门禁人脸检测和识别四：keras人脸表情分类\model.png">
