@@ -64,7 +64,8 @@ $ vim flash-all-binaries.sh
 ## 刷入分区补丁
 
 默认的系统分区很小，所以需要打一个补丁
-* 分区补丁下载</br>https://www.bwbot.org/s/GWciA9
+* 分区补丁下载  
+https://www.bwbot.org/s/GWciA9
 从上面的的下载地址下载补丁，之后解压。 把解压后的内容复制到 hikey970-lebian-9 文件夹内，执行
 
 ``` bash
@@ -73,7 +74,15 @@ sudo fastboot flash userdata hikey970-lebian9-tf.img
 ```
 
 ## 启动系统
-断开板子的电源，然后把开关拨至on off off off。给板子连接上鼠标键盘网线和显示器。然后给板子上电。 等待系统启动完成。正常情况下应该可以看到登陆界面。用户名和密码都是shunya。
+断开板子的电源，然后把开关拨至on off off off。给板子连接上鼠标键盘网线和显示器，然后给板子上电，等待系统启动完成。正常情况下应该可以看到登陆界面，用户名和密码都是shunya。
+
+在路由器上查找板子的ip，然后通过ssh 连接就可以了。
+
+### wifi 设备未就绪 的问题
+
+``` bash
+sudo service network-manager restart
+```
 
 ## 调整分区
 
@@ -89,7 +98,7 @@ $ sudo resize2fs /dev/sdd15
 $ sudo apt-get install gparted
 $ sudo gparted-pkexec # 注意此指令只能再外接显示器的情况下才能运行
 ```
-在GParted工具中，首先选择60G的硬盘，再点击未分配分区上一个分区进行resize，注意增加分区大小或者合并只能是相邻的分区，如果不是连续，发现中间有swap分区可先删除，然后把未分配的空间全部扩展到最后一个分区，最后应用就可以了。
+在GParted工具中，首先选择60G的硬盘，再点击与未分配分区相邻的userdata分区（这个镜像对应是/dev/sdd15）进行resize，注意增加分区大小或者合并只能是相邻的分区，如果不是连续，发现中间有swap分区可先删除，然后把未分配的空间全部扩展到最后一个分区，最后应用就可以了。
 ``` bash
 shunya@hikey970:~$ df -h
 ```
@@ -132,6 +141,16 @@ $ sudo vim /etc/apt/sources.list
 $ sudo apt-get update
 $ sudo apt-get upgrade
 ```
+
+### 没更新源时 ctrl+z 中断下载的 Could not get lock 问题
+删除apt-get操作时的lock
+``` bash
+sudo rm /var/lib/apt/lists/lock 
+sudo rm /var/lib/dpkg/lock
+sudo rm /var/cache/apt/archives/lock
+sudo apt-get update
+```
+
 
 ## 参考资料
 * 引言 · Hikey 970 开发板使用教程  

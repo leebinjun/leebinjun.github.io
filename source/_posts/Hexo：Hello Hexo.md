@@ -155,6 +155,8 @@ $ hexo d      //部署网站到设定的仓库
 * Themes | Hexo https://hexo.io/themes/
 * Themes · hexojs/hexo Wiki https://github.com/hexojs/hexo/wiki/Themes
 
+常用的主题是next主题。
+
 ## 添加主题
 复制主题到themes目录下
 ``` bash

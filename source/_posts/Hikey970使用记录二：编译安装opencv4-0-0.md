@@ -50,11 +50,19 @@ $ sudo apt-get install python3-dev
 ``` bash
 $ sudo apt-get install libjasper-dev
 ```
-libjasper-dev安装可能会报错，原因是Arm64架构的版本目前还没有被Debian官方收录，可以直接下载deb文件安装，注意相关依赖。
+libjasper-dev安装可能会报错，原因是Arm64架构的版本目前还没有被Debian官方收录，可以通过直接下载deb文件安装，注意相关依赖和包的冲突。
 
+
+删除与libjpeg-turbo8冲突的包
 ``` bash
-$ sudo apt --fix-broken install
+$ sudo apt-get --purge remove libturbojpeg0
 $ sudo apt-get --purge remove libjpeg62-turbo-dev
+$ sudo apt --fix-broken install
+```
+下载相关包并按依赖关系依次安装
+``` bash
+$  wget https://launchpad.net/~ubuntu-security/+archive/ubuntu/ppa/+build/5255502/+files/libjpeg-turbo8_1.3.0-0ubuntu1.1_arm64.deb
+$ sudo dpkg -i libjpeg-turbo8_1.3.0-0ubuntu1.1_arm64.deb
 $ wget http://launchpadlibrarian.net/152841589/libjpeg8_8c-2ubuntu8_arm64.deb
 $ sudo dpkg -i libjpeg8_8c-2ubuntu8_arm64.deb
 $ wget http://launchpadlibrarian.net/376191785/libjasper1_1.900.1-debian1-2.4ubuntu1.2_arm64.deb
@@ -62,6 +70,10 @@ $ sudo dpkg -i libjasper1_1.900.1-debian1-2.4ubuntu1.2_arm64.deb
 $ wget http://launchpadlibrarian.net/376191781/libjasper-dev_1.900.1-debian1-2.4ubuntu1.2_arm64.deb
 $ sudo dpkg -i libjasper-dev_1.900.1-debian1-2.4ubuntu1.2_arm64.deb
 ```
+相关下载地址
+* arm64 build of libjpeg-turbo 1.3.0-0ubuntu1.1 : Private PPA for Ubuntu Security Team : “Ubuntu Security Team” team  
+https://launchpad.net/~ubuntu-security/+archive/ubuntu/ppa/+build/5255502
+
 
 ### 下载opencv源码
 ``` bash

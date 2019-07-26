@@ -144,7 +144,7 @@ plt.show()
 <img src="OpenCV学习笔记四：目标检测与识别/output_4_0.png">
 
 
-```python
+``` python
 import cv2
 import numpy as np
 import math
