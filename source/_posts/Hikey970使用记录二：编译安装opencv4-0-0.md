@@ -159,23 +159,24 @@ $ sudo make -j4
 $ sudo make install 
 $ sudo ldconfig
 ```
-因编译后的库文件cv2.so生成位置为~/Workplace/opencv/opencv-4.0.0/build /lib/python3/cv2.cpython-35m-aarch64-linux-gnu.so
-，这将导致该模块在Python3中无法import进来，将其拷贝到python3的第三方库文件夹dist-packages下
+
+因编译后的库文件cv2.so生成位置为usr/local/python/cv2/python-3.5/cv2.cpython-35m-aarch64-linux-gnu.so，或者在~/Workplace/opencv/opencv-4.0.0/build/lib/python3/cv2.cpython-35m-aarch64-linux-gnu.so，这将导致该模块在Python3中无法import进来，将其拷贝到python3的第三方库文件夹dist-packages下并添加软链接
 ``` bash
-$ sudo cp /usr/local/python/cv2/python-3.5/cv2.cpython-35m-arm-linux-gnueabihf.so /usr/local/lib/python3.5/dist-packages
+$ sudo cp /usr/local/python/cv2/python-3.5/cv2.cpython-35m-aarch64-linux-gnu.so /usr/local/lib/python3.5/dist-packages
 $ cd /usr/local/lib/python3.5/dist-packages/
 $ ls
+$ sudo ln -s cv2.cpython-35m-aarch64-linux-gnu.so cv2.so
 ```
 
-ImportError: numpy.core.multiarray failed to import  
-出现这个错误的原因是numpy的版本太低了
-``` bash
-$ pip3 install -U numpy
-```
 import cv2 没有报错，则安装正常
 <img src="Hikey970使用记录二：编译安装opencv4-0-0/04.png" height=100 width=600>
 
 
+### 问题：ImportError: numpy.core.multiarray failed to import  
+出现这个错误的原因是numpy的版本太低了
+``` bash
+$ pip3 install -U numpy
+```
 
 
 

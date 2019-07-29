@@ -115,12 +115,13 @@ $ python
 ## 问题记录
 
 ### 明明已经安装matplotlib 还是报错ImportError: No module named 'matplotlib'
+sudo下环境和虚拟环境不同。
 ``` bash
 $ sudo apt-get install python-matplotlib
 ```
 ### sudo python 下找不到模块
 <img src="Hikey970使用记录三：USB转串口驱动安装\03.png" witdh=600 height=300>
-在.py文件中添加sys.path
+可以在.py文件中添加sys.path
 ``` bash
 $ vim serial_test.py
     import sys

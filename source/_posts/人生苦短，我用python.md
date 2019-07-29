@@ -140,6 +140,7 @@ def fib(n):
     return(1 if n in (1,2) else fib(n-1)+fib(n-2))
 fib(30)
 ```
+大量重复计算，时间复杂度为$O(2^n)$  
 * 用缓存机制加速递归函数  
 ``` python
 %%time

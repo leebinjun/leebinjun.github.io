@@ -62,7 +62,7 @@ https://www.jianshu.com/p/feecdcdef8a0
 # By default: Inception v3
 python retrain.py
 # mobileNet
-python retrain.py --image_dir ./daata --architecture mobilenet_1.0_224
+python retrain.py --image_dir ./data --architecture mobilenet_1.0_224
 ```
 可以提前下载模型文件到./tmp/imagenet文件夹下。
 * Google AI Blog: MobileNets: Open-Source Models for Efficient On-Device Vision  
