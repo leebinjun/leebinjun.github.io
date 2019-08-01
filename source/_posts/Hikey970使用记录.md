@@ -53,3 +53,30 @@ pip指定安装源安装
 ``` bash
 sudo pip3 install -i https://pypi.tuna.tsinghua.edu.cn/simple XXX
 ```
+
+
+
+
+使用 lsusb 来列出 USB 设备和它的属性，lsusb 会显示驱动和内部连接到你系统的设备。  
+如果无法运行 lsusb，使用以下命令安装。
+``` bash
+sudo apt-get install usbutils
+```
+
+``` bash
+shunya@hikey970:~$ lsusb
+Bus 002 Device 003: ID 05e3:0612 Genesys Logic, Inc.
+Bus 002 Device 002: ID 0451:8140 Texas Instruments, Inc.
+Bus 002 Device 001: ID 1d6b:0003 Linux Foundation 3.0 root hub
+Bus 001 Device 004: ID 0d8c:0014 C-Media Electronics, Inc.
+Bus 001 Device 003: ID 05e3:0610 Genesys Logic, Inc. 4-port hub
+Bus 001 Device 002: ID 0451:8142 Texas Instruments, Inc. TUSB8041 4-Port Hub
+Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
+```
+
+
+
+
+
+
+
