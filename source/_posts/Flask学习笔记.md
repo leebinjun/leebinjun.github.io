@@ -129,3 +129,122 @@ pip install -r requirements.txt
 (envname)$ deactivate
 ```
 
+
+
+
+
+
+
+
+
+
+* Python-Flask-企业级论坛实战 - 随笔分类 - sellsa - 博客园  
+https://www.cnblogs.com/sellsa/category/1244063.html
+
+
+
+
+### URL传参
+
+* ### path形式传参
+
+``` python
+@app.route('/article/<article_id>/')    #我们在<>里面写参数名article_id
+def article_detail(article_id):         #这里的参数名要和上面的一致，即article_id
+    return '您请求的文章是：{}'.format(article_id)
+```
+
+限定参数数据类型
+``` python
+@app.route('/article/<int:article_id>/')
+```
+这样当我们传递的参数是int类型的时候才能正常访问，其他类型都会返回404  
+
+类型可以设置提下几种：  
+* string: 默认的数据类型，接收没有任何斜杠"\   /"的文本
+* int: 整数形
+* float: 浮点型
+* path: 和string类似，但是接受斜杠
+* uuid: 只接受uuid字符串
+* any: 可以指定多种路径，比如以下例子
+``` python
+@app.route('/<any(article,blog):url_path>/<id>/')
+def item(url_path, id):
+    if url_path == 'article':
+        return '文章详情：{}'.format(id)
+    else:
+        return '博客详情：{}'.format(id)
+```
+
+
+* ### ?key=value形式传参
+
+即在浏览器的URL中使用“?key=value”的形式传递参数（多个参数之间使用“&”连接即可），在后台则使用“from flask import request”，然后使用“request.args.get(key)”来获取参数key的值value。
+``` python
+from flask import Flask, request
+...
+ 
+@app.route('/d/')
+def d():
+    wd = request.args.get('wd')
+    return '您传递的参数是: {}'.format(wd)
+```
+访问127.0.0.1:5000/d/?wd=hello
+
+
+### URL重定向
+
+
+url_for使用  
+我们之前是通过url来找到对应的视图函数
+*  　　/     =>    hello_world  
+
+那么url_for则是通过视图函数找到url
+* 　　hello world  =>  /
+
+``` python
+from flask import url_for
+
+@app.route('/')
+def hello_world():
+    return url_for('my_list', page_id=1)
+
+@app.route('/list/<page_id>')
+def my_list():
+    return 'list page'
+```
+
+在flask中，重定向是通过flask.redict(location, code=302)函数来实现的
+* location表示需要重定向到的URL,应该配合url_for()函数来使用
+* code表示采用哪种重定向，默认是302（临时重定向），也可以改成301来实现永久重定向
+``` python
+from flask import redirect
+
+@app.route("/redirect")
+def test():
+    return redirect(url_for('hello'))
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

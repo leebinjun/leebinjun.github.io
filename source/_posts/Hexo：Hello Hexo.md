@@ -263,3 +263,11 @@ $(document).ready(function(){
 
 * 如何配置才能让hexo搭建的博客中的代码实现折叠功能？ - 知乎  
 https://www.zhihu.com/question/66271897
+
+
+
+* 如何在Hexo中对文章md文件分类 - 貌似掉线的博客 - CSDN博客  
+https://blog.csdn.net/maosidiaoxian/article/details/85220394
+
+
+

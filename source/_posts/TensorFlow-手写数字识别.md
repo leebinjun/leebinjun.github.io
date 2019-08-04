@@ -17,7 +17,8 @@ https://tensorflow.google.cn/tutorials?tdsourcetag=s_pcqq_aiomsg
 * 优化器 Optimizer 加速神经网络训练 (深度学习) Speed up neural network training process (deep learning) - YouTube  
 https://www.youtube.com/watch?v=UlUGGB7akfE&list=PLXO45tsB95cKI5AIlf5TxxFPzb-0zeVZ8&index=18&app=desktop
 
-
+* An overview of gradient descent optimization algorithms  
+http://ruder.io/optimizing-gradient-descent/
 
 
 
