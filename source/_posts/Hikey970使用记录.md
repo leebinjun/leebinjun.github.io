@@ -22,6 +22,12 @@ Hikey970使用记录三：[USB转串口驱动安装](https://leebinjun.github.io
 Hikey970使用记录四：[python加载运行OpenCL](https://leebinjun.github.io/2019/06/08/Hikey970%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%95%E5%9B%9B%EF%BC%9Apython%E5%8A%A0%E8%BD%BD%E8%BF%90%E8%A1%8COpenCL/)
 
 
+## hikey970亚克力外壳
+* hikey970 case by Binjun - Thingiverse  
+https://www.thingiverse.com/thing:3801720
+
+<img src="Hikey970使用记录\01.png">
+
 
 ## 问题记录 
 ### apt-get 安装时出现dpkg: error processing package XXX的问题
@@ -41,7 +47,7 @@ hikey970的USB口有限，插上hub集线器(鼠标、键盘、摄像头)，终�
 应该是供电问题，hub最好单独供电。
 
 
-## 常用指令 
+## 常用功能 
 
 截图
 ``` bash
@@ -55,8 +61,9 @@ sudo pip3 install -i https://pypi.tuna.tsinghua.edu.cn/simple XXX
 ```
 
 
+### 发声
 
-
+* usb声卡
 使用 lsusb 来列出 USB 设备和它的属性，lsusb 会显示驱动和内部连接到你系统的设备。  
 如果无法运行 lsusb，使用以下命令安装。
 ``` bash
@@ -75,7 +82,11 @@ Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
 ```
 
 
-
+* tick
+找一块带音响的hdmi屏幕。
+``` bash
+aplay c.wav
+```
 
 
 

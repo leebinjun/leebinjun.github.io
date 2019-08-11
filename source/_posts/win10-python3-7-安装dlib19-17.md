@@ -23,8 +23,7 @@ tags:
 * 安装python
 * 安装VS2017
 * 安装cmake
-* 安装dlib
-
+* 安装dlib/;
 ## 安装python
 安装Anaconda环境，顺便安装VScode  
 * Home - Anaconda  
