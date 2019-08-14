@@ -6,7 +6,8 @@ tags:
 
 opencv的dnn模块支持直接导入网络模型进行目标检测，以下测试了ssd_caffe和yoloV3两个模型。
 
-
+<!-- more -->
+<The rest of contents | 余下全文>
 
 ## 使用caffe
 
@@ -63,6 +64,7 @@ blob = cv2.dnn.blobFromImage(image, 1/175, (416,416), (0,0,0), True, crop=False)
 net.setInput(blob)
 outs = net.forward(get_output_layers(net))
 ```
+
 
 
 * ### 问题1:Unknown layer type: shortcut in function cv::dnn::darknet::ReadDarknetFromCfgFile

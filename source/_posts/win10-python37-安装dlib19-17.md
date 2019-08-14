@@ -10,7 +10,7 @@ tags:
 最近使用了dlib识别人脸68个特征点，教研室的win7很早之前就装的dlib当时没遇到什么坑，回家里在win10上安装“大礼包”竟然把电脑弄蓝屏了，在此记录一下。  
 
 <div align=center>
-<img src = "win10-python3-7-安装dlib19-17/00.png" width=300 height=500>
+<img src = "win10-python37-安装dlib19-17/00.png" width=300 height=500>
 </div>
 
 搜索还原点->点击“配置”启用保护->创建还原点。  
@@ -36,11 +36,11 @@ https://visualstudio.microsoft.com/zh-hans/downloads/
 
 注意勾选“Visual C++ tool for Cmake and linux”  
 <div align=center>
-<img src = "win10-python3-7-安装dlib19-17/01.png">
+<img src = "win10-python37-安装dlib19-17/01.png">
 </div>
 否则会出现下面的问题    
 <div>
-<img src = "win10-python3-7-安装dlib19-17/02.png">
+<img src = "win10-python37-安装dlib19-17/02.png">
 </div>
 
 ## 安装cmake

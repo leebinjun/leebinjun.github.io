@@ -61,7 +61,7 @@ $ sudo apt --fix-broken install
 ```
 下载相关包并按依赖关系依次安装
 ``` bash
-$  wget https://launchpad.net/~ubuntu-security/+archive/ubuntu/ppa/+build/5255502/+files/libjpeg-turbo8_1.3.0-0ubuntu1.1_arm64.deb
+$ wget https://launchpad.net/~ubuntu-security/+archive/ubuntu/ppa/+build/5255502/+files/libjpeg-turbo8_1.3.0-0ubuntu1.1_arm64.deb
 $ sudo dpkg -i libjpeg-turbo8_1.3.0-0ubuntu1.1_arm64.deb
 $ wget http://launchpadlibrarian.net/152841589/libjpeg8_8c-2ubuntu8_arm64.deb
 $ sudo dpkg -i libjpeg8_8c-2ubuntu8_arm64.deb

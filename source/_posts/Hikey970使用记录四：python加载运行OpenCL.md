@@ -37,7 +37,7 @@ pip show numpy
 ```
 更新numpy的版本
 ``` bash
-pip  install -i https://pypi.tuna.tsinghua.edu.cn/simple --upgrade numpy
+pip install -i https://pypi.tuna.tsinghua.edu.cn/simple --upgrade numpy
 ```
 
 ## 参考资料
