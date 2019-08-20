@@ -89,5 +89,14 @@ aplay c.wav
 ```
 
 
+### 中文支持
+默认不支持中文，打开可以看到一个个小框框，里面还有四个字母，可以安装文泉驿的中文字体
+``` bash
+sudo apt install fonts-wqy-zenhei
+```
 
+### exFat U盘读取
+``` bash
+sudo apt install exfat-utils
+```
 
