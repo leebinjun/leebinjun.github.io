@@ -194,3 +194,34 @@ array_b = relu(array_a)
 
 * 03-用Jupyter编写数学公式 - ds19991999的博客 - CSDN博客  
 https://blog.csdn.net/ds19991999/article/details/81275580
+
+
+
+
+
+### numpy
+
+布尔矩阵转0/1矩阵
+``` python
+import numpy as np
+import tensorflow as tf
+from tensorflow.examples.tutorials.mnist import input_data
+
+# 载入数据集
+mnist = input_data.read_data_sets("MNIST_data", one_hot = True) 
+
+A =  mnist.train.images[1]
+# 得到布尔矩阵
+B = (A==0)
+# 法1：布尔矩阵转0/1矩阵
+C= B.astype(int)
+# 法2：布尔矩阵转0/1矩阵
+C = B+0
+```
+
+
+
+
+
+
+
