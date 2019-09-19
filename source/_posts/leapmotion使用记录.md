@@ -2,6 +2,9 @@
 title: leapmotion使用记录
 date: 2019-09-04 23:26:36
 tags:
+  - leapmotion\
+  - js
+  - box2d
 ---
 
 最近发现leapmotion出了一款体感键盘，大体就是一个薄膜键盘加上一个leapmotion，七夕价在淘宝上才300元，要知道三代的支架都卖300多了，果断入手来学习一下。
@@ -11,6 +14,8 @@ tags:
 * Developer Support – Leap Motion Support  
 https://support.leapmotion.com/hc/en-us/categories/203324688-Developer-Support
 
+<!-- more -->
+<The rest of contents | 余下全文>
 
 
 # 配置 leapmotion 的 python3 开发环境
@@ -112,12 +117,6 @@ https://developer-archive.leapmotion.com/javascript
 运行官方JavaScript示例，结果如图
 
 <img src="leapmotion使用记录\Leap Motion JavaScript Sample.png">
-
-
-
-
-
-
 
 
 
