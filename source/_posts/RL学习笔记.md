@@ -23,7 +23,6 @@ tags:
 (root) C:\Users\Administrator\Desktop\DQN-2048-master>python
 Python 3.6.3 |Anaconda, Inc.| (default, Oct 15 2017, 03:27:45) [MSC v.1900 64 bit (AMD64)] on win32
 Type "help", "copyright", "credits" or "license" for more information.
->>> import pandas as pf
 >>> import pandas as pd
 >>> import numpy as np
 >>> table = pd.DataFrame(np.random.random((3,4)), index=[2,4,6], columns=['a', 'c', 'd', 'd'])
@@ -48,11 +47,13 @@ Name: 4, dtype: float64
 ```
 
 
-* 深度增强学习（DRL）漫谈 - 从DQN到AlphaGo - 世事难料，保持低调 - CSDN博客</br>https://blog.csdn.net/jinzhuojun/article/details/52752561
+* 深度增强学习（DRL）漫谈 - 从DQN到AlphaGo - 世事难料，保持低调 - CSDN博客  
+https://blog.csdn.net/jinzhuojun/article/details/52752561
 
-* 深度增强学习DDPG（Deep Deterministic Policy Gradient）算法源码走读 - 世事难料，保持低调 - CSDN博客 </br>https://blog.csdn.net/jinzhuojun/article/details/82556127
+* 深度增强学习DDPG（Deep Deterministic Policy Gradient）算法源码走读 - 世事难料，保持低调 - CSDN博客  
+https://blog.csdn.net/jinzhuojun/article/details/82556127
 
 
-
-* 在Windows下使用OpenAI Gym - HelloGym - 止于至玄 - CSDN博客</br> https://blog.csdn.net/philthinker/article/details/79810249
+* 在Windows下使用OpenAI Gym - HelloGym - 止于至玄 - CSDN博客  
+https://blog.csdn.net/philthinker/article/details/79810249
 

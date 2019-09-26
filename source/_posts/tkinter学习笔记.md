@@ -84,7 +84,7 @@ button = tk.Button(windows, text='hi', command=hi).pack()
 
 windows.mainloop()
 ```
-### 弹窗
+
 
 
 
