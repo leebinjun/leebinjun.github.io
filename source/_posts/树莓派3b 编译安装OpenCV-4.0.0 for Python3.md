@@ -79,7 +79,7 @@ $ (venv) pi@raspberrypi:~/Documents/opencv-4.0.0/build $ cmake-gui
 ```
 
 选择源文件路径，编译文件夹选择刚才新建的build文件夹
-点击左下角Configure，第一次完成是红色的，再点一次就变成白色了，如图</br>
+点击左下角Configure，第一次完成是红色的，再点一次就变成白色了，如图  
 
 <img src = "树莓派3b 编译安装OpenCV-4.0.0 for Python3/01.png" width=600 height=300>
 
@@ -90,7 +90,7 @@ $ (venv) pi@raspberrypi:~/Documents/opencv-4.0.0/build $ cmake-gui
 这样OpenCV_Contrib-4.0.0就被添加进去了，然后我们修改关于Python的参数，在查找栏键入PYTHON：取消BIULD_opencv_python2，勾选INSTALL_PYTHON_EXMAPLES，这样就设置为编译Python3的版本了，再次点击Configure，如图：
 <img src = "树莓派3b 编译安装OpenCV-4.0.0 for Python3/03.png" width=600 height=300>
 
-然后就可以生成编译文件了，点击Generate</br>
+然后就可以生成编译文件了，点击Generate  
 
 ### 编译
 键入下述命令开始编译，有风扇-j4，没风扇-j2-j3
