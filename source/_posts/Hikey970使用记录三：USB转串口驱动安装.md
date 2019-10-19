@@ -120,12 +120,14 @@ sudo下环境和虚拟环境不同。
 $ sudo apt-get install python-matplotlib
 ```
 ### sudo python 下找不到模块
-<img src="Hikey970使用记录三：USB转串口驱动安装\03.png" witdh=600 height=300>
-可以在.py文件中添加sys.path
+<img src="Hikey970使用记录三：USB转串口驱动安装\05.png" witdh=600 height=300>
+
+在 .py 文件中添加 sys.path
 ``` bash
 $ vim serial_test.py
     import sys
     sys.path.append("/home/shunya/.local/lib/python3.5/site-packages")
+    import serial
 $ sudo python serial_test.py
 ```
 
