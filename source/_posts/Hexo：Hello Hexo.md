@@ -271,3 +271,40 @@ https://blog.csdn.net/maosidiaoxian/article/details/85220394
 
 
 
+## 绑定域名
+
+### 在域名的解析设置中添加记录
+
+<img src='Hexo：Hello Hexo\000.png'>
+
+| 参数 | 值 | 说明 |
+| :-----| :--- | :--- |
+| 记录类型 | CNAME | |
+| 主机记录 | @ | 域名前缀 @直接解析主域名
+| 解析路线 | 默认 |  |
+| 记录值 | your_github_user_name.github.io  | |
+| TTL |  10分钟 |  缓存时间 |
+
+
+### 在github添加自定义域名
+
+<img src='Hexo：Hello Hexo\001.png'>
+
+
+### 配置hexo的_config.yml
+
+``` yml
+# URL
+## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
+url: http://www.yoursite.com
+root: /
+permalink: :year/:month/:day/:title/
+permalink_defaults:
+```
+
+### 上传CNAME文件
+
+在/hexo/source目录下，新建一个CNAME文件，内容为域名，上传更新
+
+
+

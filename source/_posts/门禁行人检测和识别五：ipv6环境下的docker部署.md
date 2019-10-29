@@ -35,14 +35,14 @@ curl -fsSL https://mirrors.ustc.edu.cn/docker-ce/linux/ubuntu/gpg | sudo apt-key
 
 在APT源中添加Docker软件的源，并添加稳定版本的docker CE APT镜像源
 ``` shell
-sudo add-apte-repository "deb [arch=amd64] https://mirrors.ustc.edu.cn/docker-ce/linux/ubuntu $(lsb_release -cs) stable"
+sudo add-apt-repository "deb [arch=amd64] https://mirrors.ustc.edu.cn/docker-ce/linux/ubuntu $(lsb_release -cs) stable"
 ```
 
 
 安装 Docker CE
 
 更新apt软件包的缓存并安装docker-ce
-```
+``` shell
 $ sudo apt-get update
 $ sudo apt-get install docker-ce
 ```

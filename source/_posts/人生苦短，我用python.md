@@ -286,6 +286,15 @@ for i in range(101):
     sleep(0.1)
 ```
 
+
+## python3.8 里的一些功能
+
+* f-string里的'='
+``` python
+a = 5
+print(f"{a=}")
+```
+
 *  海象运算符:=
 赋值的时候同时可以进行运算
 
