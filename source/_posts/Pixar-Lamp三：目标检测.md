@@ -2,6 +2,7 @@
 title: Pixar-Lamp三：目标检测
 date: 2019-08-11 19:51:10
 tags:
+ - opencv
 ---
 
 opencv的dnn模块支持直接导入网络模型进行目标检测，以下测试了ssd_caffe和yoloV3两个模型。
