@@ -12,6 +12,23 @@ https://github.com/521xueweihan/git-tips
 <The rest of contents | 余下全文>
 
 
+已经有一个远程的Git版本库，只需要在本地克隆一份
+``` shell
+git clone xxx.git 
+```
+
+当本地创建了一个工作目录，可以进入这个目录，使用'git init'命令进行初始化
+``` shell
+git init
+```
+
+Git以后就会对该目录下的文件进行版本控制，这时候如果需要将它放到远程服务器上，可以在远程服务器上创建一个目录，并把可访问的URL记录下来，此时可以利用'git remote add'命令来增加一个远程服务器端
+``` shell
+git remote add origin xxx.git
+```
+
+
+
 ## 利用.gitignore文件忽略指定文件
 
 * 新建.gitignore文件输入要忽略的文件
