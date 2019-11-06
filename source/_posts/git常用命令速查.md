@@ -27,6 +27,26 @@ Git以后就会对该目录下的文件进行版本控制，这时候如果需�
 git remote add origin xxx.git
 ```
 
+从其他的版本库（既可以是远程的也可以是本地的）将代码更新到本地，例如：'git pull origin master'就是将origin这个版本库的代码更新到本地的master主枝
+``` shell
+git pull origin master
+```
+
+将当前更改或者新增的文件加入到Git的索引中，加入到Git的索引中就表示记入了版本历史中，这也是提交之前所需要执行的一步，例如'git add app/model/user.rb'就会增加app/model/user.rb文件到Git的索引中
+``` shell
+git add .
+```
+
+
+提交当前工作空间的修改内容，例如'git commit -m story #3, add user model'，提交的时候必须用-m来输入一条提交信息
+``` shell
+git commit -m d
+```
+
+将本地commit的代码更新到远程版本库中，例如'git push origin'就会将本地的代码更新到名为orgin的远程版本库中
+``` shell
+git push origin master
+```
 
 
 ## 利用.gitignore文件忽略指定文件
@@ -49,6 +69,14 @@ git commit -m '×××××'
 ```
 
 
+## 解决git冲突：please move or remove them before you can merge
+
+先将冲突的代码备份一下，删除本地修改，解决冲突后再还原，最后push代码。
+
+``` shell
+git clean -d -fx 
+git pull origin master
+```
 
 
 
