@@ -380,7 +380,10 @@ print(f"{a=}")
 https://item.jd.com/11864820.html
 
 
+## python数据科学手册
 
+* jakevdp/PythonDataScienceHandbook: Python Data Science Handbook: full text in Jupyter Notebooks  
+https://github.com/jakevdp/PythonDataScienceHandbook
 
 
 
