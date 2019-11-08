@@ -7,6 +7,9 @@ tags:
 * C#教程：C#入门经典教程，值得收藏  
 http://c.biancheng.net/csharp/
 
+<!-- more -->
+<The rest of contents | 余下全文>
+
 ## C#语言特性
 * C# 语言是一种安全的、稳定的、简单的、面向对象的编程语言， 它不仅去掉了 C++ 和 Java 语言中的一些复杂特性，还提供了可视化工具，能够高效地编写程序。
 
