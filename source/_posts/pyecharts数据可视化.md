@@ -85,10 +85,11 @@ bar.render()
 ### 在 jupyter notebook 中显示 
 
 
-``` python
+```python
 bar.render_notebook()
 ```
 
+<img src='pyecharts数据可视化\bar.png'>
 
 
 
@@ -100,7 +101,8 @@ bar.render_notebook()
 3. pip install pyecharts-snapshot
 
 
-``` python
+
+```python
 # from snapshot_selenium import snapshot as driver
 from snapshot_phantomjs import snapshot as driver
 
@@ -125,12 +127,10 @@ def bar_chart() -> Bar:
 make_snapshot(driver, bar_chart().render(), "bar.png")
 ```
 
-<img src='pyecharts数据可视化\bar.png'>
-
 ## Pie（饼图）
 
 
-``` python
+```python
 from pyecharts.charts import Pie
 from pyecharts import options as opts
 
