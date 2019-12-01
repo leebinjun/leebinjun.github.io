@@ -169,8 +169,7 @@ MPII Human Pose Database http://human-pose.mpi-inf.mpg.de/#results
 
 
 
-
-* #3 机械手臂从零开始 写动态环境 (机器学习实战 教程教学 tutorial) - YouTube</br>https://www.youtube.com/watch?v=T5QlePZ4s3U&list=PLXO45tsB95cL8HTAlqkrmKLN_VSjlq4J8&index=3
+* 3 机械手臂从零开始 写动态环境 (机器学习实战 教程教学 tutorial) - YouTube</br>https://www.youtube.com/watch?v=T5QlePZ4s3U&list=PLXO45tsB95cL8HTAlqkrmKLN_VSjlq4J8&index=3
 
 
 
