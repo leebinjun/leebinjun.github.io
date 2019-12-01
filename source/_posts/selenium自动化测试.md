@@ -26,6 +26,7 @@ pip install selenium
 ``` title
 chrome://version/
 ```
+<img src = "selenium自动化测试\001.png" >
 
 按照chrome版本下载对应的driver  
 

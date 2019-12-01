@@ -171,3 +171,24 @@ MPII Human Pose Database http://human-pose.mpi-inf.mpg.de/#results
 
 
 * #3 机械手臂从零开始 写动态环境 (机器学习实战 教程教学 tutorial) - YouTube</br>https://www.youtube.com/watch?v=T5QlePZ4s3U&list=PLXO45tsB95cL8HTAlqkrmKLN_VSjlq4J8&index=3
+
+
+
+
+
+
+
+# ReID
+
+
+行人智能认知
+* 行人检测
+* 行人分割&背景替换
+* 谷歌关键点检测&姿态识别
+* 行人跟踪/MOT
+* 动作识别
+* 行人属性结构化
+* 跨境追踪&行人再识别/ReID
+
+
+
