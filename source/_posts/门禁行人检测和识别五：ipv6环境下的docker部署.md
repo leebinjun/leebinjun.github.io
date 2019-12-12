@@ -5,12 +5,22 @@ tags:
   - docker
 ---
 
+话说项目参加ipv6比赛时，要在ipv6环境下部署进行检验  
+负责网页的A:我写好了一个框架     
+负责功能的B:我写好了一个函数  
+负责环境的C:我写好了一个参数  
+
+``` python
+if __name__ == "__main__":
+    ''' ipv4 '''
+    # app.run(host="0.0.0.0", port="80", debug=True)
+    ''' ipv6 '''
+    app.run(host="::", port="80", debug=True) 
+```
 
 
-
-
-
-
+<!-- more -->
+<The rest of contents | 余下全文>
 
 ## docker
 
