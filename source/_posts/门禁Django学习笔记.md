@@ -4,12 +4,10 @@ date: 2019-12-03 15:57:16
 tags:
 ---
 
+参考 Eric Matthes《Python编程：从入门到实践》 第18章。
 
 <!-- more -->
 <The rest of contents | 余下全文>
-
-参考 Eric Matthes《Python编程：从入门到实践》 第18章。
-
 
 ## 建立项目
 

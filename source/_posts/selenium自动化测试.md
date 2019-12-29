@@ -15,6 +15,9 @@ Selenium测试直接运行在浏览器中，就像真正的用户在操作一样
 
 * 文档：https://python-selenium-zh.readthedocs.io/zh_CN/latest/
 
+<!-- more -->
+<The rest of contents | 余下全文>
+
 # 安装
 ``` cmd
 pip install selenium
