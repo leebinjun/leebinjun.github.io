@@ -17,6 +17,41 @@ http://www.lawlite.me/2017/04/13/Hexo-Github%E5%AE%9E%E7%8E%B0%E7%9B%B8%E5%86%8C
 
 在photos文件夹放入原始图片，运行py文件处理原图，在min_photos文件夹生成图标文件，并生成data.json文件。
 
+``` python
+def cut_photo():
+    """裁剪算法
+    ----------
+    调用Graphics类中的裁剪算法，将src_dir目录下的文件复制到des_dir下裁剪成正方形
+    """
+    src_dir, des_dir = "photos_backup/photos/", "photos_backup/min_photos/"
+    if directory_exists(src_dir) and directory_exists(des_dir):
+        file_list = list_img_file(src_dir)
+        file_list_des = list_img_file(des_dir)
+        # print file_list
+        if file_list:
+            for infile in file_list:
+                if infile not in file_list_des:
+                    img = Image.open(src_dir+infile)
+                    g = Graphics(infile=src_dir+infile, outfile=des_dir+infile)
+                    g.cut_by_ratio()
+                else:
+                    file_list.remove(infile)
+        else:
+            pass
+    else:
+        print("source directory not exist!")     
+    
+    # 进行压缩
+    compress('4', des_dir, des_dir, file_list)
+
+if __name__ == "__main__":
+    
+    print_help()
+    resize_photo()       # 压缩图片，不大于1080P，保存到photos文件夹下
+    cut_photo()          # 裁剪图片，裁剪成正方形,并压缩，保存到mini_photos文件夹下
+    # git_operation()    # 提交到github仓库
+    handle_photo()       # 将文件处理成json格式，存到博客仓库中    
+```
 
 ## 博客操作
 
