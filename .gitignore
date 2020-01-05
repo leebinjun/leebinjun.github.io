@@ -5,7 +5,5 @@ public/
 .deploy_git/
 .vscode
 node_modules
-photos_backup/min_photos/
-photos_backup/photos
 package.json
 package-lock.json
