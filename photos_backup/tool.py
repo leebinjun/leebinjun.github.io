@@ -57,6 +57,16 @@ def compress(choose, des_dir, src_dir, file_list):
     choose: str
             选择压缩的比例，有4个选项，越大压缩后的图片越小
     """
+    if choose == '0':  # 指定大小压缩
+        for infile in file_list:
+            img = Image.open(src_dir+infile)
+            # size_of_file = os.path.getsize(infile)
+            w, h = img.size
+            if w > 1080:
+                img.thumbnail((1080, 1080))
+                img.save(des_dir + infile)
+        return
+    
     if choose == '1':
         scale = SIZE_normal
     if choose == '2':
@@ -189,7 +199,7 @@ def cut_photo():
         print("source directory not exist!")     
     
     # 进行压缩
-    compress('2', des_dir, des_dir, file_list)
+    compress('0', des_dir, des_dir, file_list)
 
 
 def git_operation():
@@ -208,6 +218,6 @@ if __name__ == "__main__":
     
     print_help()
     # resize_photo()     # 压缩图片，不大于1080P，保存到photos文件夹下
-    cut_photo()          # 裁剪图片，裁剪成正方形,并压缩，保存到mini_photos文件夹下
+    cut_photo()          # 裁剪图片，裁剪成正方形，并压缩，保存到mini_photos文件夹下
     # git_operation()    # 提交到github仓库
     handle_photo()     # 将文件处理成json格式，存到博客仓库中    

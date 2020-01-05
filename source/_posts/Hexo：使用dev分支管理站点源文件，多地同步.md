@@ -56,5 +56,5 @@ git checkout -b dev origin/dev
 git pull origin dev             
 ```
 然后就可以愉快地开始写博客了。  
-推送时会有remote: Permission to A denied to B地问题，原因是系统已经记住了zb的密码，每次push操作都会读取zb的信息。查了一下解放方案，决定还是不删他账号也不重新生成密钥了。  
+推送时会有remote: Permission to A denied to B地问题，原因是系统已经记住了zb的密码，每次push操作都会读取zb的信息。查了一下解决方案，决定还是不删他账号也不重新生成密钥了。  
 敲完这些，发现他的电脑还没hexo，于是我把他的键盘和U盘一起拿走了。  
