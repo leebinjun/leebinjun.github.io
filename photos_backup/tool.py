@@ -158,7 +158,7 @@ def resize_photo():
             for infile in file_list:
                 img = Image.open(src_dir+infile)
                 g = Graphics(infile=src_dir+infile, outfile=src_dir+infile)
-                g.resize_by_height(h=1080)
+                g.resize_by_height(h=2190)
         else:
             pass
     else:
@@ -189,7 +189,7 @@ def cut_photo():
         print("source directory not exist!")     
     
     # 进行压缩
-    compress('4', des_dir, des_dir, file_list)
+    compress('2', des_dir, des_dir, file_list)
 
 
 def git_operation():
@@ -207,7 +207,7 @@ def git_operation():
 if __name__ == "__main__":
     
     print_help()
-    resize_photo()       # 压缩图片，不大于1080P，保存到photos文件夹下
+    # resize_photo()     # 压缩图片，不大于1080P，保存到photos文件夹下
     cut_photo()          # 裁剪图片，裁剪成正方形,并压缩，保存到mini_photos文件夹下
     # git_operation()    # 提交到github仓库
     handle_photo()     # 将文件处理成json格式，存到博客仓库中    
