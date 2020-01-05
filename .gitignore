@@ -2,7 +2,7 @@
 Thumbs.db
 *.log
 public/
-.deploy*/
+.deploy_git/
 .vscode
 node_modules
 photos_backup
