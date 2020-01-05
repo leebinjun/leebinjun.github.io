@@ -5,6 +5,7 @@ public/
 .deploy*/
 .vscode
 node_modules
+photos_backup
 db.json
 package.json
 package-lock.json
