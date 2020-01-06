@@ -73,7 +73,7 @@ class Graphics:
             crop_img = im.crop(region)  
             #保存裁切后的图片  
             crop_img.save(self.outfile)             
-        elif x < y:  
+        else:  
             region = (0, int(y/2-x/2), x, int(y/2+x/2))
             #裁切图片  
             crop_img = im.crop(region)  

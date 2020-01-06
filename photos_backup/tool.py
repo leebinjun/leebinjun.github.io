@@ -188,6 +188,8 @@ def cut_photo():
     else:
         print("source directory not exist!")     
     
+    print("file_list:", file_list)
+
     # 进行压缩
     compress('2', des_dir, des_dir, file_list)
 
@@ -199,16 +201,17 @@ def git_operation():
     ----------
     需要安装git命令行工具，并且添加到环境变量中
     '''
-    os.system('git add .')
+    os.system('git add .') 
     os.system('git commit -m "add photos"')
     os.system('git push origin data')
     os.system('git checkout dev')
     os.system('git checkout --patch data source\photos\ins.json')
+    os.system('git commit -m "add photos"')
 
 if __name__ == "__main__":
     
     print_help()
     # resize_photo()     # 压缩图片，不大于1080P，保存到photos文件夹下
     cut_photo()          # 裁剪图片，裁剪成正方形,并压缩，保存到mini_photos文件夹下
-    handle_photo()     # 将文件处理成json格式，存到博客仓库中    
-    git_operation()    # 提交到github仓库
+    handle_photo()       # 将文件处理成json格式，存到博客仓库中    
+    git_operation()      # 将data分支photos提交到github仓库，并更新dev分支ins.json文件

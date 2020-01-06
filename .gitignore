@@ -5,7 +5,5 @@ public/
 .deploy_git/
 .vscode
 node_modules
-source
-themes
 package.json
 package-lock.json
