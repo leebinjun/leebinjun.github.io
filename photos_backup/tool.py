@@ -175,22 +175,24 @@ def cut_photo():
         file_list = list_img_file(src_dir)
         file_list_des = list_img_file(des_dir)
         # print file_list
+        print("file_list:", file_list)
+        # print("file_list_des:", file_list_des)
         if file_list:
             for infile in file_list:
-                if infile not in file_list_des:
+                if infile in file_list_des:
+                    file_list.remove(infile)
+                else:
                     img = Image.open(src_dir+infile)
                     g = Graphics(infile=src_dir+infile, outfile=des_dir+infile)
                     g.cut_by_ratio()
-                else:
-                    file_list.remove(infile)
         else:
             pass
     else:
         print("source directory not exist!")     
     
-    print("file_list:", file_list)
-
+    # print("file_list:", file_list)
     # 进行压缩
+    print("compress")
     compress('2', des_dir, des_dir, file_list)
 
 

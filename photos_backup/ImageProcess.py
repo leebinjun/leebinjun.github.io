@@ -66,7 +66,8 @@ class Graphics:
         取中间的部分，裁剪成正方形
         """  
         im = Image.open(self.infile)  
-        (x, y) = im.size  
+        (x, y) = im.size 
+        print("x,y：", x, y) 
         if x > y:  
             region = (int(x/2-y/2), 0, int(x/2+y/2), y)  
             #裁切图片  
