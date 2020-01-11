@@ -2,8 +2,9 @@
 
 menu:
   主页: /
-  相册: /photos/
   随笔: /tags/随笔/
+  相册: /photos/
+  PPT: /slides/
 
 
 # SubNav
