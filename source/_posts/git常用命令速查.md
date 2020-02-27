@@ -8,6 +8,9 @@ tags:
 * 521xueweihan/git-tips: Git的奇技淫巧  
 https://github.com/521xueweihan/git-tips
 
+* 程序员必备工具 – SadAngel的小屋  
+http://www.sadangel.cn/category/%e7%a8%8b%e5%ba%8f%e5%91%98%e5%bf%85%e5%a4%87%e5%b7%a5%e5%85%b7/
+
 <!-- more -->
 <The rest of contents | 余下全文>
 
