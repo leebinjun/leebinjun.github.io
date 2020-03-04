@@ -1,5 +1,5 @@
 ---
-title: switch日常玩耍指北
+title: switch游戏玩耍指北
 date: 2019-1-1 04:55:07
 tags:
   - 随笔
