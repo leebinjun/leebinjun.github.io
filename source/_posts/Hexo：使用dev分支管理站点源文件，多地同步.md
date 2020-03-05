@@ -1,5 +1,5 @@
 ---
-title: 'Hexo:使用dev分支管理站点源文件，多地同步'
+title: 'Hexo: 使用dev分支管理站点源文件，多地同步'
 date: 2019-06-16 00:14:49
 tags:
   - hexo
