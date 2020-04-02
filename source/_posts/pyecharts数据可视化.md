@@ -578,6 +578,7 @@ line.render_notebook()
             chart_ab9ae8ad29ab4c04a6669abb9806d43f.setOption(option_ab9ae8ad29ab4c04a6669abb9806d43f);
         });
     </script>
+    </body>
 </html>
 
 
