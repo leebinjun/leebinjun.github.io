@@ -18,8 +18,41 @@ https://github.com/pyecharts/pyecharts
 * 简介 - pyecharts - A Python Echarts Plotting Library  
 https://pyecharts.org/#/zh-cn/intro
 
+# echarts官方实例
+可以在官网上使用js在线编辑运行并下载图片。
+
+* Examples - Apache ECharts (incubating)  
+https://www.echartsjs.com/examples/zh/index.html
+
 <!-- more -->
 <The rest of contents | 余下全文>
+
+使用自己的数据
+``` js
+var aa = [0, 1, 2] //
+var bb = [0, 1, 2] //
+
+//...
+xAxis: {
+    // show : false,
+    data: aa,
+    // axisTick:{       //x轴刻度线
+    //     "show":false
+    // },
+    axisLabel:{         // 不显示刻度坐标
+        "show":false
+    },
+
+//...
+series: {
+    name: 'Beijing AQI',
+    type: 'line',
+    data:  bb,
+    ...
+
+```
+
+
 
 # 安装
 ``` shell
