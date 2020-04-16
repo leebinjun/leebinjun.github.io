@@ -1,5 +1,5 @@
 ---
-title: Hexo：Hello Hexo
+title: Hexo：Hello Hexo 使用hexo+githu搭建个人博客
 date: 2019-04-19 22:30:18
 tags:
   - hexo
@@ -11,28 +11,20 @@ Welcome to [Hexo](https://hexo.io/)! This is your very first post. Check [docume
 
 ## 准备
 
-### 所需软件
+* 注册github账号
 
-* git: http://git-scm.com/
-* node.js：http://nodejs.org/
+安装软件
+
+* git：版本控制系统，利用git可以将代码托管到github上  
+  http://git-scm.com/
+* node.js：JavaScript 运行环境，npm是随同nodejs一起安装的包管理工具  
+  http://nodejs.org/
 
 查看是否安装成功
 
 ``` bash
 $ git --version
 $ npm -v
-```
-
-### Hexo 相关命令
-``` bash
-$ hexo new page"pageName"     新建页面
-$ cls                         清屏
-$ hexo clean                  清理项目
-$ hexo g(generate)            生成静态页面至public目录
-$ hexo s(server)              开启预览访问端口
-$ hexo d(deploy)              将.deploy目录部署到GitHub
-$ hexo help                   查看帮助
-$ hexo version                查看Hexo的版本
 ```
 
 ## 部署
@@ -103,50 +95,23 @@ $ git init
 $ git remote add origin git@github.com:your_github_user_name/your_github_user_name.github.io.git
 ```
 
-## Quick Start
 
-### Create a new post
-
-``` bash
-$ hexo new "My New Post"
-```
-
-More info: [Writing](https://hexo.io/docs/writing.html)
-
-### Run server
+### 网站部署
 
 ``` bash
-$ hexo server
+$ hexo new "My New Post"   //新建页面
+$ cls                      //清屏
+$ hexo clean               //清除缓存文件db.json和已生成的静态文件public
+$ hexo g(generate)         //生成网站静态文件到默认设置的public文件夹
+$ hexo s(server)           //开启服务器预览网址
+$ hexo d(deploy)           //部署网站到设定的仓库
 ```
 
-More info: [Server](https://hexo.io/docs/server.html)
-
-### Generate static files
-
-``` bash
-$ hexo generate
+hexo其他命令
 ```
-
-More info: [Generating](https://hexo.io/docs/generating.html)
-
-### Deploy to remote sites
-
-``` bash
-$ hexo deploy
+$ hexo help                   查看帮助
+$ hexo version                查看Hexo的版本
 ```
-
-More info: [Deployment](https://hexo.io/docs/deployment.html)
-
-
-## 网站部署
-
-``` bash
-$ hexo clean  //清除缓存文件db.json和已生成的静态文件public
-$ hexo g      //生成网站静态文件到默认设置的public文件夹
-$ hexo s      //开启服务器预览网址
-$ hexo d      //部署网站到设定的仓库
-```
-
 
 
 ## 主题
