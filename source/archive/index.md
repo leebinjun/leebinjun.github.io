@@ -89,3 +89,8 @@ date: 2020-03-05 19:44:52
 ### Robot
 * [作业检查机器人](https://binjun.xyz/2019/06/10/%E4%BD%9C%E4%B8%9A%E6%A3%80%E6%9F%A5%E6%9C%BA%E5%99%A8%E4%BA%BA/)  
 * [桌面冰球机器人](https://binjun.xyz/2019/06/07/%E6%A1%8C%E9%9D%A2%E5%86%B0%E7%90%83%E6%9C%BA%E5%99%A8%E4%BA%BA/)  
+
+
+### DIY
+* [FDM3D电吉他](https://binjun.xyz/2019/06/24/FDM3D%E6%89%93%E5%8D%B0%E7%94%B5%E5%90%89%E4%BB%96%E7%90%B4%E4%BD%93%EF%BC%8C%E5%88%B6%E4%BD%9C%E7%94%B5%E5%90%89%E4%BB%96/)
+* 
