@@ -57,7 +57,7 @@ class Topic(models.Model):
 
 * 激活模型
 
-打开settings.py, 将应用程序添加到 INSTALLED_APPS 元组中  
+打开settings.py, 将 应用程序 添加到 INSTALLED_APPS 元组中  
 
 对 应用程序 调用 makemigrations, 让Django确定如何修改数据库
 ``` shell
@@ -194,5 +194,41 @@ def camtest(request):
 
 
 
+## mysql
 
 
+
+
+
+### 问题1：mysql由于找不到vcruntime140.dll，无法继续执行代码
+
+不要相信光下载一个dll放到system32文件夹然后注册一下就能搞定的这种办法，下载安装微软常用运行库合集。  
+
+* MySQL:由于找不到VCRUNTIME140_1.dll，无法继续执行代码。重新安装程序可能会解决此问题_数据库_Read by heart-CSDN博客  
+https://blog.csdn.net/weixin_42545675/article/details/104108216
+
+
+初始化数据库，执行后会输出root用户的初始默认密码，如下j!9!KsxXstfL就是初始密码
+``` bash
+C:\Users\win10>D:\mysql-8.0.19-winx64\bin\mysqld.exe --initialize --console
+2020-04-22T04:29:54.223007Z 5 [Note] [MY-010454] [Server] A temporary password is generated for root@localhost: j!9!KsxXstfL
+```
+
+安装
+``` bash
+C:\WINDOWS\system32>D:\mysql-8.0.19-winx64\bin\mysqld.exe install
+Service successfully installed.
+```
+
+登录MySQL，密码是初始化的默认密码
+``` bash
+C:\WINDOWS\system32>D:\mysql-8.0.19-winx64\bin\mysql.exe -u root -p
+```
+
+修改密码
+``` bash
+C:\WINDOWS\system32>D:\mysql-8.0.19-winx64\bin\mysqladmin.exe -u root -p password
+Enter password:   //这里输入上面的v:gNXSw5FTkw
+New password:    //重新输入新密码
+Confirm new password: //重新输入新密码
+```
