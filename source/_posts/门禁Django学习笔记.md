@@ -232,3 +232,33 @@ Enter password:   //这里输入上面的v:gNXSw5FTkw
 New password:    //重新输入新密码
 Confirm new password: //重新输入新密码
 ```
+
+## 使用 Visual Studio Code 链接 MySql 数据库并进行查询
+
+VScode 安装插件：
+* MySQL
+* MySQL Syntax
+
+在文件菜单可以添加数据库连接。
+
+### 问题2：vscode 链接 mysql，报错MYSQL：ER_NOT_SUPPORTED_AUTH_MODE:Client does not support authentication protocol
+
+* MYSQL：ER_NOT_SUPPORTED_AUTH_MODE:Client does not support authentication protocol - 今晚打老虎i2016 - 博客园  
+https://www.cnblogs.com/Jiangchuanwei/p/10238958.html
+
+原因：登录数据库的客户端跟mysql8.0不兼容了，mysql8.0密码认证采用了新的密码格式
+
+解决办法：在系统mysql终端输入下面命令
+```
+//password 是你的数据库账户密码，root和host也是
+ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'password';
+```
+
+
+
+右键数据库，可创建sql脚本
+
+
+右键可执行
+
+
