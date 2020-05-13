@@ -1,24 +1,10 @@
 ---
-title: vscode连接mysql并进行查询
+title: 读研期间花销系统一：vscode连接mysql并进行查询
 date: 2020-04-24 23:31:11
 tags:
 ---
 
-
-
 ## mysql
-
-
-
-
-
-### 问题1：mysql由于找不到vcruntime140.dll，无法继续执行代码
-
-不要相信光下载一个dll放到system32文件夹然后注册一下就能搞定的这种办法，下载安装微软常用运行库合集。  
-
-* MySQL:由于找不到VCRUNTIME140_1.dll，无法继续执行代码。重新安装程序可能会解决此问题_数据库_Read by heart-CSDN博客  
-https://blog.csdn.net/weixin_42545675/article/details/104108216
-
 
 初始化数据库，执行后会输出root用户的初始默认密码，如下j!9!KsxXstfL就是初始密码
 ``` bash
@@ -53,6 +39,27 @@ VScode 安装插件：
 
 在文件菜单可以添加数据库连接。
 
+
+右键数据库，可创建sql脚本
+
+<img src="vscode连接mysql并进行查询\01.png">
+
+
+右键可执行  
+<img src="vscode连接mysql并进行查询\02.png">
+
+<img src="vscode连接mysql并进行查询\03.png">
+
+
+
+
+### 问题1：mysql由于找不到vcruntime140.dll，无法继续执行代码
+
+不要相信光下载一个dll放到system32文件夹然后注册一下就能搞定的这种办法，下载安装微软常用运行库合集。  
+
+* MySQL:由于找不到VCRUNTIME140_1.dll，无法继续执行代码。重新安装程序可能会解决此问题_数据库_Read by heart-CSDN博客  
+https://blog.csdn.net/weixin_42545675/article/details/104108216
+
 ### 问题2：vscode 链接 mysql，报错MYSQL：ER_NOT_SUPPORTED_AUTH_MODE:Client does not support authentication protocol
 
 * MYSQL：ER_NOT_SUPPORTED_AUTH_MODE:Client does not support authentication protocol - 今晚打老虎i2016 - 博客园  
@@ -67,14 +74,4 @@ ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'password
 ```
 
 
-
-右键数据库，可创建sql脚本
-
-<img src="vscode连接mysql并进行查询\01.png">
-
-
-右键可执行  
-<img src="vscode连接mysql并进行查询\02.png">
-
-<img src="vscode连接mysql并进行查询\03.png">
 
