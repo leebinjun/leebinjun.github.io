@@ -6,8 +6,6 @@ tags:
 
 
 
-
-
 ## openpyxl学习笔记
 
 ``` python
@@ -35,29 +33,3 @@ tags:
 
 
 
-### 问题1：Win10 PowerShell无法激活Anaconda环境
-
-查看conda版本为4.5.6
-``` bash
-conda --version
-```
-升级一下，升级后版本为4.8.3
-``` bash
-conda update conda
-```
-Win + X 组合键调出PowerShell管理员模式，重启shell
-``` bash
-conda init powershell
-```
-关闭PowerShell后重试，成功。
-``` bash
-(base) PS C:\Users\win10\Desktop> conda env list
-# conda environments:
-#
-base                  *  C:\ProgramData\Anaconda3
-env_bill                 C:\ProgramData\Anaconda3\envs\env_bill
-py38                     C:\ProgramData\Anaconda3\envs\py38
-
-(base) PS C:\Users\win10\Desktop> conda activate env_bill
-(env_bill) PS C:\Users\win10\Desktop> code
-```

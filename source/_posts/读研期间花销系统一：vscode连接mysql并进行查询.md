@@ -75,3 +75,54 @@ ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'password
 
 
 
+## SQL语句
+
+查看前1000个数据
+``` sql
+SELECT * FROM `my_bill`.`dailybill_dailybill` LIMIT 1000;
+```
+
+将表1数据复制到表2
+* Mysql复制表结构、表数据的方法_Mysql_脚本之家  
+https://www.jb51.net/article/73187.htm
+
+``` sql
+insert into dailybill_dailybill(id,
+                                date,
+                                breakfast,
+                                lunch    ,
+                                dinner   ,
+                                fruit    ,
+                                drink    ,
+                                snack    ,
+                                wash     ,
+                                phone    ,
+                                text )
+    select  td.id,
+            td.date,
+            td.breakfast,
+            td.lunch   ,
+            td.dinner  ,
+            td.fruit   ,
+            td.drink   ,
+            td.snack   ,
+            td.wash    ,
+            td.phone   ,
+            "l"
+    from tb_daily as td where td.id < 1080;
+```
+
+查找包含switch的数据
+``` sql
+SELECT * FROM `my_bill`.`consumebill_consumebill` where goods like "%switch%";
+```
+
+
+按日期排序
+``` sql
+SELECT * FROM `my_bill`.`consumebill_consumebill` ORDER BY date;
+```
+降序
+``` sql
+SELECT * FROM `my_bill`.`consumebill_consumebill` ORDER BY date DESC;
+```
