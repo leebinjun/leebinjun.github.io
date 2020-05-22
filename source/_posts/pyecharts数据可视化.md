@@ -18,6 +18,10 @@ https://github.com/pyecharts/pyecharts
 * 简介 - pyecharts - A Python Echarts Plotting Library  
 https://pyecharts.org/#/zh-cn/intro
 
+* 中文简介 - Document  
+https://gallery.pyecharts.org/#/README
+
+
 # echarts官方实例
 可以在官网上使用js在线编辑运行并下载图片。
 
@@ -1375,3 +1379,14 @@ geo_line.render_notebook()
         </script>
     </body>
 </html>
+
+
+
+## 参数设置
+ 
+* pyecharts 柱状图基础篇#学习笔记# - 知乎  
+https://zhuanlan.zhihu.com/p/111330795
+
+
+* 中文简介 - Document  
+https://gallery.pyecharts.org/#/README

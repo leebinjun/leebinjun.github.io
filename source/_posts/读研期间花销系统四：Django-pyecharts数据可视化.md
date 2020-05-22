@@ -112,3 +112,19 @@ urlpatterns = [
 
 
 
+
+
+
+
+
+
+
+
+
+
+安装bootstrap
+``` bash
+pip install django-bootstrap3
+```
+设置
+

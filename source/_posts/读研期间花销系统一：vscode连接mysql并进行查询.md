@@ -42,13 +42,13 @@ VScode 安装插件：
 
 右键数据库，可创建sql脚本
 
-<img src="vscode连接mysql并进行查询\01.png">
+<img src="读研期间花销系统一：vscode连接mysql并进行查询\01.png">
 
 
 右键可执行  
-<img src="vscode连接mysql并进行查询\02.png">
+<img src="读研期间花销系统一：vscode连接mysql并进行查询\02.png">
 
-<img src="vscode连接mysql并进行查询\03.png">
+<img src="读研期间花销系统一：vscode连接mysql并进行查询\03.png">
 
 
 
