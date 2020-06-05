@@ -51,6 +51,20 @@ git commit -m d
 git push origin master
 ```
 
+回滚到特定版本  
+查看近三次提交日志
+``` shell
+git log -3
+```
+回滚到特定版本
+``` shell
+git reset --hard e8027d79c3e3a4b30196d3b35d456abfa9acd99e8
+```
+强制提交  
+``` shell
+git push -f origin master
+```
+
 
 ## 利用.gitignore文件忽略指定文件
 
