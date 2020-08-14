@@ -35,6 +35,7 @@ date: 2020-03-05 19:44:52
 * [Hexo：yilia主题下添加相册功能](https://binjun.xyz/2020/01/05/Hexo%EF%BC%9Ayilia%E4%B8%BB%E9%A2%98%E4%B8%8B%E6%B7%BB%E5%8A%A0%E7%9B%B8%E5%86%8C%E5%8A%9F%E8%83%BD/)
 
 ### 日常
+* [打磨工具的日常](http://binjun.xyz/2019/04/26/%E6%89%93%E7%A3%A8%E5%B7%A5%E5%85%B7%E7%9A%84%E6%97%A5%E5%B8%B8/)  
 * [pyecharts数据可视化](https://binjun.xyz/2019/11/10/pyecharts%E6%95%B0%E6%8D%AE%E5%8F%AF%E8%A7%86%E5%8C%96/)  
 * [selenium自动化测试](https://binjun.xyz/2019/11/26/selenium%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95/)  
 * [git常用命令速查](https://binjun.xyz/2019/08/20/git%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E9%80%9F%E6%9F%A5/)
@@ -44,6 +45,15 @@ date: 2020-03-05 19:44:52
 * [使用labelImg制作数据集](https://binjun.xyz/2019/10/09/%E4%BD%BF%E7%94%A8labelImg%E5%88%B6%E4%BD%9C%E6%95%B0%E6%8D%AE%E9%9B%86/)  
 * [keras版本yolov3使用和训练](https://binjun.xyz/2019/08/14/keras%E7%89%88%E6%9C%ACyolov3%E4%BD%BF%E7%94%A8%E5%92%8C%E8%AE%AD%E7%BB%83/)  
 * [Ubuntu 16.04 python3.5 编译caffe](https://binjun.xyz/2019/08/09/Ubuntu-16-04-python3-5-%E7%BC%96%E8%AF%91caffe/)  
+
+### OpenCV
+* [OpenCV学习笔记](http://binjun.xyz/2019/06/14/OpenCV%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/)  
+* [OpenCV学习笔记二：图像处理](http://binjun.xyz/2019/06/22/OpenCV%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%BA%8C%EF%BC%9A%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86/)  
+* [OpenCV学习笔记三：特征检测和图像检索](http://binjun.xyz/2019/06/23/OpenCV%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B8%89%EF%BC%9A%E7%89%B9%E5%BE%81%E6%A3%80%E6%B5%8B%E5%92%8C%E5%9B%BE%E5%83%8F%E6%A3%80%E7%B4%A2/)  
+* [OpenCV学习笔记四：目标检测与识别](http://binjun.xyz/2019/06/23/OpenCV%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E5%9B%9B%EF%BC%9A%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B%E4%B8%8E%E8%AF%86%E5%88%AB/)  
+* [编译安装 OpenCV-4.0.0 for Python3在树莓派3B上](https://binjun.xyz/2019/04/20/%E6%A0%91%E8%8E%93%E6%B4%BE3b%20%E7%BC%96%E8%AF%91%E5%AE%89%E8%A3%85OpenCV-4.0.0%20for%20Python3/)  
+* [编译安装 OpenCV4.0.0 在Hikey970上](https://leebinjun.github.io/2019/05/22/Hikey970%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%95%E4%BA%8C%EF%BC%9A%E7%BC%96%E8%AF%91%E5%AE%89%E8%A3%85opencv4-0-0/)  
+
 
 ## 项目篇
 
@@ -89,8 +99,26 @@ date: 2020-03-05 19:44:52
 ### Robot
 * [作业检查机器人](https://binjun.xyz/2019/06/10/%E4%BD%9C%E4%B8%9A%E6%A3%80%E6%9F%A5%E6%9C%BA%E5%99%A8%E4%BA%BA/)  
 * [桌面冰球机器人](https://binjun.xyz/2019/06/07/%E6%A1%8C%E9%9D%A2%E5%86%B0%E7%90%83%E6%9C%BA%E5%99%A8%E4%BA%BA/)  
-
+* [loomo多服务机器人开发](http://binjun.xyz/2019/05/26/loomo%E5%A4%9A%E6%9C%8D%E5%8A%A1%E6%9C%BA%E5%99%A8%E4%BA%BA%E5%BC%80%E5%8F%91/)  
+* 小派双足机器人(待编辑)
 
 ### DIY
-* [FDM3D电吉他](https://binjun.xyz/2019/06/24/FDM3D%E6%89%93%E5%8D%B0%E7%94%B5%E5%90%89%E4%BB%96%E7%90%B4%E4%BD%93%EF%BC%8C%E5%88%B6%E4%BD%9C%E7%94%B5%E5%90%89%E4%BB%96/)
-* 
+* [FDM3D电吉他](https://binjun.xyz/2019/06/24/FDM3D%E6%89%93%E5%8D%B0%E7%94%B5%E5%90%89%E4%BB%96%E7%90%B4%E4%BD%93%EF%BC%8C%E5%88%B6%E4%BD%9C%E7%94%B5%E5%90%89%E4%BB%96/)  
+* [Arduino和一些好玩的](http://binjun.xyz/2019/08/05/Arduino%E5%92%8C%E4%B8%80%E4%BA%9B%E5%A5%BD%E7%8E%A9%E7%9A%84/)  
+
+
+## 生活篇
+
+### 日常
+* [每日练琴](http://binjun.xyz/2020/03/01/%E9%9A%8F%E7%AC%94_%E6%97%A5%E5%B8%B8%E7%BB%83%E7%90%B4/)  
+* [那些年，我们一起去比赛](http://binjun.xyz/2020/02/29/%E9%9A%8F%E7%AC%94_%E9%82%A3%E4%BA%9B%E5%B9%B4%EF%BC%8C%E6%88%91%E4%BB%AC%E4%B8%80%E8%B5%B7%E5%8E%BB%E6%AF%94%E8%B5%9B/)  
+* [VR飞行体验记录](http://binjun.xyz/2019/11/11/%E9%9A%8F%E7%AC%94_VR%E7%9A%84%E6%97%A5%E5%B8%B8%E4%BD%93%E9%AA%8C%E8%AE%B0%E5%BD%95/)  
+
+### 读书笔记
+* [未来简史](http://binjun.xyz/2020/01/01/%E9%9A%8F%E7%AC%94_%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%EF%BC%9A%E6%9C%AA%E6%9D%A5%E7%AE%80%E5%8F%B2/)
+
+### NS
+* [switch玩耍指北](http://binjun.xyz/2019/12/12/%E9%9A%8F%E7%AC%94_switch/)  
+* [塞尔达人马地图](http://binjun.xyz/2020/01/01/%E9%9A%8F%E7%AC%94_%E5%A1%9E%E5%B0%94%E8%BE%BE%E4%BA%BA%E9%A9%AC%E5%9C%B0%E5%9B%BE/)  
+
+

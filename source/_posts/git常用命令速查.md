@@ -14,6 +14,18 @@ http://www.sadangel.cn/category/%e7%a8%8b%e5%ba%8f%e5%91%98%e5%bf%85%e5%a4%87%e5
 <!-- more -->
 <The rest of contents | 余下全文>
 
+## GitKraken——git的UI界面
+
+* gitkranken官网  
+https://www.gitkraken.com/
+
+<img src="打磨工具的日常\001.png">
+
+### 登录
+### 授权
+### 使用
+
+## 命令查询
 
 已经有一个远程的Git版本库，只需要在本地克隆一份
 ``` shell
@@ -40,13 +52,12 @@ git pull origin master
 git add .
 ```
 
-
-提交当前工作空间的修改内容，例如'git commit -m story #3, add user model'，提交的时候必须用-m来输入一条提交信息
+提交当前工作空间的修改内容，提交的时候必须用-m来输入一条提交信息  
 ``` shell
 git commit -m d
 ```
 
-将本地commit的代码更新到远程版本库中，例如'git push origin'就会将本地的代码更新到名为orgin的远程版本库中
+将本地commit的代码更新到远程版本库中，例如'git push origin master'就会将本地当前代码更新到远程仓库orgin的master分支上  
 ``` shell
 git push origin master
 ```
@@ -95,6 +106,28 @@ git clean -d -fx
 git pull origin master
 ```
 
+
+## Git底层原理
+
+* GIT底层原理（一）  
+https://blog.csdn.net/qq360694660/article/details/80256367 
+
+* 深入理解Git的实现原理  
+https://www.cnblogs.com/mamingqian/p/9711975.html
+
+Git的核心是它的对象数据库，其中保存着git的对象，其中最重要的是blob、tree和commit对象，blob对象实现了对文件内容的记录，tree对象实现了对文件名、文件目录结构的记录，commit对象实现了对版本提交时间、版本作者、版本序列、版本说明等附加信息的记录。这三类对象，完美实现了git的基础功能：对版本状态的记录。
+ 
+Git引用是指向git对象hash键值的类似指针的文件。通过Git引用，我们可以更加方便的定位到某一版本的提交。Git分支、tags等功能都是基于Git引用实现的。
+ 
+ 
+### 流程
+* 创建工作目录，对文件进行修改
+* git add .  
+    * git hash-object -w 文件名  
+    * git update-index ...  
+* git commit -m "注释"  
+    * git write-tree   
+    * git commit-tree  
 
 
 
