@@ -12,6 +12,10 @@ tags:
 python manage.py startapp show
 ```
 
+<!-- more -->
+<The rest of contents | 余下全文>
+
+
 在项目的settings.py文件中配置
 
 在show文件夹中的views.py文件中定义视图
