@@ -182,6 +182,8 @@ permalink_defaults:
 在/hexo/source目录下，新建一个CNAME文件，内容为域名，上传更新
 
 
+### 浏览markdown文件
 
+ctrl+shift+p打开命令面板，然后输入markdowm->选择在侧边打开锁定预览即可
 
 
