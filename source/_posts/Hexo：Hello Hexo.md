@@ -1,5 +1,5 @@
 ---
-title: Hexo：Hello Hexo 使用hexo+githu搭建个人博客
+title: Hexo：Hello Hexo 使用hexo+github搭建个人博客
 date: 2019-04-19 22:30:18
 tags:
   - hexo
