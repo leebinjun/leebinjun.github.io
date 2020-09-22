@@ -184,6 +184,10 @@ permalink_defaults:
 
 ### 浏览markdown文件
 
+#### vscode自带浏览功能
 ctrl+shift+p打开命令面板，然后输入markdowm->选择在侧边打开锁定预览即可
 
+#### 安装插件
+安装Markdown Preview Enhanced插件  
+快捷键 (ctrl+k) + v 打开浏览
 
