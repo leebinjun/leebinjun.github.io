@@ -4,6 +4,9 @@ date: 2020-04-24 23:31:11
 tags:
 ---
 
+<!-- more -->
+<The rest of contents | 余下全文>
+
 ## mysql
 
 初始化数据库，执行后会输出root用户的初始默认密码，如下j!9!KsxXstfL就是初始密码
