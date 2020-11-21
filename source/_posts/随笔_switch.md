@@ -5,6 +5,12 @@ tags:
   - 随笔
 ---
 
+## 一周年游戏游玩时间排行
+<img src="随笔_switch\01.jpg" >
+<img src="随笔_switch\02.jpg" >
+
+
+
 ## 狂野飙车9 首次登录无法连接服务器
 
 下载加速器，这里使用的是QMProxyAcc；  

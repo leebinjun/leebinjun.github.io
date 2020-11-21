@@ -29,6 +29,34 @@ html语法
 * 在线压缩图片,在线无损压缩图片-BeJSON.com  
 http://www.bejson.com/ui/compress_img/
 
+## markdonw代码折叠
+
+折叠代码：
+``` html
+<details>
+    <summary>点击查看Code</summary>
+    <p>
+    测试
+    </p>
+    <pre><code>
+    for i in a:
+        print(i)
+    </code></pre>
+</details>
+```
+
+效果如下：
+<details>
+    <summary>点击查看Code</summary>
+    <p>
+    测试
+    </p>
+    <pre><code>
+    for i in a:
+        print(i)
+    </code></pre>
+</details>
+
 
 ## 代码折叠
 
