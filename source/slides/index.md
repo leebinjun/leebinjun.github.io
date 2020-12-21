@@ -15,5 +15,5 @@ table th:nth-of-type(2) {
 
 |NO.|Links|
 |:-:|:-:|
-|1|[test1](https://binjun.xyz/slides/index/test.html)|
-|2|[CoreXY 3D Printer](https://binjun.xyz/slides/index/coreXY.html)|
+|1|[test1](https://leebinjun.github.io/slides/index/test.html)|
+|2|[CoreXY 3D Printer](https://leebinjun.github.io/slides/index/coreXY.html)|
