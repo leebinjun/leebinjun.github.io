@@ -13,8 +13,8 @@ timezone:
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-# url: http://binjun.xyz
-url: https://leebinjun.github.io/
+# url: https://leebinjun.github.io/
+url: https://binjun.xyz
 root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:
@@ -117,8 +117,10 @@ live2d:
     use: live2d-widget-model-wanko
   display:
     position: right
-    width: 400
-    height: 800
+    width: 200 # 宽度
+    height: 400 # 高度
+    hOffset: 50 #水平偏移
+    vOffset: -95 #垂直偏移
   mobile:
     show: false # 在移动端取消显示
   react:

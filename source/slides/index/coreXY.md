@@ -2,31 +2,33 @@
 marp: true
 theme: base
 ---
-![bg](https://raw.githubusercontent.com/leebinjun/leebinjun.github.io/master/slides/index/coreXY/幻灯片1.PNG)
+
+![bg](http://img.binjun.xyz/slide/coreXY/01.PNG)
 
 ---
-![bg](https://raw.githubusercontent.com/leebinjun/leebinjun.github.io/master/slides/index/coreXY/幻灯片2.PNG)
+![bg](http://img.binjun.xyz/slide/coreXY/02.PNG)
 
 ---
-![bg](https://raw.githubusercontent.com/leebinjun/leebinjun.github.io/master/slides/index/coreXY/幻灯片3.PNG)
+![bg](http://img.binjun.xyz/slide/coreXY/03.PNG)
 
 ---
-![bg](https://raw.githubusercontent.com/leebinjun/leebinjun.github.io/master/slides/index/coreXY/幻灯片4.PNG)
+![bg](http://img.binjun.xyz/slide/coreXY/04.PNG)
 
 ---
-![bg](https://raw.githubusercontent.com/leebinjun/leebinjun.github.io/master/slides/index/coreXY/幻灯片5.PNG)
+![bg](http://img.binjun.xyz/slide/coreXY/05.PNG)
 
 ---
-![bg](https://raw.githubusercontent.com/leebinjun/leebinjun.github.io/master/slides/index/coreXY/幻灯片6.PNG)
+![bg](http://img.binjun.xyz/slide/coreXY/06.PNG)
 
 ---
-![bg](https://raw.githubusercontent.com/leebinjun/leebinjun.github.io/master/slides/index/coreXY/幻灯片7.PNG)
+![bg](http://img.binjun.xyz/slide/coreXY/07.PNG)
 
 ---
-![bg](https://raw.githubusercontent.com/leebinjun/leebinjun.github.io/master/slides/index/coreXY/幻灯片8.PNG)
+![bg](http://img.binjun.xyz/slide/coreXY/08.PNG)
 
 ---
-![bg](https://raw.githubusercontent.com/leebinjun/leebinjun.github.io/master/slides/index/coreXY/幻灯片9.PNG)
+![bg](http://img.binjun.xyz/slide/coreXY/09.PNG)
 
 ---
-![bg](https://raw.githubusercontent.com/leebinjun/leebinjun.github.io/master/slides/index/coreXY/幻灯片10.PNG)
+![bg](http://img.binjun.xyz/slide/coreXY/10.PNG)
+

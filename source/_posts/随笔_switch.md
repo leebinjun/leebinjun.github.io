@@ -6,8 +6,12 @@ tags:
 ---
 
 ## 一周年游戏游玩时间排行
-<img src="随笔_switch\02.jpg" >
 <img src="随笔_switch\01.jpg" >
+
+<!-- more -->
+<The rest of contents | 余下全文>
+
+<img src="随笔_switch\02.jpg" >
 
 
 
@@ -75,7 +79,7 @@ http://zelda.ali213.net/
 <body>
 
   <!-- 为ECharts准备一个具备大小（宽高）的Dom -->
-  <div id="main" style="width: 1111px;height:927px;"></div>
+  <div id="main" style="width: 650px;height:542px;"></div>
   <script type="text/javascript">
   // 基于准备好的dom，初始化echarts实例
   var myChart = echarts.init(document.getElementById('main'));

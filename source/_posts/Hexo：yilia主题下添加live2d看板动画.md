@@ -42,10 +42,12 @@ live2d:
     use: live2d-widget-model-wanko
   display:
     position: right
-    width: 300
-    height: 600
+    width: 200 # 宽度
+    height: 400 # 高度
+    hOffset: 50 #水平偏移
+    vOffset: -95 #垂直偏移
   mobile:
-    show: true
+    show: false # 在移动端取消显示
   react:
     opacity: 0.7
 ```
