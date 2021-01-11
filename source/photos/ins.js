@@ -117,8 +117,8 @@
         var liTmpl = "";
         for (var i = 0, len = data.link.length; i < len; i++) {
 
-          var minSrc = 'https://raw.githubusercontent.com/leebinjun/leebinjun.github.io/data/photos_backup/min_photos/' + data.link[i];
-          var src = 'https://raw.githubusercontent.com/leebinjun/leebinjun.github.io/data/photos_backup/photos/' + data.link[i];
+          var minSrc = 'http://img.binjun.xyz/photos/min/' + data.link[i];
+          var src = 'http://img.binjun.xyz/photos/src/' + data.link[i];
           var type = data.type[i];
           // var target = src + (type === 'video' ? '.mp4' : '.jpg');
           var target = src;
