@@ -7,10 +7,7 @@ tags:
 
 ## 使用marp添加PPT
 
-### marp
-* Marp: Markdown Presentation Ecosystem  
-https://marp.app/
-
+### hexo相关设置
 
 在 themes\yilia\_config.yml 中添加 PPT 菜单
 ``` yml
@@ -45,10 +42,20 @@ table th:nth-of-type(2) {
 
 在 source\slides\index 文件夹下，放置用于存放ppt图片的test文件夹和对应test.md文件
 
-首先上传ppt图片到github上，使用github作为图床  
+### Marp相关语法
 
-然后修改test.md文件中图片位置，利用marp生成对应html  
-``` 
+* Marp: Markdown Presentation Ecosystem  
+  https://marp.app/
+
+如果是之前已经做好的ppt，可以使用WPS直接将每页ppt转成图片。
+
+记得上传ppt图片到图床上，这里的图床可以使用github或者七牛云等。  
+
+将每页图片的地址插入到md文本中，利用marp生成对应html。  
+
+最后将html文件放在source\slides\index 文件夹下。  
+
+``` md
 ---
 marp: true
 theme: base
@@ -56,8 +63,6 @@ theme: base
 ![bg](https://raw.githubusercontent.com/leebinjun/leebinjun.github.io/master/slides/index/coreXY/幻灯片1.PNG)
 ---
 ```
-
-最后将html文件放在source\slides\index 文件夹下  
 
 ### 使用七牛云作为图床
 
