@@ -13,7 +13,13 @@ http://www.lawlite.me/2017/04/13/Hexo-Github%E5%AE%9E%E7%8E%B0%E7%9B%B8%E5%86%8C
 
 ## 创建图床，用于储存相册
 
-在leebinjun.github.io仓库的dev分支创建photos_backup文件夹，用于作为图床存放相册图片。
+在leebinjun.github.io仓库新建data分支，专门用于存储图片。
+``` shell
+git branch data
+git checkout data
+```
+
+在data分支创建photos_backup文件夹，用于作为图床存放相册图片。
 
 在photos文件夹放入原始图片，运行py文件处理原图，在min_photos文件夹生成图标文件，并生成data.json文件。
 
@@ -85,8 +91,8 @@ https://github.com/leebinjun/leebinjun.github.io/tree/dev/source/photos
         var liTmpl = "";
         for (var i = 0, len = data.link.length; i < len; i++) {
 
-          var minSrc = 'https://raw.githubusercontent.com/leebinjun/leebinjun.github.io/dev/photos_backup/min_photos/' + data.link[i];
-          var src = 'https://raw.githubusercontent.com/leebinjun/leebinjun.github.io/dev/photos_backup/photos/' + data.link[i];
+          var minSrc = 'https://raw.githubusercontent.com/leebinjun/leebinjun.github.io/data/photos_backup/min_photos/' + data.link[i];
+          var src = 'https://raw.githubusercontent.com/leebinjun/leebinjun.github.io/data/photos_backup/photos/' + data.link[i];
           var type = data.type[i];
           // var target = src + (type === 'video' ? '.mp4' : '.jpg');
           var target = src;
@@ -109,7 +115,7 @@ https://github.com/leebinjun/leebinjun.github.io/tree/dev/source/photos
     };
 ```
 
-修改ins.json文件，已由python脚本生成
+修改ins.json文件，与data分支中由python脚本生成的data.json同步
 ``` json
 {"list": [{"date": "2020-01", "arr": {"year": 2020, "month": 1, "link": ["2020-01-04_\u6d4b\u8bd5.jpg"], "text": ["\u6d4b\u8bd5"], "type": ["image"]}}]}
 ```

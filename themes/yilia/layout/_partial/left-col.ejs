@@ -26,6 +26,34 @@
     			<% } %>
             <%}%>
 		</nav>
+		
+		<script type="text/javascript" src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+		<form id="search-form"> <!-- 搜索框相关 -->
+			
+			<input type="text" id="local-search-input" name="q" results="0" style="text-align:center" placeholder="" class="search form-control" autocomplete="off" autocorrect="off"/>
+			<i class="icon-font icon-search" onclick="resetSearch()"></i> <!-- 清空/重置搜索框  没有使用-->
+		</form>
+		<div id="local-search-result"></div> <!-- 搜索结果区 -->
+		<p class='no-result'>无匹配结果！<i class='fa fa-spinner fa-pulse'></i></p> <!-- 无匹配时显示，注意请在 CSS 中设置默认隐藏 -->
+		<script type="text/javascript" src="/search.js"></script>
+		<script>
+			var inputArea = document.querySelector("#local-search-input");
+			var $resultArea = $("#local-search-result");
+			var getSearchFile = function(){
+				var path = "/search.xml";
+				searchFunc(path, 'local-search-input', 'local-search-result');
+			
+			}
+			inputArea.onfocus = function(){ getSearchFile() 
+					$resultArea.bind("DOMNodeRemoved DOMNodeInserted", function(e) {
+						if (!$(e.target).text()) {
+							$(".no-result").show(200);
+						} else {
+						$(".no-result").hide();}
+					})
+			}
+		</script>
+
 		<nav class="header-nav">
 			<div class="social">
 				<% for (var i in theme.subnav){ %>

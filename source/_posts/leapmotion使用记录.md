@@ -2,7 +2,7 @@
 title: leapmotion使用记录
 date: 2019-09-04 23:26:36
 tags:
-  - leapmotion\
+  - leapmotion
   - js
   - box2d
 ---

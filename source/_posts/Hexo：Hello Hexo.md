@@ -1,5 +1,5 @@
 ---
-title: Hexo：Hello Hexo
+title: Hexo：Hello Hexo 使用hexo+github搭建个人博客
 date: 2019-04-19 22:30:18
 tags:
   - hexo
@@ -11,28 +11,20 @@ Welcome to [Hexo](https://hexo.io/)! This is your very first post. Check [docume
 
 ## 准备
 
-### 所需软件
+* 注册github账号
 
-* git: http://git-scm.com/
-* node.js：http://nodejs.org/
+安装软件
+
+* git：版本控制系统，利用git可以将代码托管到github上  
+  http://git-scm.com/
+* node.js：JavaScript 运行环境，npm是随同nodejs一起安装的包管理工具  
+  http://nodejs.org/
 
 查看是否安装成功
 
 ``` bash
 $ git --version
 $ npm -v
-```
-
-### Hexo 相关命令
-``` bash
-$ hexo new page"pageName"     新建页面
-$ cls                         清屏
-$ hexo clean                  清理项目
-$ hexo g(generate)            生成静态页面至public目录
-$ hexo s(server)              开启预览访问端口
-$ hexo d(deploy)              将.deploy目录部署到GitHub
-$ hexo help                   查看帮助
-$ hexo version                查看Hexo的版本
 ```
 
 ## 部署
@@ -103,50 +95,23 @@ $ git init
 $ git remote add origin git@github.com:your_github_user_name/your_github_user_name.github.io.git
 ```
 
-## Quick Start
 
-### Create a new post
-
-``` bash
-$ hexo new "My New Post"
-```
-
-More info: [Writing](https://hexo.io/docs/writing.html)
-
-### Run server
+### 网站部署
 
 ``` bash
-$ hexo server
+$ hexo new "My New Post"   //新建页面
+$ cls                      //清屏
+$ hexo clean               //清除缓存文件db.json和已生成的静态文件public
+$ hexo g(generate)         //生成网站静态文件到默认设置的public文件夹
+$ hexo s(server)           //开启服务器预览网址
+$ hexo d(deploy)           //部署网站到设定的仓库
 ```
 
-More info: [Server](https://hexo.io/docs/server.html)
-
-### Generate static files
-
-``` bash
-$ hexo generate
+hexo其他命令
 ```
-
-More info: [Generating](https://hexo.io/docs/generating.html)
-
-### Deploy to remote sites
-
-``` bash
-$ hexo deploy
+$ hexo help                   查看帮助
+$ hexo version                查看Hexo的版本
 ```
-
-More info: [Deployment](https://hexo.io/docs/deployment.html)
-
-
-## 网站部署
-
-``` bash
-$ hexo clean  //清除缓存文件db.json和已生成的静态文件public
-$ hexo g      //生成网站静态文件到默认设置的public文件夹
-$ hexo s      //开启服务器预览网址
-$ hexo d      //部署网站到设定的仓库
-```
-
 
 
 ## 主题
@@ -180,96 +145,6 @@ hexo s
 ``` bash
 hexo d
 ```
-
-## 插入图片
-
-### 设置
-配置blog\\_config.yml
-
-``` yml
-post_asset_folder: true
-```
-安装插件
-``` bash
-npm install hexo-asset-image --save
-```
-
-html语法
-``` html
-<div align=center>
-<img alt="title" src = "path to xxx.png" width=999 height=999>
-</div>
-```
-
-
-## 代码折叠
-
-目前使用以下脚本  
-<html>
-<head>
-<meta charset="utf-8"> 
-<title>title_test</title> 
-<script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js">
-</script>
-<script>
-$(document).ready(function(){
-    $(document).on('click', '.fold_hider', function(){
-        $('>.fold', this.parentNode).slideToggle();
-        $('>:first', this).toggleClass('open');
-    });
-    $("div.fold").css("display","none");
-});
-</script>
-</head>
-<body>
-<div>
-    <div class="fold_hider">
-        <div class="close hider_title">点击显示/隐藏代码</div>
-    </div>
-    <div class="fold">
-        ``` html
-        <html>
-        <head>
-        <meta charset="utf-8"> 
-        <title>title_test</title> 
-        <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js">
-        </script>
-        <script>
-        $(document).ready(function(){
-            $(document).on('click', '.fold_hider', function(){
-                $('>.fold', this.parentNode).slideToggle();
-                $('>:first', this).toggleClass('open');
-            });
-            $("div.fold").css("display","none");
-        });
-        </script>
-        </head>
-        <body>
-        <div>
-            <div class="fold_hider">
-                <div class="close hider_title">点击显示/隐藏代码</div>
-            </div>
-            <div class="fold">
-                要隐藏的部分
-            </div>
-        </div>
-        </body>
-        </html>
-        ```
-    </div>
-</div>
-</body>
-</html>
-
-* 如何配置才能让hexo搭建的博客中的代码实现折叠功能？ - 知乎  
-https://www.zhihu.com/question/66271897
-
-
-
-* 如何在Hexo中对文章md文件分类 - 貌似掉线的博客 - CSDN博客  
-https://blog.csdn.net/maosidiaoxian/article/details/85220394
-
-
 
 ## 绑定域名
 
@@ -307,4 +182,12 @@ permalink_defaults:
 在/hexo/source目录下，新建一个CNAME文件，内容为域名，上传更新
 
 
+### 浏览markdown文件
+
+#### vscode自带浏览功能
+ctrl+shift+p打开命令面板，然后输入markdowm->选择在侧边打开锁定预览即可
+
+#### 安装插件
+安装Markdown Preview Enhanced插件  
+快捷键 (ctrl+k) + v 打开浏览
 

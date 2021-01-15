@@ -6,6 +6,8 @@ tags:
   - 数模
 ---
 
+<img src="空间博弈与matplotlib绘制gif动图\03.gif">
+
 ```python
 # 独立窗口显示
 %matplotlib qt5 

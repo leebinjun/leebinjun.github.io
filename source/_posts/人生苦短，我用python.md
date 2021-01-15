@@ -13,6 +13,18 @@ Life is short, you need Python
 <!-- more -->
 <The rest of contents | 余下全文>
 
+使用conda创建python虚拟环境  
+``` bash
+> conda create -n your_env_name python=3.6
+> activate your_env_name
+```
+
+在win10的powershell中无法使用activate指令激活环境，需要进入到cmd中激活环境后再使用vscode打开工作区 
+``` bash
+> conda env list
+> activate py38
+(py38) > code C:\my-workplace
+```
 
 
 ## 迭代器

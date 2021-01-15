@@ -2,9 +2,10 @@
 
 menu:
   主页: /
-  相册: /photos/
+  整理: /archive/
   随笔: /tags/随笔/
-
+  相册: /photos/
+  PPT: /slides/
 
 # SubNav
 subnav:
@@ -71,7 +72,7 @@ google_analytics: ''
 favicon: /img/favicon.png
 
 #你的头像url
-avatar: /img/avatar.png
+avatar: /img/avatar.jpg
 
 #是否开启分享
 share_jia: true
@@ -125,13 +126,15 @@ smart_menu:
 friends:
   nona's Blog: https://socialsciences.nature.com/users/302895-xiaona-zhao/
   Yingping's Blog: https://bye-lemon.github.io/  
-  paine1690's Blog: http://paine1690.github.io/
+  paine1690's Blog: https://paine1690.github.io/
   dong's Blog: https://haxisnake.github.io/
   spground's Blog: https://spground.github.io/  
   aibin's Blog: https://leslieaibin.github.io/  
   yumin's Blog: https://www.yumindexiaozhan.cn/
-  zhanbo's Blog:  http://sadangel.cn/
+  zhanbo's Blog:  http://www.sadangel.cn/
   liuxiang's Blog: https://eyeeco.github.io/
-
+  不会写代码的xiaoyang's Blog: https://yeshengzhangzhen.github.io/
+  ye老师's Blog: https://laurenfrost.github.io/
+  sanfeng's Blog: https://me.csdn.net/weixin_42089190
 
 aboutme: 很惭愧<br><br>太懒了<br><br>谢谢大家
