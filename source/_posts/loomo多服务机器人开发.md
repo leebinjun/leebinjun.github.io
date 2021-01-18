@@ -1,0 +1,19 @@
+---
+title: loomo多服务机器人开发
+date: 2019-05-26 19:43:22
+tags:
+  - loomo
+  - Android
+  - 机械手
+---
+
+## 设计思路
+
+<div align=center>
+<img alt="design" src = "loomo多服务机器人开发\设计思路-201905.png" width=1000 height=800>
+</div>
+
+## 一些资料
+
+* 机器人 · 3D打印的假肢，像真手一样听你指挥！  
+https://mp.weixin.qq.com/s/qumdZIXXGmF-blSeHLu1tw
