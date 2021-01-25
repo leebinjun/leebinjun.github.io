@@ -41,6 +41,60 @@
       
 <div class="overlay" style="background: #4d4d4d"></div>
 <div class="intrude-less">
+	
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css">
+		<!-- // 这里div的样式是笔者自己修改过的，你可以直接使用APlayer官方的原配置： -->
+		<div id="aplayer" style="position:absolute;left:0;top:0;"></div>
+		<script src="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/color-thief-don@2.0.2/src/color-thief.js"></script>
+		<script>
+		  const ap = new APlayer({
+			container: document.getElementById('aplayer'),
+			autoplay: false, //自动播放
+			listFolded: true, //播放列表默认折叠
+			listMaxHeight: 90, //播放列表最大高度
+			order: 'list', //音频循环顺序, 可选值: 'list', 'random'
+			loop: 'all', //音频循环播放, 可选值: 'all', 'one', 'none'
+			theme: '#e9e9e9', //切换音频时的主题色，优先级低于audio.theme
+			preload: 'none', //音频预加载，可选值: 'none', 'metadata', 'auto'
+			mutex: true, //互斥，阻止多个播放器同时播放，当前播放器播放时暂停其他播放器
+			lrcType: 3, //歌词格式，可选值：3（LRC文件歌词格式），1（JS字符串歌词格式）
+			volume: 0.7, //默认音量，请注意播放器会记忆用户设置，用户手动设置音量后默认音量即失效
+			// mini: true,
+			// fixed: true, //吸底模式（fixed:true），迷你模式（mini:true），普通模式（注释此行或者设置fixed:false）
+			audio: [{
+				name: 'Let her go',
+				artist: 'passenger',
+				lrc: 'http://music.binjun.xyz/music/Let%20Her%20Go-Passenger.lrc',
+				cover: 'https://p2.music.126.net/uYgsk7GFZ_C-dFPjN7V_Hg==/109951163450380228.jpg?param=130y130',
+				url: 'http://m10.music.126.net/20210125185950/959d40781a2e45049b21f559fbe5cb57/ymusic/obj/w5zDlMODwrDDiGjCn8Ky/3058351692/926b/5568/4eff/76bbb5d74f79359148934ea5ce7b1831.mp3'
+			  },
+			  {
+				name: 'traveling light',
+				artist: 'Joel Hanson,Sara Groves',
+				lrc: 'http://music.binjun.xyz/misic/Traveling%20Light-Joel%20Hanson%2CSara%20Groves.lrc',
+				cover: 'https://p1.music.126.net/zYqptzyHld2ylpb5FOoqDA==/1785606883508227.jpg?param=130y130',
+				url: 'http://m10.music.126.net/20210125190041/3199f1499b3b28d10d89c6b11f1236af/ymusic/obj/w5zDlMODwrDDiGjCn8Ky/3035927604/eca7/4e65/15ad/59231ae7bf98f1eb8b73369a26d00756.mp3'
+			  }
+			]
+		  });
+		
+		  //实现切换音频时，根据音频的封面图片自适应主题色
+		  const colorThief = new ColorThief();
+		  const setTheme = (index) => {
+			if (!ap.list.audios[index].theme) {
+			  colorThief.getColorAsync(ap.list.audios[index].cover, function(color) {
+				ap.theme(`rgb(${color[0]}, ${color[1]}, ${color[2]})`, index);
+			  });
+			}
+		  };
+		  setTheme(ap.list.index);
+		  ap.on('listswitch', (data) => {
+			setTheme(data.index);
+		  });
+		</script>
+	
+	
 	<header id="header" class="inner">
 		<a href="/" class="profilepic">
 			<img src="/img/avatar.jpg" class="js-avatar">
@@ -117,6 +171,7 @@
 		        
 			</div>
 		</nav>
+
 	</header>		
 </div>
 
@@ -189,6 +244,104 @@
           </div>
           <div id="js-content" class="content-ll">
             
+  
+    <article id="post-Hexo：yilia主题下添加相册功能" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/01/05/Hexo：yilia主题下添加相册功能/">Hexo：yilia主题下添加相册功能</a>
+    </h1>
+  
+
+        
+        <a href="/2020/01/05/Hexo：yilia主题下添加相册功能/" class="archive-article-date">
+  	<time datetime="2020-01-04T17:54:29.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-01-05</time>
+</a>
+        
+      </header>
+    
+
+    <!-- 目录内容 -->
+    
+    <!-- 目录内容结束 -->
+
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>参考Lawlite的博客 </p>
+<ul>
+<li>Hexo+Github实现相册功能 | Lawlite的博客<br><a href="http://www.lawlite.me/2017/04/13/Hexo-Github%E5%AE%9E%E7%8E%B0%E7%9B%B8%E5%86%8C%E5%8A%9F%E8%83%BD/" target="_blank" rel="noopener">http://www.lawlite.me/2017/04/13/Hexo-Github%E5%AE%9E%E7%8E%B0%E7%9B%B8%E5%86%8C%E5%8A%9F%E8%83%BD/</a></li>
+</ul>
+<h2 id="创建图床，用于储存相册"><a href="#创建图床，用于储存相册" class="headerlink" title="创建图床，用于储存相册"></a>创建图床，用于储存相册</h2><p>在leebinjun.github.io仓库新建data分支，专门用于存储图片。<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git branch data</span><br><span class="line">git checkout data</span><br></pre></td></tr></table></figure></p>
+<p>在data分支创建photos_backup文件夹，用于作为图床存放相册图片。</p>
+<p>在photos文件夹放入原始图片，运行py文件处理原图，在min_photos文件夹生成图标文件，并生成data.json文件。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">cut_photo</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="string">"""裁剪算法</span></span><br><span class="line"><span class="string">    ----------</span></span><br><span class="line"><span class="string">    调用Graphics类中的裁剪算法，将src_dir目录下的文件复制到des_dir下裁剪成正方形</span></span><br><span class="line"><span class="string">    """</span></span><br><span class="line">    src_dir, des_dir = <span class="string">"photos_backup/photos/"</span>, <span class="string">"photos_backup/min_photos/"</span></span><br><span class="line">    <span class="keyword">if</span> directory_exists(src_dir) <span class="keyword">and</span> directory_exists(des_dir):</span><br><span class="line">        file_list = list_img_file(src_dir)</span><br><span class="line">        file_list_des = list_img_file(des_dir)</span><br><span class="line">        <span class="comment"># print file_list</span></span><br><span class="line">        <span class="keyword">if</span> file_list:</span><br><span class="line">            <span class="keyword">for</span> infile <span class="keyword">in</span> file_list:</span><br><span class="line">                <span class="keyword">if</span> infile <span class="keyword">not</span> <span class="keyword">in</span> file_list_des:</span><br><span class="line">                    img = Image.open(src_dir+infile)</span><br><span class="line">                    g = Graphics(infile=src_dir+infile, outfile=des_dir+infile)</span><br><span class="line">                    g.cut_by_ratio()</span><br><span class="line">                <span class="keyword">else</span>:</span><br><span class="line">                    file_list.remove(infile)</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="keyword">pass</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        print(<span class="string">"source directory not exist!"</span>)     </span><br><span class="line">    </span><br><span class="line">    <span class="comment"># 进行压缩</span></span><br><span class="line">    compress(<span class="string">'4'</span>, des_dir, des_dir, file_list)</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:</span><br><span class="line">    </span><br><span class="line">    print_help()</span><br><span class="line">    resize_photo()       <span class="comment"># 压缩图片，不大于1080P，保存到photos文件夹下</span></span><br><span class="line">    cut_photo()          <span class="comment"># 裁剪图片，裁剪成正方形,并压缩，保存到mini_photos文件夹下</span></span><br><span class="line">    <span class="comment"># git_operation()    # 提交到github仓库</span></span><br><span class="line">    handle_photo()       <span class="comment"># 将文件处理成json格式，存到博客仓库中</span></span><br></pre></td></tr></table></figure>
+<h2 id="博客操作"><a href="#博客操作" class="headerlink" title="博客操作"></a>博客操作</h2><p>在博客的source文件夹下建立一个photos文件夹<br><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new page photos</span><br></pre></td></tr></table></figure></p>
+<p>由于之前hexo插入图片对blog\_config.yml进行过配置</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">post_asset_folder:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+<p>photos文件夹会自动生成一个index.md文件和一个同名文件夹</p>
+<p>清空photos文件夹，放入相关样式文件，如下</p>
+<ul>
+<li>leebinjun.github.io/source/photos at dev · leebinjun/leebinjun.github.io<br><a href="https://github.com/leebinjun/leebinjun.github.io/tree/dev/source/photos" target="_blank" rel="noopener">https://github.com/leebinjun/leebinjun.github.io/tree/dev/source/photos</a></li>
+</ul>
+<p><img src="/2020/01/05/Hexo：yilia主题下添加相册功能/0.png"></p>
+<p>修改ins.js文件，主要render函数相关路径<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> render = <span class="function"><span class="keyword">function</span> <span class="title">render</span>(<span class="params">res</span>) </span>&#123;</span><br><span class="line">     <span class="keyword">var</span> ulTmpl = <span class="string">""</span>;</span><br><span class="line">     <span class="keyword">for</span> (<span class="keyword">var</span> j = <span class="number">0</span>, len2 = res.list.length; j &lt; len2; j++) &#123;</span><br><span class="line">       <span class="keyword">var</span> data = res.list[j].arr;</span><br><span class="line">       <span class="keyword">var</span> liTmpl = <span class="string">""</span>;</span><br><span class="line">       <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>, len = data.link.length; i &lt; len; i++) &#123;</span><br><span class="line"></span><br><span class="line">         <span class="keyword">var</span> minSrc = <span class="string">'https://raw.githubusercontent.com/leebinjun/leebinjun.github.io/data/photos_backup/min_photos/'</span> + data.link[i];</span><br><span class="line">         <span class="keyword">var</span> src = <span class="string">'https://raw.githubusercontent.com/leebinjun/leebinjun.github.io/data/photos_backup/photos/'</span> + data.link[i];</span><br><span class="line">         <span class="keyword">var</span> type = data.type[i];</span><br><span class="line">         <span class="comment">// var target = src + (type === 'video' ? '.mp4' : '.jpg');</span></span><br><span class="line">         <span class="keyword">var</span> target = src;</span><br><span class="line">         <span class="comment">// src += '.jpg';</span></span><br><span class="line"></span><br><span class="line">         liTmpl += <span class="string">'&lt;figure class="thumb" itemprop="associatedMedia" itemscope="" itemtype="http://schema.org/ImageObject"&gt;\</span></span><br><span class="line"><span class="string">               &lt;a href="'</span> + src + <span class="string">'" itemprop="contentUrl" data-size="640x640" data-type="'</span> + type + <span class="string">'" data-target="'</span> + target + <span class="string">'"&gt;\</span></span><br><span class="line"><span class="string">                 &lt;img class="reward-img" data-type="'</span> + type + <span class="string">'" data-src="'</span> + minSrc + <span class="string">'" src="empty.png" itemprop="thumbnail" onload="lzld(this)"&gt;\</span></span><br><span class="line"><span class="string">               &lt;/a&gt;\</span></span><br><span class="line"><span class="string">               &lt;figcaption style="display:none" itemprop="caption description"&gt;'</span> + data.text[i] + <span class="string">'&lt;/figcaption&gt;\</span></span><br><span class="line"><span class="string">           &lt;/figure&gt;'</span>;</span><br><span class="line">       &#125;</span><br><span class="line">       ulTmpl = ulTmpl + <span class="string">'&lt;section class="archives album"&gt;&lt;h1 class="year"&gt;'</span> + data.year + <span class="string">'&lt;em&gt;'</span> + data.month + <span class="string">'月&lt;/em&gt;&lt;/h1&gt;\</span></span><br><span class="line"><span class="string">       &lt;ul class="img-box-ul"&gt;'</span> + liTmpl + <span class="string">'&lt;/ul&gt;\</span></span><br><span class="line"><span class="string">       &lt;/section&gt;'</span>;</span><br><span class="line">     &#125;</span><br><span class="line">     <span class="built_in">document</span>.querySelector(<span class="string">'.instagram'</span>).innerHTML = <span class="string">'&lt;div class="photos" itemscope="" itemtype="http://schema.org/ImageGallery"&gt;'</span> + ulTmpl + <span class="string">'&lt;/div&gt;'</span>;</span><br><span class="line">     createVideoIncon();</span><br><span class="line">     _view2.default.init();</span><br><span class="line">   &#125;;</span><br></pre></td></tr></table></figure></p>
+<p>修改ins.json文件，与data分支中由python脚本生成的data.json同步<br><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;<span class="attr">"list"</span>: [&#123;<span class="attr">"date"</span>: <span class="string">"2020-01"</span>, <span class="attr">"arr"</span>: &#123;<span class="attr">"year"</span>: <span class="number">2020</span>, <span class="attr">"month"</span>: <span class="number">1</span>, <span class="attr">"link"</span>: [<span class="string">"2020-01-04_\u6d4b\u8bd5.jpg"</span>], <span class="attr">"text"</span>: [<span class="string">"\u6d4b\u8bd5"</span>], <span class="attr">"type"</span>: [<span class="string">"image"</span>]&#125;&#125;]&#125;</span><br></pre></td></tr></table></figure></p>
+<p>配置themes\yilia\_config.yml文件，在侧边栏添加相册<br><figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Header</span></span><br><span class="line"><span class="attr">menu:</span></span><br><span class="line">  <span class="string">主页:</span> <span class="string">/</span></span><br><span class="line">  <span class="string">相册:</span> <span class="string">/photos/</span></span><br><span class="line">  <span class="string">随笔:</span> <span class="string">/tags/随笔/</span></span><br></pre></td></tr></table></figure></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">hexo</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/01/05/Hexo：yilia主题下添加相册功能/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
   
     <article id="post-随笔_读书笔记：未来简史" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
@@ -1299,157 +1452,6 @@
 
 
   
-    <article id="post-随笔_VR的飞行体验记录" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/11/11/随笔_VR的飞行体验记录/">VR的飞行体验记录</a>
-    </h1>
-  
-
-        
-        <a href="/2019/11/11/随笔_VR的飞行体验记录/" class="archive-article-date">
-  	<time datetime="2019-11-11T03:36:43.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-11</time>
-</a>
-        
-      </header>
-    
-
-    <!-- 目录内容 -->
-    
-    <!-- 目录内容结束 -->
-
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="Pico-G2-NOLO-CV1-无线玩-SteamVR"><a href="#Pico-G2-NOLO-CV1-无线玩-SteamVR" class="headerlink" title="Pico G2 + NOLO CV1 无线玩 SteamVR"></a>Pico G2 + NOLO CV1 无线玩 SteamVR</h2><h3 id="官方教程"><a href="#官方教程" class="headerlink" title="官方教程"></a>官方教程</h3><ul>
-<li>Pico G2+NOLO CV1无线玩SteamVR教程 - 官方教程 - NOLO中文论坛 - Powered by Discuz!<br><a href="http://bbs.nolovr.com/forum.php?mod=viewthread&amp;tid=1793&amp;extra=page=1" target="_blank" rel="noopener">http://bbs.nolovr.com/forum.php?mod=viewthread&amp;tid=1793&amp;extra=page=1</a></li>
-</ul>
-<h3 id="我的硬件清单"><a href="#我的硬件清单" class="headerlink" title="我的硬件清单"></a>我的硬件清单</h3><ul>
-<li>VR眼镜：Pico G2</li>
-<li>定位套件：NOLO CV1</li>
-<li>显卡：GTX1660super</li>
-<li>路由器：Redmi AC2100</li>
-<li>其他<br>NOLO CV1配件盒中有相关OTG线材和头盔固定卡扣粘贴<br>用纸片挡住Pico G2内眉心处的传感器，以免一体机息屏导致与电脑断开连接</li>
-</ul>
-<h3 id="我的软件准备"><a href="#我的软件准备" class="headerlink" title="我的软件准备"></a>我的软件准备</h3><h4 id="PC端"><a href="#PC端" class="headerlink" title="PC端"></a>PC端</h4><ul>
-<li>系统：<br>专业版Win10 64位系统</li>
-<li>NOLO HOME Windows版：<br>安装Windows版的NOLO HOME，下载链接<br><a href="https://www.nolovr.com/picopage" target="_blank" rel="noopener">https://www.nolovr.com/picopage</a></li>
-<li>安装Steam客户端：<br>在Steam官网下载、安装、注册并登录；</li>
-<li>安装SteamVR工具软件：<br>登陆Steam客户端后在“库”选项的下拉菜单中选择“工具”，然后再在搜索栏中搜索“Steam VR”下载、安装，安装完成后需先启动检验是否可正常运行（steamvr单独启动正常会提示108错误）后，彻底关闭Steam、Steam VR。</li>
-</ul>
-<h4 id="Pico-G2"><a href="#Pico-G2" class="headerlink" title="Pico G2"></a>Pico G2</h4><ul>
-<li>NOLO HOME 一体机版：<br>Pico G2应用商店内下载安装移动版NOLO HOME</li>
-</ul>
-<h3 id="开启SteamVR游戏教程"><a href="#开启SteamVR游戏教程" class="headerlink" title="开启SteamVR游戏教程"></a>开启SteamVR游戏教程</h3><p>将PC电脑和Pico G2连接到同一5G网络。  </p>
-<p>组装、开启Pico G2与NOLOCV1</p>
-<ul>
-<li>将基站放置于与肩同高的平面边缘，基站放稳3-5秒后，顶部指示灯为绿色表示已正常工作；   </li>
-<li>单击手柄系统键，得到震动反馈后，等待1-3秒，手柄指示灯为绿色表示已正常工作；  </li>
-<li>将头盔定位器插入定位器卡座固定好后，开启Pico G2，使用Type-C接口的OTG短线先连接Pico G2，再连接头盔定位器，头盔定位器上指示灯呈绿色表示连接成功。   </li>
-</ul>
-<p>如以上设备开机后指示灯长时间未呈现绿色，请依照下表进行对应操作</p>
-<div class="table-container">
-<table>
-<thead>
-<tr>
-<th>指示灯状态</th>
-<th>对应操作</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>手柄红灯常亮</td>
-<td>未配对，需进行重新配对，请至官网查看NOLO CV1配对教程</td>
-</tr>
-<tr>
-<td>基站红灯常亮</td>
-<td>未放稳或工作异常，请放至平坦桌面</td>
-</tr>
-<tr>
-<td>红灯闪烁</td>
-<td>低电量，请充电，使用配件盒中一分三的充电线进行充电即可</td>
-</tr>
-<tr>
-<td>绿灯闪烁</td>
-<td>配对中，误操作易引起此种现象，请重新配对</td>
-</tr>
-<tr>
-<td>红绿灯交替闪烁</td>
-<td>硬件错误，请及时联系客服</td>
-</tr>
-</tbody>
-</table>
-</div>
-<p>连接Pico G2与电脑，开启游戏</p>
-<ul>
-<li>在Pico G2内打开NOLO HOME，进入“等待连接”模式，此过程需保持Pico G2屏幕常亮。  </li>
-<li>在电脑端打开NOLO HOME根据引导选择一体机模式，NOLO HOME会自动搜索Pico G2，搜索到后点击“连接”，即可启动Steam和Steam VR（Steam客户端响应时间较长，中高配置电脑启动需十秒左右，如未保存账户名密码，此时请手动输入、登录）  </li>
-<li>Steam VR窗口弹出，显示“SteamVR Home就绪”，或Pico G2内画面进入SteamVRHome房间后表示连接成功</li>
-</ul>
-<h3 id="操作注意事项："><a href="#操作注意事项：" class="headerlink" title="操作注意事项："></a>操作注意事项：</h3><ul>
-<li>防火墙：<br>关闭所有具有防火墙功能的杀毒软件</li>
-<li>首次连接成功后偶有出现不识别手柄：<br>需关闭Steam、Steam VR、NOLO HOME，再次打开NOLO HOME连接一次即可。</li>
-<li>OTG短线连接：<br>先连接Pico G2，再连接头盔定位器，否则可能出现连接失败。</li>
-<li>禁止事项：<br>游戏过程中，基站禁止使用USB线连接电脑；在基站电量剩余60%以下时，禁止边充电边进行游戏。</li>
-<li>首次进入Steam VR如高度、手柄位置不对，可对NOLO CV1头盔定位器和手柄进行标定调整：<br>手柄或高度出现定位位置不准确时进行，点击NOLO HOME Windows版窗口上的“新手引导”查看。</li>
-<li>首次或未在电脑上运行过的VR游戏，需通过Steam电脑客户端选择“以VR模式运行”开启。</li>
-</ul>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/11/11/随笔_VR的飞行体验记录/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/10/">10</a><a class="extend next" rel="next" href="/page/3/">Next &raquo;</a>
@@ -1569,11 +1571,19 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">brainfuck</a>
+                <a href="javascript:void(0)" class="js-tag color4">lua</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
+                <a href="javascript:void(0)" class="js-tag color5">neat</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Mario</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">brainfuck</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1582,6 +1592,10 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">吉他</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1601,23 +1615,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">lua</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">neat</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Mario</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">python</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">RL</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1629,11 +1627,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">tensorflow</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">git</a>
+                <a href="javascript:void(0)" class="js-tag color3">RL</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1641,19 +1635,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">git</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">tensorflow</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">yolo</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">loomo</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Android</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">机械手</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1669,7 +1659,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">web</a>
+                <a href="javascript:void(0)" class="js-tag color1">loomo</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Android</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">机械手</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1677,7 +1675,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">dlib</a>
+                <a href="javascript:void(0)" class="js-tag color4">web</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1685,11 +1683,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Latex</a>
+                <a href="javascript:void(0)" class="js-tag color5">dlib</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">数模</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Latex</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1721,11 +1723,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">tf</a>
+                <a href="javascript:void(0)" class="js-tag color5">alphazero</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">alphazero</a>
+                <a href="javascript:void(0)" class="js-tag color3">tf</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1737,11 +1739,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">keras</a>
+                <a href="javascript:void(0)" class="js-tag color1">Flask</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">docker</a>
+                <a href="javascript:void(0)" class="js-tag color1">keras</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1749,7 +1751,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Flask</a>
+                <a href="javascript:void(0)" class="js-tag color2">docker</a>
               </li>
             
             <div class="clearfix"></div>

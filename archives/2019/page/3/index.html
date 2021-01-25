@@ -41,6 +41,60 @@
       
 <div class="overlay" style="background: #4d4d4d"></div>
 <div class="intrude-less">
+	
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css">
+		<!-- // 这里div的样式是笔者自己修改过的，你可以直接使用APlayer官方的原配置： -->
+		<div id="aplayer" style="position:absolute;left:0;top:0;"></div>
+		<script src="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/color-thief-don@2.0.2/src/color-thief.js"></script>
+		<script>
+		  const ap = new APlayer({
+			container: document.getElementById('aplayer'),
+			autoplay: false, //自动播放
+			listFolded: true, //播放列表默认折叠
+			listMaxHeight: 90, //播放列表最大高度
+			order: 'list', //音频循环顺序, 可选值: 'list', 'random'
+			loop: 'all', //音频循环播放, 可选值: 'all', 'one', 'none'
+			theme: '#e9e9e9', //切换音频时的主题色，优先级低于audio.theme
+			preload: 'none', //音频预加载，可选值: 'none', 'metadata', 'auto'
+			mutex: true, //互斥，阻止多个播放器同时播放，当前播放器播放时暂停其他播放器
+			lrcType: 3, //歌词格式，可选值：3（LRC文件歌词格式），1（JS字符串歌词格式）
+			volume: 0.7, //默认音量，请注意播放器会记忆用户设置，用户手动设置音量后默认音量即失效
+			// mini: true,
+			// fixed: true, //吸底模式（fixed:true），迷你模式（mini:true），普通模式（注释此行或者设置fixed:false）
+			audio: [{
+				name: 'Let her go',
+				artist: 'passenger',
+				lrc: 'http://music.binjun.xyz/music/Let%20Her%20Go-Passenger.lrc',
+				cover: 'https://p2.music.126.net/uYgsk7GFZ_C-dFPjN7V_Hg==/109951163450380228.jpg?param=130y130',
+				url: 'http://m10.music.126.net/20210125185950/959d40781a2e45049b21f559fbe5cb57/ymusic/obj/w5zDlMODwrDDiGjCn8Ky/3058351692/926b/5568/4eff/76bbb5d74f79359148934ea5ce7b1831.mp3'
+			  },
+			  {
+				name: 'traveling light',
+				artist: 'Joel Hanson,Sara Groves',
+				lrc: 'http://music.binjun.xyz/misic/Traveling%20Light-Joel%20Hanson%2CSara%20Groves.lrc',
+				cover: 'https://p1.music.126.net/zYqptzyHld2ylpb5FOoqDA==/1785606883508227.jpg?param=130y130',
+				url: 'http://m10.music.126.net/20210125190041/3199f1499b3b28d10d89c6b11f1236af/ymusic/obj/w5zDlMODwrDDiGjCn8Ky/3035927604/eca7/4e65/15ad/59231ae7bf98f1eb8b73369a26d00756.mp3'
+			  }
+			]
+		  });
+		
+		  //实现切换音频时，根据音频的封面图片自适应主题色
+		  const colorThief = new ColorThief();
+		  const setTheme = (index) => {
+			if (!ap.list.audios[index].theme) {
+			  colorThief.getColorAsync(ap.list.audios[index].cover, function(color) {
+				ap.theme(`rgb(${color[0]}, ${color[1]}, ${color[2]})`, index);
+			  });
+			}
+		  };
+		  setTheme(ap.list.index);
+		  ap.on('listswitch', (data) => {
+			setTheme(data.index);
+		  });
+		</script>
+	
+	
 	<header id="header" class="inner">
 		<a href="/" class="profilepic">
 			<img src="/img/avatar.jpg" class="js-avatar">
@@ -117,6 +171,7 @@
 		        
 			</div>
 		</nav>
+
 	</header>		
 </div>
 
@@ -647,11 +702,19 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">brainfuck</a>
+                <a href="javascript:void(0)" class="js-tag color4">lua</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
+                <a href="javascript:void(0)" class="js-tag color5">neat</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Mario</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">brainfuck</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -660,6 +723,10 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">吉他</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -679,23 +746,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">lua</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">neat</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Mario</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">python</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">RL</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -707,11 +758,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">tensorflow</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">git</a>
+                <a href="javascript:void(0)" class="js-tag color3">RL</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -719,19 +766,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">git</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">tensorflow</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">yolo</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">loomo</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Android</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">机械手</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -747,7 +790,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">web</a>
+                <a href="javascript:void(0)" class="js-tag color1">loomo</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Android</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">机械手</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -755,7 +806,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">dlib</a>
+                <a href="javascript:void(0)" class="js-tag color4">web</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -763,11 +814,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Latex</a>
+                <a href="javascript:void(0)" class="js-tag color5">dlib</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">数模</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Latex</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -799,11 +854,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">tf</a>
+                <a href="javascript:void(0)" class="js-tag color5">alphazero</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">alphazero</a>
+                <a href="javascript:void(0)" class="js-tag color3">tf</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -815,11 +870,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">keras</a>
+                <a href="javascript:void(0)" class="js-tag color1">Flask</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">docker</a>
+                <a href="javascript:void(0)" class="js-tag color1">keras</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -827,7 +882,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Flask</a>
+                <a href="javascript:void(0)" class="js-tag color2">docker</a>
               </li>
             
             <div class="clearfix"></div>
