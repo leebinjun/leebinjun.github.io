@@ -131,3 +131,7 @@ search:
   field: post
   format: html
   limit: 10000
+
+
+aplayer:
+  enable: true
