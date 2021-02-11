@@ -5,12 +5,12 @@
   
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <link rel="dns-prefetch" href="https://binjun.xyz">
+  <link rel="dns-prefetch" href="http://blog.binjun.xyz">
   <title>Binjun</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta property="og:type" content="website">
 <meta property="og:title" content="Binjun">
-<meta property="og:url" content="https://binjun.xyz/index.html">
+<meta property="og:url" content="http://blog.binjun.xyz/index.html">
 <meta property="og:site_name" content="Binjun">
 <meta property="og:locale" content="zh-Hans">
 <meta name="twitter:card" content="summary">
@@ -294,7 +294,7 @@
         <h2 id="配置config文件"><a href="#配置config文件" class="headerlink" title="配置config文件"></a>配置config文件</h2><p>在站点根目录下的_config.yml中添加如下配置</p>
 <figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">aplayer:</span></span><br><span class="line"><span class="attr">  enanble:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
 <h2 id="添加播放器样式"><a href="#添加播放器样式" class="headerlink" title="添加播放器样式"></a>添加播放器样式</h2><p>修改themes/yilia/layout/_partial/left-col.ejs文件，添加下面代码</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">%</span> <span class="attr">if</span>(<span class="attr">theme.aplayer.enable</span>) &#123; %&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span> <span class="attr">href</span>=<span class="string">"https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css"</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- // 这里div的样式是笔者自己修改过的，你可以直接使用APlayer官方的原配置： --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"aplayer"</span> <span class="attr">style</span>=<span class="string">"position:absolute;left:0;top:0;"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://cdn.jsdelivr.net/npm/color-thief-don@2.0.2/src/color-thief.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined">        const ap = new APlayer(&#123;</span></span><br><span class="line"><span class="undefined">        container: document.getElementById('aplayer'),</span></span><br><span class="line"><span class="undefined">        autoplay: false, //自动播放</span></span><br><span class="line"><span class="undefined">        listFolded: true, //播放列表默认折叠</span></span><br><span class="line"><span class="undefined">        listMaxHeight: 90, //播放列表最大高度</span></span><br><span class="line"><span class="undefined">        order: 'list', //音频循环顺序, 可选值: 'list', 'random'</span></span><br><span class="line"><span class="undefined">        loop: 'all', //音频循环播放, 可选值: 'all', 'one', 'none'</span></span><br><span class="line"><span class="undefined">        theme: '#e9e9e9', //切换音频时的主题色，优先级低于audio.theme</span></span><br><span class="line"><span class="undefined">        preload: 'none', //音频预加载，可选值: 'none', 'metadata', 'auto'</span></span><br><span class="line"><span class="undefined">        mutex: true, //互斥，阻止多个播放器同时播放，当前播放器播放时暂停其他播放器</span></span><br><span class="line"><span class="undefined">        lrcType: 3, //歌词格式，可选值：3（LRC文件歌词格式），1（JS字符串歌词格式）</span></span><br><span class="line"><span class="undefined">        volume: 0.7, //默认音量，请注意播放器会记忆用户设置，用户手动设置音量后默认音量即失效</span></span><br><span class="line"><span class="undefined">        // mini: true,</span></span><br><span class="line"><span class="undefined">        // fixed: true, //吸底模式（fixed:true），迷你模式（mini:true），普通模式（注释此行或者设置fixed:false）</span></span><br><span class="line"><span class="undefined">        audio: [</span></span><br><span class="line"><span class="undefined">        &#123;</span></span><br><span class="line"><span class="undefined">            name: 'City Of Stars',</span></span><br><span class="line"><span class="undefined">            artist: 'Ryan Gosling',</span></span><br><span class="line"><span class="undefined">            lrc: 'data:application/octet-stream;base64,WzAwOjE5LjgyXUNpdHkgb2Ygc3RhcnMsClswMDoyMy4wMV1hcmUgeW91IHNoaW5pbmcganVzdCBmb3IgbWU/ClswMDoyOS42NV1DaXR5IG9mIHN0YXJzLApbMDA6MzIuNzRddGhlcmUncyBzbyBtdWNoIHRoYXQgSSBjYW4ndCBzZWUuClswMDozOS4yOF1XaG8ga25vd3MsClswMDo0Mi4zN11pcyB0aGlzIHRoZSBzdGFydCBvZiBzb21ldGhpbmcgd29uZGVyZnVsIGFuZCBuZXcsClswMDo0OS42Nl1vciBvbmUgbW9yZSBkcmVhbSB0aGF0IEkgY2Fubm90IG1ha2UgdHJ1ZT8K',</span></span><br><span class="line"><span class="undefined">            cover: 'https://p4.music.126.net/zqGxChorQDtXQxNoT45hww==/3426078245816925.jpg?param=300x300',</span></span><br><span class="line"><span class="undefined">            url: 'https://music.163.com/song/media/outer/url?id=421203025.mp3'</span></span><br><span class="line"><span class="undefined">        &#125;,</span></span><br><span class="line"><span class="undefined">        ]</span></span><br><span class="line"><span class="undefined">        &#125;);</span></span><br><span class="line"><span class="undefined">    </span></span><br><span class="line"><span class="undefined">        //实现切换音频时，根据音频的封面图片自适应主题色</span></span><br><span class="line"><span class="undefined">        const colorThief = new ColorThief();</span></span><br><span class="line"><span class="undefined">        const setTheme = (index) =&gt; &#123;</span></span><br><span class="line"><span class="undefined">        if (!ap.list.audios[index].theme) &#123;</span></span><br><span class="line"><span class="undefined">            colorThief.getColorAsync(ap.list.audios[index].cover, function(color) &#123;</span></span><br><span class="line"><span class="undefined">            ap.theme(`rgb($&#123;color[0]&#125;, $&#123;color[1]&#125;, $&#123;color[2]&#125;)`, index);</span></span><br><span class="line"><span class="undefined">            &#125;);</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="undefined">        &#125;;</span></span><br><span class="line"><span class="undefined">        setTheme(ap.list.index);</span></span><br><span class="line"><span class="undefined">        ap.on('listswitch', (data) =&gt; &#123;</span></span><br><span class="line"><span class="undefined">        setTheme(data.index);</span></span><br><span class="line"><span class="undefined">        &#125;);</span></span><br><span class="line"><span class="undefined">    </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">%</span> &#125; %&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">%</span> <span class="attr">if</span>(<span class="attr">theme.aplayer.enable</span>) &#123; %&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span> <span class="attr">href</span>=<span class="string">"https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css"</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- // 这里div的样式是笔者自己修改过的，你可以直接使用APlayer官方的原配置： --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"aplayer"</span> <span class="attr">style</span>=<span class="string">"position:absolute;left:0;top:0;"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://cdn.jsdelivr.net/npm/color-thief-don@2.0.2/src/color-thief.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript">        <span class="keyword">const</span> ap = <span class="keyword">new</span> APlayer(&#123;</span></span><br><span class="line"><span class="javascript">        container: <span class="built_in">document</span>.getElementById(<span class="string">'aplayer'</span>),</span></span><br><span class="line"><span class="javascript">        autoplay: <span class="literal">false</span>, <span class="comment">//自动播放</span></span></span><br><span class="line"><span class="javascript">        listFolded: <span class="literal">true</span>, <span class="comment">//播放列表默认折叠</span></span></span><br><span class="line"><span class="javascript">        listMaxHeight: <span class="number">90</span>, <span class="comment">//播放列表最大高度</span></span></span><br><span class="line"><span class="javascript">        order: <span class="string">'list'</span>, <span class="comment">//音频循环顺序, 可选值: 'list', 'random'</span></span></span><br><span class="line"><span class="javascript">        loop: <span class="string">'all'</span>, <span class="comment">//音频循环播放, 可选值: 'all', 'one', 'none'</span></span></span><br><span class="line"><span class="javascript">        theme: <span class="string">'#e9e9e9'</span>, <span class="comment">//切换音频时的主题色，优先级低于audio.theme</span></span></span><br><span class="line"><span class="javascript">        preload: <span class="string">'none'</span>, <span class="comment">//音频预加载，可选值: 'none', 'metadata', 'auto'</span></span></span><br><span class="line"><span class="javascript">        mutex: <span class="literal">true</span>, <span class="comment">//互斥，阻止多个播放器同时播放，当前播放器播放时暂停其他播放器</span></span></span><br><span class="line"><span class="javascript">        lrcType: <span class="number">3</span>, <span class="comment">//歌词格式，可选值：3（LRC文件歌词格式），1（JS字符串歌词格式）</span></span></span><br><span class="line"><span class="javascript">        volume: <span class="number">0.7</span>, <span class="comment">//默认音量，请注意播放器会记忆用户设置，用户手动设置音量后默认音量即失效</span></span></span><br><span class="line"><span class="javascript">        <span class="comment">// mini: true,</span></span></span><br><span class="line"><span class="javascript">        <span class="comment">// fixed: true, //吸底模式（fixed:true），迷你模式（mini:true），普通模式（注释此行或者设置fixed:false）</span></span></span><br><span class="line"><span class="undefined">        audio: [</span></span><br><span class="line"><span class="undefined">        &#123;</span></span><br><span class="line"><span class="javascript">            name: <span class="string">'City Of Stars'</span>,</span></span><br><span class="line"><span class="javascript">            artist: <span class="string">'Ryan Gosling'</span>,</span></span><br><span class="line"><span class="javascript">            lrc: <span class="string">'data:application/octet-stream;base64,WzAwOjE5LjgyXUNpdHkgb2Ygc3RhcnMsClswMDoyMy4wMV1hcmUgeW91IHNoaW5pbmcganVzdCBmb3IgbWU/ClswMDoyOS42NV1DaXR5IG9mIHN0YXJzLApbMDA6MzIuNzRddGhlcmUncyBzbyBtdWNoIHRoYXQgSSBjYW4ndCBzZWUuClswMDozOS4yOF1XaG8ga25vd3MsClswMDo0Mi4zN11pcyB0aGlzIHRoZSBzdGFydCBvZiBzb21ldGhpbmcgd29uZGVyZnVsIGFuZCBuZXcsClswMDo0OS42Nl1vciBvbmUgbW9yZSBkcmVhbSB0aGF0IEkgY2Fubm90IG1ha2UgdHJ1ZT8K'</span>,</span></span><br><span class="line"><span class="javascript">            cover: <span class="string">'https://p4.music.126.net/zqGxChorQDtXQxNoT45hww==/3426078245816925.jpg?param=300x300'</span>,</span></span><br><span class="line"><span class="javascript">            url: <span class="string">'https://music.163.com/song/media/outer/url?id=421203025.mp3'</span></span></span><br><span class="line"><span class="undefined">        &#125;,</span></span><br><span class="line"><span class="undefined">        ]</span></span><br><span class="line"><span class="undefined">        &#125;);</span></span><br><span class="line"><span class="undefined">    </span></span><br><span class="line"><span class="javascript">        <span class="comment">//实现切换音频时，根据音频的封面图片自适应主题色</span></span></span><br><span class="line"><span class="javascript">        <span class="keyword">const</span> colorThief = <span class="keyword">new</span> ColorThief();</span></span><br><span class="line"><span class="javascript">        <span class="keyword">const</span> setTheme = <span class="function">(<span class="params">index</span>) =&gt;</span> &#123;</span></span><br><span class="line"><span class="javascript">        <span class="keyword">if</span> (!ap.list.audios[index].theme) &#123;</span></span><br><span class="line"><span class="javascript">            colorThief.getColorAsync(ap.list.audios[index].cover, <span class="function"><span class="keyword">function</span>(<span class="params">color</span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">            ap.theme(<span class="string">`rgb(<span class="subst">$&#123;color[<span class="number">0</span>]&#125;</span>, <span class="subst">$&#123;color[<span class="number">1</span>]&#125;</span>, <span class="subst">$&#123;color[<span class="number">2</span>]&#125;</span>)`</span>, index);</span></span><br><span class="line"><span class="undefined">            &#125;);</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="undefined">        &#125;;</span></span><br><span class="line"><span class="undefined">        setTheme(ap.list.index);</span></span><br><span class="line"><span class="javascript">        ap.on(<span class="string">'listswitch'</span>, (data) =&gt; &#123;</span></span><br><span class="line"><span class="undefined">        setTheme(data.index);</span></span><br><span class="line"><span class="undefined">        &#125;);</span></span><br><span class="line"><span class="undefined">    </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">%</span> &#125; %&gt;</span></span><br></pre></td></tr></table></figure>
 <p>其中歌曲的url为如下格式,xxx处替换相应的id号</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://music.163.com/song/media/outer/url?id=xxxxxxxxx.mp3</span><br></pre></td></tr></table></figure>
 <p>歌曲的歌词文件lrc和封面地址cover可以通过<a href="https://music.liuzhijin.cn/" target="_blank" rel="noopener">音乐直链搜索工具</a>获取。</p>
@@ -302,6 +302,8 @@
 <li><p>Hexo 全局添加 APlayer 音乐播放器 | Clay的技术博客<br><a href="https://www.techgrow.cn/posts/cfdad023.html" target="_blank" rel="noopener">https://www.techgrow.cn/posts/cfdad023.html</a></p>
 </li>
 <li><p>音乐直链搜索|音乐在线试听 - by 刘志进实验室<br><a href="https://music.liuzhijin.cn/" target="_blank" rel="noopener">https://music.liuzhijin.cn/</a></p>
+</li>
+<li><p>如何获取网易云音乐播放外链 - 知乎<br><a href="https://zhuanlan.zhihu.com/p/104569759" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/104569759</a></p>
 </li>
 </ul>
 
@@ -1498,7 +1500,7 @@
     <script>
 	var yiliaConfig = {
 		mathjax: true,
-		isHome: true,
+		isHome: false,
 		isPost: false,
 		isArchive: false,
 		isTag: false,
@@ -1587,6 +1589,10 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Arduino</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">lua</a>
               </li>
              
@@ -1600,10 +1606,6 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">brainfuck</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Arduino</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1627,19 +1629,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">pyopencl</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">opencv</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">python</a>
+                <a href="javascript:void(0)" class="js-tag color4">pyopencl</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">RL</a>
+                <a href="javascript:void(0)" class="js-tag color2">python</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1651,6 +1649,10 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">RL</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">tensorflow</a>
               </li>
              
@@ -1659,23 +1661,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">-go</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">yolo</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">leapmotion</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">js</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">box2d</a>
+                <a href="javascript:void(0)" class="js-tag color4">-go</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1691,7 +1681,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">web</a>
+                <a href="javascript:void(0)" class="js-tag color1">leapmotion</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">js</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">box2d</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1699,11 +1697,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">dlib</a>
+                <a href="javascript:void(0)" class="js-tag color4">web</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">jupyter notebook</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">dlib</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1763,15 +1765,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Flask</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">docker</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">随笔</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Flask</a>
               </li>
             
             <div class="clearfix"></div>
