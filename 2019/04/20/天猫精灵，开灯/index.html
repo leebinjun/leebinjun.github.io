@@ -18,7 +18,8 @@
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://blog.binjun.xyz/2019/04/20/天猫精灵，开灯/1.png">
 <meta property="og:image" content="http://blog.binjun.xyz/2019/04/20/天猫精灵，开灯/2.png">
-<meta property="og:updated_time" content="2021-01-18T02:26:36.643Z">
+<meta property="og:image" content="http://blog.binjun.xyz/2019/04/20/天猫精灵，开灯/1.gif">
+<meta property="og:updated_time" content="2021-02-12T06:39:25.152Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="天猫精灵，开灯">
 <meta name="twitter:description" content="天猫精灵，开灯   整体方案天猫精灵协议的对接是云服务器与云服务器的对接，并不支持与硬件设备的直接对接。下图展示了智能硬件的接入方式：用户的语音指令通过天猫精灵上传阿里云语音服务器通过解析后发送响应的协议到云服务器，然后控制云再与硬件设备进行沟通控制。">
@@ -307,69 +308,127 @@
 <the rest of contents | 余下全文>
 
 <p>采用花生壳内网穿透的方法，部署一台ubuntu 16.04作为服务器。使用Apache2搭建一个web服务器用于解析域名和php文本，为域名申请SSL证书，部署Apahce2下的https服务器，安装MySQL数据库用于http协议下频繁的数据存储和查询读取和OAuth2.0服务器的搭建。AliGenie平台通过OAuth2.0在不需要注册新设备用户的同时使用用户已有的账号获得智能硬件的认证系统的授权，使得天猫精灵能够访问智能硬件，然后完成指令的交互。</p>
-<p><div align="center">
+<div align="center">
 <img src="/2019/04/20/天猫精灵，开灯/2.png" width="600" height="300">
-</div><br>懒得搭服务器可以考虑下第三方平台，比如HomeAssistant、贝壳物联</p>
-<h2 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h2><ul>
-<li>路由器</li>
-<li>实验室主机一台</li>
-<li>花生棒</li>
-<li>esp8266</li>
-<li>天猫精灵</li>
-</ul>
-<h2 id="花生棒设置"><a href="#花生棒设置" class="headerlink" title="花生棒设置"></a>花生棒设置</h2><p>访问<a href="https://b.oray.com/" target="_blank" rel="noopener">https://b.oray.com/</a><br>内网穿透中增加两个映射<br>映射一</p>
-<ul>
-<li>映射类型 HTTP80</li>
-<li>外网端口 80</li>
-<li>内网主机 192.168.1.241</li>
-<li>内网端口 80<br>映射二</li>
-<li>映射类型 通用应用</li>
-<li>外网端口 动态端口号</li>
-<li>内网主机 192.168.1.241</li>
-<li>内网端口 443</li>
-</ul>
-<h2 id="服务器部署"><a href="#服务器部署" class="headerlink" title="服务器部署"></a>服务器部署</h2><h3 id="apache2-php7-0-web服务器的构建"><a href="#apache2-php7-0-web服务器的构建" class="headerlink" title="apache2+php7.0 web服务器的构建"></a>apache2+php7.0 web服务器的构建</h3><p>安装apathe<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo apt-get install apache2</span><br></pre></td></tr></table></figure></p>
-<p>安装php<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo apt-get install php</span><br></pre></td></tr></table></figure></p>
-<p>配置apache2支持php7<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo apt-get install libapache2-mod-php</span><br></pre></td></tr></table></figure></p>
-<p>重启一下apache2<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo service apache2 restart</span><br></pre></td></tr></table></figure></p>
-<p>配置DPO<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ sudo apt-get install php7.0-mysql</span><br><span class="line">$ sudo phpenmod pdo_mysql</span><br><span class="line">$ sudo service apache2 restart</span><br></pre></td></tr></table></figure></p>
+</div>
+懒得搭服务器可以考虑下第三方平台，比如HomeAssistant、贝壳物联
+
+## 准备
+* 路由器
+* 实验室主机一台
+* 花生棒
+* esp8266
+* 天猫精灵
+
+## 花生棒设置
+访问https://b.oray.com/ 
+内网穿透中增加两个映射
+映射一
+* 映射类型 HTTP80
+* 外网端口 80
+* 内网主机 192.168.1.241
+* 内网端口 80
+映射二
+* 映射类型 通用应用
+* 外网端口 动态端口号
+* 内网主机 192.168.1.241
+* 内网端口 443
+
+## 服务器部署
+### apache2+php7.0 web服务器的构建
+安装apathe
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo apt-get install apache2</span><br></pre></td></tr></table></figure>
+
+安装php
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo apt-get install php</span><br></pre></td></tr></table></figure>
+
+配置apache2支持php7
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo apt-get install libapache2-mod-php</span><br></pre></td></tr></table></figure>
+
+重启一下apache2
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo service apache2 restart</span><br></pre></td></tr></table></figure>
+
+配置DPO
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ sudo apt-get install php7.0-mysql</span><br><span class="line">$ sudo phpenmod pdo_mysql</span><br><span class="line">$ sudo service apache2 restart</span><br></pre></td></tr></table></figure>
+
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ sudo vim /etc/php/7.0/mods-available/pdo.ini</span><br><span class="line"></span><br><span class="line">    ;extension=pdo.so</span><br></pre></td></tr></table></figure>
+
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$ sudo vim /etc/php/7.0/apache2/php.ini</span><br><span class="line"></span><br><span class="line">    extension=/usr/lib/php/20151012/mysqli.so</span><br><span class="line">    extension=/usr/lib/php/20151012/mysqlnd.so</span><br><span class="line">    extension=/usr/lib/php/20151012/pdo.so</span><br><span class="line">    extension=/usr/lib/php/20151012/pdo_mysql.so</span><br></pre></td></tr></table></figure>
-<h3 id="申请SSL证书"><a href="#申请SSL证书" class="headerlink" title="申请SSL证书"></a>申请SSL证书</h3><p>SSL For Free工具官方网站</p>
-<ul>
-<li><a href="https://www.sslforfree.com/" target="_blank" rel="noopener">https://www.sslforfree.com/</a></li>
-</ul>
-<p>输入域名点击后面的Create Free SSL Certificate按钮获取，选择手工验证方式Manual Verification，点击Manually Verify Domain，根据提示的步骤进行，下载文件，然后对应添加文件夹，然后激活验证链接<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> /var/www/html/</span><br><span class="line">$ sudo mkdir .well-known</span><br><span class="line">$ <span class="built_in">cd</span> .well-known/</span><br><span class="line">$ sudo mkdir acme-challenge</span><br><span class="line">$ <span class="built_in">cd</span> acme-challenge/</span><br><span class="line">$ sudo chmod 777 -R /var/www/html/</span><br></pre></td></tr></table></figure></p>
-<p>设置到期后通知邮箱，下载证书</p>
-<h3 id="部署HTTPS服务器"><a href="#部署HTTPS服务器" class="headerlink" title="部署HTTPS服务器"></a>部署HTTPS服务器</h3><p>安装openssl<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo apt-get install openssl</span><br></pre></td></tr></table></figure></p>
-<p>开启SSL模块<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo a2enmod ssl</span><br></pre></td></tr></table></figure></p>
-<p>拷贝证书到相应目录，指定SSL证书</p>
+
+### 申请SSL证书
+SSL For Free工具官方网站
+* https://www.sslforfree.com/
+
+输入域名点击后面的Create Free SSL Certificate按钮获取，选择手工验证方式Manual Verification，点击Manually Verify Domain，根据提示的步骤进行，下载文件，然后对应添加文件夹，然后激活验证链接
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> /var/www/html/</span><br><span class="line">$ sudo mkdir .well-known</span><br><span class="line">$ <span class="built_in">cd</span> .well-known/</span><br><span class="line">$ sudo mkdir acme-challenge</span><br><span class="line">$ <span class="built_in">cd</span> acme-challenge/</span><br><span class="line">$ sudo chmod 777 -R /var/www/html/</span><br></pre></td></tr></table></figure>
+
+设置到期后通知邮箱，下载证书
+
+### 部署HTTPS服务器
+安装openssl
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo apt-get install openssl</span><br></pre></td></tr></table></figure>
+
+开启SSL模块
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo a2enmod ssl</span><br></pre></td></tr></table></figure>
+
+拷贝证书到相应目录，指定SSL证书
+
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">SSLCertificateFile      /etc/ssl/certs/certificate.crt</span><br><span class="line">SSLCertificateKeyFile   /etc/ssl/private/private.key</span><br><span class="line">SSLCertificateChainFile /etc/ssl/private/ca_bundle.crt</span><br></pre></td></tr></table></figure>
+
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">$ sudo chmod 777 -R /etc/ssl/</span><br><span class="line">$ <span class="built_in">cd</span> /etc/apache2/</span><br><span class="line">$ cat ports.conf</span><br><span class="line">    </span><br><span class="line">    <span class="comment"># If you just change the port or add more ports here, you will likely also</span></span><br><span class="line">    <span class="comment"># have to change the VirtualHost statement in</span></span><br><span class="line">    <span class="comment"># /etc/apache2/sites-enabled/000-default.conf</span></span><br><span class="line"></span><br><span class="line">    Listen 80</span><br><span class="line"></span><br><span class="line">    &lt;IfModule ssl_module&gt;</span><br><span class="line">            Listen 443</span><br><span class="line">    &lt;/IfModule&gt;</span><br><span class="line"></span><br><span class="line">    &lt;IfModule mod_gnutls.c&gt;</span><br><span class="line">            Listen 443</span><br><span class="line">    &lt;/IfModule&gt;</span><br></pre></td></tr></table></figure>
-<p>建立软链<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo ln -s /etc/apache2/sites-available/default-ssl.conf /etc/apache2/sites-enabled/</span><br></pre></td></tr></table></figure></p>
-<p>修改default-ssl.conf<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$ sudo apt-get install vim</span><br><span class="line">$ sudo vim /etc/apache2/sites-available/default-ssl.conf</span><br><span class="line"></span><br><span class="line">    SSLProtocol all -SSLv2 -SSLv3</span><br><span class="line">    SSLCertificateFile      /etc/ssl/certs/certificate.crt</span><br><span class="line">    SSLCertificateKeyFile   /etc/ssl/private/private.key</span><br><span class="line">    SSLCertificateChainFile /etc/ssl/private/ca_bundle.crt</span><br></pre></td></tr></table></figure></p>
-<p>通过a2ensite激活站点<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo a2ensite default-ssl.conf</span><br></pre></td></tr></table></figure></p>
-<p>重启apache<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo service apache2 restart</span><br></pre></td></tr></table></figure></p>
-<h3 id="安装MySQL"><a href="#安装MySQL" class="headerlink" title="安装MySQL"></a>安装MySQL</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo apt-get install mysql-server mysql-client</span><br></pre></td></tr></table></figure>
-<p>下载安装oauth2-server<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> /var/www/html/</span><br><span class="line">$ sudo apt-get install git</span><br><span class="line">$ git <span class="built_in">clone</span> https://github.com/bshaffer/oauth2-server-php.git -b master</span><br></pre></td></tr></table></figure></p>
-<p>建立数据库<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ mysql -u root -p</span><br></pre></td></tr></table></figure></p>
+
+建立软链
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo ln -s /etc/apache2/sites-available/default-ssl.conf /etc/apache2/sites-enabled/</span><br></pre></td></tr></table></figure>
+
+修改default-ssl.conf
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$ sudo apt-get install vim</span><br><span class="line">$ sudo vim /etc/apache2/sites-available/default-ssl.conf</span><br><span class="line"></span><br><span class="line">    SSLProtocol all -SSLv2 -SSLv3</span><br><span class="line">    SSLCertificateFile      /etc/ssl/certs/certificate.crt</span><br><span class="line">    SSLCertificateKeyFile   /etc/ssl/private/private.key</span><br><span class="line">    SSLCertificateChainFile /etc/ssl/private/ca_bundle.crt</span><br></pre></td></tr></table></figure>
+
+通过a2ensite激活站点
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo a2ensite default-ssl.conf</span><br></pre></td></tr></table></figure>
+
+重启apache
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo service apache2 restart</span><br></pre></td></tr></table></figure>
+
+### 安装MySQL
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo apt-get install mysql-server mysql-client</span><br></pre></td></tr></table></figure>
+
+下载安装oauth2-server
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> /var/www/html/</span><br><span class="line">$ sudo apt-get install git</span><br><span class="line">$ git <span class="built_in">clone</span> https://github.com/bshaffer/oauth2-server-php.git -b master</span><br></pre></td></tr></table></figure>
+
+建立数据库
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ mysql -u root -p</span><br></pre></td></tr></table></figure>
+
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; create database ilamp;</span><br><span class="line">mysql&gt; use ilamp;</span><br><span class="line">mysql&gt; CREATE TABLE `oauth_access_tokens` (</span><br><span class="line">         `access_token` VARCHAR(40) NOT NULL,</span><br><span class="line">         `client_id`    VARCHAR(80) NOT NULL,</span><br><span class="line">         `user_id`  VARCHAR(255),</span><br><span class="line">         `expires` TIMESTAMP NOT NULL,</span><br><span class="line">         `scope` VARCHAR(2000),</span><br><span class="line">         PRIMARY KEY (access_token));</span><br><span class="line">mysql&gt;  CREATE TABLE `oauth_authorization_codes` (</span><br><span class="line">         `authorization_code` VARCHAR(40) NOT NULL,</span><br><span class="line">         `client_id` VARCHAR(80) NOT NULL,</span><br><span class="line">         `user_id` VARCHAR(255),</span><br><span class="line">         `redirect_uri` VARCHAR(2000),</span><br><span class="line">         `expires` TIMESTAMP NOT NULL,</span><br><span class="line">         `scope` VARCHAR(2000),</span><br><span class="line">         <span class="string">'id_token'</span> VARCHAR(1000),</span><br><span class="line">         PRIMARY KEY (authorization_code));</span><br><span class="line">mysql&gt;  CREATE TABLE <span class="string">'oauth_clients'</span> (</span><br><span class="line">         <span class="string">'client_id'</span> VARCHAR(80) not null,</span><br><span class="line">         <span class="string">'client_secret'</span> VARCHAR(80), </span><br><span class="line">         <span class="string">'redirect_uri'</span> VARCHAR(2000),</span><br><span class="line">         <span class="string">'grant_types'</span> VARCHAR(80),</span><br><span class="line">         <span class="string">'scope'</span> VARCHAR(4000),</span><br><span class="line">         <span class="string">'user_id'</span> VARCHAR(80), </span><br><span class="line">         PRIMARY KEY (client_id));</span><br><span class="line">mysql&gt;  CREATE TABLE `oauth_refresh_tokens` ( </span><br><span class="line">         `refresh_token` VARCHAR(40) NOT NULL,</span><br><span class="line">         `client_id` VARCHAR(80) NOT NULL,</span><br><span class="line">         `user_id` VARCHAR(255),</span><br><span class="line">         `expires` TIMESTAMP NOT NULL,</span><br><span class="line">         `scope` VARCHAR(2000),</span><br><span class="line">         PRIMARY KEY (refresh_token));</span><br><span class="line">mysql&gt; CREATE TABLE `oauth_users` (</span><br><span class="line">         `username` VARCHAR(255) NOT NULL,</span><br><span class="line">         `password` VARCHAR(2000),</span><br><span class="line">         `first_name` VARCHAR(255),</span><br><span class="line">         `last_name` VARCHAR(255),</span><br><span class="line">         PRIMARY KEY (username));</span><br><span class="line">mysql&gt; CREATE TABLE `oauth_scopes` (</span><br><span class="line">         <span class="string">'scope'</span> VARCHAR(80) not null,</span><br><span class="line">         <span class="string">'is_default'</span> boolean,</span><br><span class="line">         PRIMARY KEY(scope));</span><br><span class="line">mysql&gt; CREATE TABLE `oauth_jwt` (</span><br><span class="line">         <span class="string">'client_id'</span> VARCHAR(80) not null,</span><br><span class="line">         <span class="string">'subject'</span> VARCHAR(80),</span><br><span class="line">         <span class="string">'public_key'</span> VARCHAR(2000) not null);</span><br><span class="line">mysql&gt; show tables;</span><br><span class="line">+---------------------------+</span><br><span class="line">| Tables_in_ilamp           |</span><br><span class="line">+---------------------------+</span><br><span class="line">| oauth_access_tokens       |</span><br><span class="line">| oauth_authorization_codes |</span><br><span class="line">| oauth_clients             |</span><br><span class="line">| oauth_jwt                 |</span><br><span class="line">| oauth_refresh_tokens      |</span><br><span class="line">| oauth_scopes              |</span><br><span class="line">| oauth_users               |</span><br><span class="line">+---------------------------+</span><br><span class="line">mysql&gt; insert into oauth_clients (client_id, client_secret, redirect_uri ) values (<span class="string">"id"</span>,<span class="string">"psw"</span>,<span class="string">"https://open.bot.tmall.com/oauth/callback"</span>);</span><br></pre></td></tr></table></figure>
-<h2 id="天猫精灵新加技能"><a href="#天猫精灵新加技能" class="headerlink" title="天猫精灵新加技能"></a>天猫精灵新加技能</h2><p>登录开发者平台AliGenie - 语音开发者平台  <a href="https://open.aligenie.com/" target="_blank" rel="noopener">https://open.aligenie.com/</a><br>发布新技能。</p>
-<h3 id="服务设置"><a href="#服务设置" class="headerlink" title="服务设置"></a>服务设置</h3><p>OAuth2</p>
-<ul>
-<li>账户授权连接: <a href="https://xxxx/authorize.php" target="_blank" rel="noopener">https://xxxx/authorize.php</a></li>
-<li>ClientID: id</li>
-<li>Client Secret: psw</li>
-<li>跳转 URL: <a href="https://open.bot.tmall.com/oauth/callback" target="_blank" rel="noopener">https://open.bot.tmall.com/oauth/callback</a></li>
-<li>Access Token URL: <a href="https://xxx/token.php" target="_blank" rel="noopener">https://xxx/token.php</a></li>
-<li>厂商登出 URL: 暂无描述</li>
-</ul>
-<p>设备管理</p>
-<ul>
-<li>开发者网关地址: <a href="https://xxx/gate.php" target="_blank" rel="noopener">https://xxx/gate.php</a></li>
-<li>设备管理跳转连接: 暂无描述</li>
-</ul>
-<h3 id="开机跳过用户登录"><a href="#开机跳过用户登录" class="headerlink" title="开机跳过用户登录"></a>开机跳过用户登录</h3><p>打开 系统设置 中的 用户帐户;<br>打开用户帐户设置窗口后，点击右上角的”解锁”按钮;<br>将自动登录设置为“开启”。</p>
+
+## 天猫精灵新加技能
+
+登录开发者平台AliGenie - 语音开发者平台  https://open.aligenie.com/
+发布新技能。
+
+### 服务设置
+OAuth2
+* 账户授权连接: https://xxxx/authorize.php
+* ClientID: id
+* Client Secret: psw
+* 跳转 URL: https://open.bot.tmall.com/oauth/callback
+* Access Token URL: https://xxx/token.php
+* 厂商登出 URL: 暂无描述
+
+设备管理
+* 开发者网关地址: https://xxx/gate.php
+* 设备管理跳转连接: 暂无描述
+
+
+### 开机跳过用户登录
+打开 系统设置 中的 用户帐户;  
+打开用户帐户设置窗口后，点击右上角的"解锁"按钮;  
+将自动登录设置为“开启”。
+
+## 效果展示
+<div align="center">
+<img src="/2019/04/20/天猫精灵，开灯/1.gif" width="600">
+</div>
+
 <h2 id="参考博客"><a href="#参考博客" class="headerlink" title="参考博客"></a>参考博客</h2><ul>
 <li>esp8266对接天猫精灵（1）前言 - CSDN博客<br><a href="https://blog.csdn.net/qq_35527832/article/details/79143899" target="_blank" rel="noopener">https://blog.csdn.net/qq_35527832/article/details/79143899</a></li>
 <li>天猫精灵接入HomeAssistant<br><a href="https://weibo.com/ttarticle/p/show?id=2309404195482120392395" target="_blank" rel="noopener">https://weibo.com/ttarticle/p/show?id=2309404195482120392395</a></li>
@@ -482,7 +541,7 @@
     </a>
   
   
-    <a href="/2019/04/20/树莓派3b 编译安装OpenCV-4.0.0 for Python3/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2019/04/20/树莓派 编译安装OpenCV-4.0.0 for Python3/" id="article-nav-older" class="article-nav-link-wrap">
       <div class="article-nav-title">树莓派3b 编译安装OpenCV-4.0.0 for Python3</div>
       <i class="icon-circle-right"></i>
     </a>
@@ -510,7 +569,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#整体方案"><span class="toc-number">1.</span> <span class="toc-text">整体方案</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#准备"><span class="toc-number">2.</span> <span class="toc-text">准备</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#花生棒设置"><span class="toc-number">3.</span> <span class="toc-text">花生棒设置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#服务器部署"><span class="toc-number">4.</span> <span class="toc-text">服务器部署</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#apache2-php7-0-web服务器的构建"><span class="toc-number">4.1.</span> <span class="toc-text">apache2+php7.0 web服务器的构建</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#申请SSL证书"><span class="toc-number">4.2.</span> <span class="toc-text">申请SSL证书</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#部署HTTPS服务器"><span class="toc-number">4.3.</span> <span class="toc-text">部署HTTPS服务器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#安装MySQL"><span class="toc-number">4.4.</span> <span class="toc-text">安装MySQL</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#天猫精灵新加技能"><span class="toc-number">5.</span> <span class="toc-text">天猫精灵新加技能</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#服务设置"><span class="toc-number">5.1.</span> <span class="toc-text">服务设置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#开机跳过用户登录"><span class="toc-number">5.2.</span> <span class="toc-text">开机跳过用户登录</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#参考博客"><span class="toc-number">6.</span> <span class="toc-text">参考博客</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#整体方案"><span class="toc-number">1.</span> <span class="toc-text">整体方案</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#参考博客"><span class="toc-number">2.</span> <span class="toc-text">参考博客</span></a></li></ol>
                     </div>
                 </span>
             </div>
@@ -676,7 +735,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">brainfuck</a>
+                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -692,7 +751,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
+                <a href="javascript:void(0)" class="js-tag color5">brainfuck</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -712,6 +771,14 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">RL</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">+ loomo + Android + 机械手</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">import</a>
               </li>
              
@@ -720,11 +787,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">RL</a>
+                <a href="javascript:void(0)" class="js-tag color4">+ opencv + arduino</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">tensorflow</a>
+                <a href="javascript:void(0)" class="js-tag color1">robot</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -732,7 +799,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">yolo</a>
+                <a href="javascript:void(0)" class="js-tag color1">tensorflow</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -740,15 +807,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">loomo</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Android</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">机械手</a>
+                <a href="javascript:void(0)" class="js-tag color5">yolo</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -768,19 +827,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">web</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">jupyter notebook</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">dlib</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Latex</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">jupyter notebook</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -812,15 +867,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">arduino</a>
+                <a href="javascript:void(0)" class="js-tag color5">alphazero</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">tf</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">alphazero</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -836,15 +887,19 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">docker</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">随笔</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Flask</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">docker</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">+ python</a>
               </li>
             
             <div class="clearfix"></div>

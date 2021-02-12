@@ -9,7 +9,7 @@
   <title>Pixar Lamp | Binjun</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="Pixar Lamp  做个跳跳灯！">
-<meta name="keywords" content="python">
+<meta name="keywords" content="+ python">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Pixar Lamp">
 <meta property="og:url" content="http://blog.binjun.xyz/2019/05/14/Pixar-Lamp/index.html">
@@ -19,7 +19,7 @@
 <meta property="og:image" content="http://blog.binjun.xyz/2019/05/14/Pixar-Lamp/设计思路.png">
 <meta property="og:image" content="http://blog.binjun.xyz/2019/05/14/Pixar-Lamp/设计思路-201905.png">
 <meta property="og:image" content="http://blog.binjun.xyz/2019/05/14/Pixar-Lamp/001.jpg">
-<meta property="og:updated_time" content="2021-01-18T02:26:36.366Z">
+<meta property="og:updated_time" content="2021-02-12T06:40:26.178Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Pixar Lamp">
 <meta name="twitter:description" content="Pixar Lamp  做个跳跳灯！">
@@ -302,11 +302,11 @@
 <the rest of contents | 余下全文>
 
 <h1 id="设计思路"><a href="#设计思路" class="headerlink" title="设计思路"></a>设计思路</h1><h3 id="2018年3月"><a href="#2018年3月" class="headerlink" title="2018年3月"></a>2018年3月</h3><div align="center">
-<img src="/2019/05/14/Pixar-Lamp/设计思路.png" width="1000" height="800">
+<img src="/2019/05/14/Pixar-Lamp/设计思路.png" width="600" height="480">
 </div>
 
 <h3 id="2019年5月"><a href="#2019年5月" class="headerlink" title="2019年5月"></a>2019年5月</h3><div align="center">
-<img src="/2019/05/14/Pixar-Lamp/设计思路-201905.png" width="1000" height="800">
+<img src="/2019/05/14/Pixar-Lamp/设计思路-201905.png" width="600" height="480">
 </div>
 
 <h1 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&gt; conda create -n lamp python=3.6</span><br><span class="line">&gt; activate lamp</span><br><span class="line">&gt; pip install numpy</span><br><span class="line">&gt; pip install pandas</span><br><span class="line">&gt; pip install scipy</span><br><span class="line">&gt; pip install tensorflow</span><br><span class="line">&gt; pip install baidu-aip</span><br><span class="line">&gt; pip install pyserial</span><br><span class="line">&gt; pip install opencv-python</span><br><span class="line">&gt; pip install opencv-contrib-python</span><br></pre></td></tr></table></figure>
@@ -354,8 +354,9 @@
 <p>传统方法</p>
 <ul>
 <li>基于图结构(Pictorial Structures)</li>
-<li>DPM(形变部件模型)目标价侧算法<br>DPM算法采用了改进后的HOG特征，SVM分类器和滑动窗口（Sliding Windows）检测思想，针对目标的多视角问题，采用了多组件（Component）的策略，针对目标本身的形变问题，采用了基于图结构（Pictorial Structure）的部件模型策略。此外，将样本的所属的模型类别，部件模型的位置等作为潜变量（Latent Variable），采用多示例学习（Multiple-instance Learning）来自动确定。</li>
+<li>DPM(形变部件模型)目标价侧算法  </li>
 </ul>
+<p>DPM算法采用了改进后的HOG特征，SVM分类器和滑动窗口（Sliding Windows）检测思想，针对目标的多视角问题，采用了多组件（Component）的策略，针对目标本身的形变问题，采用了基于图结构（Pictorial Structure）的部件模型策略。此外，将样本的所属的模型类别，部件模型的位置等作为潜变量（Latent Variable），采用多示例学习（Multiple-instance Learning）来自动确定。</p>
 <p>基于深度学习的方法</p>
 <ul>
 <li><p>直接回归坐标 </p>
@@ -412,18 +413,26 @@
 <li>2016</li>
 </ul>
 <h2 id="参考博客"><a href="#参考博客" class="headerlink" title="参考博客"></a>参考博客</h2><ul>
-<li>如何评价卡内基梅隆大学的开源项目 OpenPose？ - 知乎<br><a href="https://www.zhihu.com/question/59750782" target="_blank" rel="noopener">https://www.zhihu.com/question/59750782</a></li>
-<li>CMU-Perceptual-Computing-Lab/openpose: OpenPose: Real-time multi-person keypoint detection library for body, face, hands, and foot estimation<br><a href="https://github.com/CMU-Perceptual-Computing-Lab/openpose" target="_blank" rel="noopener">https://github.com/CMU-Perceptual-Computing-Lab/openpose</a></li>
-<li>人体姿态估计数据集整理（Pose Estimation/Keypoint） - 上善若水 - CSDN博客<br><a href="https://blog.csdn.net/guo1988kui/article/details/84321581" target="_blank" rel="noopener">https://blog.csdn.net/guo1988kui/article/details/84321581</a></li>
-<li>openpose实时多人2D姿态估计 - weixin_41441682的博客 - CSDN博客<br><a href="https://blog.csdn.net/weixin_41441682/article/details/81357369#" target="_blank" rel="noopener">https://blog.csdn.net/weixin_41441682/article/details/81357369#</a></li>
-<li>人体姿态估计资源大列表（Human Pose Estimation） - xiaolouhan的博客 - CSDN博客<br><a href="https://blog.csdn.net/xiaolouhan/article/details/84321148" target="_blank" rel="noopener">https://blog.csdn.net/xiaolouhan/article/details/84321148</a></li>
-<li>新人求教如何从头学习人体姿态估计 - Ilovepose <a href="http://ilovepose.luohuank.xin/t/66" target="_blank" rel="noopener">http://ilovepose.luohuank.xin/t/66</a><br>论文解析与翻译：《Stacked Hourglass Networks for Human Pose Estimation》 - qq_38522972的博客 - CSDN博客<br><a href="https://blog.csdn.net/qq_38522972/article/details/82958077" target="_blank" rel="noopener">https://blog.csdn.net/qq_38522972/article/details/82958077</a></li>
-<li>人体姿态估计资源大列表（Human Pose Estimation） - weixin_38367817的博客 - CSDN博客<br><a href="https://blog.csdn.net/weixin_38367817/article/details/86522569" target="_blank" rel="noopener">https://blog.csdn.net/weixin_38367817/article/details/86522569</a></li>
-<li>人体姿态估计综述（Human Pose Estimation Overview） - 青青韶华 - CSDN博客<br><a href="https://blog.csdn.net/qq_36165459/article/details/78320535?locationNum=10&amp;fps=1" target="_blank" rel="noopener">https://blog.csdn.net/qq_36165459/article/details/78320535?locationNum=10&amp;fps=1</a></li>
-<li>人体姿态估计（人体关键点检测）分类与经典方法分析（附GitHub地址） - ls83776736的博客 - CSDN博客<br><a href="https://blog.csdn.net/ls83776736/article/details/87991515" target="_blank" rel="noopener">https://blog.csdn.net/ls83776736/article/details/87991515</a><br>MPII Human Pose Database <a href="http://human-pose.mpi-inf.mpg.de/#results" target="_blank" rel="noopener">http://human-pose.mpi-inf.mpg.de/#results</a></li>
-</ul>
-<ul>
-<li>3 机械手臂从零开始 写动态环境 (机器学习实战 教程教学 tutorial) - YouTube&lt;/br&gt;<a href="https://www.youtube.com/watch?v=T5QlePZ4s3U&amp;list=PLXO45tsB95cL8HTAlqkrmKLN_VSjlq4J8&amp;index=3" target="_blank" rel="noopener">https://www.youtube.com/watch?v=T5QlePZ4s3U&amp;list=PLXO45tsB95cL8HTAlqkrmKLN_VSjlq4J8&amp;index=3</a></li>
+<li><p>如何评价卡内基梅隆大学的开源项目 OpenPose？ - 知乎<br><a href="https://www.zhihu.com/question/59750782" target="_blank" rel="noopener">https://www.zhihu.com/question/59750782</a></p>
+</li>
+<li><p>CMU-Perceptual-Computing-Lab/openpose: OpenPose: Real-time multi-person keypoint detection library for body, face, hands, and foot estimation<br><a href="https://github.com/CMU-Perceptual-Computing-Lab/openpose" target="_blank" rel="noopener">https://github.com/CMU-Perceptual-Computing-Lab/openpose</a></p>
+</li>
+<li><p>人体姿态估计数据集整理（Pose Estimation/Keypoint） - 上善若水 - CSDN博客<br><a href="https://blog.csdn.net/guo1988kui/article/details/84321581" target="_blank" rel="noopener">https://blog.csdn.net/guo1988kui/article/details/84321581</a></p>
+</li>
+<li><p>openpose实时多人2D姿态估计 - weixin_41441682的博客 - CSDN博客<br><a href="https://blog.csdn.net/weixin_41441682/article/details/81357369#" target="_blank" rel="noopener">https://blog.csdn.net/weixin_41441682/article/details/81357369#</a></p>
+</li>
+<li><p>人体姿态估计资源大列表（Human Pose Estimation） - xiaolouhan的博客 - CSDN博客<br><a href="https://blog.csdn.net/xiaolouhan/article/details/84321148" target="_blank" rel="noopener">https://blog.csdn.net/xiaolouhan/article/details/84321148</a></p>
+</li>
+<li><p>新人求教如何从头学习人体姿态估计 - Ilovepose <a href="http://ilovepose.luohuank.xin/t/66" target="_blank" rel="noopener">http://ilovepose.luohuank.xin/t/66</a><br>论文解析与翻译：《Stacked Hourglass Networks for Human Pose Estimation》 - qq_38522972的博客 - CSDN博客<br><a href="https://blog.csdn.net/qq_38522972/article/details/82958077" target="_blank" rel="noopener">https://blog.csdn.net/qq_38522972/article/details/82958077</a></p>
+</li>
+<li><p>人体姿态估计资源大列表（Human Pose Estimation） - weixin_38367817的博客 - CSDN博客<br><a href="https://blog.csdn.net/weixin_38367817/article/details/86522569" target="_blank" rel="noopener">https://blog.csdn.net/weixin_38367817/article/details/86522569</a></p>
+</li>
+<li><p>人体姿态估计综述（Human Pose Estimation Overview） - 青青韶华 - CSDN博客<br><a href="https://blog.csdn.net/qq_36165459/article/details/78320535?locationNum=10&amp;fps=1" target="_blank" rel="noopener">https://blog.csdn.net/qq_36165459/article/details/78320535?locationNum=10&amp;fps=1</a></p>
+</li>
+<li><p>人体姿态估计（人体关键点检测）分类与经典方法分析（附GitHub地址） - ls83776736的博客 - CSDN博客<br><a href="https://blog.csdn.net/ls83776736/article/details/87991515" target="_blank" rel="noopener">https://blog.csdn.net/ls83776736/article/details/87991515</a><br>MPII Human Pose Database <a href="http://human-pose.mpi-inf.mpg.de/#results" target="_blank" rel="noopener">http://human-pose.mpi-inf.mpg.de/#results</a></p>
+</li>
+<li><p>3 机械手臂从零开始 写动态环境 (机器学习实战 教程教学 tutorial) - YouTube&lt;/br&gt;<a href="https://www.youtube.com/watch?v=T5QlePZ4s3U&amp;list=PLXO45tsB95cL8HTAlqkrmKLN_VSjlq4J8&amp;index=3" target="_blank" rel="noopener">https://www.youtube.com/watch?v=T5QlePZ4s3U&amp;list=PLXO45tsB95cL8HTAlqkrmKLN_VSjlq4J8&amp;index=3</a></p>
+</li>
 </ul>
 <h1 id="ReID"><a href="#ReID" class="headerlink" title="ReID"></a>ReID</h1><p>行人智能认知</p>
 <ul>
@@ -448,7 +457,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">python</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">+ python</a>
         		</li>
       		
 		</ul>
@@ -722,7 +731,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">brainfuck</a>
+                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -738,7 +747,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
+                <a href="javascript:void(0)" class="js-tag color5">brainfuck</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -758,6 +767,14 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">RL</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">+ loomo + Android + 机械手</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">import</a>
               </li>
              
@@ -766,11 +783,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">RL</a>
+                <a href="javascript:void(0)" class="js-tag color4">+ opencv + arduino</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">tensorflow</a>
+                <a href="javascript:void(0)" class="js-tag color1">robot</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -778,7 +795,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">yolo</a>
+                <a href="javascript:void(0)" class="js-tag color1">tensorflow</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -786,15 +803,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">loomo</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Android</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">机械手</a>
+                <a href="javascript:void(0)" class="js-tag color5">yolo</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -814,19 +823,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">web</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">jupyter notebook</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">dlib</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Latex</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">jupyter notebook</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -858,15 +863,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">arduino</a>
+                <a href="javascript:void(0)" class="js-tag color5">alphazero</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">tf</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">alphazero</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -882,15 +883,19 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">docker</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">随笔</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Flask</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">docker</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">+ python</a>
               </li>
             
             <div class="clearfix"></div>
