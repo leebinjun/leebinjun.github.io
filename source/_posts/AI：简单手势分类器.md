@@ -1,0 +1,185 @@
+---
+title: 简单手势分类器
+date: 2019-04-24 20:41:48
+tags:
+  - raspberry 
+  - tf
+  - opencv
+  - python
+---
+** {{ title }} ** <Excerpt in index | 首页摘要>
+
+树莓派作为一个视觉传感器，串口实时返回手势分类结果。
+
+<!-- more -->
+<The rest of contents | 余下全文>
+
+## 准备
+
+### 安装tensorflow
+维护树莓派交叉编译版本的github项目
+* samjabrahams/tensorflow-on-raspberry-pi: TensorFlow for Raspberry Pi  
+https://github.com/samjabrahams/tensorflow-on-raspberry-pi
+``` bash
+sudo apt install libatlas-base-dev
+pip3 install tensorflow
+``` 
+安装旧版本
+``` bash 
+$ wget https://github.com/samjabrahams/tensorflow-on-raspberry-pi/releases/download/v0.11.0/tensorflow-0.11.0-py3-none-any.whl
+$ sudo pip3 install tensorflow-0.11.0-py3-none-any.whl
+```
+### 安装serial
+
+安装串口模块
+``` bash
+$ sudo apt-get install python-serial
+$ pip install serial
+$ pip install pyserial
+```
+如果需要指定位置
+``` bash
+$ sudo pip install --target=/usr/local/lib/python3.5/dist-packages pyserial
+```
+
+### 一些包
+``` bash
+pip install pillow
+pip install matplotlib
+```
+
+## 数据处理
+使用OpenCV的BackgroundSubtractor类，分割前景和背景，获得手势灰度图
+``` python
+camera = cv2.VideoCapture(0) # 参数0表示第一个摄像头
+bs = cv2.createBackgroundSubtractorKNN(detectShadows=True)
+es = cv2.getStructuringElement(cv2.MORPH_ELLIPSE, (3, 3))
+while True:
+    grabbed, frame_lwpCV = camera.read()
+    fgmask = bs.apply(frame_lwpCV) # 背景分割器，该函数计算了前景掩码
+    # 二值化阈值处理，前景掩码含有前景的白色值以及阴影的灰色值，在阈值化图像中，将非纯白色（244~255）的所有像素都设为0，而不是255
+    th = cv2.threshold(fgmask.copy(), 244, 255, cv2.THRESH_BINARY)[1]
+    # 下面就跟基本运动检测中方法相同，识别目标，检测轮廓，在原始帧上绘制检测结果
+    dilated = cv2.dilate(th, es, iterations=2) # 形态学膨胀
+    image, contours, hierarchy = cv2.findContours(dilated, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE) # 该函数计算一幅图像中目标的轮廓
+    # rasp
+    # contours, hierarchy = cv2.findContours(dilated, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE) # 该函数计算一幅图像中目标的轮廓
+    for c in contours:
+        if cv2.contourArea(c) > 2000: #1600:
+            (x, y, w, h) = cv2.boundingRect(c)
+            cv2.rectangle(frame_lwpCV, (x, y), (x + w, y + h), (255, 255, 0), 2)
+    cv2.imshow('detection', frame_lwpCV)
+    # 按'q'健退出循环
+# When everything done, release the capture
+```
+
+## 模型和训练
+通过一个小的卷积网络来实现分类，两层卷积+两层全连接
+``` python
+def model(x, keep_prob):
+    '''Build the classify model
+    Args:
+      x: Input, tf.placeholder, the dimension is [-1, 784]
+      keep_prob: 
+    Returns:
+      y: Classification probability
+    '''
+    x_image = tf.reshape(x, [-1, w, h, 1])
+    # Conv1
+    with tf.name_scope('conv1'):
+        W_conv1 = weight_variable([3, 3, 1, 16], name="weight")
+        b_conv1 = bias_variable([16], name='bias')
+        h_conv1 = tf.nn.relu(tf.nn.conv2d(x_image, W_conv1, strides=[1,1,1,1], padding="SAME", name='conv')+ b_conv1)
+        h_pool1 = tf.nn.max_pool(h_conv1, ksize=[1,2,2,1], strides=[1,2,2,1], padding="SAME", name="pool")
+    # Conv2
+    with tf.name_scope('conv2'):
+        W_conv2 = weight_variable([3, 3, 16, 32], name="weight")
+        b_conv2 = bias_variable([32], name='bias')
+        h_conv2 = tf.nn.relu(tf.nn.conv2d(h_pool1, W_conv2, strides=[1,1,1,1], padding="SAME", name='conv')+ b_conv2)
+        h_pool2 = tf.nn.max_pool(h_conv2, ksize=[1,2,2,1], strides=[1,2,2,1], padding="SAME", name="pool")
+    # fc1
+    with tf.name_scope('fc1'):
+        W_fc1 = weight_variable([7*7*32, 256], name="weight")
+        b_fc1 = bias_variable([256], name='bias')
+        h_pool2_flat = tf.reshape(h_pool2, [-1, 7*7*32])
+        h_fc1 = tf.nn.relu(tf.matmul(h_pool2_flat, W_fc1)+b_fc1)
+    # Dropout
+    h_fc1_drop = tf.nn.dropout(h_fc1, keep_prob)
+    # fc2
+    with tf.name_scope('fc2'):
+        W_fc2 = weight_variable([256, 4], name="weight")
+        b_fc2 = bias_variable([4], name='bias')
+        y = tf.nn.softmax(tf.matmul(h_fc1_drop, W_fc2)+b_fc2, name="output")
+    return y
+```
+
+## HC-05蓝牙串口
+
+### 蓝牙配对
+
+连接(rt反接)
+* usb-ttl ---------- bluetooth
+* RXD &nbsp;&nbsp;&nbsp;&nbsp;---------- TXD
+* TXD &nbsp;&nbsp;&nbsp;&nbsp;---------- RXD
+
+按住复位键插USB，进入AT模式
+打开串口助手，设置波特率38400，数据位8位，停止位1位，无校验位，加回车换行(发送消息包含换行符)
+修改名称
+``` bash
+→ AT+ NAME=xxx
+→ AT+ NAME?
+```
+设置蓝牙密码，注意两块蓝牙的密码都要一样
+``` bash
+→ AT+ PSWD=1234
+→ AT+ PSWD?
+```
+设置主从模式
+串口调试助手A，将蓝牙A配置为主机模式
+``` bash
+→ AT+ ROLE=1
+→ AT+ ROLE?
+```
+串口调试助手B，将蓝牙B配置为从机模式
+``` bash
+→ AT+ ROLE=0
+```
+设置波特率9600，无校验位，1停止位
+``` bash
+→ AT+ UART:9600,0,0
+→ AT+ UART?
+```
+设置连接模式
+``` bash
+→ AT+ CMODE=0
+→ AT+ CMODE?
+```
+查询蓝牙地址，并相互绑定，注意把地址的冒号换成逗号
+``` bash
+→ AT+ ADDR?
+→ AT+ BIND=98d3,32,307440
+```
+
+
+## 结果
+查看端口
+``` bash
+$ ls /dev/tty*
+```
+运行
+``` bash
+$ python run.py --serial /dev/ttyUSB0
+```
+<img src = "简单手势分类器\02.png" width=600 height=300>
+<img src = "简单手势分类器\01.png" width=600 height=300>
+
+
+## 参考博客
+* 【Python+OpenCV】目标跟踪-背景分割器：KNN、MOG2和GMG - CSDN博客  
+https://blog.csdn.net/lwplwf/article/details/73551648
+* Tensorflow+树莓派，自制“猜拳神器” - Lauyeed的博客 - CSDN博客  
+https://blog.csdn.net/Lauyeed/article/details/79345685
+* 蓝牙模块HC-05使用说明_图文_百度文库  
+http://wenku.baidu.com/link?url=tDhQ1eN2RBFS4-iA9dFZuuYUUb21nx3ZpahLARbDaesVM0HkHMeiLc0NzfR7W6NVqc5F57p0x8t6c_3T3JN4ne9NCEB540mwEYV5kLpFSfq
+* AttributeError: module 'serial' has no attribute 'Serial' - m0_37827405的博客 - CSDN博客  
+https://blog.csdn.net/m0_37827405/article/details/80879678
