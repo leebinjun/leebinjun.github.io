@@ -73,9 +73,7 @@ aplayer:
 https://music.163.com/song/media/outer/url?id=xxxxxxxxx.mp3
 ```
 
-歌曲的歌词文件lrc和封面地址cover可以通过[音乐直链搜索工具](https://music.liuzhijin.cn/
-)获取。
-
+歌曲的歌词文件lrc和封面地址cover可以通过[音乐直链搜索工具](https://music.liuzhijin.cn/)获取。
 
 ## Reference
 
