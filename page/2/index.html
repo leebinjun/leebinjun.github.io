@@ -302,6 +302,277 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-随笔_日常练琴" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/03/01/随笔_日常练琴/">每日练琴</a>
+    </h1>
+  
+
+        
+        <a href="/2020/03/01/随笔_日常练琴/" class="archive-article-date">
+  	<time datetime="2020-02-29T18:25:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-01</time>
+</a>
+        
+      </header>
+    
+
+    <!-- 目录内容 -->
+    
+    <!-- 目录内容结束 -->
+
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="节拍器"><a href="#节拍器" class="headerlink" title="节拍器"></a>节拍器</h2><html>
+
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- <title>节拍器</title> -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            let speed = 60, //节拍速度
+                arrClick = [],  //测速时每次点击的速度组成的数组，节拍速度取其平均值
+                clickTime = 0,  //测速点击计时器，超过 5 秒清空数组
+                s = Date.now(), //记录每一次点击的时间，下一次点击时与此时间的间隔，来计算速度
+                time = 0,   //play 过程 timeout 变量
+                times = 0,  //44拍节的计数器
+                isPlay = false, //是否正在播放
+                speedMsg = document.getElementById("speed"),    //页面正中间显示速度值的元素
+                rangeValue = document.getElementById("rangeValue"), //滑块元素
+                elSpeed1 = document.getElementById("speed1"),
+                elSpeed2 = document.getElementById("speed2"),
+                showSpeed = () => {//显示速度值的方法（或者叫 update 方法）
+                    rangeValue.value = speedMsg.innerText = speed;
+                    elSpeed1.innerText = Math.round(speed / 2);
+                    elSpeed2.innerText = speed * 2;
+                }; 
+            /** 测速按钮点击 */
+            document.getElementById("btnTest").addEventListener("click", function () {
+                let lastSpeed = Math.floor(60000 / (Date.now() - s));
+                if (Math.abs(lastSpeed - arrClick[arrClick.length - 1]) > 30) { arrClick = []; }  //如果点击时间和上次差别较大，则清零重测
+                arrClick.push(lastSpeed);
+                if (arrClick.length > 31) arrClick.shift(); //最大容量保持在30个（除去第 1 个不用）
+                //如果数量多于1个则计算速度（第 1 个时间间隔太久，不准确，弃之）
+                if (arrClick.length > 1) {
+                    //取第2个到最后的平均值
+                    speed = Math.ceil((arrClick.reduce((sum, n) => sum + n) - arrClick[0]) / (arrClick.length - 1));
+                    console.log(arrClick.slice(1, arrClick.length).join("+") + " = " + (arrClick.reduce((s, n) => s + n) - arrClick[0]) + " / " + (arrClick.length - 1));
+                    if (arrClick.length > 5) document.getElementById("msg").innerText = "多点几次更准确...";
+                }
+                showSpeed();
+                s = Date.now();
+                document.getElementById("btnStop").click(); //测速时停止播放
+                //两次点击间隔大于 3 秒就重置
+                window.clearTimeout(clickTime);
+                clickTime = window.setTimeout(function () {
+                    arrClick = [];
+                    document.getElementById("msg").innerText = "";
+                }, 3000);
+            });
+            /** 播放按钮点击 */
+            document.getElementById("btnPlay").addEventListener("click", function () {
+                isPlay = true;
+                play();
+                this.style.display = "none";
+                document.getElementById("btnStop").style.display = "inline-block";
+            });
+            /** 停止按钮点击 */
+            document.getElementById("btnStop").addEventListener("click", function () {
+                window.clearTimeout(time);
+                isPlay = false;
+                this.style.display = "none";
+                document.getElementById("btnPlay").style.display = "inline-block";
+            });
+            /** 减号按钮点击 */
+            document.getElementById("btnSub").addEventListener("click", function () {
+                speed--;
+                showSpeed();
+            });
+            /** 加号按钮点击 */
+            document.getElementById("btnAdd").addEventListener("click", function () {
+                speed++;
+                showSpeed();
+            });
+            document.getElementById("speed1").addEventListener("click",function(){
+                speed = this.innerText * 1;
+                showSpeed();
+            })
+            document.getElementById("speed2").addEventListener("click",function(){
+                speed = this.innerText * 1;
+                showSpeed();
+            })
+            /** 滑动条更改 */
+            rangeValue.addEventListener("change", function () {
+                speed = this.value * 1;
+                showSpeed();
+            });
+            /** 播放 */
+            let play = () => {
+                window.clearTimeout(time);
+                playsound();
+                if (isPlay) {
+                    time = window.setTimeout(play, Math.floor(60000 / speed));
+                };
+            }
+            let audioCtx = new AudioContext();
+            /** 发声 */
+            let playsound = () => {
+                times++;
+                let oscillator = audioCtx.createOscillator();
+                let gainNode = audioCtx.createGain();
+                oscillator.connect(gainNode);
+                gainNode.connect(audioCtx.destination);
+                oscillator.type = 'sine';
+                if (times%4){
+                    oscillator.frequency.setValueAtTime(200, audioCtx.currentTime);
+                }
+                else
+                {
+                    oscillator.frequency.setValueAtTime(700, audioCtx.currentTime);
+                    times=0;
+                }
+                oscillator.frequency.linearRampToValueAtTime(50, audioCtx.currentTime + 0.1);
+                gainNode.gain.setValueAtTime(0, audioCtx.currentTime);
+                gainNode.gain.linearRampToValueAtTime(1, audioCtx.currentTime + 0.01);
+                gainNode.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + 0.5);
+                oscillator.start(audioCtx.currentTime);
+                oscillator.stop(audioCtx.currentTime + 0.5);
+            }
+        });
+    </script>
+</head>
+
+<body>
+    <style>
+        *{padding: 0;margin: 0;font-family: Cambria, "微软雅黑";}
+        /* header{background-image: linear-gradient(to bottom,#4387fd,#4683ea);padding: 20px;font-size: 30px;color: #fff;} */
+        footer{padding: 20px;text-align: center;color: #ccc;}
+        footer>a{color: #999;}
+        .section{text-align: center;padding: 20px;width: 300px;margin: auto;}
+        .sectionsection{margin: 30px auto;}
+        .speed{display: flex;justify-content:space-between;align-items: center;}
+        .sectionbutton {padding: 5px 10px;}
+        #btnTest {padding: 15px 30px;font-size: 20px;}
+        #btnPlay,#btnStop{font-size: 50px;border: 0;background: transparent;}
+        #btnStop {display: none;}
+        #speed{font-size: 45px;}
+        #speed1,#speed2{color: #999;cursor: pointer;}
+        #speed1:hover,#speed2:hover{color: #333;}
+        #msg{height: 20px;padding-top: 5px; font-size: 9px;color: gray;}
+    </style>
+    <header>节拍器</header>
+    <section class="section">
+        <button class="sectionbutton" id="btnTest">连续点击测速</button>
+        <div id="msg"></div>
+        <section class="sectionsection">
+            <div class="speed">
+                <button id="btnSub">➖</button>
+                <div id="speed1">30</div>
+                <div id="speed">60</div>
+                <div id="speed2">120</div>
+                <button id="btnAdd">➕</button>
+            </div>
+            <div><input type="range" style="width:100%;" min="20" max="300" id="rangeValue" value="60"></div>
+        </section>
+        <button id="btnPlay">▶️</button>
+        <button id="btnStop">⏹️</button>
+    </section>
+    <footer>2018-02-05 by <a href="mailto://zk1218@gmail.com" target="_blank" rel="noopener">📧 zhangkai</a></footer>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"position":"right","width":200,"height":400,"hOffset":50,"vOffset":-95},"mobile":{"show":false},"react":{"opacity":0.7},"log":false});</script><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"position":"right","width":200,"height":400,"hOffset":50,"vOffset":-95},"mobile":{"show":false},"react":{"opacity":0.7},"log":false});</script></body>
+
+</html>
+
+
+<h2 id="音阶练习"><a href="#音阶练习" class="headerlink" title="音阶练习"></a>音阶练习</h2><p><strong>教学频道</strong></p>
+<ul>
+<li>Wen吉他誌<br><a href="https://www.youtube.com/user/k7256580" target="_blank" rel="noopener">https://www.youtube.com/user/k7256580</a></li>
+</ul>
+<p><img src="/2020/03/01/随笔_日常练琴/0.png"></p>
+<p><strong>注意</strong></p>
+<ul>
+<li>主音开始，主音结束，主音是基准点</li>
+<li>模进练习(三个音一组、四个音一组、三度音模进)</li>
+<li>唱出来</li>
+<li>节拍器</li>
+</ul>
+<p><strong>建议</strong></p>
+<ul>
+<li>以一分钟为最小练习单位</li>
+<li>熟悉一个pattern后再学下一个</li>
+<li>用脑袋练习</li>
+</ul>
+<h2 id="我的吉他谱"><a href="#我的吉他谱" class="headerlink" title="我的吉他谱"></a>我的吉他谱</h2><ul>
+<li>leebinjun/my-guitar-tab: let‘s play the guitar together : )<br><a href="https://github.com/leebinjun/my-guitar-tab" target="_blank" rel="noopener">https://github.com/leebinjun/my-guitar-tab</a></li>
+</ul>
+<h2 id="常见的和弦套路"><a href="#常见的和弦套路" class="headerlink" title="常见的和弦套路"></a>常见的和弦套路</h2><ul>
+<li>万能和弦15634325<br>拿起吉他用这个套路走一遍，发现它的和声变化是如此的顺畅，如果你自己创作的话可以尝试一下这个套路，但是它也有缺点，就是大家都用就显得没有特0色。</li>
+<li>万能变体13634325<br>这个套路是将第二个和弦变成了III级和弦，我们都知道I、IV、V是大三和弦，和弦色彩很阳光、很明亮，II、III、VI级和弦是小三和弦，色彩很阴柔、很暗淡，大家尝试一下这个套路，看看感觉有什么不同。</li>
+<li>1645+万能<br>主歌部分使用1645，副歌部分使用万能和弦，这样可以添加一些变化。</li>
+<li>1451<br>这个套路只使用了大三和弦，正能量满满啊！</li>
+<li>1625<br>这个套路将IV级换成了II级，如果是C调的话就省去了大横按F，初学者练练这个套路，《二月十四》就是这个套路。</li>
+<li>1645变体<br>V级和弦使用V7代替，V7和弦听起来极不稳定，让人非常想把它拖回来，后面接着就是I级和弦，瞬间满足了。</li>
+<li>15634145<br>使用这个套路歌曲也很多，《开不了口》《简单爱》《爱一个好难》《约定》《深呼吸》《光辉岁月》，其实是来自己欧洲的经典和声。</li>
+<li>17654325<br>很多流行喜欢用的和弦走向，现代很多歌都是这样的走向，例如《好心分手》、《菊花台》、《挥着翅膀的女孩》、《饮歌》，其实这个走向就叫做卡农。</li>
+</ul>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/03/01/随笔_日常练琴/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-随笔_那些年，我们一起去比赛" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -1625,88 +1896,6 @@
 
 
   
-    <article id="post-数模：空间博弈演化" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/11/12/数模：空间博弈演化/">空间博弈演化</a>
-    </h1>
-  
-
-        
-        <a href="/2019/11/12/数模：空间博弈演化/" class="archive-article-date">
-  	<time datetime="2019-11-11T16:41:12.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-12</time>
-</a>
-        
-      </header>
-    
-
-    <!-- 目录内容 -->
-    
-    <!-- 目录内容结束 -->
-
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><img src="/2019/11/12/数模：空间博弈演化/空间博弈演化/01.png">  </p>
-<h1 id="Evolutionary-games-and-spatial-chaos"><a href="#Evolutionary-games-and-spatial-chaos" class="headerlink" title="Evolutionary games and spatial chaos"></a>Evolutionary games and spatial chaos</h1>
-        
-          <a class="article-more-a" href="/2019/11/12/数模：空间博弈演化/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">数模</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/11/12/数模：空间博弈演化/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/10/">10</a><a class="extend next" rel="next" href="/page/3/">Next &raquo;</a>
@@ -1822,6 +2011,10 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">RL</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">3D打印</a>
               </li>
              
@@ -1830,15 +2023,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">RL</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">tensorflow</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">dlib</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1851,6 +2036,10 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">yolo</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">dlib</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1886,10 +2075,6 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">+ loomo + Android + 机械手</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">Arduino</a>
               </li>
              
@@ -1898,11 +2083,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">+ opencv + arduino</a>
+                <a href="javascript:void(0)" class="js-tag color4">+ loomo + Android + 机械手</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">jupyter notebook</a>
+                <a href="javascript:void(0)" class="js-tag color4">+ opencv + arduino</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1914,7 +2099,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">today is a happy day</a>
+                <a href="javascript:void(0)" class="js-tag color4">php</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">mysql</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1922,11 +2111,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">php</a>
+                <a href="javascript:void(0)" class="js-tag color2">jupyter notebook</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">mysql</a>
+                <a href="javascript:void(0)" class="js-tag color1">today is a happy day</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1950,6 +2139,10 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">AlphaZero</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">brainfuck</a>
               </li>
              
@@ -1958,19 +2151,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">tkinter</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">AlphaZero</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">-go</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">git</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">tkinter</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1978,11 +2163,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Flask</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">docker</a>
+                <a href="javascript:void(0)" class="js-tag color4">-go</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1991,6 +2172,14 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">随笔</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">docker</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Flask</a>
               </li>
             
             <div class="clearfix"></div>
