@@ -18,7 +18,7 @@
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://blog.binjun.xyz/2019/11/10/软件：pyecharts数据可视化/pyecharts数据可视化/00.jpg">
 <meta property="og:image" content="http://blog.binjun.xyz/2019/11/10/软件：pyecharts数据可视化/pyecharts数据可视化/bar.png">
-<meta property="og:updated_time" content="2021-12-29T17:31:51.594Z">
+<meta property="og:updated_time" content="2022-01-03T03:30:23.695Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="pyecharts数据可视化">
 <meta name="twitter:description" content="什么是pyechartspyecharts 是一个用于生成 Echarts 图表的类库。echarts 是百度开源的一个数据可视化 JS 库，主要用于数据可视化。pyecharts 是一个用于生成 Echarts 图表的类库。实际上就是 Echarts 与 Python 的对接。使用 pyecharts 可以生成独立的网页，也可以在 flask , Django 中集成使用。  pyecharts">
@@ -383,7 +383,6 @@ $(document).ready(function(){
 </div>
 </body>
 </html>
-
 
 <h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install pyecharts</span><br></pre></td></tr></table></figure>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pyecharts</span><br><span class="line">pyecharts.__version__</span><br></pre></td></tr></table></figure>
@@ -1090,8 +1089,8 @@ $(document).ready(function(){
     </body>
 </html>
 
-
-
+<p>词云图设置背景形状，蒙版图片可以从iconfont上下载。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># WordCloud模块，链式调用配置，最终生成html文件</span></span><br><span class="line">c = (</span><br><span class="line">    WordCloud()</span><br><span class="line">    .add(<span class="string">""</span>, words, word_size_range=[<span class="number">10</span>, <span class="number">60</span>], mask_image=<span class="string">"蒙版图片.png"</span>)</span><br><span class="line">    .set_global_opts(title_opts=opts.TitleOpts(title=<span class="string">"WordCloud-shape-diamond"</span>))</span><br><span class="line"><span class="comment">#     .render("wordcloud_diamond.html")</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">c.render_notebook()</span><br></pre></td></tr></table></figure>
 <h2 id="Geo（地图）"><a href="#Geo（地图）" class="headerlink" title="Geo（地图）"></a>Geo（地图）</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> pyecharts <span class="keyword">import</span> options <span class="keyword">as</span> opts</span><br><span class="line"><span class="keyword">from</span> pyecharts.charts <span class="keyword">import</span> Geo, Page</span><br><span class="line"><span class="keyword">from</span> pyecharts.faker <span class="keyword">import</span> Collector, Faker</span><br><span class="line"><span class="keyword">from</span> pyecharts.globals <span class="keyword">import</span> ChartType, SymbolType</span><br><span class="line"></span><br><span class="line">geo_line =  (</span><br><span class="line">        Geo()</span><br><span class="line">        .add_schema(maptype=<span class="string">"china"</span>)</span><br><span class="line">        .add(</span><br><span class="line">            <span class="string">"destination"</span>,</span><br><span class="line">            [(<span class="string">"广州"</span>, <span class="number">55</span>), (<span class="string">"北京"</span>, <span class="number">66</span>), (<span class="string">"杭州"</span>, <span class="number">77</span>), (<span class="string">"重庆"</span>, <span class="number">88</span>)],</span><br><span class="line">            type_=ChartType.EFFECT_SCATTER,</span><br><span class="line">            color=<span class="string">"blue"</span>,</span><br><span class="line">        )</span><br><span class="line">        .add(</span><br><span class="line">            <span class="string">"geo"</span>,</span><br><span class="line">            [(<span class="string">"广州"</span>, <span class="string">"上海"</span>), (<span class="string">"广州"</span>, <span class="string">"北京"</span>), (<span class="string">"广州"</span>, <span class="string">"杭州"</span>), (<span class="string">"广州"</span>, <span class="string">"重庆"</span>)],</span><br><span class="line">            type_=ChartType.LINES,</span><br><span class="line">            effect_opts=opts.EffectOpts(</span><br><span class="line">                symbol=SymbolType.ARROW, symbol_size=<span class="number">6</span>, color=<span class="string">"blue"</span></span><br><span class="line">            ),</span><br><span class="line">            linestyle_opts=opts.LineStyleOpts(curve=<span class="number">0.3</span>),</span><br><span class="line">        )</span><br><span class="line">        .set_series_opts(label_opts=opts.LabelOpts(is_show=<span class="literal">False</span>))</span><br><span class="line">        .set_global_opts(title_opts=opts.TitleOpts(title=<span class="string">"Geo-Lines"</span>))</span><br><span class="line">    )</span><br><span class="line"></span><br><span class="line">geo_line.render_notebook()</span><br></pre></td></tr></table></figure>
 <html>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
@@ -1514,7 +1513,7 @@ $(document).ready(function(){
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2021 Binjun
+    		&copy; 2022 Binjun
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
@@ -1615,26 +1614,6 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">3D打印</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">吉他</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">tensorflow</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">RL</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">dlib</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">import</a>
               </li>
              
@@ -1643,7 +1622,27 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">tensorflow</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">3D打印</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">吉他</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">RL</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">yolo</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">dlib</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1679,19 +1678,19 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">+ loomo + Android + 机械手</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">+ opencv + arduino</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">Arduino</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">robot</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">+ loomo + Android + 机械手</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">+ opencv + arduino</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1715,11 +1714,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">数模</a>
+                <a href="javascript:void(0)" class="js-tag color1">today is a happy day</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">today is a happy day</a>
+                <a href="javascript:void(0)" class="js-tag color3">数模</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1747,11 +1746,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">flask</a>
+                <a href="javascript:void(0)" class="js-tag color5">brainfuck</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">brainfuck</a>
+                <a href="javascript:void(0)" class="js-tag color1">flask</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1760,6 +1759,10 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">-go</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">tkinter</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1780,10 +1783,6 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Flask</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">tkinter</a>
               </li>
             
             <div class="clearfix"></div>
