@@ -6,7 +6,7 @@ tags:
   - 数模
 ---
 
-<img src="空间博弈与matplotlib绘制gif动图\03.gif">
+<img src="数模：空间博弈与matplotlib绘制gif动图\03.gif">
 
 ```python
 # 独立窗口显示
@@ -105,7 +105,7 @@ if __name__ == '__main__':
     game.update_and_plot(5)
 
 ```
-<img src="空间博弈与matplotlib绘制gif动图\01.png">
+<img src="数模：空间博弈与matplotlib绘制gif动图\01.png">
 
 生命游戏中的图形
 * Category:Animated images - LifeWiki  
@@ -293,7 +293,7 @@ anim = animation.FuncAnimation(fig, update, frames=data_gen,interval=10,
 
 plt.show()
 ```
-<img src="空间博弈与matplotlib绘制gif动图\02.gif">
+<img src="数模：空间博弈与matplotlib绘制gif动图\02.gif">
 
 
 ```python
@@ -327,7 +327,7 @@ anim.save('cells_animation.gif',writer='imagemagick')
 ```
 
 
-<img src="空间博弈与matplotlib绘制gif动图\03.gif">
+<img src="数模：空间博弈与matplotlib绘制gif动图\03.gif">
 
 
 

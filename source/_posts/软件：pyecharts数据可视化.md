@@ -5,10 +5,9 @@ tags:
  - import
 ---
 
-
-
 # 什么是pyecharts
-pyecharts 是一个用于生成 Echarts 图表的类库。   
+
+pyecharts 是一个用于生成 Echarts 图表的类库。
 echarts 是百度开源的一个数据可视化 JS 库，主要用于数据可视化。pyecharts 是一个用于生成 Echarts 图表的类库。实际上就是 Echarts 与 Python 的对接。  
 使用 pyecharts 可以生成独立的网页，也可以在 flask , Django 中集成使用。
 
@@ -21,8 +20,8 @@ https://pyecharts.org/#/zh-cn/intro
 * 中文简介 - Document  
 https://gallery.pyecharts.org/#/README
 
-
 # echarts官方实例
+
 可以在官网上使用js在线编辑运行并下载图片。
 
 * Examples - Apache ECharts (incubating)  
@@ -218,12 +217,11 @@ $(document).ready(function(){
 </body>
 </html>
 
-
 # 安装
+
 ``` shell
 pip install pyecharts
 ```
-
 
 ``` python
 import pyecharts
@@ -231,9 +229,8 @@ pyecharts.__version__
 ```
     '1.5.1'
 
-
-
 # 使用方法
+
 ``` python
 chart_object = Type()       # 初始化具体类型图表
 chart_object.add()          # 添加图表的数据和设置各种配置项
@@ -243,13 +240,11 @@ chart_object.render()       # 生成 .html 文件；支持 path 参数，设置�
 
 默认的编码类型为 UTF-8。
 
-
 # 示例
 
 ## Bar（柱状图/条形图）
 
 ### 生成html
-
 
 ``` python
 from pyecharts.charts import Bar
@@ -274,14 +269,10 @@ bar.set_global_opts(title_opts=opts.TitleOpts(title="某商场销售情况"))
 bar.render()
 ```
 
-
-
-
     'C:\\Users\\Administrator\\Desktop\\Python-BaseTutorial-master\\render.html'
 
 
-
-### 在 jupyter notebook 中显示 
+### 在 jupyter notebook 中显示
 
 
 ```python
@@ -360,7 +351,7 @@ pie.render_notebook()
                 }
             });
         </script>
-        <div id="dc6bc23d60bd4973916b962be084b2a3" style="width:900px; height:500px;"></div>
+        <div id="dc6bc23d60bd4973916b962be084b2a3" style="width: 100%;"></div>
         <script>
             require(['echarts'], function(echarts) {
                 var chart_dc6bc23d60bd4973916b962be084b2a3 = echarts.init(
@@ -1102,7 +1093,19 @@ wordcloud.render_notebook()
     </body>
 </html>
 
+词云图设置背景形状，蒙版图片可以从iconfont上下载。
 
+``` python
+# WordCloud模块，链式调用配置，最终生成html文件
+c = (
+    WordCloud()
+    .add("", words, word_size_range=[10, 60], mask_image="蒙版图片.png")
+    .set_global_opts(title_opts=opts.TitleOpts(title="WordCloud-shape-diamond"))
+#     .render("wordcloud_diamond.html")
+)
+
+c.render_notebook()
+```
 
 ## Geo（地图）
 
