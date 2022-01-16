@@ -191,10 +191,7 @@ ctrl+shift+p打开命令面板，然后输入markdowm->选择在侧边打开锁�
 安装Markdown Preview Enhanced插件  
 快捷键 (ctrl+k) + v 打开浏览
 
-<<<<<<< HEAD
-=======
 ### 带过滤功能的Hexo首页生成器插件
 
 * hexo-generator-index2/README_zh.md at master · Jamling/hexo-generator-index2  
 https://github.com/Jamling/hexo-generator-index2/blob/master/README_zh.md  
->>>>>>> 057af1afbd2d1fd63b6b9c9578a8fc82136565b7

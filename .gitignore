@@ -5,9 +5,6 @@ public/
 .deploy_git/
 .vscode
 node_modules
-<<<<<<< HEAD
 package.json
 package-lock.json
-=======
->>>>>>> 057af1afbd2d1fd63b6b9c9578a8fc82136565b7
 imgs/

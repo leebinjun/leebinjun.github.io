@@ -13,12 +13,9 @@ timezone: Asia/Shanghai
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-# url: https://leebinjun.github.io/
-<<<<<<< HEAD
-url: https://binjun.xyz
-=======
-url: http://blog.binjun.xyz
->>>>>>> 057af1afbd2d1fd63b6b9c9578a8fc82136565b7
+url: https://leebinjun.github.io
+# url: https://binjun.xyz
+# url: http://blog.binjun.xyz
 root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:
@@ -134,9 +131,6 @@ search:
   path: search.xml
   field: post
   format: html
-<<<<<<< HEAD
-  limit: 10000
-=======
   limit: 10000
 
 aplayer:
@@ -152,4 +146,3 @@ index2_generator:
   # include:
   exclude:
     - tag hidden # 不包含标签为Hexo的文章
->>>>>>> 057af1afbd2d1fd63b6b9c9578a8fc82136565b7
