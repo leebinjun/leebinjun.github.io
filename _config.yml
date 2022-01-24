@@ -13,7 +13,8 @@ timezone: Asia/Shanghai
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: https://leebinjun.github.io
+url: http://blog.binjun.icu
+# url: https://leebinjun.github.io
 # url: https://binjun.xyz
 # url: http://blog.binjun.xyz
 root: /
@@ -27,7 +28,7 @@ tag_dir: tags
 archive_dir: archives
 category_dir: categories
 code_dir: downloads/code
-i18n_dir: :lang
+i18n_dir: lang
 skip_render:
   - "slides/index/*"
 
