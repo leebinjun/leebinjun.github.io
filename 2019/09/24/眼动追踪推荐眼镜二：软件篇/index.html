@@ -5,17 +5,17 @@
   
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <link rel="dns-prefetch" href="http://blog.binjun.xyz">
+  <link rel="dns-prefetch" href="http://blog.binjun.icu">
   <title>眼动追踪推荐眼镜二：软件篇 | Binjun</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="软件部分主要解决下面三个问题：  首先是人眼关键点的检测问题，通过多级级联的回归树进行眼眶和通孔的检测，得到关键点特征信息；   其次是兴趣点的估计问题，通过梯度提升回归算法建立人眼关键点和兴趣点的映射关系；   最后是兴趣点处的目标识别问题，通过yolo目标检测网络对检测视野中的待推荐目标，判断兴趣点是否落在识别框中。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="眼动追踪推荐眼镜二：软件篇">
-<meta property="og:url" content="http://blog.binjun.xyz/2019/09/24/眼动追踪推荐眼镜二：软件篇/index.html">
+<meta property="og:url" content="http://blog.binjun.icu/2019/09/24/眼动追踪推荐眼镜二：软件篇/index.html">
 <meta property="og:site_name" content="Binjun">
 <meta property="og:description" content="软件部分主要解决下面三个问题：  首先是人眼关键点的检测问题，通过多级级联的回归树进行眼眶和通孔的检测，得到关键点特征信息；   其次是兴趣点的估计问题，通过梯度提升回归算法建立人眼关键点和兴趣点的映射关系；   最后是兴趣点处的目标识别问题，通过yolo目标检测网络对检测视野中的待推荐目标，判断兴趣点是否落在识别框中。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2021-10-14T11:45:50.169Z">
+<meta property="og:updated_time" content="2022-08-15T13:54:19.416Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="眼动追踪推荐眼镜二：软件篇">
 <meta name="twitter:description" content="软件部分主要解决下面三个问题：  首先是人眼关键点的检测问题，通过多级级联的回归树进行眼眶和通孔的检测，得到关键点特征信息；   其次是兴趣点的估计问题，通过梯度提升回归算法建立人眼关键点和兴趣点的映射关系；   最后是兴趣点处的目标识别问题，通过yolo目标检测网络对检测视野中的待推荐目标，判断兴趣点是否落在识别框中。">
@@ -232,7 +232,6 @@
 		        
 			</div>
 		</nav>
-
 	</header>		
 </div>
 
@@ -341,9 +340,8 @@
 <h2 id="人眼关键点检测"><a href="#人眼关键点检测" class="headerlink" title="人眼关键点检测"></a>人眼关键点检测</h2><p>首先使用人眼摄像头采集人眼图像数据，然后使用dlib自带的image数据库标注工具制作数据集，最后通过dlib的官方代码训练出模型，并对模型进行测试。</p>
 <p>模型分别对眼眶和眼珠进行识别，并检测它们的位置。</p>
 <ul>
-<li>dlib train_object_detector  </li>
+<li>dlib train_object_detector<br><a href="http://dlib.net/train_object_detector.py.html" target="_blank" rel="noopener">http://dlib.net/train_object_detector.py.html</a></li>
 </ul>
-<p><a href="http://dlib.net/train_object_detector.py.html" target="_blank" rel="noopener">http://dlib.net/train_object_detector.py.html</a></p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"><span class="keyword">import</span> glob</span><br><span class="line"><span class="keyword">import</span> dlib</span><br><span class="line"></span><br><span class="line">options = dlib.simple_object_detector_training_options()</span><br><span class="line"><span class="comment"># 单个眼睛不是左右对称的</span></span><br><span class="line"><span class="comment"># options.add_left_right_image_flips = True</span></span><br><span class="line"><span class="comment"># 支持向量机的C参数，通常默认取为5.自己适当更改参数以达到最好的效果</span></span><br><span class="line">options.C = <span class="number">5</span></span><br><span class="line"><span class="comment"># 线程数，你电脑有4核的话就填4</span></span><br><span class="line">options.num_threads = <span class="number">4</span></span><br><span class="line">options.be_verbose = <span class="literal">True</span></span><br><span class="line"></span><br><span class="line">training_xml_path = <span class="string">"pupil.xml"</span></span><br><span class="line">dlib.train_simple_object_detector(training_xml_path, <span class="string">"pupil.svm"</span>, options)</span><br><span class="line">print(<span class="string">"Training accuracy: &#123;&#125;"</span>.format(</span><br><span class="line">    dlib.test_simple_object_detector(training_xml_path, <span class="string">"pupil.svm"</span>)))</span><br><span class="line"></span><br><span class="line">training_xml_path = <span class="string">"eye.xml"</span></span><br><span class="line">dlib.train_simple_object_detector(training_xml_path, <span class="string">"eye.svm"</span>, options)</span><br><span class="line">print(<span class="string">"Training accuracy: &#123;&#125;"</span>.format(</span><br><span class="line">    dlib.test_simple_object_detector(training_xml_path, <span class="string">"eye.svm"</span>)))</span><br></pre></td></tr></table></figure>
 <h2 id="兴趣点映射估计"><a href="#兴趣点映射估计" class="headerlink" title="兴趣点映射估计"></a>兴趣点映射估计</h2><p>分别采集人眼图像中眼眶和眼珠的坐标数据和视野图像中目标点的坐标数据，通过sklearn中的梯度提升回归算法建立人眼关键点数据和兴趣点数据的映射关系。  </p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 读取数据</span></span><br><span class="line">point = pd.read_csv(<span class="string">"csv_data/points_p.csv"</span>)</span><br><span class="line">world_x = point[<span class="string">"world_x"</span>]</span><br><span class="line">world_y = point[<span class="string">"world_y"</span>]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 读取数据中的标签列</span></span><br><span class="line">eye = point[[<span class="string">'eye_x'</span>, <span class="string">'eye_y'</span>, <span class="string">'pipil_x'</span>, <span class="string">'pupil_y'</span>, <span class="string">'pupil_w'</span>, <span class="string">'pupil_h'</span>]]</span><br><span class="line">print(eye)</span><br><span class="line"></span><br><span class="line">clf = GBR(max_depth=<span class="number">10</span>)</span><br><span class="line"><span class="comment"># clf = SGDR(loss='huber',penalty='l2',alpha=0.9,max_iter=1000)</span></span><br><span class="line"><span class="comment"># clf = KNeighborsRegressor(n_neighbors=20, weights="distance", algorithm="ball_tree", leaf_size=50)</span></span><br><span class="line"></span><br><span class="line">clf.fit(eye, world_x)</span><br><span class="line">joblib.dump(clf, <span class="string">"model/world_x.pkl"</span>)</span><br><span class="line">print(<span class="string">'得分：'</span>,clf.score(eye, world_x))</span><br><span class="line"></span><br><span class="line">clf.fit(eye, world_y)</span><br><span class="line">joblib.dump(clf, <span class="string">"model/world_y.pkl"</span>)</span><br><span class="line">print(<span class="string">'得分：'</span>,clf.score(eye, world_y))</span><br></pre></td></tr></table></figure>
@@ -410,7 +408,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://blog.binjun.xyz/2019/09/24/眼动追踪推荐眼镜二：软件篇/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://blog.binjun.icu/2019/09/24/眼动追踪推荐眼镜二：软件篇/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -424,7 +422,7 @@
   
 <nav id="article-nav">
   
-    <a href="/2019/10/09/AI：使用labelImg制作数据集/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2019/10/09/使用labelImg制作数据集/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
@@ -476,7 +474,7 @@
   
   <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="眼动追踪推荐眼镜二：软件篇" data-title="眼动追踪推荐眼镜二：软件篇" data-url="http://blog.binjun.xyz/2019/09/24/眼动追踪推荐眼镜二：软件篇/"></div>
+	<div class="ds-thread" data-thread-key="眼动追踪推荐眼镜二：软件篇" data-title="眼动追踪推荐眼镜二：软件篇" data-url="http://blog.binjun.icu/2019/09/24/眼动追踪推荐眼镜二：软件篇/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">
@@ -616,19 +614,23 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">lua</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">neat</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Mario</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">import</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">sklearn</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">tensorflow</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">dlib</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -640,7 +642,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">yolo</a>
+                <a href="javascript:void(0)" class="js-tag color1">tensorflow</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">dlib</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -660,6 +666,22 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">yolo</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">brainfuck</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">flask</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Arduino</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">hexo</a>
               </li>
              
@@ -672,15 +694,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">+ python</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">+ loomo + Android + 机械手</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Arduino</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -692,35 +706,19 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">jupyter notebook</a>
+                <a href="javascript:void(0)" class="js-tag color4">-go</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">数模</a>
+                <a href="javascript:void(0)" class="js-tag color1">loomo</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">天猫精灵</a>
+                <a href="javascript:void(0)" class="js-tag color3">Android</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">esp8266</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">php</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">mysql</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">today is a happy day</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">alphazero</a>
+                <a href="javascript:void(0)" class="js-tag color4">机械手</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -736,23 +734,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">迁移学习</a>
+                <a href="javascript:void(0)" class="js-tag color4">git</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">AlphaZero</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">brainfuck</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">-go</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">flask</a>
+                <a href="javascript:void(0)" class="js-tag color4">web</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -760,11 +746,51 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">git</a>
+                <a href="javascript:void(0)" class="js-tag color1">Latex</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Latex</a>
+                <a href="javascript:void(0)" class="js-tag color2">jupyter notebook</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">天猫精灵</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">esp8266</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">数模</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">today is a happy day</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">php</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">mysql</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">arduino</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">alphazero</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">迁移学习</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">AlphaZero</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -776,11 +802,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
+                <a href="javascript:void(0)" class="js-tag color1">Flask</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Flask</a>
+                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
               </li>
             
             <div class="clearfix"></div>

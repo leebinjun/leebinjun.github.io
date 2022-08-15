@@ -5,12 +5,12 @@
   
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <link rel="dns-prefetch" href="http://blog.binjun.xyz">
+  <link rel="dns-prefetch" href="http://blog.binjun.icu">
   <title>Binjun</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta property="og:type" content="website">
 <meta property="og:title" content="Binjun">
-<meta property="og:url" content="http://blog.binjun.xyz/page/8/index.html">
+<meta property="og:url" content="http://blog.binjun.icu/page/8/index.html">
 <meta property="og:site_name" content="Binjun">
 <meta property="og:locale" content="zh-Hans">
 <meta name="twitter:card" content="summary">
@@ -228,7 +228,6 @@
 		        
 			</div>
 		</nav>
-
 	</header>		
 </div>
 
@@ -302,20 +301,20 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-象棋残局机器人一：摄像头标定" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-AI：使用dlib的imglab工具制作训练集与测试" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/05/25/象棋残局机器人一：摄像头标定/">象棋残局机器人一：摄像头标定</a>
+      <a class="article-title" href="/2019/07/06/AI：使用dlib的imglab工具制作训练集与测试/">使用dlib的imglab工具制作训练集与测试</a>
     </h1>
   
 
         
-        <a href="/2019/05/25/象棋残局机器人一：摄像头标定/" class="archive-article-date">
-  	<time datetime="2019-05-25T08:44:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-25</time>
+        <a href="/2019/07/06/AI：使用dlib的imglab工具制作训练集与测试/" class="archive-article-date">
+  	<time datetime="2019-07-06T14:30:06.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-06</time>
 </a>
         
       </header>
@@ -327,9 +326,360 @@
 
     <div class="article-entry" itemprop="articleBody">
       
-        <p><strong> 象棋残局机器人一：摄像头标定 </strong> <excerpt in index | 首页摘要><br>廉价摄像头会给图像带来很多畸变，硬件解决方法是买个无畸变的摄像头，软件解决方案是找到摄像机畸变参数以及摄像机的内部参数和外部参数，对畸变图像进行修复。<br></excerpt></p>
+        <p><strong> 使用dlib的imglab工具制作训练集与测试 </strong> <excerpt in index | 首页摘要></excerpt></p>
+<p>在使用dlib进行人脸识别和关键点检测的demo中，官方提供了训练好的数据：正脸检测器dlib.get_frontal_face_detector()<br>和特征点的训练库shape_predictor_68_face_landmarks.dat，如果想对自己的图形进行识别和关键点检测，可以使用dlib自带的imglab数据库标准工具制作训练集，再通过dlib的官方代码训练出模型，最后对模型进行测试。</p>
+<ul>
+<li><p>dlib train_object_detector<br><a href="http://dlib.net/train_object_detector.py.html" target="_blank" rel="noopener">http://dlib.net/train_object_detector.py.html</a></p>
+</li>
+<li><p>dlib train_shape_predictor<br><a href="http://dlib.net/train_shape_predictor.py.html" target="_blank" rel="noopener">http://dlib.net/train_shape_predictor.py.html</a></p>
+</li>
+</ul>
         
-          <a class="article-more-a" href="/2019/05/25/象棋残局机器人一：摄像头标定/#more">more >></a>
+          <a class="article-more-a" href="/2019/07/06/AI：使用dlib的imglab工具制作训练集与测试/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">dlib</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/07/06/AI：使用dlib的imglab工具制作训练集与测试/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-使用dlib的imglab工具制作训练集与测试" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/07/06/使用dlib的imglab工具制作训练集与测试/">使用dlib的imglab工具制作训练集与测试</a>
+    </h1>
+  
+
+        
+        <a href="/2019/07/06/使用dlib的imglab工具制作训练集与测试/" class="archive-article-date">
+  	<time datetime="2019-07-06T14:30:06.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-06</time>
+</a>
+        
+      </header>
+    
+
+    <!-- 目录内容 -->
+    
+    <!-- 目录内容结束 -->
+
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><strong> 使用dlib的imglab工具制作训练集与测试 </strong> <excerpt in index | 首页摘要></excerpt></p>
+<p>在使用dlib进行人脸识别和关键点检测的demo中，官方提供了训练好的数据：正脸检测器dlib.get_frontal_face_detector()<br>和特征点的训练库shape_predictor_68_face_landmarks.dat，如果想对自己的图形进行识别和关键点检测，可以使用dlib自带的imglab数据库标准工具制作训练集，再通过dlib的官方代码训练出模型，最后对模型进行测试。</p>
+<ul>
+<li><p>dlib train_object_detector<br><a href="http://dlib.net/train_object_detector.py.html" target="_blank" rel="noopener">http://dlib.net/train_object_detector.py.html</a></p>
+</li>
+<li><p>dlib train_shape_predictor<br><a href="http://dlib.net/train_shape_predictor.py.html" target="_blank" rel="noopener">http://dlib.net/train_shape_predictor.py.html</a></p>
+</li>
+</ul>
+        
+          <a class="article-more-a" href="/2019/07/06/使用dlib的imglab工具制作训练集与测试/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">dlib</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/07/06/使用dlib的imglab工具制作训练集与测试/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-AI：win10-python37-安装dlib19-17" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/07/06/AI：win10-python37-安装dlib19-17/">win10 python3.7 安装dlib19.17</a>
+    </h1>
+  
+
+        
+        <a href="/2019/07/06/AI：win10-python37-安装dlib19-17/" class="archive-article-date">
+  	<time datetime="2019-07-06T03:17:54.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-06</time>
+</a>
+        
+      </header>
+    
+
+    <!-- 目录内容 -->
+    
+    <!-- 目录内容结束 -->
+
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><strong> win10 python3.7 安装dlib19.17 </strong> <excerpt in index | 首页摘要></excerpt></p>
+<p>最近使用了dlib识别人脸68个特征点，教研室的win7很早之前就装的dlib当时没遇到什么坑，回家里在win10上安装“大礼包”竟然把电脑弄蓝屏了，在此记录一下。  </p>
+<div align="center">
+<img src="/2019/07/06/AI：win10-python37-安装dlib19-17/win10-python37-安装dlib19-17/00.png" width="300" height="500">
+</div>
+
+<p>搜索还原点-&gt;点击“配置”启用保护-&gt;创建还原点。  </p>
+        
+          <a class="article-more-a" href="/2019/07/06/AI：win10-python37-安装dlib19-17/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">dlib</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/07/06/AI：win10-python37-安装dlib19-17/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-win10-python37-安装dlib19-17" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/07/06/win10-python37-安装dlib19-17/">win10 python3.7 安装dlib19.17</a>
+    </h1>
+  
+
+        
+        <a href="/2019/07/06/win10-python37-安装dlib19-17/" class="archive-article-date">
+  	<time datetime="2019-07-06T03:17:54.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-06</time>
+</a>
+        
+      </header>
+    
+
+    <!-- 目录内容 -->
+    
+    <!-- 目录内容结束 -->
+
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><strong> win10 python3.7 安装dlib19.17 </strong> <excerpt in index | 首页摘要></excerpt></p>
+<p>最近使用了dlib识别人脸68个特征点，教研室的win7很早之前就装的dlib当时没遇到什么坑，回家里在win10上安装“大礼包”竟然把电脑弄蓝屏了，在此记录一下。  </p>
+<div align="center">
+<img src="/2019/07/06/win10-python37-安装dlib19-17/00.png" width="300" height="500">
+</div>
+
+<p>搜索还原点-&gt;点击“配置”启用保护-&gt;创建还原点。  </p>
+        
+          <a class="article-more-a" href="/2019/07/06/win10-python37-安装dlib19-17/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">dlib</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/07/06/win10-python37-安装dlib19-17/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-门禁人脸检测和识别三：Delaunay三角剖分和Voronoi图" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/06/29/门禁人脸检测和识别三：Delaunay三角剖分和Voronoi图/">门禁人脸检测和识别三：Delaunay三角剖分和Voronoi图</a>
+    </h1>
+  
+
+        
+        <a href="/2019/06/29/门禁人脸检测和识别三：Delaunay三角剖分和Voronoi图/" class="archive-article-date">
+  	<time datetime="2019-06-28T16:11:20.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-29</time>
+</a>
+        
+      </header>
+    
+
+    <!-- 目录内容 -->
+    
+    <!-- 目录内容结束 -->
+
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><strong> 门禁人脸检测和识别三：Delaunay三角剖分和Voronoi图 </strong> <excerpt in index | 首页摘要></excerpt></p>
+<h2 id="Voronoi-diagram-维诺图-和-Delaunay-Triangulation-德罗奈三角剖分"><a href="#Voronoi-diagram-维诺图-和-Delaunay-Triangulation-德罗奈三角剖分" class="headerlink" title="Voronoi diagram 维诺图 和 Delaunay Triangulation 德罗奈三角剖分"></a>Voronoi diagram 维诺图 和 Delaunay Triangulation 德罗奈三角剖分</h2>
+        
+          <a class="article-more-a" href="/2019/06/29/门禁人脸检测和识别三：Delaunay三角剖分和Voronoi图/#more">more >></a>
         
       
 
@@ -353,7 +703,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2019/05/25/象棋残局机器人一：摄像头标定/">展开全文 >></a>
+          <a class="article-more-a" href="/2019/06/29/门禁人脸检测和识别三：Delaunay三角剖分和Voronoi图/">展开全文 >></a>
         </p>
       
 
@@ -383,20 +733,20 @@
 
 
   
-    <article id="post-AI：RL学习笔记" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-门禁人脸检测和识别二：人脸关键点检测" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/05/22/AI：RL学习笔记/">RL学习笔记</a>
+      <a class="article-title" href="/2019/06/28/门禁人脸检测和识别二：人脸关键点检测/">门禁人脸检测和识别二：人脸关键点检测</a>
     </h1>
   
 
         
-        <a href="/2019/05/22/AI：RL学习笔记/" class="archive-article-date">
-  	<time datetime="2019-05-22T07:56:59.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-22</time>
+        <a href="/2019/06/28/门禁人脸检测和识别二：人脸关键点检测/" class="archive-article-date">
+  	<time datetime="2019-06-27T17:57:02.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-28</time>
 </a>
         
       </header>
@@ -408,29 +758,13 @@
 
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="windows安装gym"><a href="#windows安装gym" class="headerlink" title="windows安装gym"></a>windows安装gym</h2><p>安装依赖包<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt; pip install pillow ...</span><br></pre></td></tr></table></figure></p>
-<p>安装gym和游戏仿真环境Atari<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt; pip install gym</span><br><span class="line">&gt; pip install - -no-index -f https://github.com/Kojoley/atari-py/releases atari_py</span><br></pre></td></tr></table></figure></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">(root) C:\Users\Administrator\Desktop\DQN-2048-master&gt;python</span><br><span class="line">Python 3.6.3 |Anaconda, Inc.| (default, Oct 15 2017, 03:27:45) [MSC v.1900 64 bit (AMD64)] on win32</span><br><span class="line">Type <span class="string">"help"</span>, <span class="string">"copyright"</span>, <span class="string">"credits"</span> or <span class="string">"license"</span> <span class="keyword">for</span> more information.</span><br><span class="line">&gt;&gt;&gt; import pandas as pd</span><br><span class="line">&gt;&gt;&gt; import numpy as np</span><br><span class="line">&gt;&gt;&gt; table = pd.DataFrame(np.random.random((3,4)), index=[2,4,6], columns=[<span class="string">'a'</span>, <span class="string">'c'</span>, <span class="string">'d'</span>, <span class="string">'d'</span>])</span><br><span class="line">&gt;&gt;&gt; table</span><br><span class="line">          a         c         d         d</span><br><span class="line">2  0.444598  0.907250  0.629258  0.607062</span><br><span class="line">4  0.531954  0.341319  0.477738  0.480921</span><br><span class="line">6  0.102290  0.765902  0.923868  0.159364</span><br><span class="line">&gt;&gt;&gt; table_alist = table.loc[4,:]</span><br><span class="line">&gt;&gt;&gt; table_alist</span><br><span class="line">a    0.531954</span><br><span class="line">c    0.341319</span><br><span class="line">d    0.477738</span><br><span class="line">d    0.480921</span><br><span class="line">Name: 4, dtype: float64</span><br><span class="line">&gt;&gt;&gt; table_alist.max()</span><br><span class="line">0.5319538779267701</span><br><span class="line">&gt;&gt;&gt; table_alist.argmax()</span><br><span class="line"><span class="string">'a'</span></span><br><span class="line">&gt;&gt;&gt;</span><br></pre></td></tr></table></figure>
+        <p><strong> 门禁人脸检测和识别二：人脸关键点检测 </strong> <excerpt in index | 首页摘要></excerpt></p>
 <ul>
-<li><p>深度增强学习（DRL）漫谈 - 从DQN到AlphaGo - 世事难料，保持低调 - CSDN博客<br><a href="https://blog.csdn.net/jinzhuojun/article/details/52752561" target="_blank" rel="noopener">https://blog.csdn.net/jinzhuojun/article/details/52752561</a></p>
-</li>
-<li><p>深度增强学习DDPG（Deep Deterministic Policy Gradient）算法源码走读 - 世事难料，保持低调 - CSDN博客<br><a href="https://blog.csdn.net/jinzhuojun/article/details/82556127" target="_blank" rel="noopener">https://blog.csdn.net/jinzhuojun/article/details/82556127</a></p>
-</li>
+<li>dlib人脸关键点代码解析 - 知乎 <a href="https://zhuanlan.zhihu.com/p/56195986" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/56195986</a></li>
 </ul>
-<ul>
-<li>在Windows下使用OpenAI Gym - HelloGym - 止于至玄 - CSDN博客<br><a href="https://blog.csdn.net/philthinker/article/details/79810249" target="_blank" rel="noopener">https://blog.csdn.net/philthinker/article/details/79810249</a></li>
-</ul>
-<h2 id="AI通关超级马里奥"><a href="#AI通关超级马里奥" class="headerlink" title="AI通关超级马里奥"></a>AI通关超级马里奥</h2><p>在windows下编译运行lua源程序 - weixin_38527697的博客 - CSDN博客 <a href="https://blog.csdn.net/weixin_38527697/article/details/80718168" target="_blank" rel="noopener">https://blog.csdn.net/weixin_38527697/article/details/80718168</a></p>
-<p>基于NEAT算法的马里奥AI实现 - 小天狼星的博客 - CSDN博客 <a href="https://blog.csdn.net/qq_37913997/article/details/81871589" target="_blank" rel="noopener">https://blog.csdn.net/qq_37913997/article/details/81871589</a></p>
-<p>aleju/mario-ai: Playing Mario with Deep Reinforcement Learning <a href="https://github.com/aleju/mario-ai" target="_blank" rel="noopener">https://github.com/aleju/mario-ai</a></p>
-<p>BitTigerLab/ArtificialIntelligent/RetroContest at master · Fabsqrt/BitTigerLab <a href="https://github.com/Fabsqrt/BitTigerLab/tree/master/ArtificialIntelligent/RetroContest" target="_blank" rel="noopener">https://github.com/Fabsqrt/BitTigerLab/tree/master/ArtificialIntelligent/RetroContest</a></p>
-<p>openai/retro: Retro Games in Gym <a href="https://github.com/openai/retro#gym-retro" target="_blank" rel="noopener">https://github.com/openai/retro#gym-retro</a></p>
-<p>BitTigerLab/README.md at master · Fabsqrt/BitTigerLab <a href="https://github.com/Fabsqrt/BitTigerLab/blob/master/ArtificialIntelligent/Mario/README.md" target="_blank" rel="noopener">https://github.com/Fabsqrt/BitTigerLab/blob/master/ArtificialIntelligent/Mario/README.md</a></p>
-<p>NeuroEvolution of Augmenting Topologies <a href="http://www.cs.ucf.edu/~kstanley/neat.html" target="_blank" rel="noopener">http://www.cs.ucf.edu/~kstanley/neat.html</a></p>
-<p>CodeReclaimers/neat-python: Python implementation of the NEAT neuroevolution algorithm <a href="https://github.com/CodeReclaimers/neat-python" target="_blank" rel="noopener">https://github.com/CodeReclaimers/neat-python</a></p>
-<p>NEAT 监督学习 - 进化算法 Evolutionary Algorithm | 莫烦Python <a href="https://morvanzhou.github.io/tutorials/machine-learning/evolutionary-algorithm/4-02-neat-supervised-learning/" target="_blank" rel="noopener">https://morvanzhou.github.io/tutorials/machine-learning/evolutionary-algorithm/4-02-neat-supervised-learning/</a></p>
-<p>沁原的硅谷创新课 002 如何训练人工智能游戏高手？OpenAI、Gym Retro、DQN、PPO、TensorFlow - YouTube <a href="https://www.youtube.com/watch?v=cZa_xot8Wdc&amp;list=PL34eqMVgn4cjnvak8FtJysKd6Ke_T5Lsl&amp;index=2" target="_blank" rel="noopener">https://www.youtube.com/watch?v=cZa_xot8Wdc&amp;list=PL34eqMVgn4cjnvak8FtJysKd6Ke_T5Lsl&amp;index=2</a></p>
-
+        
+          <a class="article-more-a" href="/2019/06/28/门禁人脸检测和识别二：人脸关键点检测/#more">more >></a>
+        
       
 
       
@@ -443,7 +777,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">RL</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">opencv</a>
         		</li>
       		
 		</ul>
@@ -453,7 +787,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2019/05/22/AI：RL学习笔记/">展开全文 >></a>
+          <a class="article-more-a" href="/2019/06/28/门禁人脸检测和识别二：人脸关键点检测/">展开全文 >></a>
         </p>
       
 
@@ -483,20 +817,20 @@
 
 
   
-    <article id="post-Hikey970使用记录三：USB转串口驱动安装" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-golang学习笔记" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/05/22/Hikey970使用记录三：USB转串口驱动安装/">Hikey970使用记录三：USB转串口驱动安装</a>
+      <a class="article-title" href="/2019/06/25/golang学习笔记/">golang学习笔记</a>
     </h1>
   
 
         
-        <a href="/2019/05/22/Hikey970使用记录三：USB转串口驱动安装/" class="archive-article-date">
-  	<time datetime="2019-05-22T01:54:51.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-22</time>
+        <a href="/2019/06/25/golang学习笔记/" class="archive-article-date">
+  	<time datetime="2019-06-25T11:15:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-25</time>
 </a>
         
       </header>
@@ -508,12 +842,10 @@
 
     <div class="article-entry" itemprop="articleBody">
       
-        <p><strong> Hikey970使用记录三：USB转串口驱动安装 </strong> <excerpt in index | 首页摘要><br>hello hikey!<br>USB转串口驱动安装    </excerpt></p>
-<ul>
-<li><ol>
-<li>usb转串口驱动安装 · Hikey 970 开发板使用教程<br><a href="https://doc.bwbot.org/zh-cn/books-online/hikey970-doc/topic/485.html" target="_blank" rel="noopener">https://doc.bwbot.org/zh-cn/books-online/hikey970-doc/topic/485.html</a></li></ol></li></ul>
+        <p><strong> golang学习笔记 </strong> <excerpt in index | 首页摘要><br>hello go!</excerpt></p>
+<p>Go 语言起源于 2007 年，并在 2009 年正式对外发布。</p>
         
-          <a class="article-more-a" href="/2019/05/22/Hikey970使用记录三：USB转串口驱动安装/#more">more >></a>
+          <a class="article-more-a" href="/2019/06/25/golang学习笔记/#more">more >></a>
         
       
 
@@ -527,7 +859,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Hikey970</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">-go</a>
         		</li>
       		
 		</ul>
@@ -537,7 +869,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2019/05/22/Hikey970使用记录三：USB转串口驱动安装/">展开全文 >></a>
+          <a class="article-more-a" href="/2019/06/25/golang学习笔记/">展开全文 >></a>
         </p>
       
 
@@ -567,20 +899,20 @@
 
 
   
-    <article id="post-Hikey970使用记录二：编译安装opencv4-0-0" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-软件：golang学习笔记" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/05/22/Hikey970使用记录二：编译安装opencv4-0-0/">Hikey970使用记录二：编译安装opencv4.0.0</a>
+      <a class="article-title" href="/2019/06/25/软件：golang学习笔记/">golang学习笔记</a>
     </h1>
   
 
         
-        <a href="/2019/05/22/Hikey970使用记录二：编译安装opencv4-0-0/" class="archive-article-date">
-  	<time datetime="2019-05-22T01:54:03.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-22</time>
+        <a href="/2019/06/25/软件：golang学习笔记/" class="archive-article-date">
+  	<time datetime="2019-06-25T11:15:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-25</time>
 </a>
         
       </header>
@@ -592,9 +924,10 @@
 
     <div class="article-entry" itemprop="articleBody">
       
-        <p><strong> Hikey970使用记录二：编译安装opencv4.0.0 </strong> <excerpt in index | 首页摘要><br>hello hikey!<br>编译安装opencv4.0.0<br></excerpt></p>
+        <p><strong> golang学习笔记 </strong> <excerpt in index | 首页摘要><br>hello go!</excerpt></p>
+<p>Go 语言起源于 2007 年，并在 2009 年正式对外发布。</p>
         
-          <a class="article-more-a" href="/2019/05/22/Hikey970使用记录二：编译安装opencv4-0-0/#more">more >></a>
+          <a class="article-more-a" href="/2019/06/25/软件：golang学习笔记/#more">more >></a>
         
       
 
@@ -608,7 +941,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Hikey970</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">-go</a>
         		</li>
       		
 		</ul>
@@ -618,7 +951,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2019/05/22/Hikey970使用记录二：编译安装opencv4-0-0/">展开全文 >></a>
+          <a class="article-more-a" href="/2019/06/25/软件：golang学习笔记/">展开全文 >></a>
         </p>
       
 
@@ -648,20 +981,20 @@
 
 
   
-    <article id="post-Hikey970使用记录一：ubuntu16-04下烧写lebian系统" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-门禁人脸检测和识别" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/05/22/Hikey970使用记录一：ubuntu16-04下烧写lebian系统/">Hikey970使用记录一：ubuntu16.04下烧写lebian系统</a>
+      <a class="article-title" href="/2019/06/25/门禁人脸检测和识别/">门禁人脸检测和识别</a>
     </h1>
   
 
         
-        <a href="/2019/05/22/Hikey970使用记录一：ubuntu16-04下烧写lebian系统/" class="archive-article-date">
-  	<time datetime="2019-05-22T01:53:43.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-22</time>
+        <a href="/2019/06/25/门禁人脸检测和识别/" class="archive-article-date">
+  	<time datetime="2019-06-25T10:08:41.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-25</time>
 </a>
         
       </header>
@@ -673,9 +1006,9 @@
 
     <div class="article-entry" itemprop="articleBody">
       
-        <p><strong> Hikey970使用记录一：ubuntu16.04下烧写lebian系统 </strong> <excerpt in index | 首页摘要><br>hello hikey!<br>ubuntu16.04下烧写lebian系统<br></excerpt></p>
+        <p><strong> 门禁人脸检测和识别 </strong> <excerpt in index | 首页摘要><br><img src="/2019/06/25/门禁人脸检测和识别/demo.gif"></excerpt></p>
         
-          <a class="article-more-a" href="/2019/05/22/Hikey970使用记录一：ubuntu16-04下烧写lebian系统/#more">more >></a>
+          <a class="article-more-a" href="/2019/06/25/门禁人脸检测和识别/#more">more >></a>
         
       
 
@@ -689,248 +1022,10 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Hikey970</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/05/22/Hikey970使用记录一：ubuntu16-04下烧写lebian系统/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-硬件：Jetson-Nano-使用记录" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/05/18/硬件：Jetson-Nano-使用记录/">Jetson Nano 使用记录</a>
-    </h1>
-  
-
-        
-        <a href="/2019/05/18/硬件：Jetson-Nano-使用记录/" class="archive-article-date">
-  	<time datetime="2019-05-18T10:00:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-18</time>
-</a>
-        
-      </header>
-    
-
-    <!-- 目录内容 -->
-    
-    <!-- 目录内容结束 -->
-
-    <div class="article-entry" itemprop="articleBody">
-      
-        <ul>
-<li>balenaEtcher - Home<br><a href="https://www.balena.io/etcher/" target="_blank" rel="noopener">https://www.balena.io/etcher/</a></li>
-</ul>
-<ul>
-<li>Jetson-Nano开箱配置及Tensorflow安装使用 - dwSun的博客 - CSDN博客 &lt;/br&gt;<a href="https://blog.csdn.net/dvd_sun/article/details/88975005" target="_blank" rel="noopener">https://blog.csdn.net/dvd_sun/article/details/88975005</a></li>
-</ul>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/05/18/硬件：Jetson-Nano-使用记录/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-人生苦短，我用python" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/05/16/人生苦短，我用python/">人生苦短，我用python</a>
-    </h1>
-  
-
-        
-        <a href="/2019/05/16/人生苦短，我用python/" class="archive-article-date">
-  	<time datetime="2019-05-16T15:56:01.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-16</time>
-</a>
-        
-      </header>
-    
-
-    <!-- 目录内容 -->
-    
-    <!-- 目录内容结束 -->
-
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><strong> 人生苦短，我用python </strong> <excerpt in index | 首页摘要></excerpt></p>
-<p>Life is short, you need Python<br>1989 年，为了打发无所事事的圣诞节假期，Guido 开始写 Python 语言的编译/解释器，Python这个名字来自他所喜欢的电视剧 Monty Python’s Flying Circus (一部情景幽默剧)。两年后，Python 第一个版本终于问世。</p>
-        
-          <a class="article-more-a" href="/2019/05/16/人生苦短，我用python/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">python</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">opencv</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">jupyter notebook</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/05/16/人生苦短，我用python/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-门禁python多进程练习" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/05/16/门禁python多进程练习/">门禁python多进程练习</a>
-    </h1>
-  
-
-        
-        <a href="/2019/05/16/门禁python多进程练习/" class="archive-article-date">
-  	<time datetime="2019-05-16T12:33:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-16</time>
-</a>
-        
-      </header>
-    
-
-    <!-- 目录内容 -->
-    
-    <!-- 目录内容结束 -->
-
-    <div class="article-entry" itemprop="articleBody">
-      
-        <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">import multiprocessing as mp</span><br><span class="line"></span><br><span class="line">def task(a):</span><br><span class="line">    pass</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:</span><br><span class="line">    p1 = mp.Process(target=task, args=(1,))</span><br><span class="line">    p1.start()</span><br><span class="line">    p1.join()</span><br></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">import tkinter as tk</span><br><span class="line"></span><br><span class="line">root = tk.Tk()</span><br><span class="line"></span><br><span class="line">def func_loop():</span><br><span class="line">    func()</span><br><span class="line">    root.after(1, func_loop)</span><br><span class="line"></span><br><span class="line">root.loopmain()</span><br></pre></td></tr></table></figure>
-<ul>
-<li>[译]深度神经网络的多任务学习概览(An Overview of Multi-task Learning in Deep Neural Networks) - Shuzi_rank - 博客园 &lt;/br&gt;<a href="https://www.cnblogs.com/shuzirank/p/7141017.html" target="_blank" rel="noopener">https://www.cnblogs.com/shuzirank/p/7141017.html</a></li>
-</ul>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">python</a>
         		</li>
       		
@@ -941,7 +1036,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2019/05/16/门禁python多进程练习/">展开全文 >></a>
+          <a class="article-more-a" href="/2019/06/25/门禁人脸检测和识别/">展开全文 >></a>
         </p>
       
 
@@ -971,20 +1066,20 @@
 
 
   
-    <article id="post-Pixar-Lamp" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-3D：FDM3D打印电吉他琴体，制作电吉他" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/05/14/Pixar-Lamp/">Pixar Lamp</a>
+      <a class="article-title" href="/2019/06/24/3D：FDM3D打印电吉他琴体，制作电吉他/">FDM3D打印电吉他琴体，制作电吉他</a>
     </h1>
   
 
         
-        <a href="/2019/05/14/Pixar-Lamp/" class="archive-article-date">
-  	<time datetime="2019-05-14T11:25:43.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-14</time>
+        <a href="/2019/06/24/3D：FDM3D打印电吉他琴体，制作电吉他/" class="archive-article-date">
+  	<time datetime="2019-06-23T17:05:39.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-24</time>
 </a>
         
       </header>
@@ -996,9 +1091,10 @@
 
     <div class="article-entry" itemprop="articleBody">
       
-        <p><strong> Pixar Lamp </strong> <excerpt in index | 首页摘要><br>做个跳跳灯！<br></excerpt></p>
+        <p><strong> FDM3D打印电吉他琴体，制作电吉他 </strong> <excerpt in index | 首页摘要></excerpt></p>
+<p>涉及制作一把电吉他：<br>琴体部分完全采用FDM3D打印制作……<br><del>多图预警</del><br></p>
         
-          <a class="article-more-a" href="/2019/05/14/Pixar-Lamp/#more">more >></a>
+          <a class="article-more-a" href="/2019/06/24/3D：FDM3D打印电吉他琴体，制作电吉他/#more">more >></a>
         
       
 
@@ -1012,88 +1108,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">+ python</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">3D打印</a>
         		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/05/14/Pixar-Lamp/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Hikey970使用记录" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/05/12/Hikey970使用记录/">Hikey970使用记录</a>
-    </h1>
-  
-
-        
-        <a href="/2019/05/12/Hikey970使用记录/" class="archive-article-date">
-  	<time datetime="2019-05-12T03:16:12.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-12</time>
-</a>
-        
-      </header>
-    
-
-    <!-- 目录内容 -->
-    
-    <!-- 目录内容结束 -->
-
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><strong> Hikey970使用记录 </strong> <excerpt in index | 首页摘要><br>hello hikey!<br>Hikey970使用记录一：ubuntu16.04下烧写lebian系统<br>Hikey970使用记录二：编译安装opencv4.0.0<br>Hikey970使用记录三：USB转串口驱动安装<br></excerpt></p>
-        
-          <a class="article-more-a" href="/2019/05/12/Hikey970使用记录/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
+      		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Hikey970</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">吉他</a>
         		</li>
       		
 		</ul>
@@ -1103,7 +1122,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2019/05/12/Hikey970使用记录/">展开全文 >></a>
+          <a class="article-more-a" href="/2019/06/24/3D：FDM3D打印电吉他琴体，制作电吉他/">展开全文 >></a>
         </p>
       
 
@@ -1135,7 +1154,7 @@
   
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/page/7/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><a class="page-number" href="/page/7/">7</a><span class="page-number current">8</span><a class="page-number" href="/page/9/">9</a><a class="page-number" href="/page/10/">10</a><a class="extend next" rel="next" href="/page/9/">Next &raquo;</a>
+      <a class="extend prev" rel="prev" href="/page/7/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><a class="page-number" href="/page/7/">7</a><span class="page-number current">8</span><a class="page-number" href="/page/9/">9</a><a class="page-number" href="/page/10/">10</a><span class="space">&hellip;</span><a class="page-number" href="/page/14/">14</a><a class="extend next" rel="next" href="/page/9/">Next &raquo;</a>
     </nav>
   
 
@@ -1252,19 +1271,23 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">lua</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">neat</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Mario</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">import</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">sklearn</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">tensorflow</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">dlib</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1276,7 +1299,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">yolo</a>
+                <a href="javascript:void(0)" class="js-tag color1">tensorflow</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">dlib</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1296,6 +1323,22 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">yolo</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">brainfuck</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">flask</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Arduino</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">hexo</a>
               </li>
              
@@ -1308,15 +1351,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">+ python</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">+ loomo + Android + 机械手</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Arduino</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1328,35 +1363,19 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">jupyter notebook</a>
+                <a href="javascript:void(0)" class="js-tag color4">-go</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">数模</a>
+                <a href="javascript:void(0)" class="js-tag color1">loomo</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">天猫精灵</a>
+                <a href="javascript:void(0)" class="js-tag color3">Android</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">esp8266</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">php</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">mysql</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">today is a happy day</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">alphazero</a>
+                <a href="javascript:void(0)" class="js-tag color4">机械手</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1372,23 +1391,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">迁移学习</a>
+                <a href="javascript:void(0)" class="js-tag color4">git</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">AlphaZero</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">brainfuck</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">-go</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">flask</a>
+                <a href="javascript:void(0)" class="js-tag color4">web</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1396,11 +1403,51 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">git</a>
+                <a href="javascript:void(0)" class="js-tag color1">Latex</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Latex</a>
+                <a href="javascript:void(0)" class="js-tag color2">jupyter notebook</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">天猫精灵</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">esp8266</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">数模</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">today is a happy day</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">php</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">mysql</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">arduino</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">alphazero</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">迁移学习</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">AlphaZero</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1412,11 +1459,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
+                <a href="javascript:void(0)" class="js-tag color1">Flask</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Flask</a>
+                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
               </li>
             
             <div class="clearfix"></div>

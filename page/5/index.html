@@ -5,12 +5,12 @@
   
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <link rel="dns-prefetch" href="http://blog.binjun.xyz">
+  <link rel="dns-prefetch" href="http://blog.binjun.icu">
   <title>Binjun</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta property="og:type" content="website">
 <meta property="og:title" content="Binjun">
-<meta property="og:url" content="http://blog.binjun.xyz/page/5/index.html">
+<meta property="og:url" content="http://blog.binjun.icu/page/5/index.html">
 <meta property="og:site_name" content="Binjun">
 <meta property="og:locale" content="zh-Hans">
 <meta name="twitter:card" content="summary">
@@ -228,7 +228,6 @@
 		        
 			</div>
 		</nav>
-
 	</header>		
 </div>
 
@@ -302,20 +301,20 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-软件：Flask学习笔记" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-眼动追踪推荐眼镜一：硬件篇" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/07/23/软件：Flask学习笔记/">Flask学习笔记</a>
+      <a class="article-title" href="/2019/09/24/眼动追踪推荐眼镜一：硬件篇/">眼动追踪推荐眼镜一：硬件篇</a>
     </h1>
   
 
         
-        <a href="/2019/07/23/软件：Flask学习笔记/" class="archive-article-date">
-  	<time datetime="2019-07-23T08:29:31.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-23</time>
+        <a href="/2019/09/24/眼动追踪推荐眼镜一：硬件篇/" class="archive-article-date">
+  	<time datetime="2019-09-23T17:04:25.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-24</time>
 </a>
         
       </header>
@@ -327,66 +326,16 @@
 
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="利用循环的判断语句控制template的渲染"><a href="#利用循环的判断语句控制template的渲染" class="headerlink" title="利用循环的判断语句控制template的渲染"></a>利用循环的判断语句控制template的渲染</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">  &#123;% if title %&#125;</span><br><span class="line">  <span class="tag">&lt;<span class="name">title</span>&gt;</span>&#123;&#123;  title  &#125;&#125;<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">  &#123;% else %&#125;</span><br><span class="line">  <span class="tag">&lt;<span class="name">title</span>&gt;</span>AI Workplace<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">   &#123;% endif %&#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">h1</span>&gt;</span>Welcome to AI Workshop<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">  &#123;% for i in range(2) %&#125;</span><br><span class="line">    <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"&#123;&#123; url_for('video_feed') &#125;&#125;"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span>text &#123;&#123; i &#125;&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">&#123;% endfor %&#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h3 id="模板继承和引用"><a href="#模板继承和引用" class="headerlink" title="模板继承和引用"></a>模板继承和引用</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;% extends "base.html"%&#125;</span><br><span class="line"></span><br><span class="line">&#123;% block content %&#125;</span><br><span class="line">&#123;% endblock %&#125;</span><br></pre></td></tr></table></figure>
+        <p>硬件组成部分主要就是眼镜架、摄像头和供电系统。</p>
+<p>可以参考的开源方案有</p>
 <ul>
-<li>Basic usage — Flask-Bootstrap 3.3.7.1 documentation<br><a href="https://pythonhosted.org/Flask-Bootstrap/basic-usage.html" target="_blank" rel="noopener">https://pythonhosted.org/Flask-Bootstrap/basic-usage.html</a></li>
+<li>Pupil Labs<br><a href="https://pupil-labs.com/" target="_blank" rel="noopener">https://pupil-labs.com/</a></li>
 </ul>
-<h3 id="数据库"><a href="#数据库" class="headerlink" title="数据库"></a>数据库</h3><ul>
-<li>Flask-SQLAlchemy — Flask-SQLAlchemy 2.0 documentation<br><a href="http://www.pythondoc.com/flask-sqlalchemy/index.html" target="_blank" rel="noopener">http://www.pythondoc.com/flask-sqlalchemy/index.html</a></li>
-</ul>
-<h3 id="ubuntu-虚拟环境"><a href="#ubuntu-虚拟环境" class="headerlink" title="ubuntu 虚拟环境"></a>ubuntu 虚拟环境</h3><p>安装Python虚拟环境的virtualenv，执行命令<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install python-virtualenv</span><br></pre></td></tr></table></figure></p>
-<p>命令会同时安装python-virtualenv和python3-virtualenv  </p>
-<p>安装virtualwrapper，virtualwrapper是一个简单方便的管理Python虚拟环境的工具<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip3 install virtualenvwrapper</span><br></pre></td></tr></table></figure></p>
-<p>配置virtualwrapper的环境变量<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim ~/.bashrc</span><br></pre></td></tr></table></figure></p>
-<p>Shift + g 到达文本最后，加入以下内容<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3</span><br><span class="line"><span class="built_in">export</span> WORKON_HOME=~/Envs</span><br><span class="line"><span class="built_in">source</span> /home/lee/.<span class="built_in">local</span>/bin/virtualenvwrapper.sh</span><br></pre></td></tr></table></figure></p>
-<p>其中 virtualenvwrapper.sh 和 python3 的路径可通过下面命令查看<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo find / -name <span class="string">"virtualenvwrapper.sh"</span></span><br><span class="line">whereis python  <span class="comment"># 查看所有python的路径，不止一个</span></span><br><span class="line"><span class="built_in">which</span> python3   <span class="comment"># 查看当前使用的python路径</span></span><br></pre></td></tr></table></figure></p>
-<p>执行下面命令，使对~/.bashrc的修改生效<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">source</span> ~/.bashrc</span><br></pre></td></tr></table></figure></p>
-<p>新建虚拟环境<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkvirtualenv --python=/usr/bin/python3 envname</span><br></pre></td></tr></table></figure></p>
-<p>进入虚拟环境<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ workon envname</span><br></pre></td></tr></table></figure></p>
-<p>安装指定包<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install -r requirements.txt</span><br></pre></td></tr></table></figure></p>
-<p>虚拟化境virtualenv下提升权限</p>
-<p>指定python路径<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">(envname)$ <span class="built_in">which</span> python</span><br><span class="line">/home/username/Envs/envname/bin/python</span><br><span class="line">(envname)$ sudo /home/username/Envs/envname/bin/python server.py</span><br></pre></td></tr></table></figure></p>
-<p>退出虚拟环境<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(envname)$ deactivate</span><br></pre></td></tr></table></figure></p>
-<ul>
-<li>Python-Flask-企业级论坛实战 - 随笔分类 - sellsa - 博客园<br><a href="https://www.cnblogs.com/sellsa/category/1244063.html" target="_blank" rel="noopener">https://www.cnblogs.com/sellsa/category/1244063.html</a></li>
-</ul>
-<h3 id="URL传参"><a href="#URL传参" class="headerlink" title="URL传参"></a>URL传参</h3><ul>
-<li><h3 id="path形式传参"><a href="#path形式传参" class="headerlink" title="path形式传参"></a>path形式传参</h3></li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@app.route('/article/&lt;article_id&gt;/')    #我们在&lt;&gt;里面写参数名article_id</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">article_detail</span><span class="params">(article_id)</span>:</span>         <span class="comment">#这里的参数名要和上面的一致，即article_id</span></span><br><span class="line">    <span class="keyword">return</span> <span class="string">'您请求的文章是：&#123;&#125;'</span>.format(article_id)</span><br></pre></td></tr></table></figure>
-<p>限定参数数据类型<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@app.route('/article/&lt;int:article_id&gt;/')</span></span><br></pre></td></tr></table></figure></p>
-<p>这样当我们传递的参数是int类型的时候才能正常访问，其他类型都会返回404  </p>
-<p>类型可以设置提下几种：  </p>
-<ul>
-<li>string: 默认的数据类型，接收没有任何斜杠”   /“的文本</li>
-<li>int: 整数形</li>
-<li>float: 浮点型</li>
-<li>path: 和string类似，但是接受斜杠</li>
-<li>uuid: 只接受uuid字符串</li>
-<li><p>any: 可以指定多种路径，比如以下例子</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@app.route('/&lt;any(article,blog):url_path&gt;/&lt;id&gt;/')</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">item</span><span class="params">(url_path, id)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> url_path == <span class="string">'article'</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="string">'文章详情：&#123;&#125;'</span>.format(id)</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="string">'博客详情：&#123;&#125;'</span>.format(id)</span><br></pre></td></tr></table></figure>
-</li>
-<li><h3 id="key-value形式传参"><a href="#key-value形式传参" class="headerlink" title="?key=value形式传参"></a>?key=value形式传参</h3></li>
-</ul>
-<p>即在浏览器的URL中使用“?key=value”的形式传递参数（多个参数之间使用“&amp;”连接即可），在后台则使用“from flask import request”，然后使用“request.args.get(key)”来获取参数key的值value。<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> flask <span class="keyword">import</span> Flask, request</span><br><span class="line">...</span><br><span class="line"> </span><br><span class="line"><span class="meta">@app.route('/d/')</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">d</span><span class="params">()</span>:</span></span><br><span class="line">    wd = request.args.get(<span class="string">'wd'</span>)</span><br><span class="line">    <span class="keyword">return</span> <span class="string">'您传递的参数是: &#123;&#125;'</span>.format(wd)</span><br></pre></td></tr></table></figure></p>
-<p>访问127.0.0.1:5000/d/?wd=hello</p>
-<h3 id="URL重定向"><a href="#URL重定向" class="headerlink" title="URL重定向"></a>URL重定向</h3><p>url_for使用<br>我们之前是通过url来找到对应的视图函数</p>
-<ul>
-<li>　　/     =&gt;    hello_world  </li>
-</ul>
-<p>那么url_for则是通过视图函数找到url</p>
-<ul>
-<li>　　hello world  =&gt;  /</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> flask <span class="keyword">import</span> url_for</span><br><span class="line"></span><br><span class="line"><span class="meta">@app.route('/')</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">hello_world</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="keyword">return</span> url_for(<span class="string">'my_list'</span>, page_id=<span class="number">1</span>)</span><br><span class="line"></span><br><span class="line"><span class="meta">@app.route('/list/&lt;page_id&gt;')</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">my_list</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="keyword">return</span> <span class="string">'list page'</span></span><br></pre></td></tr></table></figure>
-<p>在flask中，重定向是通过flask.redict(location, code=302)函数来实现的</p>
-<ul>
-<li>location表示需要重定向到的URL,应该配合url_for()函数来使用</li>
-<li>code表示采用哪种重定向，默认是302（临时重定向），也可以改成301来实现永久重定向<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> flask <span class="keyword">import</span> redirect</span><br><span class="line"></span><br><span class="line"><span class="meta">@app.route("/redirect")</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">test</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="keyword">return</span> redirect(url_for(<span class="string">'hello'</span>))</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-
+<p>当前设计使用的是USB摄像头直接连接电脑的方案：240°鱼眼摄像头被固定在眼镜框正前方负责采集用户视野图像，720P摄像头则固定在右前方伸出的支架上负责采集右眼图像，摄像头通过USB与计算机连接完成图像传输。</p>
+<p>以下是对ip摄像头的测试，计划下一步用于眼镜的改进。</p>
+        
+          <a class="article-more-a" href="/2019/09/24/眼动追踪推荐眼镜一：硬件篇/#more">more >></a>
+        
       
 
       
@@ -394,22 +343,11 @@
     <div class="article-info article-info-index">
       
       
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">flask</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
       
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2019/07/23/软件：Flask学习笔记/">展开全文 >></a>
+          <a class="article-more-a" href="/2019/09/24/眼动追踪推荐眼镜一：硬件篇/">展开全文 >></a>
         </p>
       
 
@@ -439,20 +377,20 @@
 
 
   
-    <article id="post-门禁行人检测和识别" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-眼动追踪推荐眼镜" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/07/23/门禁行人检测和识别/">门禁行人检测和识别</a>
+      <a class="article-title" href="/2019/09/19/眼动追踪推荐眼镜/">眼动追踪推荐眼镜</a>
     </h1>
   
 
         
-        <a href="/2019/07/23/门禁行人检测和识别/" class="archive-article-date">
-  	<time datetime="2019-07-23T02:29:26.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-23</time>
+        <a href="/2019/09/19/眼动追踪推荐眼镜/" class="archive-article-date">
+  	<time datetime="2019-09-19T11:09:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-19</time>
 </a>
         
       </header>
@@ -464,158 +402,32 @@
 
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="远程桌面连接"><a href="#远程桌面连接" class="headerlink" title="远程桌面连接"></a>远程桌面连接</h2><ul>
-<li>利用远程桌面连接</li>
-</ul>
-<p>在ubuntu安装xdrp服务<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install xrdp</span><br></pre></td></tr></table></figure></p>
-<p>打开远程桌面服务（mstsc.exe），输入ip连接</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/07/23/门禁行人检测和识别/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Pixar-Lamp二：ST-GCN动作识别" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/07/17/Pixar-Lamp二：ST-GCN动作识别/">Pixar-Lamp二：ST-GCN动作识别</a>
-    </h1>
-  
-
-        
-        <a href="/2019/07/17/Pixar-Lamp二：ST-GCN动作识别/" class="archive-article-date">
-  	<time datetime="2019-07-16T16:16:39.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-17</time>
-</a>
-        
-      </header>
-    
-
-    <!-- 目录内容 -->
-    
-    <!-- 目录内容结束 -->
-
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><strong> Pixar-Lamp二：ST-GCN动作识别 </strong> <excerpt in index | 首页摘要><br>做个跳跳灯！</excerpt></p>
-<ul>
-<li>解读：基于动态骨骼的动作识别方法ST-GCN（时空图卷积网络模型） - 浪浪的博客 - CSDN博客<br><a href="https://blog.csdn.net/qq_36893052/article/details/79860328" target="_blank" rel="noopener">https://blog.csdn.net/qq_36893052/article/details/79860328</a></li>
-</ul>
-        
-          <a class="article-more-a" href="/2019/07/17/Pixar-Lamp二：ST-GCN动作识别/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/07/17/Pixar-Lamp二：ST-GCN动作识别/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-门禁Arduino下位机通信与舵机控制" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/07/12/门禁Arduino下位机通信与舵机控制/">门禁Arduino下位机通信与舵机控制</a>
-    </h1>
-  
-
-        
-        <a href="/2019/07/12/门禁Arduino下位机通信与舵机控制/" class="archive-article-date">
-  	<time datetime="2019-07-12T09:03:45.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-12</time>
-</a>
-        
-      </header>
-    
-
-    <!-- 目录内容 -->
-    
-    <!-- 目录内容结束 -->
-
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><strong> 门禁Arduino下位机通信与舵机控制 </strong> <excerpt in index | 首页摘要></excerpt></p>
-<div align="center">
-<img src="/2019/07/12/门禁Arduino下位机通信与舵机控制/00.gif">
+        <div align="center">
+<img src="/2019/09/19/眼动追踪推荐眼镜/00.png">
 </div>
-        
-          <a class="article-more-a" href="/2019/07/12/门禁Arduino下位机通信与舵机控制/#more">more >></a>
-        
+
+<h2 id="WHY"><a href="#WHY" class="headerlink" title="WHY"></a>WHY</h2><p>眼睛是人类面部最为显著的特征之一，眼睛及其运动在用户的认知、兴趣、情绪表达等过程中有着至关重要的作用。  </p>
+<p>眼动追踪技术通过追踪人体眼球运动，来识别用户所处的环境，预测用户的需求及状态，并进行响应，以实现用眼睛控制设备、完成一些操作。</p>
+<p>AR眼镜自诞生起就为人类更加直观地理解眼前的世界提供了诸多便利。结合眼动追踪技术，AR眼镜可以更加了解用户的兴趣点和需求，提供更精准的信息推荐，为用户带来更加自然的交互体验。</p>
+<h2 id="WHAT"><a href="#WHAT" class="headerlink" title="WHAT"></a>WHAT</h2><p>本文涉及一种人眼注视点的实时估计眼镜，该系统通过提取人眼信息，建立人眼与兴趣点映射关系，实现用户关注信息的实时推荐功能。</p>
+<p>本文主要从以下三个方面进行研究：</p>
+<ul>
+<li>首先是人眼关键点的检测问题，通过多级级联的回归树进行眼眶和通孔的检测，得到关键点特征信息；  </li>
+<li>其次是兴趣点的估计问题，通过梯度提升回归算法建立人眼关键点和兴趣点的映射关系；  </li>
+<li>最后是兴趣点处的目标识别问题，通过yolo目标检测网络对检测视野中的待推荐目标，判断兴趣点是否落在识别框中。</li>
+</ul>
+<h2 id="HOW"><a href="#HOW" class="headerlink" title="HOW"></a>HOW</h2><p>step1. 眼镜上部署两个ip摄像头，camera1获取用户视野图像，camera2获取用户眼睛图像，图像实时回传至中央处理器cpu；<br>step2.1 眼动信息处理，提取camera2中用户眼眶和眼球的关键点信息；<br>step2.2 兴趣点估计，由step2中的关键点特征估算camera1中人眼注视点；<br>step3. 用户视野图像目标检测，实时检测camera1中的待推荐目标，记录相应位置信息；<br>step4. 识别与信息推荐，判断step2中计算的兴趣点是否落在step3中计算的识别框中，进行语音信息推荐。</p>
+<div align="center">
+<img src="/2019/09/19/眼动追踪推荐眼镜/detect.gif" width="500" height="150">
+</div>
+
+
+
+
+<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><ul>
+<li>一文读懂眼动追踪技术及应用<br><a href="https://mp.weixin.qq.com/s?src=11&amp;timestamp=1569225062&amp;ver=1869&amp;signature=ML2J84rjyrwpwNWYIXxrqaJIq7YZdGRAfzd8*q-v2vtSxIpREhSF0MpcjruTuYEFfgRR15F9IfmkCg1iQ1HY4hZtzFGT3gOF8LGyVoxKTtr89LIuel9h6XbniBG2y-w0&amp;new=1" target="_blank" rel="noopener">https://mp.weixin.qq.com/s?src=11&amp;timestamp=1569225062&amp;ver=1869&amp;signature=ML2J84rjyrwpwNWYIXxrqaJIq7YZdGRAfzd8*q-v2vtSxIpREhSF0MpcjruTuYEFfgRR15F9IfmkCg1iQ1HY4hZtzFGT3gOF8LGyVoxKTtr89LIuel9h6XbniBG2y-w0&amp;new=1</a>   </li>
+</ul>
+
       
 
       
@@ -627,7 +439,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2019/07/12/门禁Arduino下位机通信与舵机控制/">展开全文 >></a>
+          <a class="article-more-a" href="/2019/09/19/眼动追踪推荐眼镜/">展开全文 >></a>
         </p>
       
 
@@ -657,20 +469,20 @@
 
 
   
-    <article id="post-软件：使用VSCode编写LaTeX" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-门禁行人检测和识别五：ipv6环境下的docker部署" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/07/11/软件：使用VSCode编写LaTeX/">使用VSCode编写LaTeX</a>
+      <a class="article-title" href="/2019/09/16/门禁行人检测和识别五：ipv6环境下的docker部署/">门禁行人检测和识别五：ipv6环境下的docker部署</a>
     </h1>
   
 
         
-        <a href="/2019/07/11/软件：使用VSCode编写LaTeX/" class="archive-article-date">
-  	<time datetime="2019-07-11T06:40:08.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-11</time>
+        <a href="/2019/09/16/门禁行人检测和识别五：ipv6环境下的docker部署/" class="archive-article-date">
+  	<time datetime="2019-09-16T11:33:22.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-16</time>
 </a>
         
       </header>
@@ -682,9 +494,10 @@
 
     <div class="article-entry" itemprop="articleBody">
       
-        <p><strong> 使用VSCode编写LaTeX </strong> <excerpt in index | 首页摘要></excerpt></p>
+        <p>话说项目参加ipv6比赛时，要在ipv6环境下部署进行检验<br>负责网页的A:我写好了一个框架<br>负责功能的B:我写好了一个函数<br>负责环境的C:我写好了一个参数  </p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:</span><br><span class="line">    <span class="string">''' ipv4 '''</span></span><br><span class="line">    <span class="comment"># app.run(host="0.0.0.0", port=80, debug=True)</span></span><br><span class="line">    <span class="string">''' ipv6 '''</span></span><br><span class="line">    app.run(host=<span class="string">"::"</span>, port=<span class="number">80</span>, debug=<span class="literal">True</span>)</span><br></pre></td></tr></table></figure>
         
-          <a class="article-more-a" href="/2019/07/11/软件：使用VSCode编写LaTeX/#more">more >></a>
+          <a class="article-more-a" href="/2019/09/16/门禁行人检测和识别五：ipv6环境下的docker部署/#more">more >></a>
         
       
 
@@ -698,7 +511,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Latex</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">docker</a>
         		</li>
       		
 		</ul>
@@ -708,7 +521,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2019/07/11/软件：使用VSCode编写LaTeX/">展开全文 >></a>
+          <a class="article-more-a" href="/2019/09/16/门禁行人检测和识别五：ipv6环境下的docker部署/">展开全文 >></a>
         </p>
       
 
@@ -738,20 +551,20 @@
 
 
   
-    <article id="post-门禁人脸检测和识别四：keras人脸表情分类" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-leapmotion使用记录" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/07/11/门禁人脸检测和识别四：keras人脸表情分类/">门禁人脸检测和识别四：keras人脸表情分类</a>
+      <a class="article-title" href="/2019/09/04/leapmotion使用记录/">leapmotion使用记录</a>
     </h1>
   
 
         
-        <a href="/2019/07/11/门禁人脸检测和识别四：keras人脸表情分类/" class="archive-article-date">
-  	<time datetime="2019-07-11T02:23:58.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-11</time>
+        <a href="/2019/09/04/leapmotion使用记录/" class="archive-article-date">
+  	<time datetime="2019-09-04T15:26:36.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-04</time>
 </a>
         
       </header>
@@ -763,11 +576,13 @@
 
     <div class="article-entry" itemprop="articleBody">
       
-        <p><strong> 门禁人脸检测和识别四：keras人脸表情分类 </strong> <excerpt in index | 首页摘要></excerpt></p>
+        <p>最近发现leapmotion出了一款体感键盘，大体就是一个薄膜键盘加上一个leapmotion，七夕价在淘宝上才300元，要知道三代的支架都卖300多了，果断入手来学习一下。</p>
+<p><img src="/2019/09/04/leapmotion使用记录/000.png"></p>
 <ul>
-<li>Keras:基于Python的深度学习库 - Keras中文文档<br><a href="https://keras-cn.readthedocs.io/en/latest/" target="_blank" rel="noopener">https://keras-cn.readthedocs.io/en/latest/</a></li></ul>
+<li>Developer Support – Leap Motion Support<br><a href="https://support.leapmotion.com/hc/en-us/categories/203324688-Developer-Support" target="_blank" rel="noopener">https://support.leapmotion.com/hc/en-us/categories/203324688-Developer-Support</a></li>
+</ul>
         
-          <a class="article-more-a" href="/2019/07/11/门禁人脸检测和识别四：keras人脸表情分类/#more">more >></a>
+          <a class="article-more-a" href="/2019/09/04/leapmotion使用记录/#more">more >></a>
         
       
 
@@ -781,7 +596,15 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">keras</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">leapmotion</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">js</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">box2d</a>
         		</li>
       		
 		</ul>
@@ -791,7 +614,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2019/07/11/门禁人脸检测和识别四：keras人脸表情分类/">展开全文 >></a>
+          <a class="article-more-a" href="/2019/09/04/leapmotion使用记录/">展开全文 >></a>
         </p>
       
 
@@ -821,20 +644,20 @@
 
 
   
-    <article id="post-好玩的：日常" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-硬件：leapmotion使用记录" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/07/09/好玩的：日常/">好玩的：日常</a>
+      <a class="article-title" href="/2019/09/04/硬件：leapmotion使用记录/">leapmotion使用记录</a>
     </h1>
   
 
         
-        <a href="/2019/07/09/好玩的：日常/" class="archive-article-date">
-  	<time datetime="2019-07-09T09:25:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-09</time>
+        <a href="/2019/09/04/硬件：leapmotion使用记录/" class="archive-article-date">
+  	<time datetime="2019-09-04T15:26:36.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-04</time>
 </a>
         
       </header>
@@ -846,9 +669,13 @@
 
     <div class="article-entry" itemprop="articleBody">
       
-        <p><strong> 好玩的：日常 </strong> <excerpt in index | 首页摘要></excerpt></p>
+        <p>最近发现leapmotion出了一款体感键盘，大体就是一个薄膜键盘加上一个leapmotion，七夕价在淘宝上才300元，要知道三代的支架都卖300多了，果断入手来学习一下。</p>
+<p><img src="/2019/09/04/硬件：leapmotion使用记录/leapmotion使用记录/000.png"></p>
+<ul>
+<li>Developer Support – Leap Motion Support<br><a href="https://support.leapmotion.com/hc/en-us/categories/203324688-Developer-Support" target="_blank" rel="noopener">https://support.leapmotion.com/hc/en-us/categories/203324688-Developer-Support</a></li>
+</ul>
         
-          <a class="article-more-a" href="/2019/07/09/好玩的：日常/#more">more >></a>
+          <a class="article-more-a" href="/2019/09/04/硬件：leapmotion使用记录/#more">more >></a>
         
       
 
@@ -862,134 +689,15 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">today is a happy day</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">leapmotion</a>
         		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/07/09/好玩的：日常/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Hexo：yilia主题下添加Subnav导航图标" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/07/09/Hexo：yilia主题下添加Subnav导航图标/">Hexo：yilia主题下添加Subnav导航图标</a>
-    </h1>
-  
-
-        
-        <a href="/2019/07/09/Hexo：yilia主题下添加Subnav导航图标/" class="archive-article-date">
-  	<time datetime="2019-07-09T06:37:29.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-09</time>
-</a>
-        
-      </header>
-    
-
-    <!-- 目录内容 -->
-    
-    <!-- 目录内容结束 -->
-
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="准备素材"><a href="#准备素材" class="headerlink" title="准备素材"></a>准备素材</h2><p>搜索想要使用的图标，下载png格式文件</p>
-<ul>
-<li>图标下载，ICON(SVG/PNG/ICO/ICNS)图标搜索下载 - Easyicon<br><a href="https://www.easyicon.net/" target="_blank" rel="noopener">https://www.easyicon.net/</a></li>
-<li>Font Awesome<br><a href="https://fontawesome.com/" target="_blank" rel="noopener">https://fontawesome.com/</a></li>
-</ul>
-<div align="center">
-<img src="/2019/07/09/Hexo：yilia主题下添加Subnav导航图标/00.png">
-</div>
-
-<p>拷贝xxx.github.io\themes\yilia\source-src\css\fonts下的iconfont.svg文件到桌面  </p>
-<p>使用百度字体平台，制作图标  </p>
-<ul>
-<li>百度字体平台<br><a href="http://fontstore.baidu.com/store#!/" target="_blank" rel="noopener">http://fontstore.baidu.com/store#!/</a></li>
-</ul>
-<p>进入“FontEdior”并“新建”新项目，点击“导入”选择“导入svg”，将iconfont.svg文件导入进来。  </p>
-<p>导入完成后，会出现yilia自带的图标文字。</p>
-<div align="center">
-<img src="/2019/07/09/Hexo：yilia主题下添加Subnav导航图标/01.png">
-</div>
-
-<p>再次点击“导入”选择“导入图片”，导入下载好的png格式图标。</p>
-<p>对图片大小和位置进行调整，保存并退出。</p>
-<p>选中编辑好的图标，点击“字形信息”，输入Unicode和名字，并记下来之后会用到。</p>
-<div align="center">
-<img src="/2019/07/09/Hexo：yilia主题下添加Subnav导航图标/02.png">
-</div>
-
-<p>点击“保存项目”，下载fonteditor.zip文件，制作完成。</p>
-<h2 id="配置Hexo"><a href="#配置Hexo" class="headerlink" title="配置Hexo"></a>配置Hexo</h2><p>解压下载下来的fonteditor.zip文件，将.eot，.svg，.ttf，.woff四个文件拷贝到xxx.github.io\themes\yilia\source-src\css\fonts文件夹下，重命名并替换原文件</p>
-<div align="center">
-<img src="/2019/07/09/Hexo：yilia主题下添加Subnav导航图标/03.png">
-</div>
-
-<p>编辑xxx.github.io\themes\yilia\source-src\css目录下的font.scss和social.scss文件。</p>
-<p>在font.scss中，直接添加.icon-{your App}:before{ content: “{your unicode}”}。<br><figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.icon-thingiverse</span>:before &#123; <span class="attribute">content</span>: <span class="string">"\e878"</span>; &#125;</span><br></pre></td></tr></table></figure></p>
-<p>在social.scss中，也很简单，添加颜色即可。</p>
-<figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">a</span><span class="selector-class">.thingiverse</span> &#123;</span><br><span class="line">    <span class="attribute">background</span>: <span class="number">#086ef6</span>;</span><br><span class="line">    <span class="attribute">border</span>:<span class="number">1px</span> solid <span class="number">#086ef6</span>;</span><br><span class="line">    &amp;:hover &#123;</span><br><span class="line">        <span class="attribute">border</span>:<span class="number">1px</span> solid <span class="number">#086ef6</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>在xxx.github.io\themes\yilia目录下，运行</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">xxx.github.io\themes\yilia&gt;npm install</span><br><span class="line">&gt;npm run dev</span><br><span class="line">&gt;npm run dist</span><br></pre></td></tr></table></figure>
-<p>回到博客根目录<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo g </span><br><span class="line">hexo s</span><br></pre></td></tr></table></figure></p>
-<p>完成。</p>
-<h2 id="问题记录"><a href="#问题记录" class="headerlink" title="问题记录"></a>问题记录</h2><h3 id="1-npm-ERR-Unexpected-end-of-JSON-input-while-parsing-near"><a href="#1-npm-ERR-Unexpected-end-of-JSON-input-while-parsing-near" class="headerlink" title="1. npm ERR! Unexpected end of JSON input while parsing near"></a>1. npm ERR! Unexpected end of JSON input while parsing near</h3><p>清一下缓存。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm cache clean --force</span><br></pre></td></tr></table></figure></p>
-<h3 id="2-npm-ERR-node-sass"><a href="#2-npm-ERR-node-sass" class="headerlink" title="2. npm ERR! node-sass"></a>2. npm ERR! node-sass</h3><p>先卸载，再重装，或者重建。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">npm uninstall node-sass</span><br><span class="line">npm install node-sass</span><br><span class="line">npm rebuild node-sass</span><br></pre></td></tr></table></figure></p>
-<h2 id="参考博客"><a href="#参考博客" class="headerlink" title="参考博客"></a>参考博客</h2><ul>
-<li><p>Hexo yilia 主题一揽子使用方案 - YunShell - CSDN博客<br><a href="https://blog.csdn.net/lynnbest/article/details/79845944" target="_blank" rel="noopener">https://blog.csdn.net/lynnbest/article/details/79845944</a></p>
-</li>
-<li><p>【Hexo】yilia主题 添加 Subnav 社交图标 CSDN STEAM PSN等等 - csdn_inside的博客 - CSDN博客<br><a href="https://blog.csdn.net/csdn_inside/article/details/89159803" target="_blank" rel="noopener">https://blog.csdn.net/csdn_inside/article/details/89159803</a></p>
-</li>
-</ul>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
+      		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">hexo</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">js</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">box2d</a>
         		</li>
       		
 		</ul>
@@ -999,7 +707,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2019/07/09/Hexo：yilia主题下添加Subnav导航图标/">展开全文 >></a>
+          <a class="article-more-a" href="/2019/09/04/硬件：leapmotion使用记录/">展开全文 >></a>
         </p>
       
 
@@ -1029,20 +737,20 @@
 
 
   
-    <article id="post-AI：使用dlib的imglab工具制作训练集与测试" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-git常用命令速查" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/07/06/AI：使用dlib的imglab工具制作训练集与测试/">使用dlib的imglab工具制作训练集与测试</a>
+      <a class="article-title" href="/2019/08/20/git常用命令速查/">git常用命令速查</a>
     </h1>
   
 
         
-        <a href="/2019/07/06/AI：使用dlib的imglab工具制作训练集与测试/" class="archive-article-date">
-  	<time datetime="2019-07-06T14:30:06.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-06</time>
+        <a href="/2019/08/20/git常用命令速查/" class="archive-article-date">
+  	<time datetime="2019-08-20T08:01:02.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-20</time>
 </a>
         
       </header>
@@ -1054,16 +762,14 @@
 
     <div class="article-entry" itemprop="articleBody">
       
-        <p><strong> 使用dlib的imglab工具制作训练集与测试 </strong> <excerpt in index | 首页摘要></excerpt></p>
-<p>在使用dlib进行人脸识别和关键点检测的demo中，官方提供了训练好的数据：正脸检测器dlib.get_frontal_face_detector()<br>和特征点的训练库shape_predictor_68_face_landmarks.dat，如果想对自己的图形进行识别和关键点检测，可以使用dlib自带的imglab数据库标准工具制作训练集，再通过dlib的官方代码训练出模型，最后对模型进行测试。</p>
-<ul>
-<li><p>dlib train_object_detector<br><a href="http://dlib.net/train_object_detector.py.html" target="_blank" rel="noopener">http://dlib.net/train_object_detector.py.html</a></p>
+        <ul>
+<li><p>521xueweihan/git-tips: Git的奇技淫巧<br><a href="https://github.com/521xueweihan/git-tips" target="_blank" rel="noopener">https://github.com/521xueweihan/git-tips</a></p>
 </li>
-<li><p>dlib train_shape_predictor<br><a href="http://dlib.net/train_shape_predictor.py.html" target="_blank" rel="noopener">http://dlib.net/train_shape_predictor.py.html</a></p>
+<li><p>程序员必备工具 – SadAngel的小屋<br><a href="http://www.sadangel.cn/category/%e7%a8%8b%e5%ba%8f%e5%91%98%e5%bf%85%e5%a4%87%e5%b7%a5%e5%85%b7/" target="_blank" rel="noopener">http://www.sadangel.cn/category/%e7%a8%8b%e5%ba%8f%e5%91%98%e5%bf%85%e5%a4%87%e5%b7%a5%e5%85%b7/</a></p>
 </li>
 </ul>
         
-          <a class="article-more-a" href="/2019/07/06/AI：使用dlib的imglab工具制作训练集与测试/#more">more >></a>
+          <a class="article-more-a" href="/2019/08/20/git常用命令速查/#more">more >></a>
         
       
 
@@ -1077,7 +783,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">dlib</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">git</a>
         		</li>
       		
 		</ul>
@@ -1087,7 +793,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2019/07/06/AI：使用dlib的imglab工具制作训练集与测试/">展开全文 >></a>
+          <a class="article-more-a" href="/2019/08/20/git常用命令速查/">展开全文 >></a>
         </p>
       
 
@@ -1117,20 +823,20 @@
 
 
   
-    <article id="post-AI：win10-python37-安装dlib19-17" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-软件：git常用命令速查" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/07/06/AI：win10-python37-安装dlib19-17/">win10 python3.7 安装dlib19.17</a>
+      <a class="article-title" href="/2019/08/20/软件：git常用命令速查/">git常用命令速查</a>
     </h1>
   
 
         
-        <a href="/2019/07/06/AI：win10-python37-安装dlib19-17/" class="archive-article-date">
-  	<time datetime="2019-07-06T03:17:54.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-06</time>
+        <a href="/2019/08/20/软件：git常用命令速查/" class="archive-article-date">
+  	<time datetime="2019-08-20T08:01:02.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-20</time>
 </a>
         
       </header>
@@ -1142,15 +848,14 @@
 
     <div class="article-entry" itemprop="articleBody">
       
-        <p><strong> win10 python3.7 安装dlib19.17 </strong> <excerpt in index | 首页摘要></excerpt></p>
-<p>最近使用了dlib识别人脸68个特征点，教研室的win7很早之前就装的dlib当时没遇到什么坑，回家里在win10上安装“大礼包”竟然把电脑弄蓝屏了，在此记录一下。  </p>
-<div align="center">
-<img src="/2019/07/06/AI：win10-python37-安装dlib19-17/win10-python37-安装dlib19-17/00.png" width="300" height="500">
-</div>
-
-<p>搜索还原点-&gt;点击“配置”启用保护-&gt;创建还原点。  </p>
+        <ul>
+<li><p>521xueweihan/git-tips: Git的奇技淫巧<br><a href="https://github.com/521xueweihan/git-tips" target="_blank" rel="noopener">https://github.com/521xueweihan/git-tips</a></p>
+</li>
+<li><p>程序员必备工具 – SadAngel的小屋<br><a href="http://www.sadangel.cn/category/%e7%a8%8b%e5%ba%8f%e5%91%98%e5%bf%85%e5%a4%87%e5%b7%a5%e5%85%b7/" target="_blank" rel="noopener">http://www.sadangel.cn/category/%e7%a8%8b%e5%ba%8f%e5%91%98%e5%bf%85%e5%a4%87%e5%b7%a5%e5%85%b7/</a></p>
+</li>
+</ul>
         
-          <a class="article-more-a" href="/2019/07/06/AI：win10-python37-安装dlib19-17/#more">more >></a>
+          <a class="article-more-a" href="/2019/08/20/软件：git常用命令速查/#more">more >></a>
         
       
 
@@ -1164,7 +869,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">dlib</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">git</a>
         		</li>
       		
 		</ul>
@@ -1174,7 +879,255 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2019/07/06/AI：win10-python37-安装dlib19-17/">展开全文 >></a>
+          <a class="article-more-a" href="/2019/08/20/软件：git常用命令速查/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-Hikey970使用记录五：安装测试dlib19" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/08/19/Hikey970使用记录五：安装测试dlib19/">Hikey970使用记录五：安装测试dlib19</a>
+    </h1>
+  
+
+        
+        <a href="/2019/08/19/Hikey970使用记录五：安装测试dlib19/" class="archive-article-date">
+  	<time datetime="2019-08-18T16:02:20.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-19</time>
+</a>
+        
+      </header>
+    
+
+    <!-- 目录内容 -->
+    
+    <!-- 目录内容结束 -->
+
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>安装相关依赖<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install build-essential cmake pkg-config</span><br><span class="line">sudo apt install libboost-dev libopenblas-dev</span><br></pre></td></tr></table></figure></p>
+<p>下载安装包并安装<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">wget http://dlib.net/files/dlib-19.17.tar.bz2</span><br><span class="line">tar -jxvf dlib-19.17.tar.bz2</span><br><span class="line">cd dlib-19.17</span><br><span class="line">python setup.py install</span><br></pre></td></tr></table></figure></p>
+<h2 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">import dlib</span><br></pre></td></tr></table></figure>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/08/19/Hikey970使用记录五：安装测试dlib19/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-AI：keras版本yolov3使用和训练" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/08/14/AI：keras版本yolov3使用和训练/">keras版本yolov3使用和训练</a>
+    </h1>
+  
+
+        
+        <a href="/2019/08/14/AI：keras版本yolov3使用和训练/" class="archive-article-date">
+  	<time datetime="2019-08-14T14:40:26.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-14</time>
+</a>
+        
+      </header>
+    
+
+    <!-- 目录内容 -->
+    
+    <!-- 目录内容结束 -->
+
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h2><p>安装tensorflow和keras</p>
+<p>下载yolov3代码</p>
+<ul>
+<li>qqwweee/keras-yolo3: A Keras implementation of YOLOv3 (Tensorflow backend)<br><a href="https://github.com/qqwweee/keras-yolo3" target="_blank" rel="noopener">https://github.com/qqwweee/keras-yolo3</a></li>
+</ul>
+<h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><p>下载权重文件</p>
+<ul>
+<li><a href="https://pjreddie.com/media/files/yolov3.weights" target="_blank" rel="noopener">https://pjreddie.com/media/files/yolov3.weights</a></li>
+</ul>
+        
+          <a class="article-more-a" href="/2019/08/14/AI：keras版本yolov3使用和训练/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">yolo</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/08/14/AI：keras版本yolov3使用和训练/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-keras版本yolov3使用和训练" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/08/14/keras版本yolov3使用和训练/">keras版本yolov3使用和训练</a>
+    </h1>
+  
+
+        
+        <a href="/2019/08/14/keras版本yolov3使用和训练/" class="archive-article-date">
+  	<time datetime="2019-08-14T14:40:26.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-14</time>
+</a>
+        
+      </header>
+    
+
+    <!-- 目录内容 -->
+    
+    <!-- 目录内容结束 -->
+
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h2><p>安装tensorflow和keras</p>
+<p>下载yolov3代码</p>
+<ul>
+<li>qqwweee/keras-yolo3: A Keras implementation of YOLOv3 (Tensorflow backend)<br><a href="https://github.com/qqwweee/keras-yolo3" target="_blank" rel="noopener">https://github.com/qqwweee/keras-yolo3</a></li>
+</ul>
+<h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><p>下载权重文件</p>
+<ul>
+<li><a href="https://pjreddie.com/media/files/yolov3.weights" target="_blank" rel="noopener">https://pjreddie.com/media/files/yolov3.weights</a></li>
+</ul>
+        
+          <a class="article-more-a" href="/2019/08/14/keras版本yolov3使用和训练/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">yolo</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/08/14/keras版本yolov3使用和训练/">展开全文 >></a>
         </p>
       
 
@@ -1206,7 +1159,7 @@
   
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/page/4/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><a class="page-number" href="/page/7/">7</a><span class="space">&hellip;</span><a class="page-number" href="/page/10/">10</a><a class="extend next" rel="next" href="/page/6/">Next &raquo;</a>
+      <a class="extend prev" rel="prev" href="/page/4/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><a class="page-number" href="/page/7/">7</a><span class="space">&hellip;</span><a class="page-number" href="/page/14/">14</a><a class="extend next" rel="next" href="/page/6/">Next &raquo;</a>
     </nav>
   
 
@@ -1323,19 +1276,23 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">lua</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">neat</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Mario</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">import</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">sklearn</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">tensorflow</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">dlib</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1347,7 +1304,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">yolo</a>
+                <a href="javascript:void(0)" class="js-tag color1">tensorflow</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">dlib</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1367,6 +1328,22 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">yolo</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">brainfuck</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">flask</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Arduino</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">hexo</a>
               </li>
              
@@ -1379,15 +1356,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">+ python</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">+ loomo + Android + 机械手</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Arduino</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1399,35 +1368,19 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">jupyter notebook</a>
+                <a href="javascript:void(0)" class="js-tag color4">-go</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">数模</a>
+                <a href="javascript:void(0)" class="js-tag color1">loomo</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">天猫精灵</a>
+                <a href="javascript:void(0)" class="js-tag color3">Android</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">esp8266</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">php</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">mysql</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">today is a happy day</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">alphazero</a>
+                <a href="javascript:void(0)" class="js-tag color4">机械手</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1443,23 +1396,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">迁移学习</a>
+                <a href="javascript:void(0)" class="js-tag color4">git</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">AlphaZero</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">brainfuck</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">-go</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">flask</a>
+                <a href="javascript:void(0)" class="js-tag color4">web</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1467,11 +1408,51 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">git</a>
+                <a href="javascript:void(0)" class="js-tag color1">Latex</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Latex</a>
+                <a href="javascript:void(0)" class="js-tag color2">jupyter notebook</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">天猫精灵</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">esp8266</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">数模</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">today is a happy day</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">php</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">mysql</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">arduino</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">alphazero</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">迁移学习</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">AlphaZero</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1483,11 +1464,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
+                <a href="javascript:void(0)" class="js-tag color1">Flask</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Flask</a>
+                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
               </li>
             
             <div class="clearfix"></div>
