@@ -301,93 +301,6 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-AI：TensorFlow-手写数字识别" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/04/26/AI：TensorFlow-手写数字识别/">TensorFlow 手写数字识别</a>
-    </h1>
-  
-
-        
-        <a href="/2019/04/26/AI：TensorFlow-手写数字识别/" class="archive-article-date">
-  	<time datetime="2019-04-26T02:13:08.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-26</time>
-</a>
-        
-      </header>
-    
-
-    <!-- 目录内容 -->
-    
-    <!-- 目录内容结束 -->
-
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="tensorflow基础"><a href="#tensorflow基础" class="headerlink" title="tensorflow基础"></a>tensorflow基础</h2><h3 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h3><p>tensorflow是一个编程系统，使用图(graphs)来表示计算任务，在会话(Seeeion)的context中执行graphs，graphs中的节点称为op(operation)，一个op获得零个或多个Tensor，执行计算产生零个或多个Tensor，Tensor可以看做n维数组或列表，图必须在会话中启动，通过变量(Variable)维护装填，使用feed和fetch可以为任意的操作赋值获从中获取数据。</p>
-<ul>
-<li><p>TensorFlow Core  |  TensorFlow<br><a href="https://tensorflow.google.cn/tutorials?tdsourcetag=s_pcqq_aiomsg" target="_blank" rel="noopener">https://tensorflow.google.cn/tutorials?tdsourcetag=s_pcqq_aiomsg</a></p>
-</li>
-<li><p>优化器 Optimizer 加速神经网络训练 (深度学习) Speed up neural network training process (deep learning) - YouTube<br><a href="https://www.youtube.com/watch?v=UlUGGB7akfE&amp;list=PLXO45tsB95cKI5AIlf5TxxFPzb-0zeVZ8&amp;index=18&amp;app=desktop" target="_blank" rel="noopener">https://www.youtube.com/watch?v=UlUGGB7akfE&amp;list=PLXO45tsB95cKI5AIlf5TxxFPzb-0zeVZ8&amp;index=18&amp;app=desktop</a></p>
-</li>
-<li><p>An overview of gradient descent optimization algorithms<br><a href="http://ruder.io/optimizing-gradient-descent/" target="_blank" rel="noopener">http://ruder.io/optimizing-gradient-descent/</a></p>
-</li>
-</ul>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">tensorflow</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/04/26/AI：TensorFlow-手写数字识别/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
     <article id="post-TensorFlow-手写数字识别" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -916,118 +829,6 @@
 
 
   
-    <article id="post-树莓派 编译安装OpenCV-4.0.0 for Python3" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/04/20/树莓派 编译安装OpenCV-4.0.0 for Python3/">树莓派3b 编译安装OpenCV-4.0.0 for Python3</a>
-    </h1>
-  
-
-        
-        <a href="/2019/04/20/树莓派 编译安装OpenCV-4.0.0 for Python3/" class="archive-article-date">
-  	<time datetime="2019-04-20T13:14:22.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-20</time>
-</a>
-        
-      </header>
-    
-
-    <!-- 目录内容 -->
-    
-    <!-- 目录内容结束 -->
-
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h2><h3 id="调整SWAP分区"><a href="#调整SWAP分区" class="headerlink" title="调整SWAP分区"></a>调整SWAP分区</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> /var &amp;&amp; ls</span><br></pre></td></tr></table></figure>
-<p>卸载swap文件<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo swapoff swap</span><br></pre></td></tr></table></figure></p>
-<p>查看一下<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ htop</span><br></pre></td></tr></table></figure></p>
-<p>创建一个更大的swap文件<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo dd <span class="keyword">if</span>=/dev/zero of=swap bs=1M count=2048</span><br></pre></td></tr></table></figure></p>
-<p>装载新的swap文件<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ sudo mkswap swap </span><br><span class="line">$ sudo swapon swap</span><br></pre></td></tr></table></figure></p>
-<p>可以在htop中看到新的swap分区大小为2GB，完成</p>
-<h3 id="相关依赖"><a href="#相关依赖" class="headerlink" title="相关依赖"></a>相关依赖</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$ sudo apt-get install build-essential cmake pkg-config</span><br><span class="line">$ sudo apt-get install libjpeg-dev libtiff5-dev libjasper-dev libpng12-dev</span><br><span class="line">$ sudo apt-get install libavcodec-dev libavformat-dev libswscale-dev libv4l-dev</span><br><span class="line">$ sudo apt-get install libxvidcore-dev libx264-dev</span><br><span class="line">$ sudo apt-get install libgtk2.0-dev</span><br><span class="line">$ sudo apt-get install libatlas-base-dev gfortran</span><br><span class="line">$ sudo apt-get install python2.7-dev python3-dev</span><br></pre></td></tr></table></figure>
-<p>安装numpy<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ pip3 install numpy</span><br></pre></td></tr></table></figure></p>
-<h3 id="下载opencv源码"><a href="#下载opencv源码" class="headerlink" title="下载opencv源码"></a>下载opencv源码</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> Documents/</span><br><span class="line">$ wget https://github.com/opencv/opencv/archive/4.0.0.zip</span><br><span class="line">$ unzip 4.0.0.zip</span><br><span class="line">$ wget https://github.com/opencv/opencv_contrib/archive/4.0.0.zip</span><br><span class="line">$ unzip 4.0.0.zip</span><br></pre></td></tr></table></figure>
-<h2 id="编译"><a href="#编译" class="headerlink" title="编译"></a>编译</h2><h3 id="进入虚拟环境"><a href="#进入虚拟环境" class="headerlink" title="进入虚拟环境"></a>进入虚拟环境</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> python-env</span><br><span class="line">$ pyvenv py35</span><br><span class="line">$ <span class="built_in">source</span> python-env/py35/bin/activate</span><br></pre></td></tr></table></figure>
-<h3 id="设置编译环境"><a href="#设置编译环境" class="headerlink" title="设置编译环境"></a>设置编译环境</h3><p>安装cmake-qt-gui，使用图形界面<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> Documents/opencv-4.0.0/</span><br><span class="line">$ mkdir build</span><br><span class="line">$ <span class="built_in">cd</span> build/</span><br><span class="line">$ sudo apt-get install cmake-qt-gui</span><br><span class="line">$ (venv) pi@raspberrypi:~/Documents/opencv-4.0.0/build $ cmake-gui</span><br></pre></td></tr></table></figure></p>
-<p>选择源文件路径，编译文件夹选择刚才新建的build文件夹<br>点击左下角Configure，第一次完成是红色的，再点一次就变成白色了，如图  </p>
-<p><img src="/2019/04/20/树莓派 编译安装OpenCV-4.0.0 for Python3/树莓派3b 编译安装OpenCV-4.0.0 for Python3/01.png" width="600" height="300"></p>
-<p>然后查找OPENCV_EXTRA_MODULES_PATH项，将OpenCV_Contrib-4.0.0的路径填进去，点击Configure，如图</p>
-<p><img src="/2019/04/20/树莓派 编译安装OpenCV-4.0.0 for Python3/树莓派3b 编译安装OpenCV-4.0.0 for Python3/02.png" width="600" height="300"></p>
-<p>这样OpenCV_Contrib-4.0.0就被添加进去了，然后我们修改关于Python的参数，在查找栏键入PYTHON：取消BIULD_opencv_python2，勾选INSTALL_PYTHON_EXMAPLES，这样就设置为编译Python3的版本了，再次点击Configure，如图：<br><img src="/2019/04/20/树莓派 编译安装OpenCV-4.0.0 for Python3/树莓派3b 编译安装OpenCV-4.0.0 for Python3/03.png" width="600" height="300"></p>
-<p>然后就可以生成编译文件了，点击Generate  </p>
-<h3 id="编译-1"><a href="#编译-1" class="headerlink" title="编译"></a>编译</h3><p>键入下述命令开始编译，有风扇-j4，没风扇-j2-j3<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ make -j4</span><br></pre></td></tr></table></figure></p>
-<p>安装<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ sudo make install </span><br><span class="line">$ sudo ldconfig</span><br></pre></td></tr></table></figure></p>
-<p>因编译后的库文件cv2.so被输出为 cv2.cpython-35m-arm-linux-gnueabihf.so，这将导致该模块在Python3中无法import进来<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ sudo cp /usr/<span class="built_in">local</span>/python/cv2/python-3.5/cv2.cpython-35m-arm-linux-gnueabihf.so /usr/<span class="built_in">local</span>/lib/python3.5/dist-packages</span><br><span class="line">$ <span class="built_in">cd</span> /usr/<span class="built_in">local</span>/lib/python3.5/dist-packages/</span><br><span class="line">$ sudo mv cv2.cpython-35m-arm-linux-gnueabihf.so cv.so</span><br><span class="line">$ ln -s /usr/<span class="built_in">local</span>/lib/python3.5/dist-packages/cv2.so cv2.so</span><br></pre></td></tr></table></figure></p>
-<h2 id="参考博客"><a href="#参考博客" class="headerlink" title="参考博客"></a>参考博客</h2><ul>
-<li>Raspberry Pi-树莓派搭建基于Python3和OpenCV实现的解魔方机器人-爱板网论坛 - 电子工程师学习交流园地<br><a href="http://www.eeboard.com/bbs/thread-99451-1-1.html" target="_blank" rel="noopener">http://www.eeboard.com/bbs/thread-99451-1-1.html</a></li>
-<li>树莓派3b编译安装完整OpenCV-3.4.1 for Python3 - 爱板网经验频道 - Eeboard爱板网<br><a href="https://jingyan.eeboard.com/article/76476" target="_blank" rel="noopener">https://jingyan.eeboard.com/article/76476</a></li>
-<li>树莓派安装opencv调用cv2时提示ModuleNotFoundError: NO module named ‘cv’的解决方法 - Mrkinte的博客 - CSDN博客<br><a href="https://blog.csdn.net/Mrkinte/article/details/85058507" target="_blank" rel="noopener">https://blog.csdn.net/Mrkinte/article/details/85058507</a></li>
-<li>Ubuntu 16.04: How to install OpenCV - PyImageSearch<br><a href="https://www.pyimagesearch.com/2016/10/24/ubuntu-16-04-how-to-install-opencv/" target="_blank" rel="noopener">https://www.pyimagesearch.com/2016/10/24/ubuntu-16-04-how-to-install-opencv/</a></li>
-</ul>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">raspberry</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">opencv</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">python</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/04/20/树莓派 编译安装OpenCV-4.0.0 for Python3/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
     <article id="post-树莓派3b 编译安装OpenCV-4.0.0 for Python3" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -1269,9 +1070,90 @@ $(document).ready(function(){
 
 
   
+    <article id="post-Hexo：Hello Hexo" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/04/19/Hexo：Hello Hexo/">Hexo：Hello Hexo 使用hexo+github搭建个人博客</a>
+    </h1>
+  
+
+        
+        <a href="/2019/04/19/Hexo：Hello Hexo/" class="archive-article-date">
+  	<time datetime="2019-04-19T14:30:18.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-19</time>
+</a>
+        
+      </header>
+    
+
+    <!-- 目录内容 -->
+    
+    <!-- 目录内容结束 -->
+
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><strong> Hexo：Hello Hexo 使用hexo+github搭建个人博客 </strong> <excerpt in index | 首页摘要><br>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.<br></excerpt></p>
+        
+          <a class="article-more-a" href="/2019/04/19/Hexo：Hello Hexo/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">hexo</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/04/19/Hexo：Hello Hexo/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/page/12/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/11/">11</a><a class="page-number" href="/page/12/">12</a><span class="page-number current">13</span><a class="page-number" href="/page/14/">14</a><a class="extend next" rel="next" href="/page/14/">Next &raquo;</a>
+      <a class="extend prev" rel="prev" href="/page/12/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/11/">11</a><a class="page-number" href="/page/12/">12</a><span class="page-number current">13</span>
     </nav>
   
 
@@ -1384,18 +1266,6 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">3D打印</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">吉他</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">RL</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">lua</a>
               </li>
              
@@ -1408,7 +1278,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">tensorflow</a>
+                <a href="javascript:void(0)" class="js-tag color5">3D打印</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">吉他</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1420,11 +1294,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">dlib</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">yolo</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">dlib</a>
+                <a href="javascript:void(0)" class="js-tag color3">RL</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1432,7 +1310,19 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">tensorflow</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">flask</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">brainfuck</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1452,14 +1342,6 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">flask</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Hikey970</a>
               </li>
              
@@ -1472,31 +1354,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">robot</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">+ opencv + arduino</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">git</a>
+                <a href="javascript:void(0)" class="js-tag color1">robot</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">-go</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">loomo</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Android</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">机械手</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1512,7 +1378,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">tkinter</a>
+                <a href="javascript:void(0)" class="js-tag color1">loomo</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Android</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">机械手</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1524,11 +1398,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Latex</a>
+                <a href="javascript:void(0)" class="js-tag color3">数模</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">数模</a>
+                <a href="javascript:void(0)" class="js-tag color1">Latex</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1552,6 +1426,10 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">git</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">arduino</a>
               </li>
              
@@ -1564,11 +1442,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">AlphaZero</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Flask</a>
+                <a href="javascript:void(0)" class="js-tag color3">tkinter</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1580,7 +1454,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Flask</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">随笔</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">AlphaZero</a>
               </li>
             
             <div class="clearfix"></div>
