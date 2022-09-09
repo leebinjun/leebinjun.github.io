@@ -301,20 +301,20 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-Robot：桌面冰球机器人" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-门禁python多进程练习" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/06/07/Robot：桌面冰球机器人/">桌面冰球机器人</a>
+      <a class="article-title" href="/2019/05/16/门禁python多进程练习/">门禁python多进程练习</a>
     </h1>
   
 
         
-        <a href="/2019/06/07/Robot：桌面冰球机器人/" class="archive-article-date">
-  	<time datetime="2019-06-06T16:48:20.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-07</time>
+        <a href="/2019/05/16/门禁python多进程练习/" class="archive-article-date">
+  	<time datetime="2019-05-16T12:33:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-16</time>
 </a>
         
       </header>
@@ -326,30 +326,11 @@
 
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h2><ul>
-<li>桌上冰球机器人 opencv3 + arduino mega2560  </li>
-</ul>
-<p><a href="https://blog.csdn.net/x_a_little_story/article/details/88747280" target="_blank" rel="noopener">https://blog.csdn.net/x_a_little_story/article/details/88747280</a></p>
-<p>在闲鱼上面发现这个机器人感觉得很有趣，如果使用强化学习做人机对战是一个很好的项目。<br>查到了资料发现代码模型都很全，就按开源项目的设计和代码在端午小假期DIY了一个。<br>目前还是个人工智障，主要有以下问题待解决：</p>
+        <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">import multiprocessing as mp</span><br><span class="line"></span><br><span class="line">def task(a):</span><br><span class="line">    pass</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:</span><br><span class="line">    p1 = mp.Process(target=task, args=(1,))</span><br><span class="line">    p1.start()</span><br><span class="line">    p1.join()</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">import tkinter as tk</span><br><span class="line"></span><br><span class="line">root = tk.Tk()</span><br><span class="line"></span><br><span class="line">def func_loop():</span><br><span class="line">    func()</span><br><span class="line">    root.after(1, func_loop)</span><br><span class="line"></span><br><span class="line">root.loopmain()</span><br></pre></td></tr></table></figure>
 <ul>
-<li>笔记本性能不够，帧数最多只到9，反应速度不够快；</li>
-<li>电机没有加Y轴，所以理论上只能防守；</li>
-<li>机械结构上做了一些trick，比如倾斜“场地”和封死机器人的“球门”；</li>
-<li>算法上还是常规几何推理的方法，并没有想好怎么使用RL，大概可以参考一下gym里的breakout？</li>
+<li>[译]深度神经网络的多任务学习概览(An Overview of Multi-task Learning in Deep Neural Networks) - Shuzi_rank - 博客园 &lt;/br&gt;<a href="https://www.cnblogs.com/shuzirank/p/7141017.html" target="_blank" rel="noopener">https://www.cnblogs.com/shuzirank/p/7141017.html</a></li>
 </ul>
-<h2 id="Demo"><a href="#Demo" class="headerlink" title="Demo"></a>Demo</h2><div align="center">
-<img src="/2019/06/07/Robot：桌面冰球机器人/桌面冰球机器人/001.gif" width="600" height="350">
-</div>
-
-<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><p>感谢故里草木深和JJulio两位前辈提供的资料。  </p>
-<ul>
-<li>桌上冰球机器人 opencv3 + arduino mega2560  </li>
-</ul>
-<p><a href="https://blog.csdn.net/x_a_little_story/article/details/88747280" target="_blank" rel="noopener">https://blog.csdn.net/x_a_little_story/article/details/88747280</a></p>
-<ul>
-<li>JJulio/AHRobot: Air Hockey Robot Project  </li>
-</ul>
-<p><a href="https://github.com/JJulio/AHRobot" target="_blank" rel="noopener">https://github.com/JJulio/AHRobot</a></p>
 
       
 
@@ -363,7 +344,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">+ opencv + arduino</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">python</a>
         		</li>
       		
 		</ul>
@@ -373,7 +354,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2019/06/07/Robot：桌面冰球机器人/">展开全文 >></a>
+          <a class="article-more-a" href="/2019/05/16/门禁python多进程练习/">展开全文 >></a>
         </p>
       
 
@@ -403,20 +384,20 @@
 
 
   
-    <article id="post-桌面冰球机器人" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-Pixar-Lamp" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/06/07/桌面冰球机器人/">桌面冰球机器人</a>
+      <a class="article-title" href="/2019/05/14/Pixar-Lamp/">Pixar Lamp</a>
     </h1>
   
 
         
-        <a href="/2019/06/07/桌面冰球机器人/" class="archive-article-date">
-  	<time datetime="2019-06-06T16:48:20.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-07</time>
+        <a href="/2019/05/14/Pixar-Lamp/" class="archive-article-date">
+  	<time datetime="2019-05-14T11:25:43.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-14</time>
 </a>
         
       </header>
@@ -428,24 +409,298 @@
 
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h2><ul>
-<li>桌上冰球机器人 opencv3 + arduino mega2560<br><a href="https://blog.csdn.net/x_a_little_story/article/details/88747280" target="_blank" rel="noopener">https://blog.csdn.net/x_a_little_story/article/details/88747280</a></li>
-</ul>
-<p>在闲鱼上面发现这个机器人感觉得很有趣，如果使用强化学习做人机对战是一个很好的项目。<br>查到了资料发现代码模型都很全，就按开源项目的设计和代码在端午小假期DIY了一个。<br>目前还是个人工智障，主要有以下问题待解决：</p>
-<ul>
-<li>笔记本性能不够，帧数最多只到9，反应速度不够快；</li>
-<li>电机没有加Y轴，所以理论上只能防守；</li>
-<li>机械结构上做了一些trick，比如倾斜“场地”和封死机器人的“球门”；</li>
-<li>算法上还是常规几何推理的方法，并没有想好怎么使用RL，大概可以参考一下gym里的breakout？</li>
-</ul>
-<h2 id="Demo"><a href="#Demo" class="headerlink" title="Demo"></a>Demo</h2><div align="center">
-<img src="/2019/06/07/桌面冰球机器人/001.gif" width="600" height="350">
+        <p><strong> Pixar Lamp </strong> <excerpt in index | 首页摘要><br>做个跳跳灯！<br></excerpt></p>
+        
+          <a class="article-more-a" href="/2019/05/14/Pixar-Lamp/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">python</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/05/14/Pixar-Lamp/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-Hikey970使用记录" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/05/12/Hikey970使用记录/">Hikey970使用记录</a>
+    </h1>
+  
+
+        
+        <a href="/2019/05/12/Hikey970使用记录/" class="archive-article-date">
+  	<time datetime="2019-05-12T03:16:12.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-12</time>
+</a>
+        
+      </header>
+    
+
+    <!-- 目录内容 -->
+    
+    <!-- 目录内容结束 -->
+
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><strong> Hikey970使用记录 </strong> <excerpt in index | 首页摘要><br>hello hikey!<br>Hikey970使用记录一：ubuntu16.04下烧写lebian系统<br>Hikey970使用记录二：编译安装opencv4.0.0<br>Hikey970使用记录三：USB转串口驱动安装<br></excerpt></p>
+        
+          <a class="article-more-a" href="/2019/05/12/Hikey970使用记录/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Hikey970</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/05/12/Hikey970使用记录/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-软件：tkinter学习笔记" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/05/11/软件：tkinter学习笔记/">tkinter学习笔记</a>
+    </h1>
+  
+
+        
+        <a href="/2019/05/11/软件：tkinter学习笔记/" class="archive-article-date">
+  	<time datetime="2019-05-11T06:28:52.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-11</time>
+</a>
+        
+      </header>
+    
+
+    <!-- 目录内容 -->
+    
+    <!-- 目录内容结束 -->
+
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><strong> tkinter学习笔记 </strong> <excerpt in index | 首页摘要></excerpt></p>
+<h2 id="tkinter-可以使用的颜色"><a href="#tkinter-可以使用的颜色" class="headerlink" title="tkinter 可以使用的颜色"></a>tkinter 可以使用的颜色</h2><div align="center">
+<img src="/2019/05/11/软件：tkinter学习笔记/tkinter学习笔记/color.png" width="600" height="300">
+</div>
+        
+          <a class="article-more-a" href="/2019/05/11/软件：tkinter学习笔记/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">python</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">tkinter</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/05/11/软件：tkinter学习笔记/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-象棋残局机器人" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/05/05/象棋残局机器人/">象棋残局机器人</a>
+    </h1>
+  
+
+        
+        <a href="/2019/05/05/象棋残局机器人/" class="archive-article-date">
+  	<time datetime="2019-05-05T15:08:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-05</time>
+</a>
+        
+      </header>
+    
+
+    <!-- 目录内容 -->
+    
+    <!-- 目录内容结束 -->
+
+    <div class="article-entry" itemprop="articleBody">
+      
+        <div align="center">
+<img src="/2019/05/05/象棋残局机器人/01.png" width="1120" height="675">
 </div>
 
-<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><p>感谢故里草木深和JJulio两位前辈提供的资料。  </p>
-<ul>
-<li>桌上冰球机器人 opencv3 + arduino mega2560<br><a href="https://blog.csdn.net/x_a_little_story/article/details/88747280" target="_blank" rel="noopener">https://blog.csdn.net/x_a_little_story/article/details/88747280</a></li>
-<li>JJulio/AHRobot: Air Hockey Robot Project<br><a href="https://github.com/JJulio/AHRobot" target="_blank" rel="noopener">https://github.com/JJulio/AHRobot</a></li>
+<div align="center">
+<img src="/2019/05/05/象棋残局机器人/02.png" width="1120" height="675">
+</div>
+
+<h1 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h1><h2 id="python"><a href="#python" class="headerlink" title="python"></a>python</h2><ul>
+<li>Home - Anaconda <a href="https://www.anaconda.com/" target="_blank" rel="noopener">https://www.anaconda.com/</a>  </li>
+<li>Visual Studio Code - Code Editing. Redefined <a href="https://code.visualstudio.com/" target="_blank" rel="noopener">https://code.visualstudio.com/</a>  </li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2</span><br><span class="line"><span class="keyword">import</span> numpy</span><br><span class="line"><span class="keyword">import</span> tkinter <span class="keyword">as</span> tk</span><br><span class="line"><span class="keyword">import</span> serial</span><br></pre></td></tr></table></figure>
+<h2 id="Strategy"><a href="#Strategy" class="headerlink" title="Strategy"></a>Strategy</h2><ul>
+<li>图搜索：极大极小搜索、Alpha-Beta剪枝、迭代加深、A<em>、IDA</em></li>
+<li>强化学习：MCTS、AlphaZero</li>
+</ul>
+<h2 id="Armbot"><a href="#Armbot" class="headerlink" title="Armbot"></a>Armbot</h2><ul>
+<li>越疆科技DOBOT <a href="https://cn.dobot.cc/" target="_blank" rel="noopener">https://cn.dobot.cc/</a></li>
+</ul>
+<h2 id="Vision"><a href="#Vision" class="headerlink" title="Vision"></a>Vision</h2><ul>
+<li>OpenCV: OpenCV-Python Tutorials <a href="https://docs.opencv.org/4.0.0/d6/d00/tutorial_py_root.html" target="_blank" rel="noopener">https://docs.opencv.org/4.0.0/d6/d00/tutorial_py_root.html</a></li>
+<li>spmallick/learnopencv: Learn OpenCV : C++ and Python Examples <a href="https://github.com/spmallick/learnopencv" target="_blank" rel="noopener">https://github.com/spmallick/learnopencv</a><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&gt; conda create -n your_env_name python=3.6</span><br><span class="line">&gt; activate your_env_name</span><br><span class="line">&gt; pip install opencv-python -i https://pypi.tuna.tsinghua.edu.cn/simple</span><br><span class="line">&gt; pip install opencv-contrib-python</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h1 id="Demo"><a href="#Demo" class="headerlink" title="Demo"></a>Demo</h1><ul>
+<li><p>hikey970 棋面识别  </p>
+<div align="center">
+<img src="/2019/05/05/象棋残局机器人/demo1.gif" width="600" height="400">
+</div>
+</li>
+<li><p>开局  </p>
+<div align="center">
+<img src="/2019/05/05/象棋残局机器人/demo3.gif" width="600" height="400">
+</div>
+</li>
+<li><p>人机对弈  </p>
+<div align="center">
+<img src="/2019/05/05/象棋残局机器人/demo2.gif" width="600" height="400">
+</div>
+
+</li>
 </ul>
 
       
@@ -464,7 +719,11 @@
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">arduino</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">python</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">alphazero</a>
         		</li>
       		
 		</ul>
@@ -474,7 +733,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2019/06/07/桌面冰球机器人/">展开全文 >></a>
+          <a class="article-more-a" href="/2019/05/05/象棋残局机器人/">展开全文 >></a>
         </p>
       
 
@@ -504,20 +763,20 @@
 
 
   
-    <article id="post-象棋残局机器人六：robowork竞赛机械臂项目" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-AI：Scikit-Learn学习笔记" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/06/05/象棋残局机器人六：robowork竞赛机械臂项目/">象棋残局机器人六：robowork竞赛机械臂项目</a>
+      <a class="article-title" href="/2019/05/02/AI：Scikit-Learn学习笔记/">Scikit-Learn学习笔记</a>
     </h1>
   
 
         
-        <a href="/2019/06/05/象棋残局机器人六：robowork竞赛机械臂项目/" class="archive-article-date">
-  	<time datetime="2019-06-05T07:50:48.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-05</time>
+        <a href="/2019/05/02/AI：Scikit-Learn学习笔记/" class="archive-article-date">
+  	<time datetime="2019-05-02T12:56:38.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-02</time>
 </a>
         
       </header>
@@ -529,184 +788,14 @@
 
     <div class="article-entry" itemprop="articleBody">
       
-        <p>竞赛组委会提供了Java工程Demo，这里记录一下部署过程。<br></p>
-        
-          <a class="article-more-a" href="/2019/06/05/象棋残局机器人六：robowork竞赛机械臂项目/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/06/05/象棋残局机器人六：robowork竞赛机械臂项目/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-象棋残局机器人五：象棋棋子分类模型" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/06/05/象棋残局机器人五：象棋棋子分类模型/">象棋残局机器人五：象棋棋子分类模型</a>
-    </h1>
-  
-
-        
-        <a href="/2019/06/05/象棋残局机器人五：象棋棋子分类模型/" class="archive-article-date">
-  	<time datetime="2019-06-05T07:50:47.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-05</time>
-</a>
-        
-      </header>
-    
-
-    <!-- 目录内容 -->
-    
-    <!-- 目录内容结束 -->
-
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="问题记录"><a href="#问题记录" class="headerlink" title="问题记录"></a>问题记录</h2><h3 id="1-采集图像分辨率低导致分类错误"><a href="#1-采集图像分辨率低导致分类错误" class="headerlink" title="1. 采集图像分辨率低导致分类错误"></a>1. 采集图像分辨率低导致分类错误</h3><p>小伙伴的电脑摄像头采集视频流默认长宽比是16:9，显示的图片会自动在上下方补充两道黑条，并被发现无法通过cap.set(CAP_PROP_FRAME_HEIGHT，480)函数解决这个问题。<br>这个问题导致采集图像的实际分辨率为640:360，所以采集的棋子照片中棋子比较模糊，同样的问题在重新调整摄像头位置没有调整好焦距时也会发生。</p>
+        <p><strong> Scikit-Learn学习笔记 </strong> <excerpt in index | 首页摘要></excerpt></p>
+<h2 id="选择学习方法"><a href="#选择学习方法" class="headerlink" title="选择学习方法"></a>选择学习方法</h2><p>Sklearn官网提供了一个流程图</p>
 <p><div align="center">
-<img src="/2019/06/05/象棋残局机器人五：象棋棋子分类模型/001.jpg" width="600" height="400">
-</div><br>默认分辨率是640*480，通过调高分辨率解决。  </p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">img = img[60:400,:,:]</span><br><span class="line">img = cv2.resize(img, (640, 480))</span><br></pre></td></tr></table></figure>
-<h3 id="2-对于一些场景可以调整摄像头参数"><a href="#2-对于一些场景可以调整摄像头参数" class="headerlink" title="2. 对于一些场景可以调整摄像头参数"></a>2. 对于一些场景可以调整摄像头参数</h3><p>特别注意有些摄像头参数设置后会保存，一旦修改后无法恢复到初始值，所以不要随意设置参数或在设置前注意记录摄像头参数的初始值。<br>获取摄像头参数<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">capture.get(CAP_PROP_FRAME_WIDTH)</span><br><span class="line">capture.get(CAP_PROP_FRAME_HEIGHT)</span><br><span class="line">capture.get(CAP_PROP_FPS)</span><br><span class="line">capture.get(CAP_PROP_BRIGHTNESS)</span><br><span class="line">capture.get(CAP_PROP_CONTRAST)</span><br><span class="line">capture.get(CAP_PROP_SATURATION)</span><br><span class="line">capture.get(CAP_PROP_HUE)</span><br><span class="line">capture.get(CAP_PROP_EXPOSURE)</span><br></pre></td></tr></table></figure></p>
-<p>设置摄像头参数<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">capture.set(CAP_PROP_FRAME_WIDTH, 1080) <span class="comment">#宽度 </span></span><br><span class="line">capture.set(CAP_PROP_FRAME_HEIGHT, 960) <span class="comment">#高度</span></span><br><span class="line">capture.set(CAP_PROP_FPS, 30)           <span class="comment">#帧率 帧/秒</span></span><br><span class="line">capture.set(CAP_PROP_BRIGHTNESS, 1)     <span class="comment">#亮度 1</span></span><br><span class="line">capture.set(CAP_PROP_CONTRAST,40)       <span class="comment">#对比度 40</span></span><br><span class="line">capture.set(CAP_PROP_SATURATION, 50)    <span class="comment">#饱和度 50</span></span><br><span class="line">capture.set(CAP_PROP_HUE, 50)           <span class="comment">#色调 50</span></span><br><span class="line">capture.set(CAP_PROP_EXPOSURE, -6)      <span class="comment">#曝光 50</span></span><br></pre></td></tr></table></figure></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/06/05/象棋残局机器人五：象棋棋子分类模型/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
+<img src="/2019/05/02/AI：Scikit-Learn学习笔记/Scikit-Learn学习笔记/machine_learning_map.png" width="600" height="300">
+</div><br></p>
         
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
+          <a class="article-more-a" href="/2019/05/02/AI：Scikit-Learn学习笔记/#more">more >></a>
         
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-象棋残局机器人四：策略" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/06/04/象棋残局机器人四：策略/">象棋残局机器人四：策略</a>
-    </h1>
-  
-
-        
-        <a href="/2019/06/04/象棋残局机器人四：策略/" class="archive-article-date">
-  	<time datetime="2019-06-04T06:47:59.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-04</time>
-</a>
-        
-      </header>
-    
-
-    <!-- 目录内容 -->
-    
-    <!-- 目录内容结束 -->
-
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>关于下棋策略的方案，尝试使用了象棋引擎binghewusi和cyclone，最终选择开源项目cczero。</p>
-<h2 id="象棋引擎"><a href="#象棋引擎" class="headerlink" title="象棋引擎"></a>象棋引擎</h2><ul>
-<li>中国象棋程序《象棋旋风》 &lt;/br&gt;<a href="http://www.xqbase.com/league/xqcyclone.htm" target="_blank" rel="noopener">http://www.xqbase.com/league/xqcyclone.htm</a></li>
-<li>中国象棋程序《兵河五四》 &lt;/br&gt;<a href="http://www.xqbase.com/league/bhws.htm" target="_blank" rel="noopener">http://www.xqbase.com/league/bhws.htm</a></li>
-</ul>
-<h3 id="中国象棋通用引擎协议"><a href="#中国象棋通用引擎协议" class="headerlink" title="中国象棋通用引擎协议"></a>中国象棋通用引擎协议</h3><p>不管是Windows还是UNIX平台，能被界面调用的引擎都必须是编译过的可执行文件，它跟界面之间通过“标准输入”和“标准输出”(即C/C++语言中的stdin和stdout)通道来通讯。如果引擎从Windows平台移植到UNIX平台，那么需要重新编译源代码(管道操作的程序也需要作适当修改)，或使用跨平台接口。</p>
-<ul>
-<li>中国象棋电脑应用规范(五)：中国象棋通用引擎协议&lt;/br&gt;<a href="http://www.xqbase.com/protocol/cchess_ucci.htm" target="_blank" rel="noopener">http://www.xqbase.com/protocol/cchess_ucci.htm</a></li>
-</ul>
-<p>FEN格式串最初的棋局表示:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rnbakabnr/9/1c5c1/p1p1p1p1p/9/9/P1P1P1P1P/1C5C1/9/RNBAKABNR w - - 0 1</span><br></pre></td></tr></table></figure></p>
-<p>小写表示黑方，大写表示红方  </p>
-<ul>
-<li>中国象棋电脑应用规范(三)：FEN文件格式 &lt;/br&gt;<a href="http://www.xqbase.com/protocol/cchess_fen.htm" target="_blank" rel="noopener">http://www.xqbase.com/protocol/cchess_fen.htm</a>  </li>
-</ul>
-<p>调用象棋引擎，输入FEN格式串表的当前局面，获得当前局面策略，输出的策略是一个ICCS坐标格式的四位字符串<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">import subprocess</span><br><span class="line">import time</span><br><span class="line">class Strategy:</span><br><span class="line">    exepath = r<span class="string">".\strategy.exe"</span></span><br><span class="line"></span><br><span class="line">    def __init__(self):</span><br><span class="line">        self.p = subprocess.Popen(self.exepath, stdin=subprocess.PIPE,stdout=subprocess.PIPE, stderr=subprocess.PIPE)</span><br><span class="line">        ret = self.p.stdout.readline()</span><br><span class="line"></span><br><span class="line">    def get_move(self, position = <span class="string">"rCbakabnr/9/1c5c1/p1p1p1p1p/9/9/P1P1P1P1P/4C2C1/9/RNBAKABNR"</span>, </span><br><span class="line">                 player = <span class="string">"b"</span>, <span class="built_in">times</span> = 1000, depth = 8, show_thinking = 1):   </span><br><span class="line">        </span><br><span class="line">        com = <span class="string">"position fen "</span> + position + <span class="string">" "</span> + player + <span class="string">" - - 0 1\r\n"</span></span><br><span class="line">        self.p.stdin.write(com.encode(<span class="string">'GBK'</span>))</span><br><span class="line">        <span class="comment"># com = 'go depth ' + str(depth) + ' time 20000\r\n'</span></span><br><span class="line">        com = <span class="string">'go depth '</span> + str(depth) + <span class="string">'\r\n'</span></span><br><span class="line">        self.p.stdin.write(com.encode(<span class="string">'GBK'</span>))</span><br><span class="line">        self.p.stdin.flush()</span><br><span class="line"></span><br><span class="line">        <span class="keyword">while</span> True:</span><br><span class="line">            ret = self.p.stdout.readline()</span><br><span class="line">            <span class="keyword">if</span> show_thinking:</span><br><span class="line">                <span class="built_in">print</span>(ret)</span><br><span class="line">            <span class="keyword">if</span> ret.decode()[:8] == <span class="string">'bestmove'</span>:</span><br><span class="line">                ans = ret.decode()[9:13]</span><br><span class="line">                <span class="built_in">break</span></span><br><span class="line">        <span class="comment"># print("ans", ans)</span></span><br><span class="line">        <span class="built_in">return</span> ans</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    ai = Strategy()</span><br><span class="line">    situation = <span class="string">"rnbakabnr/9/1c5c1/p1p1p1p1p/9/9/P1P1P1P1P/2C4C1/9/RNBAKABNR"</span></span><br><span class="line">    move = ai.get_move(position=situation, show_thinking = True)</span><br><span class="line">    <span class="built_in">print</span>(move)</span><br></pre></td></tr></table></figure></p>
-<p>棋盘标记</p>
-<div align="center">
-<img src="/2019/06/04/象棋残局机器人四：策略/001.png" width="300" height="300">
-</div>
-
-
-
-
-<h2 id="开源项目cczero"><a href="#开源项目cczero" class="headerlink" title="开源项目cczero"></a>开源项目cczero</h2><p>众所周知，Deep Mind公司先后推出了Alpha Go, AlphaGo Zero 和 AlphaZero 三个棋类算法：AlphaGo吊打李世石、柯洁；AlphaGo Zero不用人类知识从零学起吊打AlphaGo；AlphaZero又分别在围棋、国际象棋和将棋领域取得了最高水平。cczero项目移植了AlphaZero算法。<br>DeepMind用了5000个TPU才能在很短的时间内训练完成，cczero也需要巨大的计算资源才能使其征服中国象棋打败当今最强象棋程序，其开放跑谱教程，鼓励参与者贡献CPU/GPU时间，使这个项目变得越来越强。<br>cczero项目为开源项目，引擎和权重永久免费，项目交流群为706396552。</p>
-<ul>
-<li>中国象棋Zero&lt;/br&gt; <a href="https://cczero.org/" target="_blank" rel="noopener">https://cczero.org/</a></li>
-<li>NeymarL/ChineseChess-AlphaZero: Implement AlphaZero/AlphaGo Zero methods on Chinese chess. &lt;/br&gt;<a href="https://github.com/NeymarL/ChineseChess-AlphaZero" target="_blank" rel="noopener">https://github.com/NeymarL/ChineseChess-AlphaZero</a></li>
-<li>下载cczero最新权重 &lt;/br&gt;<a href="https://cczero.org/api/models" target="_blank" rel="noopener">https://cczero.org/api/models</a></li>
-</ul>
-<p>调用cczero主要代码<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">play = PlayWithHuman(config)</span><br><span class="line"><span class="comment"># play.start(human_first)</span></span><br><span class="line">play.env.reset(init_state=<span class="string">"r8/3k5/9/9/9/9/9/9/4A4/3AK4"</span>)</span><br><span class="line">play.load_model()</span><br><span class="line">play.pipe = play.model.get_pipes()</span><br><span class="line">play.ai = CChessPlayer(play.config, search_tree=defaultdict(VisitState), pipes=play.pipe,</span><br><span class="line">                        enable_resign=False, debugging=False)</span><br><span class="line">human_first = not args.ai_move_first</span><br><span class="line">play.human_move_first = human_first</span><br><span class="line">move = ai.get_move(position=situation, show_thinking = True)</span><br></pre></td></tr></table></figure></p>
-<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><ul>
-<li>AlphaZero实践——中国象棋（附论文翻译） - 知乎&lt;/br&gt; <a href="https://zhuanlan.zhihu.com/p/34433581" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/34433581</a></li>
-</ul>
-
       
 
       
@@ -719,7 +808,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">AlphaZero</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">import</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">sklearn</a>
         		</li>
       		
 		</ul>
@@ -729,7 +822,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2019/06/04/象棋残局机器人四：策略/">展开全文 >></a>
+          <a class="article-more-a" href="/2019/05/02/AI：Scikit-Learn学习笔记/">展开全文 >></a>
         </p>
       
 
@@ -759,20 +852,20 @@
 
 
   
-    <article id="post-象棋残局机器人三：分类模型retrain" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-天猫精灵：绑定贝壳物联设备" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/05/29/象棋残局机器人三：分类模型retrain/">象棋残局机器人三：分类模型retrain</a>
+      <a class="article-title" href="/2019/04/28/天猫精灵：绑定贝壳物联设备/">天猫精灵：绑定贝壳物联设备</a>
     </h1>
   
 
         
-        <a href="/2019/05/29/象棋残局机器人三：分类模型retrain/" class="archive-article-date">
-  	<time datetime="2019-05-28T16:27:39.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-29</time>
+        <a href="/2019/04/28/天猫精灵：绑定贝壳物联设备/" class="archive-article-date">
+  	<time datetime="2019-04-27T16:39:24.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-28</time>
 </a>
         
       </header>
@@ -784,10 +877,175 @@
 
     <div class="article-entry" itemprop="articleBody">
       
-        <p><strong> 象棋残局机器人三：分类模型retrain </strong> <excerpt in index | 首页摘要><br>基于InceptionV3和mobileNet模型重新训练自己的图片分类模型。<br></excerpt></p>
+        <p><strong> 天猫精灵：绑定贝壳物联设备 </strong> <excerpt in index | 首页摘要></excerpt></p>
+<h2 id="整体方案"><a href="#整体方案" class="headerlink" title="整体方案"></a>整体方案</h2><p>目前天猫精灵绑定贝壳物联账号后，即可使用天猫精灵控制贝壳物联账号下设备；<br>esp8266开机自动连接路由器，连接贝壳物联服务器，登陆设备，监听服务器发送消息，根据不同消息控制gpio引脚输出高低电平，从而达到给出控制信号的目的；<br>MCU接受esp8266引脚信号，完成控制步进电机拉窗帘等动作。<br></p>
         
-          <a class="article-more-a" href="/2019/05/29/象棋残局机器人三：分类模型retrain/#more">more >></a>
+          <a class="article-more-a" href="/2019/04/28/天猫精灵：绑定贝壳物联设备/#more">more >></a>
         
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">天猫精灵</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">esp8266</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/04/28/天猫精灵：绑定贝壳物联设备/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-门禁ubuntu配置-hadow-ocks-又可以刷脸开门了" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/04/27/门禁ubuntu配置-hadow-ocks-又可以刷脸开门了/">门禁ubuntu配置\$hadow\$ocks,又可以刷脸开门了</a>
+    </h1>
+  
+
+        
+        <a href="/2019/04/27/门禁ubuntu配置-hadow-ocks-又可以刷脸开门了/" class="archive-article-date">
+  	<time datetime="2019-04-27T15:30:03.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-27</time>
+</a>
+        
+      </header>
+    
+
+    <!-- 目录内容 -->
+    
+    <!-- 目录内容结束 -->
+
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><strong> 门禁ubuntu配置\$hadow\$ocks,又可以刷脸开门了 </strong> <excerpt in index | 首页摘要></excerpt></p>
+<ul>
+<li>Shadowsocks - A secure socks5 proxy<br><a href="http://shadowsocks.org/en/index.html" target="_blank" rel="noopener">http://shadowsocks.org/en/index.html</a></li>
+</ul>
+        
+          <a class="article-more-a" href="/2019/04/27/门禁ubuntu配置-hadow-ocks-又可以刷脸开门了/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/04/27/门禁ubuntu配置-hadow-ocks-又可以刷脸开门了/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-AI：TensorFlow-手写数字识别" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/04/26/AI：TensorFlow-手写数字识别/">TensorFlow 手写数字识别</a>
+    </h1>
+  
+
+        
+        <a href="/2019/04/26/AI：TensorFlow-手写数字识别/" class="archive-article-date">
+  	<time datetime="2019-04-26T02:13:08.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-26</time>
+</a>
+        
+      </header>
+    
+
+    <!-- 目录内容 -->
+    
+    <!-- 目录内容结束 -->
+
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="tensorflow基础"><a href="#tensorflow基础" class="headerlink" title="tensorflow基础"></a>tensorflow基础</h2><h3 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h3><p>tensorflow是一个编程系统，使用图(graphs)来表示计算任务，在会话(Seeeion)的context中执行graphs，graphs中的节点称为op(operation)，一个op获得零个或多个Tensor，执行计算产生零个或多个Tensor，Tensor可以看做n维数组或列表，图必须在会话中启动，通过变量(Variable)维护装填，使用feed和fetch可以为任意的操作赋值获从中获取数据。</p>
+<ul>
+<li><p>TensorFlow Core  |  TensorFlow<br><a href="https://tensorflow.google.cn/tutorials?tdsourcetag=s_pcqq_aiomsg" target="_blank" rel="noopener">https://tensorflow.google.cn/tutorials?tdsourcetag=s_pcqq_aiomsg</a></p>
+</li>
+<li><p>优化器 Optimizer 加速神经网络训练 (深度学习) Speed up neural network training process (deep learning) - YouTube<br><a href="https://www.youtube.com/watch?v=UlUGGB7akfE&amp;list=PLXO45tsB95cKI5AIlf5TxxFPzb-0zeVZ8&amp;index=18&amp;app=desktop" target="_blank" rel="noopener">https://www.youtube.com/watch?v=UlUGGB7akfE&amp;list=PLXO45tsB95cKI5AIlf5TxxFPzb-0zeVZ8&amp;index=18&amp;app=desktop</a></p>
+</li>
+<li><p>An overview of gradient descent optimization algorithms<br><a href="http://ruder.io/optimizing-gradient-descent/" target="_blank" rel="noopener">http://ruder.io/optimizing-gradient-descent/</a></p>
+</li>
+</ul>
+
       
 
       
@@ -802,10 +1060,6 @@
         		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">tensorflow</a>
         		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">迁移学习</a>
-        		</li>
       		
 		</ul>
 	</div>
@@ -814,7 +1068,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2019/05/29/象棋残局机器人三：分类模型retrain/">展开全文 >></a>
+          <a class="article-more-a" href="/2019/04/26/AI：TensorFlow-手写数字识别/">展开全文 >></a>
         </p>
       
 
@@ -844,20 +1098,20 @@
 
 
   
-    <article id="post-Robot：loomo多服务机器人开发" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-软件：打磨工具的日常" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/05/26/Robot：loomo多服务机器人开发/">loomo多服务机器人开发</a>
+      <a class="article-title" href="/2019/04/26/软件：打磨工具的日常/">打磨工具的日常</a>
     </h1>
   
 
         
-        <a href="/2019/05/26/Robot：loomo多服务机器人开发/" class="archive-article-date">
-  	<time datetime="2019-05-26T11:43:22.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-26</time>
+        <a href="/2019/04/26/软件：打磨工具的日常/" class="archive-article-date">
+  	<time datetime="2019-04-26T01:57:47.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-26</time>
 </a>
         
       </header>
@@ -869,297 +1123,17 @@
 
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="设计思路"><a href="#设计思路" class="headerlink" title="设计思路"></a>设计思路</h2><p><img src="/2019/05/26/Robot：loomo多服务机器人开发/loomo多服务机器人开发/设计思路-201905.png" width="600" height="300"></p>
-<h2 id="一些资料"><a href="#一些资料" class="headerlink" title="一些资料"></a>一些资料</h2><ul>
-<li>机器人 · 3D打印的假肢，像真手一样听你指挥！<br><a href="https://mp.weixin.qq.com/s/qumdZIXXGmF-blSeHLu1tw" target="_blank" rel="noopener">https://mp.weixin.qq.com/s/qumdZIXXGmF-blSeHLu1tw</a></li>
+        <p><strong> 打磨工具的日常 </strong> <excerpt in index | 首页摘要></excerpt></p>
+<ul>
+<li>MobaXterm</li>
+<li>cloc</li>
+<li>Mathpix Snip </li>
+<li>Chrome插件</li>
+<li>GitKraken</li>
 </ul>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">+ loomo + Android + 机械手</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/05/26/Robot：loomo多服务机器人开发/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
+<p><img src="/2019/04/26/软件：打磨工具的日常/打磨工具的日常/002.png"></p>
         
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-loomo多服务机器人开发" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/05/26/loomo多服务机器人开发/">loomo多服务机器人开发</a>
-    </h1>
-  
-
-        
-        <a href="/2019/05/26/loomo多服务机器人开发/" class="archive-article-date">
-  	<time datetime="2019-05-26T11:43:22.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-26</time>
-</a>
-        
-      </header>
-    
-
-    <!-- 目录内容 -->
-    
-    <!-- 目录内容结束 -->
-
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="设计思路"><a href="#设计思路" class="headerlink" title="设计思路"></a>设计思路</h2><div align="center">
-<img alt="design" src="/2019/05/26/loomo多服务机器人开发/设计思路-201905.png" width="1000" height="800">
-</div>
-
-<h2 id="一些资料"><a href="#一些资料" class="headerlink" title="一些资料"></a>一些资料</h2><ul>
-<li>机器人 · 3D打印的假肢，像真手一样听你指挥！<br><a href="https://mp.weixin.qq.com/s/qumdZIXXGmF-blSeHLu1tw" target="_blank" rel="noopener">https://mp.weixin.qq.com/s/qumdZIXXGmF-blSeHLu1tw</a></li>
-</ul>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">loomo</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Android</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">机械手</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/05/26/loomo多服务机器人开发/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-象棋残局机器人二：透射变换" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/05/25/象棋残局机器人二：透射变换/">象棋残局机器人二：投射变换</a>
-    </h1>
-  
-
-        
-        <a href="/2019/05/25/象棋残局机器人二：透射变换/" class="archive-article-date">
-  	<time datetime="2019-05-25T15:34:15.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-25</time>
-</a>
-        
-      </header>
-    
-
-    <!-- 目录内容 -->
-    
-    <!-- 目录内容结束 -->
-
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="图片的几何变换"><a href="#图片的几何变换" class="headerlink" title="图片的几何变换"></a>图片的几何变换</h2><ul>
-<li><p>缩放</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">img = cv2.imread(<span class="string">"tmp.png"</span>, 1)</span><br><span class="line">height, width, _ = img.shape  <span class="comment"># (height, width, mode)</span></span><br><span class="line">dstHeight = int(height*0.5)</span><br><span class="line">dstWidth = int(width*0.5)</span><br><span class="line"><span class="comment"># cv2.resize()</span></span><br><span class="line"><span class="comment"># dst = cv2.resize(img, (dstWidth, dstHeight))</span></span><br><span class="line"><span class="comment"># 最近邻域插值</span></span><br><span class="line">dstImage = np.zeros((dstHeight, dstWidth), np.uint8)</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(0, dstHeight):</span><br><span class="line">    <span class="keyword">for</span> j <span class="keyword">in</span> range(0, dstWidth):</span><br><span class="line">        iNew = int(i * height * 1.0 / dstHeight)</span><br><span class="line">        jNew = int(j * width * 1.0 / dstWidth)</span><br><span class="line">        dstImage[i, j] = img(iNew, jNew)</span><br><span class="line">cv2.imshow(<span class="string">"img"</span>, dstImage)</span><br><span class="line"><span class="comment"># 双线性插值 </span></span><br><span class="line"><span class="comment"># 像素关系重采样 </span></span><br><span class="line"><span class="comment"># 立方插值</span></span><br><span class="line">cv2.waitKey(0)</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>剪切</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 图片坐标</span></span><br><span class="line"><span class="comment"># x: 0-width</span></span><br><span class="line"><span class="comment"># y: 0-height</span></span><br><span class="line">img = cv2.imread(<span class="string">"tmp.png"</span>, 1)</span><br><span class="line">datImage = img[100:200, 100:300]</span><br><span class="line">cv2.imshow(<span class="string">"img"</span>, dstImage)</span><br><span class="line">cv2.waitKey(0)</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>位移</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">img = cv.imread(<span class="string">"tmp.png"</span>, 1)</span><br><span class="line">height, width, _ = img.shape  <span class="comment"># (height, width, mode)</span></span><br><span class="line"><span class="comment"># cv2.warpAffine()</span></span><br><span class="line">matShift = np.float32([[1,0,100], [0,1,200]]) <span class="comment"># 2行3列</span></span><br><span class="line">dstImage = cv2.warpAffine(img, matShift, (width, height))</span><br><span class="line">cv2.imshow(<span class="string">"img"</span>, dstImage)</span><br><span class="line">cv2.waitKey(0)</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>镜像</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">xImg  = cv.flip(img,1,dst=None)  <span class="comment">#水平镜像</span></span><br><span class="line">xImg1 = cv.flip(img,0,dst=None)  <span class="comment">#垂直镜像</span></span><br><span class="line">xImg2 = cv.flip(img,-1,dst=None) <span class="comment">#对角镜像</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>仿射变换</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">img = cv.imread(<span class="string">"tmp.png"</span>, 1)</span><br><span class="line">height, width, _ = img.shape  <span class="comment"># (height, width, mode)</span></span><br><span class="line"><span class="comment"># src 3p -&gt; dst 3p</span></span><br><span class="line">matSrc = np.float32([[0,0], [0,height-1], [width-1, 0]])</span><br><span class="line">matDst = np.float32([[50,50], [300,height-200], [width-300, 100]])</span><br><span class="line"><span class="comment"># 获得仿射变换矩阵</span></span><br><span class="line">matAffine = cv2.getAffineTransform(matSrc, matDst)</span><br><span class="line">dstImage = cv2.warpAffine(img, matAffine, (width, height))</span><br><span class="line">cv2.imshow(<span class="string">"img"</span>, dstImage)</span><br><span class="line">cv2.waitKey(0)</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>旋转</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">img = cv.imread(<span class="string">"tmp.png"</span>, 1)</span><br><span class="line">height, width, _ = img.shape  <span class="comment"># (height, width, mode)</span></span><br><span class="line"><span class="comment"># 获得旋转矩阵</span></span><br><span class="line">matRotate = cv2.getRotationMatrix2D((int(width/2), int(height/2)), 45, 0.5)</span><br><span class="line">dstImage = cv2.warpAffine(img, matRotate, (width, height))</span><br><span class="line">cv2.imshow(<span class="string">"img2"</span>, dstImage)</span><br><span class="line">cv2.waitKey(0)</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<h2 id="仿射变换就是特殊的透射变换"><a href="#仿射变换就是特殊的透射变换" class="headerlink" title="仿射变换就是特殊的透射变换"></a>仿射变换就是特殊的透射变换</h2><ul>
-<li>透射变换<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">matSrc = np.float32(points)</span><br><span class="line">matDst = np.float32([[0,0],[0,399],[99, 0],[99,399]])</span><br><span class="line">matPers = cv2.getPerspectiveTransform(matSrc, matDst)</span><br><span class="line">dstImage = cv2.warpPerspective(img, matPers, (width, height))</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<div align="center">
-<img src="/2019/05/25/象棋残局机器人二：透射变换/001.jpg" width="600" height="300">
-</div>
-
-<p>利用透射变换这一操作，从而将棋面的图像从背景中抽离转化成易于处理的形式。</p>
-<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><ul>
-<li><p>仿射变换和透射变换 - outthinker - 博客园<br><a href="https://www.cnblogs.com/zf-blog/p/7813227.html" target="_blank" rel="noopener">https://www.cnblogs.com/zf-blog/p/7813227.html</a></p>
-</li>
-<li><p>4.1 图像特效介绍 - YouTube<br><a href="https://www.youtube.com/watch?v=Ih2iamhLvxE&amp;list=PLsYXQooxlb1pE21-dgEf-VdsArdqSvuEW&amp;index=36" target="_blank" rel="noopener">https://www.youtube.com/watch?v=Ih2iamhLvxE&amp;list=PLsYXQooxlb1pE21-dgEf-VdsArdqSvuEW&amp;index=36</a></p>
-</li>
-</ul>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">opencv</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/05/25/象棋残局机器人二：透射变换/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-象棋残局机器人一：摄像头标定" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/05/25/象棋残局机器人一：摄像头标定/">象棋残局机器人一：摄像头标定</a>
-    </h1>
-  
-
-        
-        <a href="/2019/05/25/象棋残局机器人一：摄像头标定/" class="archive-article-date">
-  	<time datetime="2019-05-25T08:44:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-25</time>
-</a>
-        
-      </header>
-    
-
-    <!-- 目录内容 -->
-    
-    <!-- 目录内容结束 -->
-
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><strong> 象棋残局机器人一：摄像头标定 </strong> <excerpt in index | 首页摘要><br>廉价摄像头会给图像带来很多畸变，硬件解决方法是买个无畸变的摄像头，软件解决方案是找到摄像机畸变参数以及摄像机的内部参数和外部参数，对畸变图像进行修复。<br></excerpt></p>
-        
-          <a class="article-more-a" href="/2019/05/25/象棋残局机器人一：摄像头标定/#more">more >></a>
+          <a class="article-more-a" href="/2019/04/26/软件：打磨工具的日常/#more">more >></a>
         
       
 
@@ -1168,22 +1142,11 @@
     <div class="article-info article-info-index">
       
       
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">opencv</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
       
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2019/05/25/象棋残局机器人一：摄像头标定/">展开全文 >></a>
+          <a class="article-more-a" href="/2019/04/26/软件：打磨工具的日常/">展开全文 >></a>
         </p>
       
 
@@ -1215,7 +1178,7 @@
   
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/page/9/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/">8</a><a class="page-number" href="/page/9/">9</a><span class="page-number current">10</span><a class="page-number" href="/page/11/">11</a><a class="page-number" href="/page/12/">12</a><a class="page-number" href="/page/13/">13</a><a class="extend next" rel="next" href="/page/11/">Next &raquo;</a>
+      <a class="extend prev" rel="prev" href="/page/9/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/">8</a><a class="page-number" href="/page/9/">9</a><span class="page-number current">10</span><a class="page-number" href="/page/11/">11</a><a class="extend next" rel="next" href="/page/11/">Next &raquo;</a>
     </nav>
   
 
@@ -1328,6 +1291,18 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">3D打印</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">吉他</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">RL</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">lua</a>
               </li>
              
@@ -1340,14 +1315,6 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">3D打印</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">吉他</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">import</a>
               </li>
              
@@ -1356,7 +1323,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">dlib</a>
+                <a href="javascript:void(0)" class="js-tag color1">tensorflow</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1364,27 +1331,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">RL</a>
+                <a href="javascript:void(0)" class="js-tag color5">dlib</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">Arduino</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">tensorflow</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">flask</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">brainfuck</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1404,11 +1355,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Hikey970</a>
+                <a href="javascript:void(0)" class="js-tag color5">brainfuck</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">pyopencl</a>
+                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Hikey970</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1416,7 +1371,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">+ opencv + arduino</a>
+                <a href="javascript:void(0)" class="js-tag color4">pyopencl</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1424,43 +1379,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">-go</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">leapmotion</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">js</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">box2d</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">loomo</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Android</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">机械手</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">web</a>
+                <a href="javascript:void(0)" class="js-tag color4">+ opencv + arduino</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">jupyter notebook</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">数模</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1488,11 +1411,23 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">git</a>
+                <a href="javascript:void(0)" class="js-tag color3">数模</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">arduino</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">leapmotion</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">js</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">box2d</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1504,15 +1439,27 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">flask</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">AlphaZero</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">git</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">-go</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">tkinter</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">keras</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">docker</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1524,7 +1471,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">AlphaZero</a>
+                <a href="javascript:void(0)" class="js-tag color2">docker</a>
               </li>
             
             <div class="clearfix"></div>

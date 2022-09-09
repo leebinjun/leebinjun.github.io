@@ -301,799 +301,19 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-眼动追踪推荐眼镜" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-硬件：奥比中光ORBBEC-3D体感摄像头" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/09/19/眼动追踪推荐眼镜/">眼动追踪推荐眼镜</a>
+      <a class="article-title" href="/2019/08/13/硬件：奥比中光ORBBEC-3D体感摄像头/">奥比中光ORBBEC 3D体感摄像头</a>
     </h1>
   
 
         
-        <a href="/2019/09/19/眼动追踪推荐眼镜/" class="archive-article-date">
-  	<time datetime="2019-09-19T11:09:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-19</time>
-</a>
-        
-      </header>
-    
-
-    <!-- 目录内容 -->
-    
-    <!-- 目录内容结束 -->
-
-    <div class="article-entry" itemprop="articleBody">
-      
-        <div align="center">
-<img src="/2019/09/19/眼动追踪推荐眼镜/00.png">
-</div>
-
-<h2 id="WHY"><a href="#WHY" class="headerlink" title="WHY"></a>WHY</h2><p>眼睛是人类面部最为显著的特征之一，眼睛及其运动在用户的认知、兴趣、情绪表达等过程中有着至关重要的作用。  </p>
-<p>眼动追踪技术通过追踪人体眼球运动，来识别用户所处的环境，预测用户的需求及状态，并进行响应，以实现用眼睛控制设备、完成一些操作。</p>
-<p>AR眼镜自诞生起就为人类更加直观地理解眼前的世界提供了诸多便利。结合眼动追踪技术，AR眼镜可以更加了解用户的兴趣点和需求，提供更精准的信息推荐，为用户带来更加自然的交互体验。</p>
-<h2 id="WHAT"><a href="#WHAT" class="headerlink" title="WHAT"></a>WHAT</h2><p>本文涉及一种人眼注视点的实时估计眼镜，该系统通过提取人眼信息，建立人眼与兴趣点映射关系，实现用户关注信息的实时推荐功能。</p>
-<p>本文主要从以下三个方面进行研究：</p>
-<ul>
-<li>首先是人眼关键点的检测问题，通过多级级联的回归树进行眼眶和通孔的检测，得到关键点特征信息；  </li>
-<li>其次是兴趣点的估计问题，通过梯度提升回归算法建立人眼关键点和兴趣点的映射关系；  </li>
-<li>最后是兴趣点处的目标识别问题，通过yolo目标检测网络对检测视野中的待推荐目标，判断兴趣点是否落在识别框中。</li>
-</ul>
-<h2 id="HOW"><a href="#HOW" class="headerlink" title="HOW"></a>HOW</h2><p>step1. 眼镜上部署两个ip摄像头，camera1获取用户视野图像，camera2获取用户眼睛图像，图像实时回传至中央处理器cpu；<br>step2.1 眼动信息处理，提取camera2中用户眼眶和眼球的关键点信息；<br>step2.2 兴趣点估计，由step2中的关键点特征估算camera1中人眼注视点；<br>step3. 用户视野图像目标检测，实时检测camera1中的待推荐目标，记录相应位置信息；<br>step4. 识别与信息推荐，判断step2中计算的兴趣点是否落在step3中计算的识别框中，进行语音信息推荐。</p>
-<div align="center">
-<img src="/2019/09/19/眼动追踪推荐眼镜/detect.gif" width="500" height="150">
-</div>
-
-
-
-
-<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><ul>
-<li>一文读懂眼动追踪技术及应用<br><a href="https://mp.weixin.qq.com/s?src=11&amp;timestamp=1569225062&amp;ver=1869&amp;signature=ML2J84rjyrwpwNWYIXxrqaJIq7YZdGRAfzd8*q-v2vtSxIpREhSF0MpcjruTuYEFfgRR15F9IfmkCg1iQ1HY4hZtzFGT3gOF8LGyVoxKTtr89LIuel9h6XbniBG2y-w0&amp;new=1" target="_blank" rel="noopener">https://mp.weixin.qq.com/s?src=11&amp;timestamp=1569225062&amp;ver=1869&amp;signature=ML2J84rjyrwpwNWYIXxrqaJIq7YZdGRAfzd8*q-v2vtSxIpREhSF0MpcjruTuYEFfgRR15F9IfmkCg1iQ1HY4hZtzFGT3gOF8LGyVoxKTtr89LIuel9h6XbniBG2y-w0&amp;new=1</a>   </li>
-</ul>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/09/19/眼动追踪推荐眼镜/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-门禁行人检测和识别五：ipv6环境下的docker部署" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/09/16/门禁行人检测和识别五：ipv6环境下的docker部署/">门禁行人检测和识别五：ipv6环境下的docker部署</a>
-    </h1>
-  
-
-        
-        <a href="/2019/09/16/门禁行人检测和识别五：ipv6环境下的docker部署/" class="archive-article-date">
-  	<time datetime="2019-09-16T11:33:22.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-16</time>
-</a>
-        
-      </header>
-    
-
-    <!-- 目录内容 -->
-    
-    <!-- 目录内容结束 -->
-
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>话说项目参加ipv6比赛时，要在ipv6环境下部署进行检验<br>负责网页的A:我写好了一个框架<br>负责功能的B:我写好了一个函数<br>负责环境的C:我写好了一个参数  </p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:</span><br><span class="line">    <span class="string">''' ipv4 '''</span></span><br><span class="line">    <span class="comment"># app.run(host="0.0.0.0", port=80, debug=True)</span></span><br><span class="line">    <span class="string">''' ipv6 '''</span></span><br><span class="line">    app.run(host=<span class="string">"::"</span>, port=<span class="number">80</span>, debug=<span class="literal">True</span>)</span><br></pre></td></tr></table></figure>
-        
-          <a class="article-more-a" href="/2019/09/16/门禁行人检测和识别五：ipv6环境下的docker部署/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">docker</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/09/16/门禁行人检测和识别五：ipv6环境下的docker部署/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-leapmotion使用记录" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/09/04/leapmotion使用记录/">leapmotion使用记录</a>
-    </h1>
-  
-
-        
-        <a href="/2019/09/04/leapmotion使用记录/" class="archive-article-date">
-  	<time datetime="2019-09-04T15:26:36.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-04</time>
-</a>
-        
-      </header>
-    
-
-    <!-- 目录内容 -->
-    
-    <!-- 目录内容结束 -->
-
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>最近发现leapmotion出了一款体感键盘，大体就是一个薄膜键盘加上一个leapmotion，七夕价在淘宝上才300元，要知道三代的支架都卖300多了，果断入手来学习一下。</p>
-<p><img src="/2019/09/04/leapmotion使用记录/000.png"></p>
-<ul>
-<li>Developer Support – Leap Motion Support<br><a href="https://support.leapmotion.com/hc/en-us/categories/203324688-Developer-Support" target="_blank" rel="noopener">https://support.leapmotion.com/hc/en-us/categories/203324688-Developer-Support</a></li>
-</ul>
-        
-          <a class="article-more-a" href="/2019/09/04/leapmotion使用记录/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">leapmotion</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">js</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">box2d</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/09/04/leapmotion使用记录/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-硬件：leapmotion使用记录" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/09/04/硬件：leapmotion使用记录/">leapmotion使用记录</a>
-    </h1>
-  
-
-        
-        <a href="/2019/09/04/硬件：leapmotion使用记录/" class="archive-article-date">
-  	<time datetime="2019-09-04T15:26:36.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-04</time>
-</a>
-        
-      </header>
-    
-
-    <!-- 目录内容 -->
-    
-    <!-- 目录内容结束 -->
-
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>最近发现leapmotion出了一款体感键盘，大体就是一个薄膜键盘加上一个leapmotion，七夕价在淘宝上才300元，要知道三代的支架都卖300多了，果断入手来学习一下。</p>
-<p><img src="/2019/09/04/硬件：leapmotion使用记录/leapmotion使用记录/000.png"></p>
-<ul>
-<li>Developer Support – Leap Motion Support<br><a href="https://support.leapmotion.com/hc/en-us/categories/203324688-Developer-Support" target="_blank" rel="noopener">https://support.leapmotion.com/hc/en-us/categories/203324688-Developer-Support</a></li>
-</ul>
-        
-          <a class="article-more-a" href="/2019/09/04/硬件：leapmotion使用记录/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">leapmotion</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">js</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">box2d</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/09/04/硬件：leapmotion使用记录/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-git常用命令速查" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/08/20/git常用命令速查/">git常用命令速查</a>
-    </h1>
-  
-
-        
-        <a href="/2019/08/20/git常用命令速查/" class="archive-article-date">
-  	<time datetime="2019-08-20T08:01:02.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-20</time>
-</a>
-        
-      </header>
-    
-
-    <!-- 目录内容 -->
-    
-    <!-- 目录内容结束 -->
-
-    <div class="article-entry" itemprop="articleBody">
-      
-        <ul>
-<li><p>521xueweihan/git-tips: Git的奇技淫巧<br><a href="https://github.com/521xueweihan/git-tips" target="_blank" rel="noopener">https://github.com/521xueweihan/git-tips</a></p>
-</li>
-<li><p>程序员必备工具 – SadAngel的小屋<br><a href="http://www.sadangel.cn/category/%e7%a8%8b%e5%ba%8f%e5%91%98%e5%bf%85%e5%a4%87%e5%b7%a5%e5%85%b7/" target="_blank" rel="noopener">http://www.sadangel.cn/category/%e7%a8%8b%e5%ba%8f%e5%91%98%e5%bf%85%e5%a4%87%e5%b7%a5%e5%85%b7/</a></p>
-</li>
-</ul>
-        
-          <a class="article-more-a" href="/2019/08/20/git常用命令速查/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">git</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/08/20/git常用命令速查/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-软件：git常用命令速查" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/08/20/软件：git常用命令速查/">git常用命令速查</a>
-    </h1>
-  
-
-        
-        <a href="/2019/08/20/软件：git常用命令速查/" class="archive-article-date">
-  	<time datetime="2019-08-20T08:01:02.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-20</time>
-</a>
-        
-      </header>
-    
-
-    <!-- 目录内容 -->
-    
-    <!-- 目录内容结束 -->
-
-    <div class="article-entry" itemprop="articleBody">
-      
-        <ul>
-<li><p>521xueweihan/git-tips: Git的奇技淫巧<br><a href="https://github.com/521xueweihan/git-tips" target="_blank" rel="noopener">https://github.com/521xueweihan/git-tips</a></p>
-</li>
-<li><p>程序员必备工具 – SadAngel的小屋<br><a href="http://www.sadangel.cn/category/%e7%a8%8b%e5%ba%8f%e5%91%98%e5%bf%85%e5%a4%87%e5%b7%a5%e5%85%b7/" target="_blank" rel="noopener">http://www.sadangel.cn/category/%e7%a8%8b%e5%ba%8f%e5%91%98%e5%bf%85%e5%a4%87%e5%b7%a5%e5%85%b7/</a></p>
-</li>
-</ul>
-        
-          <a class="article-more-a" href="/2019/08/20/软件：git常用命令速查/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">git</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/08/20/软件：git常用命令速查/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Hikey970使用记录五：安装测试dlib19" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/08/19/Hikey970使用记录五：安装测试dlib19/">Hikey970使用记录五：安装测试dlib19</a>
-    </h1>
-  
-
-        
-        <a href="/2019/08/19/Hikey970使用记录五：安装测试dlib19/" class="archive-article-date">
-  	<time datetime="2019-08-18T16:02:20.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-19</time>
-</a>
-        
-      </header>
-    
-
-    <!-- 目录内容 -->
-    
-    <!-- 目录内容结束 -->
-
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>安装相关依赖<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install build-essential cmake pkg-config</span><br><span class="line">sudo apt install libboost-dev libopenblas-dev</span><br></pre></td></tr></table></figure></p>
-<p>下载安装包并安装<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">wget http://dlib.net/files/dlib-19.17.tar.bz2</span><br><span class="line">tar -jxvf dlib-19.17.tar.bz2</span><br><span class="line">cd dlib-19.17</span><br><span class="line">python setup.py install</span><br></pre></td></tr></table></figure></p>
-<h2 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">import dlib</span><br></pre></td></tr></table></figure>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/08/19/Hikey970使用记录五：安装测试dlib19/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-AI：keras版本yolov3使用和训练" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/08/14/AI：keras版本yolov3使用和训练/">keras版本yolov3使用和训练</a>
-    </h1>
-  
-
-        
-        <a href="/2019/08/14/AI：keras版本yolov3使用和训练/" class="archive-article-date">
-  	<time datetime="2019-08-14T14:40:26.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-14</time>
-</a>
-        
-      </header>
-    
-
-    <!-- 目录内容 -->
-    
-    <!-- 目录内容结束 -->
-
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h2><p>安装tensorflow和keras</p>
-<p>下载yolov3代码</p>
-<ul>
-<li>qqwweee/keras-yolo3: A Keras implementation of YOLOv3 (Tensorflow backend)<br><a href="https://github.com/qqwweee/keras-yolo3" target="_blank" rel="noopener">https://github.com/qqwweee/keras-yolo3</a></li>
-</ul>
-<h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><p>下载权重文件</p>
-<ul>
-<li><a href="https://pjreddie.com/media/files/yolov3.weights" target="_blank" rel="noopener">https://pjreddie.com/media/files/yolov3.weights</a></li>
-</ul>
-        
-          <a class="article-more-a" href="/2019/08/14/AI：keras版本yolov3使用和训练/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">yolo</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/08/14/AI：keras版本yolov3使用和训练/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-keras版本yolov3使用和训练" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/08/14/keras版本yolov3使用和训练/">keras版本yolov3使用和训练</a>
-    </h1>
-  
-
-        
-        <a href="/2019/08/14/keras版本yolov3使用和训练/" class="archive-article-date">
-  	<time datetime="2019-08-14T14:40:26.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-14</time>
-</a>
-        
-      </header>
-    
-
-    <!-- 目录内容 -->
-    
-    <!-- 目录内容结束 -->
-
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h2><p>安装tensorflow和keras</p>
-<p>下载yolov3代码</p>
-<ul>
-<li>qqwweee/keras-yolo3: A Keras implementation of YOLOv3 (Tensorflow backend)<br><a href="https://github.com/qqwweee/keras-yolo3" target="_blank" rel="noopener">https://github.com/qqwweee/keras-yolo3</a></li>
-</ul>
-<h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><p>下载权重文件</p>
-<ul>
-<li><a href="https://pjreddie.com/media/files/yolov3.weights" target="_blank" rel="noopener">https://pjreddie.com/media/files/yolov3.weights</a></li>
-</ul>
-        
-          <a class="article-more-a" href="/2019/08/14/keras版本yolov3使用和训练/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">yolo</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/08/14/keras版本yolov3使用和训练/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-奥比中光ORBBEC-3D体感摄像头" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/08/13/奥比中光ORBBEC-3D体感摄像头/">奥比中光ORBBEC 3D体感摄像头</a>
-    </h1>
-  
-
-        
-        <a href="/2019/08/13/奥比中光ORBBEC-3D体感摄像头/" class="archive-article-date">
+        <a href="/2019/08/13/硬件：奥比中光ORBBEC-3D体感摄像头/" class="archive-article-date">
   	<time datetime="2019-08-13T02:36:01.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-13</time>
 </a>
         
@@ -1107,7 +327,7 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>最近在淘宝上150元捡漏3D摄像头，乐视三合一体感摄像头，测试效果如下。</p>
-<p><img src="/2019/08/13/奥比中光ORBBEC-3D体感摄像头/000.png"></p>
+<p><img src="/2019/08/13/硬件：奥比中光ORBBEC-3D体感摄像头/奥比中光ORBBEC-3D体感摄像头/000.png"></p>
 <ul>
 <li><p>奥比中光 | 3D传感 - 3D人脸识别 - 3D感知 - 人工智能视觉<br><a href="http://www.orbbec.com.cn/" target="_blank" rel="noopener">http://www.orbbec.com.cn/</a></p>
 </li>
@@ -1115,7 +335,7 @@
 </li>
 </ul>
         
-          <a class="article-more-a" href="/2019/08/13/奥比中光ORBBEC-3D体感摄像头/#more">more >></a>
+          <a class="article-more-a" href="/2019/08/13/硬件：奥比中光ORBBEC-3D体感摄像头/#more">more >></a>
         
       
 
@@ -1128,7 +348,798 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2019/08/13/奥比中光ORBBEC-3D体感摄像头/">展开全文 >></a>
+          <a class="article-more-a" href="/2019/08/13/硬件：奥比中光ORBBEC-3D体感摄像头/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-Pixar-Lamp三：目标检测" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/08/11/Pixar-Lamp三：目标检测/">Pixar-Lamp三：目标检测</a>
+    </h1>
+  
+
+        
+        <a href="/2019/08/11/Pixar-Lamp三：目标检测/" class="archive-article-date">
+  	<time datetime="2019-08-11T11:51:10.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-11</time>
+</a>
+        
+      </header>
+    
+
+    <!-- 目录内容 -->
+    
+    <!-- 目录内容结束 -->
+
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>opencv的dnn模块支持直接导入网络模型进行目标检测，以下测试了ssd_caffe和yoloV3两个模型。</p>
+        
+          <a class="article-more-a" href="/2019/08/11/Pixar-Lamp三：目标检测/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">opencv</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/08/11/Pixar-Lamp三：目标检测/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-AI：Ubuntu-16-04-python3-5-编译caffe" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/08/09/AI：Ubuntu-16-04-python3-5-编译caffe/">Ubuntu 16.04 python3.5 编译caffe</a>
+    </h1>
+  
+
+        
+        <a href="/2019/08/09/AI：Ubuntu-16-04-python3-5-编译caffe/" class="archive-article-date">
+  	<time datetime="2019-08-09T14:59:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-09</time>
+</a>
+        
+      </header>
+    
+
+    <!-- 目录内容 -->
+    
+    <!-- 目录内容结束 -->
+
+    <div class="article-entry" itemprop="articleBody">
+      
+        <excerpt in index | 首页摘要>
+
+<h2 id="参考博客"><a href="#参考博客" class="headerlink" title="参考博客"></a>参考博客</h2><ul>
+<li>（ubuntu16.04）关于caffe+python3.5（非anaconda安装）编译的一些问题 - qwrqwrqwer的博客 - CSDN博客<br><a href="https://blog.csdn.net/qwrqwrqwer/article/details/79224402" target="_blank" rel="noopener">https://blog.csdn.net/qwrqwrqwer/article/details/79224402</a></li>
+</ul></excerpt>
+        
+          <a class="article-more-a" href="/2019/08/09/AI：Ubuntu-16-04-python3-5-编译caffe/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/08/09/AI：Ubuntu-16-04-python3-5-编译caffe/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-Arduino和一些好玩的" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/08/05/Arduino和一些好玩的/">Arduino和一些好玩的</a>
+    </h1>
+  
+
+        
+        <a href="/2019/08/05/Arduino和一些好玩的/" class="archive-article-date">
+  	<time datetime="2019-08-05T13:34:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-05</time>
+</a>
+        
+      </header>
+    
+
+    <!-- 目录内容 -->
+    
+    <!-- 目录内容结束 -->
+
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="显示器同步全彩灯带背景氛围灯"><a href="#显示器同步全彩灯带背景氛围灯" class="headerlink" title="显示器同步全彩灯带背景氛围灯"></a>显示器同步全彩灯带背景氛围灯</h2><ul>
+<li>Mirlight (Domowy Ambilight) | Mirley - Elektronika i Programowanie<br><a href="http://mirley.firlej.org/mirlight" target="_blank" rel="noopener">http://mirley.firlej.org/mirlight</a></li>
+</ul>
+<ul>
+<li>arduino控制WS2812灯条！ - Arduino - 极客工坊 - Powered by Discuz!<br><a href="https://www.geek-workshop.com/thread-7262-1-1.html" target="_blank" rel="noopener">https://www.geek-workshop.com/thread-7262-1-1.html</a></li>
+</ul>
+<h2 id="other"><a href="#other" class="headerlink" title="other"></a>other</h2><ul>
+<li>《写生机器人》制作经验分享（上） - 知乎<br><a href="https://zhuanlan.zhihu.com/p/32084037" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/32084037</a></li>
+</ul>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Arduino</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/08/05/Arduino和一些好玩的/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-硬件：Arduino和一些好玩的" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/08/05/硬件：Arduino和一些好玩的/">Arduino和一些好玩的</a>
+    </h1>
+  
+
+        
+        <a href="/2019/08/05/硬件：Arduino和一些好玩的/" class="archive-article-date">
+  	<time datetime="2019-08-05T13:34:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-05</time>
+</a>
+        
+      </header>
+    
+
+    <!-- 目录内容 -->
+    
+    <!-- 目录内容结束 -->
+
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="显示器同步全彩灯带背景氛围灯"><a href="#显示器同步全彩灯带背景氛围灯" class="headerlink" title="显示器同步全彩灯带背景氛围灯"></a>显示器同步全彩灯带背景氛围灯</h2><ul>
+<li>Mirlight (Domowy Ambilight) | Mirley - Elektronika i Programowanie<br><a href="http://mirley.firlej.org/mirlight" target="_blank" rel="noopener">http://mirley.firlej.org/mirlight</a></li>
+</ul>
+<ul>
+<li>arduino控制WS2812灯条！ - Arduino - 极客工坊 - Powered by Discuz!<br><a href="https://www.geek-workshop.com/thread-7262-1-1.html" target="_blank" rel="noopener">https://www.geek-workshop.com/thread-7262-1-1.html</a></li>
+</ul>
+<h2 id="other"><a href="#other" class="headerlink" title="other"></a>other</h2><ul>
+<li>《写生机器人》制作经验分享（上） - 知乎<br><a href="https://zhuanlan.zhihu.com/p/32084037" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/32084037</a></li>
+</ul>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Arduino</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/08/05/硬件：Arduino和一些好玩的/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-晚安" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/08/02/晚安/">晚安</a>
+    </h1>
+  
+
+        
+        <a href="/2019/08/02/晚安/" class="archive-article-date">
+  	<time datetime="2019-08-01T17:30:01.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-02</time>
+</a>
+        
+      </header>
+    
+
+    <!-- 目录内容 -->
+    
+    <!-- 目录内容结束 -->
+
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>睡前常点开。<br></p>
+        
+          <a class="article-more-a" href="/2019/08/02/晚安/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/08/02/晚安/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-门禁行人检测和识别二：Flask实时视频流服务器" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/07/27/门禁行人检测和识别二：Flask实时视频流服务器/">门禁行人检测和识别二：Flask实时视频流服务器</a>
+    </h1>
+  
+
+        
+        <a href="/2019/07/27/门禁行人检测和识别二：Flask实时视频流服务器/" class="archive-article-date">
+  	<time datetime="2019-07-27T08:23:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-27</time>
+</a>
+        
+      </header>
+    
+
+    <!-- 目录内容 -->
+    
+    <!-- 目录内容结束 -->
+
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="使用Flask构建实时视频流服务器"><a href="#使用Flask构建实时视频流服务器" class="headerlink" title="使用Flask构建实时视频流服务器"></a>使用Flask构建实时视频流服务器</h2><p>狗书作者 Miguel 在 <a href="https://blog.miguelgrinberg.com/post/video-streaming-with-flask" target="_blank" rel="noopener">Video Streaming with Flask</a> 中提出了一个简单实用的流媒体服务器，之后在 <a href="https://blog.miguelgrinberg.com/post/flask-video-streaming-revisited" target="_blank" rel="noopener">Flask Video Streaming Revisited</a> 中对其进行了优化。</p>
+<ul>
+<li><p>Video Streaming with Flask - miguelgrinberg.com<br><a href="https://blog.miguelgrinberg.com/post/video-streaming-with-flask" target="_blank" rel="noopener">https://blog.miguelgrinberg.com/post/video-streaming-with-flask</a></p>
+</li>
+<li><p>Flask Video Streaming Revisited - miguelgrinberg.com<br><a href="https://blog.miguelgrinberg.com/post/flask-video-streaming-revisited" target="_blank" rel="noopener">https://blog.miguelgrinberg.com/post/flask-video-streaming-revisited</a></p>
+</li>
+</ul>
+<p>流是一种让服务器在响应请求时将响应数据分块的技术。</p>
+<p>Flask 通过使用 生成器（generator functions） 原生支持流式响应。</p>
+<h3 id="分部响应"><a href="#分部响应" class="headerlink" title="分部响应"></a>分部响应</h3><p>让每一个数据块取代页面中的前一块，这样流就能够在浏览器窗口中进行“播放”，以实现在浏览器中运行一个视频播放器的功能。实现原地更新的秘诀在于使用 multipart（分部） 响应。分部响应的内容是一个包含分部内容类型的头部，后面的是用 boundary（分界线） 标记分割的部分，每一部分有各自的特定内容类型。</p>
+<p>分部视频流的格式如下：<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">HTTP/1.1 <span class="number">200</span> OK</span><br><span class="line"><span class="attribute">Content-Type</span>: multipart/x-mixed-replace; boundary=frame</span><br><span class="line"></span><br><span class="line">--frame</span><br><span class="line"><span class="attribute">Content-Type</span>: image/jpeg</span><br><span class="line"></span><br><span class="line">&lt;jpeg data here&gt;</span><br><span class="line">--frame</span><br><span class="line"><span class="attribute">Content-Type</span>: image/jpeg</span><br><span class="line"></span><br><span class="line">&lt;jpeg data here&gt;</span><br><span class="line">...</span><br></pre></td></tr></table></figure></p>
+<h3 id="构建一个实时视频流服务器"><a href="#构建一个实时视频流服务器" class="headerlink" title="构建一个实时视频流服务器"></a>构建一个实时视频流服务器</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#!/usr/bin/env python</span></span><br><span class="line"><span class="keyword">from</span> flask <span class="keyword">import</span> Flask, render_template, Response</span><br><span class="line"><span class="keyword">from</span> camera <span class="keyword">import</span> Camera</span><br><span class="line"></span><br><span class="line">app = Flask(__name__)</span><br><span class="line"></span><br><span class="line"><span class="meta">@app.route('/')</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">index</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="keyword">return</span> render_template(<span class="string">'index.html'</span>)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">gen</span><span class="params">(camera)</span>:</span></span><br><span class="line">    <span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">        frame = camera.get_frame()</span><br><span class="line">        <span class="keyword">yield</span> (<span class="string">b'--frame\r\n'</span></span><br><span class="line">               <span class="string">b'Content-Type: image/jpeg\r\n\r\n'</span> + frame + <span class="string">b'\r\n'</span>)</span><br><span class="line"></span><br><span class="line"><span class="meta">@app.route('/video_feed')</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">video_feed</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="keyword">return</span> Response(gen(Camera()),</span><br><span class="line">                    mimetype=<span class="string">'multipart/x-mixed-replace; boundary=frame'</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    app.run(host=<span class="string">'0.0.0.0'</span>, debug=<span class="literal">True</span>)</span><br></pre></td></tr></table></figure>
+<p>Camera 类负责提供帧序列。</p>
+<p>该应用有两个路由。路由 / 提供定义在 index.html 模版中的主页面。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>Video Streaming Demonstration<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"&#123;&#123; url_for('video_feed') &#125;&#125;"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>这是个简单的 HTML 页面，只有一个 heading 和一个图片标签。注意图片标签的 src 属性指向的是该应用的第二个路由，而这正是奇妙的地方。</p>
+<p>路由 /video_feed 返回的是流式响应。因为流返回的是可以显示在网页中的图片，到该路由的 URL 就放在图片标签的 src 属性中。浏览器会自动显示流中的 JPEG 图片，从而保持图片更新。</p>
+<p>在 /video_feed 路由中用到的生成器函数叫做 gen()，它接收 Camera 类的实例作为参数。为了达到让流中的每部分能够替代前一部分的目的，内容类型mimetype 必须为 multipart/x-mixed-replace，边界字符串设置为 frame。</p>
+<p>gen() 函数进入循环，从而持续地将摄像头中获取的帧数据作为响应块返回。该函数通过调用 camera.get_frame() 方法从摄像头中获取一帧数据，然后它将这一帧以内容类型为 image/jpeg 的响应块形式产出（yield）。</p>
+<h3 id="流的局限"><a href="#流的局限" class="headerlink" title="流的局限"></a>流的局限</h3><ul>
+<li>在处理永不结束的、长的流时，比如从摄像机发来的一个视频流，web worker 将会对客户端保持锁定状态，直到客户端断开连接。</li>
+<li>Flask应用只有一个线程，因此无法打开多个浏览器窗口同时观看视频。</li>
+</ul>
+<h3 id="仅在有观看者时运行相机"><a href="#仅在有观看者时运行相机" class="headerlink" title="仅在有观看者时运行相机"></a>仅在有观看者时运行相机</h3><p>记录每次客户端访问视频祯的时间，Camera线程检查时间戳，如果超过十秒则退出，一旦客户端再次连接，线程就会重新启动。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Camera</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="comment"># ...</span></span><br><span class="line">    last_access = <span class="number">0</span>  <span class="comment"># 最后一个客户端访问相机的时间</span></span><br><span class="line"> </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">get_frame</span><span class="params">(self)</span>:</span></span><br><span class="line">        Camera.last_access = time.time()</span><br><span class="line">        <span class="comment"># ...</span></span><br><span class="line"> </span><br><span class="line"><span class="meta">    @classmethod</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">_thread</span><span class="params">(cls)</span>:</span></span><br><span class="line">        <span class="keyword">with</span> picamera.PiCamera() <span class="keyword">as</span> camera:</span><br><span class="line">            <span class="comment"># ...</span></span><br><span class="line">            <span class="keyword">for</span> foo <span class="keyword">in</span> camera.capture_continuous(stream, <span class="string">'jpeg'</span>, use_video_port=<span class="literal">True</span>):</span><br><span class="line">                <span class="comment"># ...</span></span><br><span class="line">                <span class="comment"># 如果没有任何客户端访问视屏帧</span></span><br><span class="line">                <span class="comment"># 10 秒钟之后停止线程</span></span><br><span class="line">                <span class="keyword">if</span> time.time() - cls.last_access &gt; <span class="number">10</span>:</span><br><span class="line">                    <span class="keyword">break</span></span><br><span class="line">        cls.thread = <span class="literal">None</span></span><br></pre></td></tr></table></figure>
+<h3 id="性能优化"><a href="#性能优化" class="headerlink" title="性能优化"></a>性能优化</h3><p>后台线程捕获帧与将这些帧回送到客户端的生成器之间需要同步，生成器仅将原始帧传递给客户端。如果生成器内的传送回路比相机线程的帧速率快，则生成器应该等待直到新帧可用，所以它应该自行调整以匹配相机速率；另一方面，如果传送回路以比相机线程更慢的速率运行，那么它在处理帧时永远不应该落后，而应该跳过某些帧以始终传递最新的帧。</p>
+<p>解决方案是，当新帧可用时，让相机线程信号通知生成器运行。然后，生成器可以在它们传送下一帧之前等待信号时阻塞。在查看同步单元时，我发现 threading.Event 是匹配此行为的函数。所以，基本上每个生成器都应该有一个事件对象，然后摄像机线程应该发出信号通知所有活动事件对象，以便在新帧可用时通知所有正在运行的生成器。生成器传递帧并重置其事件对象，然后等待它们再次进行下一帧。</p>
+<p>为了避免在生成器中添加事件处理逻辑，实现一个自定义事件类，该事件类使用调用者的线程 id 为每个客户端线程自动创建和管理单独的事件。说实话，这有点复杂，但这个想法来自于 Flask 的上下文局部变量是如何实现的。新的事件类称为 CameraEvent，并具有 wait()、set() 和 clear() 方法。在此类的支持下，可以将速率控制机制添加到 BaseCamera 类：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">CameraEvent</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="comment"># ...</span></span><br><span class="line"> </span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">BaseCamera</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="comment"># ...</span></span><br><span class="line">    event = CameraEvent()</span><br><span class="line"> </span><br><span class="line">    <span class="comment"># ...</span></span><br><span class="line"> </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">get_frame</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="string">"""返回相机的当前帧."""</span></span><br><span class="line">        BaseCamera.last_access = time.time()</span><br><span class="line"> </span><br><span class="line">        <span class="comment"># wait for a signal from the camera thread</span></span><br><span class="line">        BaseCamera.event.wait()</span><br><span class="line">        BaseCamera.event.clear()</span><br><span class="line"> </span><br><span class="line">        <span class="keyword">return</span> BaseCamera.frame</span><br><span class="line"> </span><br><span class="line"><span class="meta">    @classmethod</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">_thread</span><span class="params">(cls)</span>:</span></span><br><span class="line">        <span class="comment"># ...</span></span><br><span class="line">        <span class="keyword">for</span> frame <span class="keyword">in</span> frames_iterator:</span><br><span class="line">            BaseCamera.frame = frame</span><br><span class="line">            BaseCamera.event.set()  <span class="comment"># send signal to clients</span></span><br><span class="line"> </span><br><span class="line">            <span class="comment"># ...</span></span><br></pre></td></tr></table></figure>
+<p>在 CameraEvent 类中完成的魔法操作使多个客户端能够单独等待新的帧。wait() 方法使用当前线程 id 为每个客户端分配单独的事件对象并等待它。clear() 方法将重置与调用者的线程 id 相关联的事件，以便每个生成器线程可以以它自己的速度运行。相机线程调用的 set() 方法向分配给所有客户端的事件对象发送信号，并且还将删除未提供服务的任何事件，因为这意味着与这些事件关联的客户端已关闭，客户端本身也不存在了。</p>
+<h3 id="部署Web服务器"><a href="#部署Web服务器" class="headerlink" title="部署Web服务器"></a>部署Web服务器</h3><p>使用比 Flask 附带的服务器更强大的 Web服务器，一个很好的选择是使用 Gunicorn。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gunicorn --threads 5 --workers 1 --<span class="built_in">bind</span> 0.0.0.0:5000 app:app</span><br></pre></td></tr></table></figure>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Flask</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/07/27/门禁行人检测和识别二：Flask实时视频流服务器/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-软件：Flask学习笔记" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/07/23/软件：Flask学习笔记/">Flask学习笔记</a>
+    </h1>
+  
+
+        
+        <a href="/2019/07/23/软件：Flask学习笔记/" class="archive-article-date">
+  	<time datetime="2019-07-23T08:29:31.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-23</time>
+</a>
+        
+      </header>
+    
+
+    <!-- 目录内容 -->
+    
+    <!-- 目录内容结束 -->
+
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="利用循环的判断语句控制template的渲染"><a href="#利用循环的判断语句控制template的渲染" class="headerlink" title="利用循环的判断语句控制template的渲染"></a>利用循环的判断语句控制template的渲染</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">  &#123;% if title %&#125;</span><br><span class="line">  <span class="tag">&lt;<span class="name">title</span>&gt;</span>&#123;&#123;  title  &#125;&#125;<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">  &#123;% else %&#125;</span><br><span class="line">  <span class="tag">&lt;<span class="name">title</span>&gt;</span>AI Workplace<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">   &#123;% endif %&#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">h1</span>&gt;</span>Welcome to AI Workshop<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">  &#123;% for i in range(2) %&#125;</span><br><span class="line">    <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"&#123;&#123; url_for('video_feed') &#125;&#125;"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span>text &#123;&#123; i &#125;&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">&#123;% endfor %&#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="模板继承和引用"><a href="#模板继承和引用" class="headerlink" title="模板继承和引用"></a>模板继承和引用</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;% extends "base.html"%&#125;</span><br><span class="line"></span><br><span class="line">&#123;% block content %&#125;</span><br><span class="line">&#123;% endblock %&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>Basic usage — Flask-Bootstrap 3.3.7.1 documentation<br><a href="https://pythonhosted.org/Flask-Bootstrap/basic-usage.html" target="_blank" rel="noopener">https://pythonhosted.org/Flask-Bootstrap/basic-usage.html</a></li>
+</ul>
+<h3 id="数据库"><a href="#数据库" class="headerlink" title="数据库"></a>数据库</h3><ul>
+<li>Flask-SQLAlchemy — Flask-SQLAlchemy 2.0 documentation<br><a href="http://www.pythondoc.com/flask-sqlalchemy/index.html" target="_blank" rel="noopener">http://www.pythondoc.com/flask-sqlalchemy/index.html</a></li>
+</ul>
+<h3 id="ubuntu-虚拟环境"><a href="#ubuntu-虚拟环境" class="headerlink" title="ubuntu 虚拟环境"></a>ubuntu 虚拟环境</h3><p>安装Python虚拟环境的virtualenv，执行命令<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install python-virtualenv</span><br></pre></td></tr></table></figure></p>
+<p>命令会同时安装python-virtualenv和python3-virtualenv  </p>
+<p>安装virtualwrapper，virtualwrapper是一个简单方便的管理Python虚拟环境的工具<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip3 install virtualenvwrapper</span><br></pre></td></tr></table></figure></p>
+<p>配置virtualwrapper的环境变量<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim ~/.bashrc</span><br></pre></td></tr></table></figure></p>
+<p>Shift + g 到达文本最后，加入以下内容<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3</span><br><span class="line"><span class="built_in">export</span> WORKON_HOME=~/Envs</span><br><span class="line"><span class="built_in">source</span> /home/lee/.<span class="built_in">local</span>/bin/virtualenvwrapper.sh</span><br></pre></td></tr></table></figure></p>
+<p>其中 virtualenvwrapper.sh 和 python3 的路径可通过下面命令查看<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo find / -name <span class="string">"virtualenvwrapper.sh"</span></span><br><span class="line">whereis python  <span class="comment"># 查看所有python的路径，不止一个</span></span><br><span class="line"><span class="built_in">which</span> python3   <span class="comment"># 查看当前使用的python路径</span></span><br></pre></td></tr></table></figure></p>
+<p>执行下面命令，使对~/.bashrc的修改生效<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">source</span> ~/.bashrc</span><br></pre></td></tr></table></figure></p>
+<p>新建虚拟环境<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkvirtualenv --python=/usr/bin/python3 envname</span><br></pre></td></tr></table></figure></p>
+<p>进入虚拟环境<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ workon envname</span><br></pre></td></tr></table></figure></p>
+<p>安装指定包<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install -r requirements.txt</span><br></pre></td></tr></table></figure></p>
+<p>虚拟化境virtualenv下提升权限</p>
+<p>指定python路径<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">(envname)$ <span class="built_in">which</span> python</span><br><span class="line">/home/username/Envs/envname/bin/python</span><br><span class="line">(envname)$ sudo /home/username/Envs/envname/bin/python server.py</span><br></pre></td></tr></table></figure></p>
+<p>退出虚拟环境<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(envname)$ deactivate</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li>Python-Flask-企业级论坛实战 - 随笔分类 - sellsa - 博客园<br><a href="https://www.cnblogs.com/sellsa/category/1244063.html" target="_blank" rel="noopener">https://www.cnblogs.com/sellsa/category/1244063.html</a></li>
+</ul>
+<h3 id="URL传参"><a href="#URL传参" class="headerlink" title="URL传参"></a>URL传参</h3><ul>
+<li><h3 id="path形式传参"><a href="#path形式传参" class="headerlink" title="path形式传参"></a>path形式传参</h3></li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@app.route('/article/&lt;article_id&gt;/')    #我们在&lt;&gt;里面写参数名article_id</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">article_detail</span><span class="params">(article_id)</span>:</span>         <span class="comment">#这里的参数名要和上面的一致，即article_id</span></span><br><span class="line">    <span class="keyword">return</span> <span class="string">'您请求的文章是：&#123;&#125;'</span>.format(article_id)</span><br></pre></td></tr></table></figure>
+<p>限定参数数据类型<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@app.route('/article/&lt;int:article_id&gt;/')</span></span><br></pre></td></tr></table></figure></p>
+<p>这样当我们传递的参数是int类型的时候才能正常访问，其他类型都会返回404  </p>
+<p>类型可以设置提下几种：  </p>
+<ul>
+<li>string: 默认的数据类型，接收没有任何斜杠”   /“的文本</li>
+<li>int: 整数形</li>
+<li>float: 浮点型</li>
+<li>path: 和string类似，但是接受斜杠</li>
+<li>uuid: 只接受uuid字符串</li>
+<li><p>any: 可以指定多种路径，比如以下例子</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@app.route('/&lt;any(article,blog):url_path&gt;/&lt;id&gt;/')</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">item</span><span class="params">(url_path, id)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> url_path == <span class="string">'article'</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="string">'文章详情：&#123;&#125;'</span>.format(id)</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="string">'博客详情：&#123;&#125;'</span>.format(id)</span><br></pre></td></tr></table></figure>
+</li>
+<li><h3 id="key-value形式传参"><a href="#key-value形式传参" class="headerlink" title="?key=value形式传参"></a>?key=value形式传参</h3></li>
+</ul>
+<p>即在浏览器的URL中使用“?key=value”的形式传递参数（多个参数之间使用“&amp;”连接即可），在后台则使用“from flask import request”，然后使用“request.args.get(key)”来获取参数key的值value。<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> flask <span class="keyword">import</span> Flask, request</span><br><span class="line">...</span><br><span class="line"> </span><br><span class="line"><span class="meta">@app.route('/d/')</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">d</span><span class="params">()</span>:</span></span><br><span class="line">    wd = request.args.get(<span class="string">'wd'</span>)</span><br><span class="line">    <span class="keyword">return</span> <span class="string">'您传递的参数是: &#123;&#125;'</span>.format(wd)</span><br></pre></td></tr></table></figure></p>
+<p>访问127.0.0.1:5000/d/?wd=hello</p>
+<h3 id="URL重定向"><a href="#URL重定向" class="headerlink" title="URL重定向"></a>URL重定向</h3><p>url_for使用<br>我们之前是通过url来找到对应的视图函数</p>
+<ul>
+<li>　　/     =&gt;    hello_world  </li>
+</ul>
+<p>那么url_for则是通过视图函数找到url</p>
+<ul>
+<li>　　hello world  =&gt;  /</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> flask <span class="keyword">import</span> url_for</span><br><span class="line"></span><br><span class="line"><span class="meta">@app.route('/')</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">hello_world</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="keyword">return</span> url_for(<span class="string">'my_list'</span>, page_id=<span class="number">1</span>)</span><br><span class="line"></span><br><span class="line"><span class="meta">@app.route('/list/&lt;page_id&gt;')</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">my_list</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="keyword">return</span> <span class="string">'list page'</span></span><br></pre></td></tr></table></figure>
+<p>在flask中，重定向是通过flask.redict(location, code=302)函数来实现的</p>
+<ul>
+<li>location表示需要重定向到的URL,应该配合url_for()函数来使用</li>
+<li>code表示采用哪种重定向，默认是302（临时重定向），也可以改成301来实现永久重定向<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> flask <span class="keyword">import</span> redirect</span><br><span class="line"></span><br><span class="line"><span class="meta">@app.route("/redirect")</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">test</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="keyword">return</span> redirect(url_for(<span class="string">'hello'</span>))</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">flask</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/07/23/软件：Flask学习笔记/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-门禁行人检测和识别" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/07/23/门禁行人检测和识别/">门禁行人检测和识别</a>
+    </h1>
+  
+
+        
+        <a href="/2019/07/23/门禁行人检测和识别/" class="archive-article-date">
+  	<time datetime="2019-07-23T02:29:26.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-23</time>
+</a>
+        
+      </header>
+    
+
+    <!-- 目录内容 -->
+    
+    <!-- 目录内容结束 -->
+
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="远程桌面连接"><a href="#远程桌面连接" class="headerlink" title="远程桌面连接"></a>远程桌面连接</h2><ul>
+<li>利用远程桌面连接</li>
+</ul>
+<p>在ubuntu安装xdrp服务<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install xrdp</span><br></pre></td></tr></table></figure></p>
+<p>打开远程桌面服务（mstsc.exe），输入ip连接</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/07/23/门禁行人检测和识别/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-Pixar-Lamp二：ST-GCN动作识别" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/07/17/Pixar-Lamp二：ST-GCN动作识别/">Pixar-Lamp二：ST-GCN动作识别</a>
+    </h1>
+  
+
+        
+        <a href="/2019/07/17/Pixar-Lamp二：ST-GCN动作识别/" class="archive-article-date">
+  	<time datetime="2019-07-16T16:16:39.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-17</time>
+</a>
+        
+      </header>
+    
+
+    <!-- 目录内容 -->
+    
+    <!-- 目录内容结束 -->
+
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><strong> Pixar-Lamp二：ST-GCN动作识别 </strong> <excerpt in index | 首页摘要><br>做个跳跳灯！</excerpt></p>
+<ul>
+<li>解读：基于动态骨骼的动作识别方法ST-GCN（时空图卷积网络模型） - 浪浪的博客 - CSDN博客<br><a href="https://blog.csdn.net/qq_36893052/article/details/79860328" target="_blank" rel="noopener">https://blog.csdn.net/qq_36893052/article/details/79860328</a></li>
+</ul>
+        
+          <a class="article-more-a" href="/2019/07/17/Pixar-Lamp二：ST-GCN动作识别/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/07/17/Pixar-Lamp二：ST-GCN动作识别/">展开全文 >></a>
         </p>
       
 
@@ -1160,7 +1171,7 @@
   
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/page/4/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><a class="page-number" href="/page/7/">7</a><span class="space">&hellip;</span><a class="page-number" href="/page/13/">13</a><a class="extend next" rel="next" href="/page/6/">Next &raquo;</a>
+      <a class="extend prev" rel="prev" href="/page/4/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><a class="page-number" href="/page/7/">7</a><span class="space">&hellip;</span><a class="page-number" href="/page/11/">11</a><a class="extend next" rel="next" href="/page/6/">Next &raquo;</a>
     </nav>
   
 
@@ -1273,6 +1284,18 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">3D打印</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">吉他</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">RL</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">lua</a>
               </li>
              
@@ -1285,14 +1308,6 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">3D打印</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">吉他</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">import</a>
               </li>
              
@@ -1301,7 +1316,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">dlib</a>
+                <a href="javascript:void(0)" class="js-tag color1">tensorflow</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1309,27 +1324,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">RL</a>
+                <a href="javascript:void(0)" class="js-tag color5">dlib</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">Arduino</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">tensorflow</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">flask</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">brainfuck</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1349,11 +1348,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Hikey970</a>
+                <a href="javascript:void(0)" class="js-tag color5">brainfuck</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">pyopencl</a>
+                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Hikey970</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1361,7 +1364,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">+ opencv + arduino</a>
+                <a href="javascript:void(0)" class="js-tag color4">pyopencl</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1369,43 +1372,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">-go</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">leapmotion</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">js</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">box2d</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">loomo</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Android</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">机械手</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">web</a>
+                <a href="javascript:void(0)" class="js-tag color4">+ opencv + arduino</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">jupyter notebook</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">数模</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1433,11 +1404,23 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">git</a>
+                <a href="javascript:void(0)" class="js-tag color3">数模</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">arduino</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">leapmotion</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">js</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">box2d</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1449,15 +1432,27 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">flask</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">AlphaZero</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">git</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">-go</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">tkinter</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">keras</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">docker</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1469,7 +1464,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">AlphaZero</a>
+                <a href="javascript:void(0)" class="js-tag color2">docker</a>
               </li>
             
             <div class="clearfix"></div>
