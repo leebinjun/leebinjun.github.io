@@ -301,6 +301,65 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-门禁Arduino下位机通信与舵机控制" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+
+    <!-- 目录内容 -->
+    
+    <!-- 目录内容结束 -->
+
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>title: 门禁Arduino下位机通信与舵机控制<br>date: 2019-07-12 17:03:45<br>tags:</p>
+<p><strong>  </strong> <excerpt in index | 首页摘要></excerpt></p>
+<div align="center">
+<img src="/2022/08/15/门禁Arduino下位机通信与舵机控制/00.gif">
+</div>
+        
+          <a class="article-more-a" href="/2022/08/15/门禁Arduino下位机通信与舵机控制/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2022/08/15/门禁Arduino下位机通信与舵机控制/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-硬件：树莓派 制作复古游戏机" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -492,7 +551,7 @@
 
     <div class="article-entry" itemprop="articleBody">
       
-        <p><img src="/2021/02/12/Robot：小派双足机器人/Robot-小派双足机器人/photo01.jpg"></p>
+        <p><img src="/2021/02/12/Robot：小派双足机器人/photo01.jpg"></p>
 <p>小pi舞蹈机器人，最初制作是参加2015年的iCan大赛时，参考了BoB机器人的机械机构设计。</p>
 <p>电路控制部分用的mega2560，挂载啦很多其他功能模块，诸如led、超声波、音乐播放等。</p>
 <p>特别感谢当时的队友杜总小宇洋神，在806一起成长的日子十分难忘。</p>
@@ -1046,107 +1105,6 @@
 
 
   
-    <article id="post-Hexo：使用marp添加PPT" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/03/31/Hexo：使用marp添加PPT/">Hexo：使用marp添加PPT</a>
-    </h1>
-  
-
-        
-        <a href="/2020/03/31/Hexo：使用marp添加PPT/" class="archive-article-date">
-  	<time datetime="2020-03-30T16:06:23.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-31</time>
-</a>
-        
-      </header>
-    
-
-    <!-- 目录内容 -->
-    
-    <!-- 目录内容结束 -->
-
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="使用marp添加PPT"><a href="#使用marp添加PPT" class="headerlink" title="使用marp添加PPT"></a>使用marp添加PPT</h2><h3 id="hexo相关设置"><a href="#hexo相关设置" class="headerlink" title="hexo相关设置"></a>hexo相关设置</h3><p>在 themes\yilia_config.yml 中添加 PPT 菜单<br><figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">menu:</span></span><br><span class="line">  <span class="string">主页:</span> <span class="string">/</span></span><br><span class="line">  <span class="string">随笔:</span> <span class="string">/tags/随笔/</span></span><br><span class="line">  <span class="string">相册:</span> <span class="string">/photos/</span></span><br><span class="line"><span class="attr">  PPT:</span> <span class="string">/slides/</span></span><br></pre></td></tr></table></figure></p>
-<p>在 source\slides 文件夹下，生成ppt目录<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: slides</span><br><span class="line">---</span><br><span class="line"></span><br><span class="line">&lt;style&gt;</span><br><span class="line">table th:first-of-type &#123;</span><br><span class="line">    width: 1cm;</span><br><span class="line">&#125;</span><br><span class="line">table th:nth-of-type(2) &#123;</span><br><span class="line">    width: 5cm;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/style&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">|NO.|Links|</span><br><span class="line">|:-:|:-:|</span><br><span class="line">|1|[test1](https://binjun.xyz/slides/index/test1.html)|</span><br><span class="line">|2|[test2](https://binjun.xyz/slides/index/test2.html)|</span><br></pre></td></tr></table></figure></p>
-<p>在 source\slides\index 文件夹下，放置用于存放ppt图片的test文件夹和对应test.md文件</p>
-<h3 id="Marp相关语法"><a href="#Marp相关语法" class="headerlink" title="Marp相关语法"></a>Marp相关语法</h3><ul>
-<li>Marp: Markdown Presentation Ecosystem<br><a href="https://marp.app/" target="_blank" rel="noopener">https://marp.app/</a></li>
-</ul>
-<p>如果是之前已经做好的ppt，可以使用WPS直接将每页ppt转成图片。</p>
-<p>记得上传ppt图片到图床上，这里的图床可以使用github或者七牛云等。  </p>
-<p>将每页图片的地址插入到md文本中，利用marp生成对应html。  </p>
-<p>最后将html文件放在source\slides\index 文件夹下。  </p>
-<figure class="highlight md"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">marp: true</span><br><span class="line">theme: base</span><br><span class="line">---</span><br><span class="line">![<span class="string">bg</span>](<span class="link">https://raw.githubusercontent.com/leebinjun/leebinjun.github.io/master/slides/index/coreXY/幻灯片1.PNG</span>)</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
-<h3 id="使用七牛云作为图床"><a href="#使用七牛云作为图床" class="headerlink" title="使用七牛云作为图床"></a>使用七牛云作为图床</h3><p>对于已认证的个人用户，七牛云提供了10GB存储、10GB下载流量和10万次PUT/月100万次GET/月的免费额度，对于博客的使用是完全足够的。</p>
-<ul>
-<li>七牛云<br><a href="https://portal.qiniu.com" target="_blank" rel="noopener">https://portal.qiniu.com</a></li>
-</ul>
-<p>目前七牛云提供的测试域名只有30天有效期，所以我们需要绑定自己的域名进行访问。<br>对于未备案的域名，<strong>存储区域</strong>只能选择国外，并使用<strong>自定义源站域名</strong>绑定域名。</p>
-<ul>
-<li>存储空间域名管理 - 七牛开发者中心<br><a href="https://developer.qiniu.com/kodo/kb/5859/domain-name-to-access-the-storage-space" target="_blank" rel="noopener">https://developer.qiniu.com/kodo/kb/5859/domain-name-to-access-the-storage-space</a></li>
-</ul>
-<p>自定义源站域名时，使用二级域名img.binjun.xyz</p>
-<p>在阿里云配置域名的CNAME记录解析，记录值填写七牛云提供的地址，以保证能正常访问空间。</p>
-<ul>
-<li>如何配置域名的 CNAME - 七牛开发者中心<br><a href="https://developer.qiniu.com/fusion/kb/1322/how-to-configure-cname-domain-name" target="_blank" rel="noopener">https://developer.qiniu.com/fusion/kb/1322/how-to-configure-cname-domain-name</a></li>
-</ul>
-<p>配置好后使用<strong>nslookup 域名</strong>测试。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">C:\Users\user&gt;nslookup img.binjun.xyz</span><br><span class="line">服务器:  acca-ad-p-2.acca.com.cn</span><br><span class="line">Address:  10.1.2.172</span><br><span class="line"></span><br><span class="line">DNS request timed out.</span><br><span class="line">    timeout was 2 seconds.</span><br><span class="line">非权威应答:</span><br><span class="line">名称:    as-gate-io.qiniu.com</span><br><span class="line">Addresses:  23.248.173.8</span><br><span class="line">          23.248.173.13</span><br><span class="line">          23.248.173.7</span><br><span class="line">Aliases:  img.binjun.xyz</span><br><span class="line">          iovip-as0.qbox.me</span><br></pre></td></tr></table></figure>
-<h4 id="Hexo七牛同步插件"><a href="#Hexo七牛同步插件" class="headerlink" title="Hexo七牛同步插件"></a>Hexo七牛同步插件</h4><ul>
-<li><p>压缩图 -在线图片压缩工具(jpg、png、gif)无损压缩50%<br><a href="https://www.yasuotu.com/" target="_blank" rel="noopener">https://www.yasuotu.com/</a></p>
-</li>
-<li><p>Hexo七牛同步插件<br><a href="https://github.com/gyk001/hexo-qiniu-sync" target="_blank" rel="noopener">https://github.com/gyk001/hexo-qiniu-sync</a></p>
-</li>
-<li><p>使用七牛为Hexo存储图片等资源 | 跬步<br><a href="http://yuchen-lea.github.io/2016-01-21-use-qiniu-store-file-for-hexo/" target="_blank" rel="noopener">http://yuchen-lea.github.io/2016-01-21-use-qiniu-store-file-for-hexo/</a></p>
-</li>
-</ul>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/03/31/Hexo：使用marp添加PPT/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/11/">11</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
@@ -1262,14 +1220,6 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">3D打印</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">吉他</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">RL</a>
               </li>
              
@@ -1286,6 +1236,14 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">3D打印</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">吉他</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">import</a>
               </li>
              
@@ -1299,6 +1257,10 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">dlib</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">yolo</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1322,10 +1284,6 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">yolo</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">brainfuck</a>
               </li>
              
@@ -1346,23 +1304,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">+ opencv + arduino</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">robot</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Latex</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">jupyter notebook</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">today is a happy day</a>
+                <a href="javascript:void(0)" class="js-tag color4">+ opencv + arduino</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1379,6 +1325,18 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">mysql</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">jupyter notebook</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Latex</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">today is a happy day</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1418,11 +1376,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">-go</a>
+                <a href="javascript:void(0)" class="js-tag color4">git</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">git</a>
+                <a href="javascript:void(0)" class="js-tag color4">-go</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1434,7 +1392,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">docker</a>
+                <a href="javascript:void(0)" class="js-tag color1">Flask</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1442,7 +1400,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Flask</a>
+                <a href="javascript:void(0)" class="js-tag color2">docker</a>
               </li>
             
             <div class="clearfix"></div>
