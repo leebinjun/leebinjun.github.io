@@ -16,10 +16,13 @@
 <meta property="og:site_name" content="Binjun">
 <meta property="og:description" content="Hexo：Hello Hexo 使用hexo+github搭建个人博客  Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshoot">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2022-09-14T14:05:05.693Z">
+<meta property="og:image" content="http://blog.binjun.icu/2022/04/19/Hexo：Hello%20Hexo/000.png">
+<meta property="og:image" content="http://blog.binjun.icu/2022/04/19/Hexo：Hello%20Hexo/001.png">
+<meta property="og:updated_time" content="2022-09-14T14:22:06.419Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo：Hello Hexo 使用hexo+github搭建个人博客">
 <meta name="twitter:description" content="Hexo：Hello Hexo 使用hexo+github搭建个人博客  Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshoot">
+<meta name="twitter:image" content="http://blog.binjun.icu/2022/04/19/Hexo：Hello%20Hexo/000.png">
   
     <link rel="alternative" href="/atom.xml" title="Binjun" type="application/atom+xml">
   
@@ -362,7 +365,7 @@
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> themes &amp;&amp; git <span class="built_in">clone</span> https://github.com/maochunguang/black-blue(主题地址)</span><br></pre></td></tr></table></figure>
 <p>配置blog\_config.yml，修改对应主题目录名</p>
 <figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">theme:</span> <span class="string">主题名称</span></span><br></pre></td></tr></table></figure>
-<h2 id="绑定域名"><a href="#绑定域名" class="headerlink" title="绑定域名"></a>绑定域名</h2><h3 id="在域名的解析设置中添加记录"><a href="#在域名的解析设置中添加记录" class="headerlink" title="在域名的解析设置中添加记录"></a>在域名的解析设置中添加记录</h3><p><code>&lt;img src=&#39;Hexo：Hello Hexo\000.png&#39;&gt;</code></p>
+<h2 id="绑定域名"><a href="#绑定域名" class="headerlink" title="绑定域名"></a>绑定域名</h2><h3 id="在域名的解析设置中添加记录"><a href="#在域名的解析设置中添加记录" class="headerlink" title="在域名的解析设置中添加记录"></a>在域名的解析设置中添加记录</h3><p><img src="/2022/04/19/Hexo：Hello Hexo/000.png"></p>
 <div class="table-container">
 <table>
 <thead>
@@ -401,7 +404,7 @@
 </tbody>
 </table>
 </div>
-<h3 id="在github添加自定义域名"><a href="#在github添加自定义域名" class="headerlink" title="在github添加自定义域名"></a>在github添加自定义域名</h3><p><code>&lt;img src=&#39;Hexo：Hello Hexo\001.png&#39;&gt;</code></p>
+<h3 id="在github添加自定义域名"><a href="#在github添加自定义域名" class="headerlink" title="在github添加自定义域名"></a>在github添加自定义域名</h3><p><img src="/2022/04/19/Hexo：Hello Hexo/001.png"></p>
 <h3 id="配置hexo的-config-yml"><a href="#配置hexo的-config-yml" class="headerlink" title="配置hexo的_config.yml"></a>配置hexo的_config.yml</h3><figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># URL</span></span><br><span class="line"><span class="comment">## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'</span></span><br><span class="line"><span class="attr">url:</span> <span class="attr">http://www.yoursite.com</span></span><br><span class="line"><span class="attr">root:</span> <span class="string">/</span></span><br><span class="line"><span class="attr">permalink:</span> <span class="string">:year/:month/:day/:title/</span></span><br><span class="line"><span class="attr">permalink_defaults:</span></span><br></pre></td></tr></table></figure>
 <h3 id="上传CNAME文件"><a href="#上传CNAME文件" class="headerlink" title="上传CNAME文件"></a>上传CNAME文件</h3><p>在/hexo/source目录下，新建一个CNAME文件，内容为域名，上传更新</p>
 </the>
@@ -868,5 +871,21 @@ MathJax.Hub.Queue(function() {
 
 </div>
   </div>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<!-- <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script> -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
 <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"position":"right","width":200,"height":400,"hOffset":50,"vOffset":-95},"mobile":{"show":false},"react":{"opacity":0.7},"log":false});</script></body>
 </html>

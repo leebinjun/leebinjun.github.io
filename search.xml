@@ -106,7 +106,7 @@
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> themes &amp;&amp; git <span class="built_in">clone</span> https://github.com/maochunguang/black-blue(主题地址)</span><br></pre></td></tr></table></figure>
 <p>配置blog\_config.yml，修改对应主题目录名</p>
 <figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">theme:</span> <span class="string">主题名称</span></span><br></pre></td></tr></table></figure>
-<h2 id="绑定域名"><a href="#绑定域名" class="headerlink" title="绑定域名"></a>绑定域名</h2><h3 id="在域名的解析设置中添加记录"><a href="#在域名的解析设置中添加记录" class="headerlink" title="在域名的解析设置中添加记录"></a>在域名的解析设置中添加记录</h3><p><code>&lt;img src=&#39;Hexo：Hello Hexo\000.png&#39;&gt;</code></p>
+<h2 id="绑定域名"><a href="#绑定域名" class="headerlink" title="绑定域名"></a>绑定域名</h2><h3 id="在域名的解析设置中添加记录"><a href="#在域名的解析设置中添加记录" class="headerlink" title="在域名的解析设置中添加记录"></a>在域名的解析设置中添加记录</h3><p><img src="/2022/04/19/Hexo：Hello Hexo/000.png"></p>
 <div class="table-container">
 <table>
 <thead>
@@ -145,7 +145,7 @@
 </tbody>
 </table>
 </div>
-<h3 id="在github添加自定义域名"><a href="#在github添加自定义域名" class="headerlink" title="在github添加自定义域名"></a>在github添加自定义域名</h3><p><code>&lt;img src=&#39;Hexo：Hello Hexo\001.png&#39;&gt;</code></p>
+<h3 id="在github添加自定义域名"><a href="#在github添加自定义域名" class="headerlink" title="在github添加自定义域名"></a>在github添加自定义域名</h3><p><img src="/2022/04/19/Hexo：Hello Hexo/001.png"></p>
 <h3 id="配置hexo的-config-yml"><a href="#配置hexo的-config-yml" class="headerlink" title="配置hexo的_config.yml"></a>配置hexo的_config.yml</h3><figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># URL</span></span><br><span class="line"><span class="comment">## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'</span></span><br><span class="line"><span class="attr">url:</span> <span class="attr">http://www.yoursite.com</span></span><br><span class="line"><span class="attr">root:</span> <span class="string">/</span></span><br><span class="line"><span class="attr">permalink:</span> <span class="string">:year/:month/:day/:title/</span></span><br><span class="line"><span class="attr">permalink_defaults:</span></span><br></pre></td></tr></table></figure>
 <h3 id="上传CNAME文件"><a href="#上传CNAME文件" class="headerlink" title="上传CNAME文件"></a>上传CNAME文件</h3><p>在/hexo/source目录下，新建一个CNAME文件，内容为域名，上传更新</p>
 </the>]]></content>
@@ -636,7 +636,7 @@
     <script type="text/javascript" src="https://assets.pyecharts.org/assets/echarts.min.js"></script>
     <script type="text/javascript" src="https://assets.pyecharts.org/assets/echarts-wordcloud.min.js"></script>
     <div id="11c49d00faa448b291d718f348be1d69" class="chart-container" style="width:800px; height:500px;"></div>
-    <script>
+    <script type="text/javascript">
         var chart_11c49d00faa448b291d718f348be1d69 = echarts.init(
             document.getElementById('11c49d00faa448b291d718f348be1d69'), 'white', {renderer: 'canvas'});
         var maskImage_16c70d54c9154ea3b38160d5edca7259 = new Image();
