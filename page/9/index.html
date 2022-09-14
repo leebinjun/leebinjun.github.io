@@ -301,201 +301,6 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-Robot：loomo多服务机器人开发" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/05/26/Robot：loomo多服务机器人开发/">loomo多服务机器人开发</a>
-    </h1>
-  
-
-        
-        <a href="/2019/05/26/Robot：loomo多服务机器人开发/" class="archive-article-date">
-  	<time datetime="2019-05-26T11:43:22.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-26</time>
-</a>
-        
-      </header>
-    
-
-    <!-- 目录内容 -->
-    
-    <!-- 目录内容结束 -->
-
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="设计思路"><a href="#设计思路" class="headerlink" title="设计思路"></a>设计思路</h2><p><img src="/2019/05/26/Robot：loomo多服务机器人开发/loomo多服务机器人开发/设计思路-201905.png" width="600" height="300"></p>
-<h2 id="一些资料"><a href="#一些资料" class="headerlink" title="一些资料"></a>一些资料</h2><ul>
-<li>机器人 · 3D打印的假肢，像真手一样听你指挥！<br><a href="https://mp.weixin.qq.com/s/qumdZIXXGmF-blSeHLu1tw" target="_blank" rel="noopener">https://mp.weixin.qq.com/s/qumdZIXXGmF-blSeHLu1tw</a></li>
-</ul>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">+ loomo + Android + 机械手</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/05/26/Robot：loomo多服务机器人开发/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-象棋残局机器人二：透射变换" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/05/25/象棋残局机器人二：透射变换/">象棋残局机器人二：投射变换</a>
-    </h1>
-  
-
-        
-        <a href="/2019/05/25/象棋残局机器人二：透射变换/" class="archive-article-date">
-  	<time datetime="2019-05-25T15:34:15.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-25</time>
-</a>
-        
-      </header>
-    
-
-    <!-- 目录内容 -->
-    
-    <!-- 目录内容结束 -->
-
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="图片的几何变换"><a href="#图片的几何变换" class="headerlink" title="图片的几何变换"></a>图片的几何变换</h2><ul>
-<li><p>缩放</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">img = cv2.imread(<span class="string">"tmp.png"</span>, 1)</span><br><span class="line">height, width, _ = img.shape  <span class="comment"># (height, width, mode)</span></span><br><span class="line">dstHeight = int(height*0.5)</span><br><span class="line">dstWidth = int(width*0.5)</span><br><span class="line"><span class="comment"># cv2.resize()</span></span><br><span class="line"><span class="comment"># dst = cv2.resize(img, (dstWidth, dstHeight))</span></span><br><span class="line"><span class="comment"># 最近邻域插值</span></span><br><span class="line">dstImage = np.zeros((dstHeight, dstWidth), np.uint8)</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(0, dstHeight):</span><br><span class="line">    <span class="keyword">for</span> j <span class="keyword">in</span> range(0, dstWidth):</span><br><span class="line">        iNew = int(i * height * 1.0 / dstHeight)</span><br><span class="line">        jNew = int(j * width * 1.0 / dstWidth)</span><br><span class="line">        dstImage[i, j] = img(iNew, jNew)</span><br><span class="line">cv2.imshow(<span class="string">"img"</span>, dstImage)</span><br><span class="line"><span class="comment"># 双线性插值 </span></span><br><span class="line"><span class="comment"># 像素关系重采样 </span></span><br><span class="line"><span class="comment"># 立方插值</span></span><br><span class="line">cv2.waitKey(0)</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>剪切</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 图片坐标</span></span><br><span class="line"><span class="comment"># x: 0-width</span></span><br><span class="line"><span class="comment"># y: 0-height</span></span><br><span class="line">img = cv2.imread(<span class="string">"tmp.png"</span>, 1)</span><br><span class="line">datImage = img[100:200, 100:300]</span><br><span class="line">cv2.imshow(<span class="string">"img"</span>, dstImage)</span><br><span class="line">cv2.waitKey(0)</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>位移</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">img = cv.imread(<span class="string">"tmp.png"</span>, 1)</span><br><span class="line">height, width, _ = img.shape  <span class="comment"># (height, width, mode)</span></span><br><span class="line"><span class="comment"># cv2.warpAffine()</span></span><br><span class="line">matShift = np.float32([[1,0,100], [0,1,200]]) <span class="comment"># 2行3列</span></span><br><span class="line">dstImage = cv2.warpAffine(img, matShift, (width, height))</span><br><span class="line">cv2.imshow(<span class="string">"img"</span>, dstImage)</span><br><span class="line">cv2.waitKey(0)</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>镜像</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">xImg  = cv.flip(img,1,dst=None)  <span class="comment">#水平镜像</span></span><br><span class="line">xImg1 = cv.flip(img,0,dst=None)  <span class="comment">#垂直镜像</span></span><br><span class="line">xImg2 = cv.flip(img,-1,dst=None) <span class="comment">#对角镜像</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>仿射变换</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">img = cv.imread(<span class="string">"tmp.png"</span>, 1)</span><br><span class="line">height, width, _ = img.shape  <span class="comment"># (height, width, mode)</span></span><br><span class="line"><span class="comment"># src 3p -&gt; dst 3p</span></span><br><span class="line">matSrc = np.float32([[0,0], [0,height-1], [width-1, 0]])</span><br><span class="line">matDst = np.float32([[50,50], [300,height-200], [width-300, 100]])</span><br><span class="line"><span class="comment"># 获得仿射变换矩阵</span></span><br><span class="line">matAffine = cv2.getAffineTransform(matSrc, matDst)</span><br><span class="line">dstImage = cv2.warpAffine(img, matAffine, (width, height))</span><br><span class="line">cv2.imshow(<span class="string">"img"</span>, dstImage)</span><br><span class="line">cv2.waitKey(0)</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>旋转</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">img = cv.imread(<span class="string">"tmp.png"</span>, 1)</span><br><span class="line">height, width, _ = img.shape  <span class="comment"># (height, width, mode)</span></span><br><span class="line"><span class="comment"># 获得旋转矩阵</span></span><br><span class="line">matRotate = cv2.getRotationMatrix2D((int(width/2), int(height/2)), 45, 0.5)</span><br><span class="line">dstImage = cv2.warpAffine(img, matRotate, (width, height))</span><br><span class="line">cv2.imshow(<span class="string">"img2"</span>, dstImage)</span><br><span class="line">cv2.waitKey(0)</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<h2 id="仿射变换就是特殊的透射变换"><a href="#仿射变换就是特殊的透射变换" class="headerlink" title="仿射变换就是特殊的透射变换"></a>仿射变换就是特殊的透射变换</h2><ul>
-<li>透射变换<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">matSrc = np.float32(points)</span><br><span class="line">matDst = np.float32([[0,0],[0,399],[99, 0],[99,399]])</span><br><span class="line">matPers = cv2.getPerspectiveTransform(matSrc, matDst)</span><br><span class="line">dstImage = cv2.warpPerspective(img, matPers, (width, height))</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<div align="center">
-<img src="/2019/05/25/象棋残局机器人二：透射变换/001.jpg" width="600" height="300">
-</div>
-
-<p>利用透射变换这一操作，从而将棋面的图像从背景中抽离转化成易于处理的形式。</p>
-<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><ul>
-<li><p>仿射变换和透射变换 - outthinker - 博客园<br><a href="https://www.cnblogs.com/zf-blog/p/7813227.html" target="_blank" rel="noopener">https://www.cnblogs.com/zf-blog/p/7813227.html</a></p>
-</li>
-<li><p>4.1 图像特效介绍 - YouTube<br><a href="https://www.youtube.com/watch?v=Ih2iamhLvxE&amp;list=PLsYXQooxlb1pE21-dgEf-VdsArdqSvuEW&amp;index=36" target="_blank" rel="noopener">https://www.youtube.com/watch?v=Ih2iamhLvxE&amp;list=PLsYXQooxlb1pE21-dgEf-VdsArdqSvuEW&amp;index=36</a></p>
-</li>
-</ul>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">opencv</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/05/25/象棋残局机器人二：透射变换/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
     <article id="post-象棋残局机器人一：摄像头标定" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -1178,6 +983,170 @@
 
 
   
+    <article id="post-门禁python多进程练习" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/05/16/门禁python多进程练习/">门禁python多进程练习</a>
+    </h1>
+  
+
+        
+        <a href="/2019/05/16/门禁python多进程练习/" class="archive-article-date">
+  	<time datetime="2019-05-16T12:33:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-16</time>
+</a>
+        
+      </header>
+    
+
+    <!-- 目录内容 -->
+    
+    <!-- 目录内容结束 -->
+
+    <div class="article-entry" itemprop="articleBody">
+      
+        <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">import multiprocessing as mp</span><br><span class="line"></span><br><span class="line">def task(a):</span><br><span class="line">    pass</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:</span><br><span class="line">    p1 = mp.Process(target=task, args=(1,))</span><br><span class="line">    p1.start()</span><br><span class="line">    p1.join()</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">import tkinter as tk</span><br><span class="line"></span><br><span class="line">root = tk.Tk()</span><br><span class="line"></span><br><span class="line">def func_loop():</span><br><span class="line">    func()</span><br><span class="line">    root.after(1, func_loop)</span><br><span class="line"></span><br><span class="line">root.loopmain()</span><br></pre></td></tr></table></figure>
+<ul>
+<li>[译]深度神经网络的多任务学习概览(An Overview of Multi-task Learning in Deep Neural Networks) - Shuzi_rank - 博客园 &lt;/br&gt;<a href="https://www.cnblogs.com/shuzirank/p/7141017.html" target="_blank" rel="noopener">https://www.cnblogs.com/shuzirank/p/7141017.html</a></li>
+</ul>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">python</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/05/16/门禁python多进程练习/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-Pixar-Lamp" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/05/14/Pixar-Lamp/">Pixar Lamp</a>
+    </h1>
+  
+
+        
+        <a href="/2019/05/14/Pixar-Lamp/" class="archive-article-date">
+  	<time datetime="2019-05-14T11:25:43.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-14</time>
+</a>
+        
+      </header>
+    
+
+    <!-- 目录内容 -->
+    
+    <!-- 目录内容结束 -->
+
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><strong> Pixar Lamp </strong> <excerpt in index | 首页摘要><br>做个跳跳灯！<br></excerpt></p>
+        
+          <a class="article-more-a" href="/2019/05/14/Pixar-Lamp/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">python</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/05/14/Pixar-Lamp/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/page/8/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><a class="page-number" href="/page/8/">8</a><span class="page-number current">9</span><a class="page-number" href="/page/10/">10</a><a class="page-number" href="/page/11/">11</a><a class="extend next" rel="next" href="/page/10/">Next &raquo;</a>
@@ -1293,7 +1262,11 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">RL</a>
+                <a href="javascript:void(0)" class="js-tag color5">3D打印</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">吉他</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1309,11 +1282,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">3D打印</a>
+                <a href="javascript:void(0)" class="js-tag color3">RL</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">吉他</a>
+                <a href="javascript:void(0)" class="js-tag color1">tensorflow</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">yolo</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1325,19 +1302,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">tensorflow</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">dlib</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">yolo</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Arduino</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1354,6 +1319,10 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">python</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Arduino</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1393,6 +1362,10 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">jupyter notebook</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">php</a>
               </li>
              
@@ -1401,19 +1374,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">jupyter notebook</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Latex</a>
+                <a href="javascript:void(0)" class="js-tag color3">数模</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">today is a happy day</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">数模</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1453,11 +1418,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">tkinter</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">-go</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">tkinter</a>
+                <a href="javascript:void(0)" class="js-tag color1">Latex</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1469,11 +1438,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
+                <a href="javascript:void(0)" class="js-tag color2">docker</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">docker</a>
+                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
               </li>
             
             <div class="clearfix"></div>
