@@ -1,7 +1,107 @@
 <?xml version="1.0" encoding="utf-8"?>
-<search> 
-  
-  
-  
-  
+<search>
+  <entry>
+    <title>Hexo：Hello Hexo 使用hexo+github搭建个人博客</title>
+    <url>/2019/04/19/Hexo%EF%BC%9AHello%20Hexo/</url>
+    <content><![CDATA[<p><strong> Hexo：Hello Hexo 使用hexo+github搭建个人博客 </strong> <excerpt in index | 首页摘要><br>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</excerpt></p>
+<a id="more"></a>
+<the rest of contents | 余下全文>
+
+<h2 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h2><ul>
+<li>注册github账号</li>
+</ul>
+<p>安装软件</p>
+<ul>
+<li>git：版本控制系统，利用git可以将代码托管到github上<a href="http://git-scm.com/" target="_blank" rel="noopener">http://git-scm.com/</a></li>
+<li>node.js：JavaScript 运行环境，npm是随同nodejs一起安装的包管理工具<br><a href="http://nodejs.org/" target="_blank" rel="noopener">http://nodejs.org/</a></li>
+</ul>
+<p>查看是否安装成功</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ git --version</span><br><span class="line">$ npm -v</span><br></pre></td></tr></table></figure>
+<h2 id="部署"><a href="#部署" class="headerlink" title="部署"></a>部署</h2><h3 id="安装hexo"><a href="#安装hexo" class="headerlink" title="安装hexo"></a>安装hexo</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ npm install hexo-cli -g</span><br></pre></td></tr></table></figure>
+<p>安装hexo-deployer-git工具</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
+<h4 id="npm-install-慢的话"><a href="#npm-install-慢的话" class="headerlink" title="npm install 慢的话"></a>npm install 慢的话</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">显示当前的镜像网址</span><br><span class="line">$ npm get registry </span><br><span class="line">https://registry.npmjs.org/</span><br><span class="line">使用淘宝的镜像网址</span><br><span class="line">$ npm config <span class="built_in">set</span> registry http://registry.npm.taobao.org</span><br></pre></td></tr></table></figure>
+<h3 id="静态博客搭建"><a href="#静态博客搭建" class="headerlink" title="静态博客搭建"></a>静态博客搭建</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo init blog</span><br><span class="line">$ <span class="built_in">cd</span> blog</span><br><span class="line">$ npm install</span><br><span class="line">$ hexo s</span><br></pre></td></tr></table></figure>
+<p>浏览器访问：<a href="http://localhost:4000/" target="_blank" rel="noopener">http://localhost:4000/</a><br>按Ctrl+C停止</p>
+<h3 id="配置到GitHub"><a href="#配置到GitHub" class="headerlink" title="配置到GitHub"></a>配置到GitHub</h3><p>在github上创建仓库，仓库名称为：用户名.github.io<br>配置blog\_config.yml中的deploy</p>
+<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">deploy:</span></span><br><span class="line"><span class="attr">  type:</span> <span class="string">git</span></span><br><span class="line"><span class="attr">  repo:</span> <span class="string">git@github.com:your_github_user_name/your_github_user_name.github.io.git</span></span><br><span class="line"><span class="attr">  branch:</span> <span class="string">master</span></span><br></pre></td></tr></table></figure>
+<p>生成 ssh key</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ ssh-keygen -t rsa -C xxx@qq.com(your_email)</span><br><span class="line">$ 连按三次Enter</span><br></pre></td></tr></table></figure>
+<p>其中ssh-keygen.exe在.\Git\usr\bin文件夹中<br>根据路径提示找到id_rsa.pub文件，拷贝公钥<br>进入github账户设置，在ssh and GPG keys中新增一个ssh key<br>把刚刚拷贝出来的公钥粘贴到key中，title放空就好</p>
+<p>验证ssh key</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ ssh -T git@github.com</span><br></pre></td></tr></table></figure>
+<p>在本地hexo init生成的文件夹中初始化git仓库</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ git init</span><br></pre></td></tr></table></figure>
+<p>将本地仓库和远程仓库连接</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ git remote add origin git@github.com:your_github_user_name/your_github_user_name.github.io.git</span><br></pre></td></tr></table></figure>
+<h3 id="网站部署"><a href="#网站部署" class="headerlink" title="网站部署"></a>网站部署</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span>   //新建页面</span><br><span class="line">$ cls                      //清屏</span><br><span class="line">$ hexo clean               //清除缓存文件db.json和已生成的静态文件public</span><br><span class="line">$ hexo g(generate)         //生成网站静态文件到默认设置的public文件夹</span><br><span class="line">$ hexo s(server)           //开启服务器预览网址</span><br><span class="line">$ hexo d(deploy)           //部署网站到设定的仓库</span><br></pre></td></tr></table></figure>
+<p>hexo其他命令</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ hexo help                   查看帮助</span><br><span class="line">$ hexo version                查看Hexo的版本</span><br></pre></td></tr></table></figure>
+<h2 id="主题"><a href="#主题" class="headerlink" title="主题"></a>主题</h2><h3 id="挑选主题"><a href="#挑选主题" class="headerlink" title="挑选主题"></a>挑选主题</h3><ul>
+<li>Themes | Hexo <a href="https://hexo.io/themes/" target="_blank" rel="noopener">https://hexo.io/themes/</a></li>
+<li>Themes · hexojs/hexo Wiki <a href="https://github.com/hexojs/hexo/wiki/Themes" target="_blank" rel="noopener">https://github.com/hexojs/hexo/wiki/Themes</a></li>
+</ul>
+<p>常用的主题是next主题。</p>
+<h2 id="添加主题"><a href="#添加主题" class="headerlink" title="添加主题"></a>添加主题</h2><p>复制主题到themes目录下</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> themes &amp;&amp; git <span class="built_in">clone</span> https://github.com/maochunguang/black-blue(主题地址)</span><br></pre></td></tr></table></figure>
+<p>配置blog\_config.yml，修改对应主题目录名</p>
+<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">theme:</span> <span class="string">主题名称</span></span><br></pre></td></tr></table></figure>
+<p>重新生成静态页面</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo g</span><br></pre></td></tr></table></figure>
+<p>启动本地服务，重新访问：<a href="http://localhost:4000/" target="_blank" rel="noopener">http://localhost:4000/</a> ，查看新主题的效果</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo s</span><br></pre></td></tr></table></figure>
+<p>确认后上传到github，通过 用户名.github.io 访问查看最终效果</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo d</span><br></pre></td></tr></table></figure>
+<h2 id="绑定域名"><a href="#绑定域名" class="headerlink" title="绑定域名"></a>绑定域名</h2><h3 id="在域名的解析设置中添加记录"><a href="#在域名的解析设置中添加记录" class="headerlink" title="在域名的解析设置中添加记录"></a>在域名的解析设置中添加记录</h3><p><code>&lt;img src=&#39;Hexo：Hello Hexo\000.png&#39;&gt;</code></p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:left">参数</th>
+<th style="text-align:left">值</th>
+<th style="text-align:left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">记录类型</td>
+<td style="text-align:left">CNAME</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">主机记录</td>
+<td style="text-align:left">@</td>
+<td style="text-align:left">域名前缀 @直接解析主域名</td>
+</tr>
+<tr>
+<td style="text-align:left">解析路线</td>
+<td style="text-align:left">默认</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">记录值</td>
+<td style="text-align:left">your_github_user_name.github.io</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">TTL</td>
+<td style="text-align:left">10分钟</td>
+<td style="text-align:left">缓存时间</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3 id="在github添加自定义域名"><a href="#在github添加自定义域名" class="headerlink" title="在github添加自定义域名"></a>在github添加自定义域名</h3><p><code>&lt;img src=&#39;Hexo：Hello Hexo\001.png&#39;&gt;</code></p>
+<h3 id="配置hexo的-config-yml"><a href="#配置hexo的-config-yml" class="headerlink" title="配置hexo的_config.yml"></a>配置hexo的_config.yml</h3><figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># URL</span></span><br><span class="line"><span class="comment">## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'</span></span><br><span class="line"><span class="attr">url:</span> <span class="attr">http://www.yoursite.com</span></span><br><span class="line"><span class="attr">root:</span> <span class="string">/</span></span><br><span class="line"><span class="attr">permalink:</span> <span class="string">:year/:month/:day/:title/</span></span><br><span class="line"><span class="attr">permalink_defaults:</span></span><br></pre></td></tr></table></figure>
+<h3 id="上传CNAME文件"><a href="#上传CNAME文件" class="headerlink" title="上传CNAME文件"></a>上传CNAME文件</h3><p>在/hexo/source目录下，新建一个CNAME文件，内容为域名，上传更新</p>
+<h3 id="浏览markdown文件"><a href="#浏览markdown文件" class="headerlink" title="浏览markdown文件"></a>浏览markdown文件</h3><h4 id="vscode自带浏览功能"><a href="#vscode自带浏览功能" class="headerlink" title="vscode自带浏览功能"></a>vscode自带浏览功能</h4><p>ctrl+shift+p打开命令面板，然后输入markdowm-&gt;选择在侧边打开锁定预览即可</p>
+<h4 id="安装插件"><a href="#安装插件" class="headerlink" title="安装插件"></a>安装插件</h4><p>安装Markdown Preview Enhanced插件<br>快捷键 (ctrl+k) + v 打开浏览</p>
+<h3 id="带过滤功能的Hexo首页生成器插件"><a href="#带过滤功能的Hexo首页生成器插件" class="headerlink" title="带过滤功能的Hexo首页生成器插件"></a>带过滤功能的Hexo首页生成器插件</h3><ul>
+<li>hexo-generator-index2/README_zh.md at master · Jamli</li>
+</ul>
+</the>]]></content>
+      <tags>
+        <tag>hexo</tag>
+      </tags>
+  </entry>
 </search>
