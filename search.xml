@@ -68,11 +68,12 @@
       <tags>
         <tag>3D打印</tag>
         <tag>吉他</tag>
+        <tag>随笔</tag>
       </tags>
   </entry>
   <entry>
     <title>Hexo：Hello Hexo 使用hexo+github搭建个人博客</title>
-    <url>/2022/04/19/Hexo%EF%BC%9AHello%20Hexo/</url>
+    <url>/2021/04/19/Hexo%EF%BC%9AHello%20Hexo/</url>
     <content><![CDATA[<p><strong> Hexo：Hello Hexo 使用hexo+github搭建个人博客 </strong> <excerpt in index | 首页摘要><br>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</excerpt></p>
 <a id="more"></a>
 <the rest of contents | 余下全文>
@@ -106,7 +107,7 @@
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> themes &amp;&amp; git <span class="built_in">clone</span> https://github.com/maochunguang/black-blue(主题地址)</span><br></pre></td></tr></table></figure>
 <p>配置blog\_config.yml，修改对应主题目录名</p>
 <figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">theme:</span> <span class="string">主题名称</span></span><br></pre></td></tr></table></figure>
-<h2 id="绑定域名"><a href="#绑定域名" class="headerlink" title="绑定域名"></a>绑定域名</h2><h3 id="在域名的解析设置中添加记录"><a href="#在域名的解析设置中添加记录" class="headerlink" title="在域名的解析设置中添加记录"></a>在域名的解析设置中添加记录</h3><p><img src="/2022/04/19/Hexo：Hello Hexo/000.png"></p>
+<h2 id="绑定域名"><a href="#绑定域名" class="headerlink" title="绑定域名"></a>绑定域名</h2><h3 id="在域名的解析设置中添加记录"><a href="#在域名的解析设置中添加记录" class="headerlink" title="在域名的解析设置中添加记录"></a>在域名的解析设置中添加记录</h3><p><img src="/2021/04/19/Hexo：Hello Hexo/000.png"></p>
 <div class="table-container">
 <table>
 <thead>
@@ -145,7 +146,7 @@
 </tbody>
 </table>
 </div>
-<h3 id="在github添加自定义域名"><a href="#在github添加自定义域名" class="headerlink" title="在github添加自定义域名"></a>在github添加自定义域名</h3><p><img src="/2022/04/19/Hexo：Hello Hexo/001.png"></p>
+<h3 id="在github添加自定义域名"><a href="#在github添加自定义域名" class="headerlink" title="在github添加自定义域名"></a>在github添加自定义域名</h3><p><img src="/2021/04/19/Hexo：Hello Hexo/001.png"></p>
 <h3 id="配置hexo的-config-yml"><a href="#配置hexo的-config-yml" class="headerlink" title="配置hexo的_config.yml"></a>配置hexo的_config.yml</h3><figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># URL</span></span><br><span class="line"><span class="comment">## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'</span></span><br><span class="line"><span class="attr">url:</span> <span class="attr">http://www.yoursite.com</span></span><br><span class="line"><span class="attr">root:</span> <span class="string">/</span></span><br><span class="line"><span class="attr">permalink:</span> <span class="string">:year/:month/:day/:title/</span></span><br><span class="line"><span class="attr">permalink_defaults:</span></span><br></pre></td></tr></table></figure>
 <h3 id="上传CNAME文件"><a href="#上传CNAME文件" class="headerlink" title="上传CNAME文件"></a>上传CNAME文件</h3><p>在/hexo/source目录下，新建一个CNAME文件，内容为域名，上传更新</p>
 </the>]]></content>
