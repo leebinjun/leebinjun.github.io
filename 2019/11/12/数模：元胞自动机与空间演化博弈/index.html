@@ -6,16 +6,15 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://blog.binjun.icu">
-  <title>元胞自动机 | Binjun</title>
+  <title>元胞自动机与空间演化博弈 | Binjun</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Cellular Automata &amp;amp; Monte Carlo （元胞自动机及蒙特卡罗方法）    概述 时间、空间都离散的动力系统 不同于数学方程模型，由一系列模型构造的规则构成的方法框架。 特点：时间、空间、状态离散。 用简单的逻辑规则，给出一种随时间演化的动力学模型，使之能模拟复杂系统。  元胞自动机历史 20世纪50年代，John von Neumann 最早提出； 1970">
-<meta name="keywords" content="数模">
+  <meta name="keywords" content="数模">
 <meta property="og:type" content="article">
-<meta property="og:title" content="元胞自动机">
+<meta property="og:title" content="元胞自动机与空间演化博弈">
 <meta property="og:url" content="http://blog.binjun.icu/2019/11/12/数模：元胞自动机与空间演化博弈/index.html">
 <meta property="og:site_name" content="Binjun">
-<meta property="og:description" content="Cellular Automata &amp;amp; Monte Carlo （元胞自动机及蒙特卡罗方法）    概述 时间、空间都离散的动力系统 不同于数学方程模型，由一系列模型构造的规则构成的方法框架。 特点：时间、空间、状态离散。 用简单的逻辑规则，给出一种随时间演化的动力学模型，使之能模拟复杂系统。  元胞自动机历史 20世纪50年代，John von Neumann 最早提出； 1970">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://blog.binjun.icu/2019/11/12/数模：元胞自动机与空间演化博弈/数模：空间博弈演化/203.png">
 <meta property="og:image" content="http://blog.binjun.icu/2019/11/12/数模：元胞自动机与空间演化博弈/数模：空间博弈演化/100.png">
 <meta property="og:image" content="http://blog.binjun.icu/2019/11/12/数模：元胞自动机与空间演化博弈/数模：空间博弈演化/101.png">
 <meta property="og:image" content="http://blog.binjun.icu/2019/11/12/数模：元胞自动机与空间演化博弈/数模：空间博弈演化/102.png">
@@ -28,11 +27,10 @@
 <meta property="og:image" content="http://blog.binjun.icu/2019/11/12/数模：元胞自动机与空间演化博弈/数模：空间博弈演化/201.png">
 <meta property="og:image" content="http://blog.binjun.icu/2019/11/12/数模：元胞自动机与空间演化博弈/数模：空间博弈演化/202.png">
 <meta property="og:image" content="http://blog.binjun.icu/2019/11/12/数模：元胞自动机与空间演化博弈/数模：空间博弈演化/303.png">
-<meta property="og:updated_time" content="2022-09-18T13:45:03.395Z">
+<meta property="og:updated_time" content="2022-09-18T13:48:05.148Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="元胞自动机">
-<meta name="twitter:description" content="Cellular Automata &amp;amp; Monte Carlo （元胞自动机及蒙特卡罗方法）    概述 时间、空间都离散的动力系统 不同于数学方程模型，由一系列模型构造的规则构成的方法框架。 特点：时间、空间、状态离散。 用简单的逻辑规则，给出一种随时间演化的动力学模型，使之能模拟复杂系统。  元胞自动机历史 20世纪50年代，John von Neumann 最早提出； 1970">
-<meta name="twitter:image" content="http://blog.binjun.icu/2019/11/12/数模：元胞自动机与空间演化博弈/数模：空间博弈演化/100.png">
+<meta name="twitter:title" content="元胞自动机与空间演化博弈">
+<meta name="twitter:image" content="http://blog.binjun.icu/2019/11/12/数模：元胞自动机与空间演化博弈/数模：空间博弈演化/203.png">
   
     <link rel="alternative" href="/atom.xml" title="Binjun" type="application/atom+xml">
   
@@ -324,7 +322,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      元胞自动机
+      元胞自动机与空间演化博弈
     </h1>
   
 
@@ -366,7 +364,8 @@
 
     <div class="article-entry" itemprop="articleBody">
       
-        <a id="more"></a>
+        <p><img src="/2019/11/12/数模：元胞自动机与空间演化博弈/数模：空间博弈演化/203.png">  </p>
+<a id="more"></a>
 <the rest of contents | 余下全文>
 
 <h1 id="Cellular-Automata-amp-Monte-Carlo-（元胞自动机及蒙特卡罗方法）"><a href="#Cellular-Automata-amp-Monte-Carlo-（元胞自动机及蒙特卡罗方法）" class="headerlink" title="Cellular Automata &amp; Monte Carlo （元胞自动机及蒙特卡罗方法）"></a>Cellular Automata &amp; Monte Carlo （元胞自动机及蒙特卡罗方法）</h1><!-- <img src="数模：元胞自动机\00.png"> -->
@@ -729,7 +728,7 @@ x_{i, j}^{t+1}=f\left(x_{i-1, j}^{t}, x_{i+1, j}^{t} x_{i, j}^{t}, x_{i, j-1}^{t
   
   <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="数模：元胞自动机与空间演化博弈" data-title="元胞自动机" data-url="http://blog.binjun.icu/2019/11/12/数模：元胞自动机与空间演化博弈/"></div>
+	<div class="ds-thread" data-thread-key="数模：元胞自动机与空间演化博弈" data-title="元胞自动机与空间演化博弈" data-url="http://blog.binjun.icu/2019/11/12/数模：元胞自动机与空间演化博弈/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">
@@ -865,14 +864,6 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">数模</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">3D打印</a>
               </li>
              
@@ -882,6 +873,14 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">随笔</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">数模</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
               </li>
             
             <div class="clearfix"></div>
