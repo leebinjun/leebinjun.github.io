@@ -9,7 +9,7 @@
   <title>那些年做的机器人 | Binjun</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="小派舞蹈机器人 小pi舞蹈机器人，最初制作是参加2015年的iCAN大赛时，参考了BoB机器人的机械机构设计。 电路控制部分用的mega2560，挂载啦很多其他功能模块，诸如led、超声波、音乐播放等。 特别感谢当时的队友杜总小宇洋神，在806一起成长的日子十分难忘。 模型littlePi by Binjun - Thingiverse https://www.thingiverse.com">
-<meta name="keywords" content="树莓派,stm32,Arduino,robot,loomo,openCV,机械手">
+<meta name="keywords" content="raspberry,stm32,Arduino,robot,loomo,openCV,机械手,tf,python">
 <meta property="og:type" content="article">
 <meta property="og:title" content="那些年做的机器人">
 <meta property="og:url" content="http://blog.binjun.icu/2021/02/12/Robot：那些年做的机器人/index.html">
@@ -20,7 +20,9 @@
 <meta property="og:image" content="http://blog.binjun.icu/2021/02/12/Robot：那些年做的机器人/桌面冰球机器人/001.gif">
 <meta property="og:image" content="http://blog.binjun.icu/2021/02/12/Robot：那些年做的机器人/loomo多服务机器人开发/设计思路-201905.png">
 <meta property="og:image" content="http://blog.binjun.icu/2021/02/12/Robot：那些年做的机器人/作业检查机器人/002.png">
-<meta property="og:updated_time" content="2022-09-20T08:03:45.678Z">
+<meta property="og:image" content="http://blog.binjun.icu/2021/02/12/Robot：那些年做的机器人/简单手势分类器/02.png">
+<meta property="og:image" content="http://blog.binjun.icu/2021/02/12/Robot：那些年做的机器人/简单手势分类器/01.png">
+<meta property="og:updated_time" content="2022-09-20T08:12:55.674Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="那些年做的机器人">
 <meta name="twitter:description" content="小派舞蹈机器人 小pi舞蹈机器人，最初制作是参加2015年的iCAN大赛时，参考了BoB机器人的机械机构设计。 电路控制部分用的mega2560，挂载啦很多其他功能模块，诸如led、超声波、音乐播放等。 特别感谢当时的队友杜总小宇洋神，在806一起成长的日子十分难忘。 模型littlePi by Binjun - Thingiverse https://www.thingiverse.com">
@@ -394,7 +396,39 @@
 </div>
 
 
-
+<h1 id="简单手势分类器"><a href="#简单手势分类器" class="headerlink" title="简单手势分类器"></a>简单手势分类器</h1><p>树莓派+摄像头作为一个视觉传感器，串口实时返回手势分类结果。</p>
+<h2 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h2><h3 id="安装tensorflow"><a href="#安装tensorflow" class="headerlink" title="安装tensorflow"></a>安装tensorflow</h3><p>维护树莓派交叉编译版本的github项目</p>
+<ul>
+<li>samjabrahams/tensorflow-on-raspberry-pi: TensorFlow for Raspberry Pi<br><a href="https://github.com/samjabrahams/tensorflow-on-raspberry-pi" target="_blank" rel="noopener">https://github.com/samjabrahams/tensorflow-on-raspberry-pi</a><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install libatlas-base-dev</span><br><span class="line">pip3 install tensorflow</span><br><span class="line">``` </span><br><span class="line">安装旧版本</span><br><span class="line">``` bash </span><br><span class="line">$ wget https://github.com/samjabrahams/tensorflow-on-raspberry-pi/releases/download/v0.11.0/tensorflow-0.11.0-py3-none-any.whl</span><br><span class="line">$ sudo pip3 install tensorflow-0.11.0-py3-none-any.whl</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="安装serial"><a href="#安装serial" class="headerlink" title="安装serial"></a>安装serial</h3><p>安装串口模块<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ sudo apt-get install python-serial</span><br><span class="line">$ pip install serial</span><br><span class="line">$ pip install pyserial</span><br></pre></td></tr></table></figure></p>
+<p>如果需要指定位置<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo pip install --target=/usr/<span class="built_in">local</span>/lib/python3.5/dist-packages pyserial</span><br></pre></td></tr></table></figure></p>
+<h3 id="一些包"><a href="#一些包" class="headerlink" title="一些包"></a>一些包</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">pip install pillow</span><br><span class="line">pip install matplotlib</span><br></pre></td></tr></table></figure>
+<h2 id="数据处理"><a href="#数据处理" class="headerlink" title="数据处理"></a>数据处理</h2><p>使用OpenCV的BackgroundSubtractor类，分割前景和背景，获得手势灰度图<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">camera = cv2.VideoCapture(<span class="number">0</span>) <span class="comment"># 参数0表示第一个摄像头</span></span><br><span class="line">bs = cv2.createBackgroundSubtractorKNN(detectShadows=<span class="literal">True</span>)</span><br><span class="line">es = cv2.getStructuringElement(cv2.MORPH_ELLIPSE, (<span class="number">3</span>, <span class="number">3</span>))</span><br><span class="line"><span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">    grabbed, frame_lwpCV = camera.read()</span><br><span class="line">    fgmask = bs.apply(frame_lwpCV) <span class="comment"># 背景分割器，该函数计算了前景掩码</span></span><br><span class="line">    <span class="comment"># 二值化阈值处理，前景掩码含有前景的白色值以及阴影的灰色值，在阈值化图像中，将非纯白色（244~255）的所有像素都设为0，而不是255</span></span><br><span class="line">    th = cv2.threshold(fgmask.copy(), <span class="number">244</span>, <span class="number">255</span>, cv2.THRESH_BINARY)[<span class="number">1</span>]</span><br><span class="line">    <span class="comment"># 下面就跟基本运动检测中方法相同，识别目标，检测轮廓，在原始帧上绘制检测结果</span></span><br><span class="line">    dilated = cv2.dilate(th, es, iterations=<span class="number">2</span>) <span class="comment"># 形态学膨胀</span></span><br><span class="line">    image, contours, hierarchy = cv2.findContours(dilated, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE) <span class="comment"># 该函数计算一幅图像中目标的轮廓</span></span><br><span class="line">    <span class="comment"># rasp</span></span><br><span class="line">    <span class="comment"># contours, hierarchy = cv2.findContours(dilated, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE) # 该函数计算一幅图像中目标的轮廓</span></span><br><span class="line">    <span class="keyword">for</span> c <span class="keyword">in</span> contours:</span><br><span class="line">        <span class="keyword">if</span> cv2.contourArea(c) &gt; <span class="number">2000</span>: <span class="comment">#1600:</span></span><br><span class="line">            (x, y, w, h) = cv2.boundingRect(c)</span><br><span class="line">            cv2.rectangle(frame_lwpCV, (x, y), (x + w, y + h), (<span class="number">255</span>, <span class="number">255</span>, <span class="number">0</span>), <span class="number">2</span>)</span><br><span class="line">    cv2.imshow(<span class="string">'detection'</span>, frame_lwpCV)</span><br><span class="line">    <span class="comment"># 按'q'健退出循环</span></span><br><span class="line"><span class="comment"># When everything done, release the capture</span></span><br></pre></td></tr></table></figure></p>
+<h2 id="模型和训练"><a href="#模型和训练" class="headerlink" title="模型和训练"></a>模型和训练</h2><p>通过一个小的卷积网络来实现分类，两层卷积+两层全连接<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">model</span><span class="params">(x, keep_prob)</span>:</span></span><br><span class="line">    <span class="string">'''Build the classify model</span></span><br><span class="line"><span class="string">    Args:</span></span><br><span class="line"><span class="string">      x: Input, tf.placeholder, the dimension is [-1, 784]</span></span><br><span class="line"><span class="string">      keep_prob: </span></span><br><span class="line"><span class="string">    Returns:</span></span><br><span class="line"><span class="string">      y: Classification probability</span></span><br><span class="line"><span class="string">    '''</span></span><br><span class="line">    x_image = tf.reshape(x, [<span class="number">-1</span>, w, h, <span class="number">1</span>])</span><br><span class="line">    <span class="comment"># Conv1</span></span><br><span class="line">    <span class="keyword">with</span> tf.name_scope(<span class="string">'conv1'</span>):</span><br><span class="line">        W_conv1 = weight_variable([<span class="number">3</span>, <span class="number">3</span>, <span class="number">1</span>, <span class="number">16</span>], name=<span class="string">"weight"</span>)</span><br><span class="line">        b_conv1 = bias_variable([<span class="number">16</span>], name=<span class="string">'bias'</span>)</span><br><span class="line">        h_conv1 = tf.nn.relu(tf.nn.conv2d(x_image, W_conv1, strides=[<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>], padding=<span class="string">"SAME"</span>, name=<span class="string">'conv'</span>)+ b_conv1)</span><br><span class="line">        h_pool1 = tf.nn.max_pool(h_conv1, ksize=[<span class="number">1</span>,<span class="number">2</span>,<span class="number">2</span>,<span class="number">1</span>], strides=[<span class="number">1</span>,<span class="number">2</span>,<span class="number">2</span>,<span class="number">1</span>], padding=<span class="string">"SAME"</span>, name=<span class="string">"pool"</span>)</span><br><span class="line">    <span class="comment"># Conv2</span></span><br><span class="line">    <span class="keyword">with</span> tf.name_scope(<span class="string">'conv2'</span>):</span><br><span class="line">        W_conv2 = weight_variable([<span class="number">3</span>, <span class="number">3</span>, <span class="number">16</span>, <span class="number">32</span>], name=<span class="string">"weight"</span>)</span><br><span class="line">        b_conv2 = bias_variable([<span class="number">32</span>], name=<span class="string">'bias'</span>)</span><br><span class="line">        h_conv2 = tf.nn.relu(tf.nn.conv2d(h_pool1, W_conv2, strides=[<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>], padding=<span class="string">"SAME"</span>, name=<span class="string">'conv'</span>)+ b_conv2)</span><br><span class="line">        h_pool2 = tf.nn.max_pool(h_conv2, ksize=[<span class="number">1</span>,<span class="number">2</span>,<span class="number">2</span>,<span class="number">1</span>], strides=[<span class="number">1</span>,<span class="number">2</span>,<span class="number">2</span>,<span class="number">1</span>], padding=<span class="string">"SAME"</span>, name=<span class="string">"pool"</span>)</span><br><span class="line">    <span class="comment"># fc1</span></span><br><span class="line">    <span class="keyword">with</span> tf.name_scope(<span class="string">'fc1'</span>):</span><br><span class="line">        W_fc1 = weight_variable([<span class="number">7</span>*<span class="number">7</span>*<span class="number">32</span>, <span class="number">256</span>], name=<span class="string">"weight"</span>)</span><br><span class="line">        b_fc1 = bias_variable([<span class="number">256</span>], name=<span class="string">'bias'</span>)</span><br><span class="line">        h_pool2_flat = tf.reshape(h_pool2, [<span class="number">-1</span>, <span class="number">7</span>*<span class="number">7</span>*<span class="number">32</span>])</span><br><span class="line">        h_fc1 = tf.nn.relu(tf.matmul(h_pool2_flat, W_fc1)+b_fc1)</span><br><span class="line">    <span class="comment"># Dropout</span></span><br><span class="line">    h_fc1_drop = tf.nn.dropout(h_fc1, keep_prob)</span><br><span class="line">    <span class="comment"># fc2</span></span><br><span class="line">    <span class="keyword">with</span> tf.name_scope(<span class="string">'fc2'</span>):</span><br><span class="line">        W_fc2 = weight_variable([<span class="number">256</span>, <span class="number">4</span>], name=<span class="string">"weight"</span>)</span><br><span class="line">        b_fc2 = bias_variable([<span class="number">4</span>], name=<span class="string">'bias'</span>)</span><br><span class="line">        y = tf.nn.softmax(tf.matmul(h_fc1_drop, W_fc2)+b_fc2, name=<span class="string">"output"</span>)</span><br><span class="line">    <span class="keyword">return</span> y</span><br></pre></td></tr></table></figure></p>
+<h2 id="HC-05蓝牙串口"><a href="#HC-05蓝牙串口" class="headerlink" title="HC-05蓝牙串口"></a>HC-05蓝牙串口</h2><h3 id="蓝牙配对"><a href="#蓝牙配对" class="headerlink" title="蓝牙配对"></a>蓝牙配对</h3><p>连接(rt反接)</p>
+<ul>
+<li>usb-ttl ————— bluetooth</li>
+<li>RXD &nbsp;&nbsp;&nbsp;&nbsp;————— TXD</li>
+<li>TXD &nbsp;&nbsp;&nbsp;&nbsp;————— RXD</li>
+</ul>
+<p>按住复位键插USB，进入AT模式<br>打开串口助手，设置波特率38400，数据位8位，停止位1位，无校验位，加回车换行(发送消息包含换行符)<br>修改名称<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">→ AT+ NAME=xxx</span><br><span class="line">→ AT+ NAME?</span><br></pre></td></tr></table></figure></p>
+<p>设置蓝牙密码，注意两块蓝牙的密码都要一样<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">→ AT+ PSWD=1234</span><br><span class="line">→ AT+ PSWD?</span><br></pre></td></tr></table></figure></p>
+<p>设置主从模式<br>串口调试助手A，将蓝牙A配置为主机模式<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">→ AT+ ROLE=1</span><br><span class="line">→ AT+ ROLE?</span><br></pre></td></tr></table></figure></p>
+<p>串口调试助手B，将蓝牙B配置为从机模式<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">→ AT+ ROLE=0</span><br></pre></td></tr></table></figure></p>
+<p>设置波特率9600，无校验位，1停止位<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">→ AT+ UART:9600,0,0</span><br><span class="line">→ AT+ UART?</span><br></pre></td></tr></table></figure></p>
+<p>设置连接模式<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">→ AT+ CMODE=0</span><br><span class="line">→ AT+ CMODE?</span><br></pre></td></tr></table></figure></p>
+<p>查询蓝牙地址，并相互绑定，注意把地址的冒号换成逗号<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">→ AT+ ADDR?</span><br><span class="line">→ AT+ BIND=98d3,32,307440</span><br></pre></td></tr></table></figure></p>
+<h2 id="结果"><a href="#结果" class="headerlink" title="结果"></a>结果</h2><p>查看端口<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ls /dev/tty*</span><br></pre></td></tr></table></figure></p>
+<p>运行<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ python run.py --serial /dev/ttyUSB0</span><br></pre></td></tr></table></figure></p>
+<p><img src="/2021/02/12/Robot：那些年做的机器人/简单手势分类器\02.png" width="600" height="300"><br><img src="/2021/02/12/Robot：那些年做的机器人/简单手势分类器\01.png" width="600" height="300"></p>
+<h2 id="参考博客"><a href="#参考博客" class="headerlink" title="参考博客"></a>参考博客</h2><ul>
+<li>【Python+OpenCV】目标跟踪-背景分割器：KNN、MOG2和GMG - CSDN博客<br><a href="https://blog.csdn.net/lwplwf/article/details/73551648" target="_blank" rel="noopener">https://blog.csdn.net/lwplwf/article/details/73551648</a></li>
+<li>Tensorflow+树莓派，自制“猜拳神器” - Lauyeed的博客 - CSDN博客<br><a href="https://blog.csdn.net/Lauyeed/article/details/79345685" target="_blank" rel="noopener">https://blog.csdn.net/Lauyeed/article/details/79345685</a></li>
+<li>蓝牙模块HC-05使用说明_图文_百度文库<br><a href="http://wenku.baidu.com/link?url=tDhQ1eN2RBFS4-iA9dFZuuYUUb21nx3ZpahLARbDaesVM0HkHMeiLc0NzfR7W6NVqc5F57p0x8t6c_3T3JN4ne9NCEB540mwEYV5kLpFSfq" target="_blank" rel="noopener">http://wenku.baidu.com/link?url=tDhQ1eN2RBFS4-iA9dFZuuYUUb21nx3ZpahLARbDaesVM0HkHMeiLc0NzfR7W6NVqc5F57p0x8t6c_3T3JN4ne9NCEB540mwEYV5kLpFSfq</a></li>
+<li>AttributeError: module ‘serial’ has no attribute ‘Serial’ - m0_37827405的博客 - CSDN博客<br><a href="https://blog.csdn.net/m0_37827405/article/details/80879678" target="_blank" rel="noopener">https://blog.csdn.net/m0_37827405/article/details/80879678</a></li>
+</ul>
 <h1 id="果实采摘机器人"><a href="#果实采摘机器人" class="headerlink" title="果实采摘机器人"></a>果实采摘机器人</h1><h1 id="解魔方机器人"><a href="#解魔方机器人" class="headerlink" title="解魔方机器人"></a>解魔方机器人</h1></the>
       
 
@@ -408,7 +442,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">树莓派</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">raspberry</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
@@ -433,6 +467,14 @@
       		 
         		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">机械手</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">tf</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">python</a>
         		</li>
       		
 		</ul>
@@ -540,7 +582,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#小派舞蹈机器人"><span class="toc-number">1.</span> <span class="toc-text">小派舞蹈机器人</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#模型"><span class="toc-number">1.0.1.</span> <span class="toc-text">模型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#代码"><span class="toc-number">1.0.2.</span> <span class="toc-text">代码</span></a></li></ol></li></ol><li class="toc-item toc-level-1"><a class="toc-link" href="#桌面冰球机器人"><span class="toc-number">2.</span> <span class="toc-text">桌面冰球机器人</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#说明"><span class="toc-number">2.1.</span> <span class="toc-text">说明</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Demo"><span class="toc-number">2.2.</span> <span class="toc-text">Demo</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#参考资料"><span class="toc-number">2.3.</span> <span class="toc-text">参考资料</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#loomo多服务机器人"><span class="toc-number">3.</span> <span class="toc-text">loomo多服务机器人</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#设计思路"><span class="toc-number">3.1.</span> <span class="toc-text">设计思路</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#一些资料"><span class="toc-number">3.2.</span> <span class="toc-text">一些资料</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#100以内加减法（小学二年级）算数机器人"><span class="toc-number">4.</span> <span class="toc-text">100以内加减法（小学二年级）算数机器人</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#当前的功能"><span class="toc-number">4.1.</span> <span class="toc-text">当前的功能</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#待解决的问题"><span class="toc-number">4.2.</span> <span class="toc-text">待解决的问题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#接下来的工作"><span class="toc-number">4.3.</span> <span class="toc-text">接下来的工作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Demo-1"><span class="toc-number">4.4.</span> <span class="toc-text">Demo</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#愉快地一天"><span class="toc-number">4.5.</span> <span class="toc-text">愉快地一天</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#果实采摘机器人"><span class="toc-number">5.</span> <span class="toc-text">果实采摘机器人</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#解魔方机器人"><span class="toc-number">6.</span> <span class="toc-text">解魔方机器人</span></a></li>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#小派舞蹈机器人"><span class="toc-number">1.</span> <span class="toc-text">小派舞蹈机器人</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#模型"><span class="toc-number">1.0.1.</span> <span class="toc-text">模型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#代码"><span class="toc-number">1.0.2.</span> <span class="toc-text">代码</span></a></li></ol></li></ol><li class="toc-item toc-level-1"><a class="toc-link" href="#桌面冰球机器人"><span class="toc-number">2.</span> <span class="toc-text">桌面冰球机器人</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#说明"><span class="toc-number">2.1.</span> <span class="toc-text">说明</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Demo"><span class="toc-number">2.2.</span> <span class="toc-text">Demo</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#参考资料"><span class="toc-number">2.3.</span> <span class="toc-text">参考资料</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#loomo多服务机器人"><span class="toc-number">3.</span> <span class="toc-text">loomo多服务机器人</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#设计思路"><span class="toc-number">3.1.</span> <span class="toc-text">设计思路</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#一些资料"><span class="toc-number">3.2.</span> <span class="toc-text">一些资料</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#100以内加减法（小学二年级）算数机器人"><span class="toc-number">4.</span> <span class="toc-text">100以内加减法（小学二年级）算数机器人</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#当前的功能"><span class="toc-number">4.1.</span> <span class="toc-text">当前的功能</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#待解决的问题"><span class="toc-number">4.2.</span> <span class="toc-text">待解决的问题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#接下来的工作"><span class="toc-number">4.3.</span> <span class="toc-text">接下来的工作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Demo-1"><span class="toc-number">4.4.</span> <span class="toc-text">Demo</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#愉快地一天"><span class="toc-number">4.5.</span> <span class="toc-text">愉快地一天</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#简单手势分类器"><span class="toc-number">5.</span> <span class="toc-text">简单手势分类器</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#准备"><span class="toc-number">5.1.</span> <span class="toc-text">准备</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#安装tensorflow"><span class="toc-number">5.1.1.</span> <span class="toc-text">安装tensorflow</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#安装serial"><span class="toc-number">5.1.2.</span> <span class="toc-text">安装serial</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#一些包"><span class="toc-number">5.1.3.</span> <span class="toc-text">一些包</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#数据处理"><span class="toc-number">5.2.</span> <span class="toc-text">数据处理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#模型和训练"><span class="toc-number">5.3.</span> <span class="toc-text">模型和训练</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#HC-05蓝牙串口"><span class="toc-number">5.4.</span> <span class="toc-text">HC-05蓝牙串口</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#蓝牙配对"><span class="toc-number">5.4.1.</span> <span class="toc-text">蓝牙配对</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#结果"><span class="toc-number">5.5.</span> <span class="toc-text">结果</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#参考博客"><span class="toc-number">5.6.</span> <span class="toc-text">参考博客</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#果实采摘机器人"><span class="toc-number">6.</span> <span class="toc-text">果实采摘机器人</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#解魔方机器人"><span class="toc-number">7.</span> <span class="toc-text">解魔方机器人</span></a></li>
                     </div>
                 </span>
             </div>
@@ -690,19 +732,11 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">3D打印</a>
+                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">吉他</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">树莓派</a>
+                <a href="javascript:void(0)" class="js-tag color5">raspberry</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -730,11 +764,27 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">数模</a>
+                <a href="javascript:void(0)" class="js-tag color3">tf</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
+                <a href="javascript:void(0)" class="js-tag color2">python</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">3D打印</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">吉他</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">数模</a>
               </li>
             
             <div class="clearfix"></div>
@@ -915,21 +965,5 @@ MathJax.Hub.Queue(function() {
 
 </div>
   </div>
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
-<!-- <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script> -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
 <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"position":"right","width":200,"height":400,"hOffset":50,"vOffset":-95},"mobile":{"show":false},"react":{"opacity":0.7},"log":false});</script></body>
 </html>
