@@ -195,6 +195,200 @@ $(document).ready(function(){
       </tags>
   </entry>
   <entry>
+    <title>那些年做的机器人</title>
+    <url>/2021/02/12/Robot%EF%BC%9A%E9%82%A3%E4%BA%9B%E5%B9%B4%E5%81%9A%E7%9A%84%E6%9C%BA%E5%99%A8%E4%BA%BA/</url>
+    <content><![CDATA[<p>Q: 如何才能有很多作品，参加很多比赛？</p>
+<div align="center">
+<img src="/2021/02/12/Robot：那些年做的机器人/作业检查机器人/002.png" width="700" height="450">
+</div>
+
+<a id="more"></a>
+<the rest of contents | 余下全文>
+
+<h1 id="小派舞蹈机器人"><a href="#小派舞蹈机器人" class="headerlink" title="小派舞蹈机器人"></a>小派舞蹈机器人</h1><p><img src="/2021/02/12/Robot：那些年做的机器人/小派双足机器人\photo01.jpg"></p>
+<p>小pi舞蹈机器人，最初制作是参加2015年的iCAN大赛时，参考了BoB机器人的机械机构设计。</p>
+<p>电路控制部分用的mega2560，挂载啦很多其他功能模块，诸如led、超声波、音乐播放等。</p>
+<p>特别感谢当时的队友杜总小宇洋神，在806一起成长的日子十分难忘。</p>
+<h3 id="模型"><a href="#模型" class="headerlink" title="模型"></a>模型</h3><p>littlePi by Binjun - Thingiverse <a href="https://www.thingiverse.com/thing:1811095" target="_blank" rel="noopener">https://www.thingiverse.com/thing:1811095</a></p>
+<h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><p><a href="https://github.com/leebinjun/littlepi-robot" target="_blank" rel="noopener">https://github.com/leebinjun/littlepi-robot</a></p>
+<h1 id="桌面冰球机器人"><a href="#桌面冰球机器人" class="headerlink" title="桌面冰球机器人"></a>桌面冰球机器人</h1><h2 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h2><ul>
+<li>桌上冰球机器人 opencv3 + arduino mega2560  </li>
+</ul>
+<p><a href="https://blog.csdn.net/x_a_little_story/article/details/88747280" target="_blank" rel="noopener">https://blog.csdn.net/x_a_little_story/article/details/88747280</a></p>
+<p>在闲鱼上面发现这个机器人感觉得很有趣，如果使用强化学习做人机对战是一个很好的项目。<br>查到了资料发现代码模型都很全，就按开源项目的设计和代码在端午小假期DIY了一个。<br>目前还是个人工智障，主要有以下问题待解决：</p>
+<ul>
+<li>笔记本性能不够，帧数最多只到9，反应速度不够快；</li>
+<li>电机没有加Y轴，所以理论上只能防守；</li>
+<li>机械结构上做了一些trick，比如倾斜“场地”和封死机器人的“球门”；</li>
+<li>算法上还是常规几何推理的方法，并没有想好怎么使用RL，大概可以参考一下gym里的breakout？</li>
+</ul>
+<h2 id="Demo"><a href="#Demo" class="headerlink" title="Demo"></a>Demo</h2><div align="center">
+<img src="/2021/02/12/Robot：那些年做的机器人/桌面冰球机器人\001.gif" width="600" height="350">
+</div>
+
+<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><p>感谢故里草木深和JJulio两位前辈提供的资料。  </p>
+<ul>
+<li>桌上冰球机器人 opencv3 + arduino mega2560  </li>
+</ul>
+<p><a href="https://blog.csdn.net/x_a_little_story/article/details/88747280" target="_blank" rel="noopener">https://blog.csdn.net/x_a_little_story/article/details/88747280</a></p>
+<ul>
+<li>JJulio/AHRobot: Air Hockey Robot Project  </li>
+</ul>
+<p><a href="https://github.com/JJulio/AHRobot" target="_blank" rel="noopener">https://github.com/JJulio/AHRobot</a></p>
+<h1 id="loomo多服务机器人"><a href="#loomo多服务机器人" class="headerlink" title="loomo多服务机器人"></a>loomo多服务机器人</h1><h2 id="设计思路"><a href="#设计思路" class="headerlink" title="设计思路"></a>设计思路</h2><p><img src="/2021/02/12/Robot：那些年做的机器人/loomo多服务机器人开发\设计思路-201905.png" width="600" height="300"></p>
+<h2 id="一些资料"><a href="#一些资料" class="headerlink" title="一些资料"></a>一些资料</h2><ul>
+<li>机器人 · 3D打印的假肢，像真手一样听你指挥！<br><a href="https://mp.weixin.qq.com/s/qumdZIXXGmF-blSeHLu1tw" target="_blank" rel="noopener">https://mp.weixin.qq.com/s/qumdZIXXGmF-blSeHLu1tw</a></li>
+</ul>
+<h1 id="100以内加减法（小学二年级）算数机器人"><a href="#100以内加减法（小学二年级）算数机器人" class="headerlink" title="100以内加减法（小学二年级）算数机器人"></a>100以内加减法（小学二年级）算数机器人</h1><h2 id="当前的功能"><a href="#当前的功能" class="headerlink" title="当前的功能"></a>当前的功能</h2><p>拍一张答题纸，画四个点，透射变换为标准尺寸后进行算式分割，对每张算式图片检测识别数字后进行计算，并打印结果;<br>手指指到相应算式下方，语音播报该计算结果。</p>
+<h2 id="待解决的问题"><a href="#待解决的问题" class="headerlink" title="待解决的问题"></a>待解决的问题</h2><ul>
+<li>阴影下识别出错</li>
+</ul>
+<h2 id="接下来的工作"><a href="#接下来的工作" class="headerlink" title="接下来的工作"></a>接下来的工作</h2><ul>
+<li>写字机器人接入?</li>
+<li>更复杂的算式？</li>
+</ul>
+<h2 id="Demo-1"><a href="#Demo-1" class="headerlink" title="Demo"></a>Demo</h2><div align="center">
+<iframe height="498" width="510" src="http://player.youku.com/embed/XNDIyNzA4NDM0MA==">
+</iframe>
+</div>
+
+<ul>
+<li>算数-其他-高清完整正版视频在线观看-优酷  </li>
+</ul>
+<p><a href="https://v.youku.com/v_show/id_XNDIyNzA4NDM0MA==.html" target="_blank" rel="noopener">https://v.youku.com/v_show/id_XNDIyNzA4NDM0MA==.html</a></p>
+<h2 id="愉快地一天"><a href="#愉快地一天" class="headerlink" title="愉快地一天"></a>愉快地一天</h2><p>Q: 如何才能有很多作品，参加很多比赛？</p>
+<div align="center">
+<img src="/2021/02/12/Robot：那些年做的机器人/作业检查机器人/002.png" width="700" height="450">
+</div>
+
+
+<h1 id="简单手势分类器"><a href="#简单手势分类器" class="headerlink" title="简单手势分类器"></a>简单手势分类器</h1><p>树莓派+摄像头作为一个视觉传感器，串口实时返回手势分类结果。</p>
+<h2 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h2><h3 id="安装tensorflow"><a href="#安装tensorflow" class="headerlink" title="安装tensorflow"></a>安装tensorflow</h3><p>维护树莓派交叉编译版本的github项目</p>
+<ul>
+<li>samjabrahams/tensorflow-on-raspberry-pi: TensorFlow for Raspberry Pi<br><a href="https://github.com/samjabrahams/tensorflow-on-raspberry-pi" target="_blank" rel="noopener">https://github.com/samjabrahams/tensorflow-on-raspberry-pi</a><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo apt install libatlas-base-dev</span><br><span class="line">pip3 install tensorflow</span><br><span class="line">``` </span><br><span class="line">安装旧版本</span><br><span class="line">``` bash </span><br><span class="line">$ wget https://github.com/samjabrahams/tensorflow-on-raspberry-pi/releases/download/v0.11.0/tensorflow-0.11.0-py3-none-any.whl</span><br><span class="line">$ sudo pip3 install tensorflow-0.11.0-py3-none-any.whl</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="安装serial"><a href="#安装serial" class="headerlink" title="安装serial"></a>安装serial</h3><p>安装串口模块<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ sudo apt-get install python-serial</span><br><span class="line">$ pip install serial</span><br><span class="line">$ pip install pyserial</span><br></pre></td></tr></table></figure></p>
+<p>如果需要指定位置<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ sudo pip install --target=/usr/<span class="built_in">local</span>/lib/python3.5/dist-packages pyserial</span><br></pre></td></tr></table></figure></p>
+<h3 id="一些包"><a href="#一些包" class="headerlink" title="一些包"></a>一些包</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">pip install pillow</span><br><span class="line">pip install matplotlib</span><br></pre></td></tr></table></figure>
+<h2 id="数据处理"><a href="#数据处理" class="headerlink" title="数据处理"></a>数据处理</h2><p>使用OpenCV的BackgroundSubtractor类，分割前景和背景，获得手势灰度图<br><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">camera = cv2.VideoCapture(<span class="number">0</span>) <span class="comment"># 参数0表示第一个摄像头</span></span><br><span class="line">bs = cv2.createBackgroundSubtractorKNN(detectShadows=<span class="literal">True</span>)</span><br><span class="line">es = cv2.getStructuringElement(cv2.MORPH_ELLIPSE, (<span class="number">3</span>, <span class="number">3</span>))</span><br><span class="line"><span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">    grabbed, frame_lwpCV = camera.read()</span><br><span class="line">    fgmask = bs.apply(frame_lwpCV) <span class="comment"># 背景分割器，该函数计算了前景掩码</span></span><br><span class="line">    <span class="comment"># 二值化阈值处理，前景掩码含有前景的白色值以及阴影的灰色值，在阈值化图像中，将非纯白色（244~255）的所有像素都设为0，而不是255</span></span><br><span class="line">    th = cv2.threshold(fgmask.copy(), <span class="number">244</span>, <span class="number">255</span>, cv2.THRESH_BINARY)[<span class="number">1</span>]</span><br><span class="line">    <span class="comment"># 下面就跟基本运动检测中方法相同，识别目标，检测轮廓，在原始帧上绘制检测结果</span></span><br><span class="line">    dilated = cv2.dilate(th, es, iterations=<span class="number">2</span>) <span class="comment"># 形态学膨胀</span></span><br><span class="line">    image, contours, hierarchy = cv2.findContours(dilated, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE) <span class="comment"># 该函数计算一幅图像中目标的轮廓</span></span><br><span class="line">    <span class="comment"># rasp</span></span><br><span class="line">    <span class="comment"># contours, hierarchy = cv2.findContours(dilated, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE) # 该函数计算一幅图像中目标的轮廓</span></span><br><span class="line">    <span class="keyword">for</span> c <span class="keyword">in</span> contours:</span><br><span class="line">        <span class="keyword">if</span> cv2.contourArea(c) &gt; <span class="number">2000</span>: <span class="comment">#1600:</span></span><br><span class="line">            (x, y, w, h) = cv2.boundingRect(c)</span><br><span class="line">            cv2.rectangle(frame_lwpCV, (x, y), (x + w, y + h), (<span class="number">255</span>, <span class="number">255</span>, <span class="number">0</span>), <span class="number">2</span>)</span><br><span class="line">    cv2.imshow(<span class="string">'detection'</span>, frame_lwpCV)</span><br><span class="line">    <span class="comment"># 按'q'健退出循环</span></span><br><span class="line"><span class="comment"># When everything done, release the capture</span></span><br></pre></td></tr></table></figure></p>
+<h2 id="模型和训练"><a href="#模型和训练" class="headerlink" title="模型和训练"></a>模型和训练</h2><p>通过一个小的卷积网络来实现分类，两层卷积+两层全连接<br><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">model</span><span class="params">(x, keep_prob)</span>:</span></span><br><span class="line">    <span class="string">'''Build the classify model</span></span><br><span class="line"><span class="string">    Args:</span></span><br><span class="line"><span class="string">      x: Input, tf.placeholder, the dimension is [-1, 784]</span></span><br><span class="line"><span class="string">      keep_prob: </span></span><br><span class="line"><span class="string">    Returns:</span></span><br><span class="line"><span class="string">      y: Classification probability</span></span><br><span class="line"><span class="string">    '''</span></span><br><span class="line">    x_image = tf.reshape(x, [<span class="number">-1</span>, w, h, <span class="number">1</span>])</span><br><span class="line">    <span class="comment"># Conv1</span></span><br><span class="line">    <span class="keyword">with</span> tf.name_scope(<span class="string">'conv1'</span>):</span><br><span class="line">        W_conv1 = weight_variable([<span class="number">3</span>, <span class="number">3</span>, <span class="number">1</span>, <span class="number">16</span>], name=<span class="string">"weight"</span>)</span><br><span class="line">        b_conv1 = bias_variable([<span class="number">16</span>], name=<span class="string">'bias'</span>)</span><br><span class="line">        h_conv1 = tf.nn.relu(tf.nn.conv2d(x_image, W_conv1, strides=[<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>], padding=<span class="string">"SAME"</span>, name=<span class="string">'conv'</span>)+ b_conv1)</span><br><span class="line">        h_pool1 = tf.nn.max_pool(h_conv1, ksize=[<span class="number">1</span>,<span class="number">2</span>,<span class="number">2</span>,<span class="number">1</span>], strides=[<span class="number">1</span>,<span class="number">2</span>,<span class="number">2</span>,<span class="number">1</span>], padding=<span class="string">"SAME"</span>, name=<span class="string">"pool"</span>)</span><br><span class="line">    <span class="comment"># Conv2</span></span><br><span class="line">    <span class="keyword">with</span> tf.name_scope(<span class="string">'conv2'</span>):</span><br><span class="line">        W_conv2 = weight_variable([<span class="number">3</span>, <span class="number">3</span>, <span class="number">16</span>, <span class="number">32</span>], name=<span class="string">"weight"</span>)</span><br><span class="line">        b_conv2 = bias_variable([<span class="number">32</span>], name=<span class="string">'bias'</span>)</span><br><span class="line">        h_conv2 = tf.nn.relu(tf.nn.conv2d(h_pool1, W_conv2, strides=[<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>], padding=<span class="string">"SAME"</span>, name=<span class="string">'conv'</span>)+ b_conv2)</span><br><span class="line">        h_pool2 = tf.nn.max_pool(h_conv2, ksize=[<span class="number">1</span>,<span class="number">2</span>,<span class="number">2</span>,<span class="number">1</span>], strides=[<span class="number">1</span>,<span class="number">2</span>,<span class="number">2</span>,<span class="number">1</span>], padding=<span class="string">"SAME"</span>, name=<span class="string">"pool"</span>)</span><br><span class="line">    <span class="comment"># fc1</span></span><br><span class="line">    <span class="keyword">with</span> tf.name_scope(<span class="string">'fc1'</span>):</span><br><span class="line">        W_fc1 = weight_variable([<span class="number">7</span>*<span class="number">7</span>*<span class="number">32</span>, <span class="number">256</span>], name=<span class="string">"weight"</span>)</span><br><span class="line">        b_fc1 = bias_variable([<span class="number">256</span>], name=<span class="string">'bias'</span>)</span><br><span class="line">        h_pool2_flat = tf.reshape(h_pool2, [<span class="number">-1</span>, <span class="number">7</span>*<span class="number">7</span>*<span class="number">32</span>])</span><br><span class="line">        h_fc1 = tf.nn.relu(tf.matmul(h_pool2_flat, W_fc1)+b_fc1)</span><br><span class="line">    <span class="comment"># Dropout</span></span><br><span class="line">    h_fc1_drop = tf.nn.dropout(h_fc1, keep_prob)</span><br><span class="line">    <span class="comment"># fc2</span></span><br><span class="line">    <span class="keyword">with</span> tf.name_scope(<span class="string">'fc2'</span>):</span><br><span class="line">        W_fc2 = weight_variable([<span class="number">256</span>, <span class="number">4</span>], name=<span class="string">"weight"</span>)</span><br><span class="line">        b_fc2 = bias_variable([<span class="number">4</span>], name=<span class="string">'bias'</span>)</span><br><span class="line">        y = tf.nn.softmax(tf.matmul(h_fc1_drop, W_fc2)+b_fc2, name=<span class="string">"output"</span>)</span><br><span class="line">    <span class="keyword">return</span> y</span><br></pre></td></tr></table></figure></p>
+<h2 id="HC-05蓝牙串口"><a href="#HC-05蓝牙串口" class="headerlink" title="HC-05蓝牙串口"></a>HC-05蓝牙串口</h2><h3 id="蓝牙配对"><a href="#蓝牙配对" class="headerlink" title="蓝牙配对"></a>蓝牙配对</h3><p>连接(rt反接)</p>
+<ul>
+<li>usb-ttl ————— bluetooth</li>
+<li>RXD &nbsp;&nbsp;&nbsp;&nbsp;————— TXD</li>
+<li>TXD &nbsp;&nbsp;&nbsp;&nbsp;————— RXD</li>
+</ul>
+<p>按住复位键插USB，进入AT模式<br>打开串口助手，设置波特率38400，数据位8位，停止位1位，无校验位，加回车换行(发送消息包含换行符)<br>修改名称<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">→ AT+ NAME=xxx</span><br><span class="line">→ AT+ NAME?</span><br></pre></td></tr></table></figure></p>
+<p>设置蓝牙密码，注意两块蓝牙的密码都要一样<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">→ AT+ PSWD=1234</span><br><span class="line">→ AT+ PSWD?</span><br></pre></td></tr></table></figure></p>
+<p>设置主从模式<br>串口调试助手A，将蓝牙A配置为主机模式<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">→ AT+ ROLE=1</span><br><span class="line">→ AT+ ROLE?</span><br></pre></td></tr></table></figure></p>
+<p>串口调试助手B，将蓝牙B配置为从机模式<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">→ AT+ ROLE=0</span><br></pre></td></tr></table></figure></p>
+<p>设置波特率9600，无校验位，1停止位<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">→ AT+ UART:9600,0,0</span><br><span class="line">→ AT+ UART?</span><br></pre></td></tr></table></figure></p>
+<p>设置连接模式<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">→ AT+ CMODE=0</span><br><span class="line">→ AT+ CMODE?</span><br></pre></td></tr></table></figure></p>
+<p>查询蓝牙地址，并相互绑定，注意把地址的冒号换成逗号<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">→ AT+ ADDR?</span><br><span class="line">→ AT+ BIND=98d3,32,307440</span><br></pre></td></tr></table></figure></p>
+<h2 id="结果"><a href="#结果" class="headerlink" title="结果"></a>结果</h2><p>查看端口<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ ls /dev/tty*</span><br></pre></td></tr></table></figure></p>
+<p>运行<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ python run.py --serial /dev/ttyUSB0</span><br></pre></td></tr></table></figure></p>
+<p><img src="/2021/02/12/Robot：那些年做的机器人/简单手势分类器\02.png" width="600" height="300"><br><img src="/2021/02/12/Robot：那些年做的机器人/简单手势分类器\01.png" width="600" height="300"></p>
+<h2 id="参考博客"><a href="#参考博客" class="headerlink" title="参考博客"></a>参考博客</h2><ul>
+<li>【Python+OpenCV】目标跟踪-背景分割器：KNN、MOG2和GMG - CSDN博客<br><a href="https://blog.csdn.net/lwplwf/article/details/73551648" target="_blank" rel="noopener">https://blog.csdn.net/lwplwf/article/details/73551648</a></li>
+<li>Tensorflow+树莓派，自制“猜拳神器” - Lauyeed的博客 - CSDN博客<br><a href="https://blog.csdn.net/Lauyeed/article/details/79345685" target="_blank" rel="noopener">https://blog.csdn.net/Lauyeed/article/details/79345685</a></li>
+<li>蓝牙模块HC-05使用说明_图文_百度文库<br><a href="http://wenku.baidu.com/link?url=tDhQ1eN2RBFS4-iA9dFZuuYUUb21nx3ZpahLARbDaesVM0HkHMeiLc0NzfR7W6NVqc5F57p0x8t6c_3T3JN4ne9NCEB540mwEYV5kLpFSfq" target="_blank" rel="noopener">http://wenku.baidu.com/link?url=tDhQ1eN2RBFS4-iA9dFZuuYUUb21nx3ZpahLARbDaesVM0HkHMeiLc0NzfR7W6NVqc5F57p0x8t6c_3T3JN4ne9NCEB540mwEYV5kLpFSfq</a></li>
+<li>AttributeError: module ‘serial’ has no attribute ‘Serial’ - m0_37827405的博客 - CSDN博客<br><a href="https://blog.csdn.net/m0_37827405/article/details/80879678" target="_blank" rel="noopener">https://blog.csdn.net/m0_37827405/article/details/80879678</a></li>
+</ul>
+<h1 id="果实采摘机器人"><a href="#果实采摘机器人" class="headerlink" title="果实采摘机器人"></a>果实采摘机器人</h1><h1 id="解魔方机器人"><a href="#解魔方机器人" class="headerlink" title="解魔方机器人"></a>解魔方机器人</h1></the>]]></content>
+      <tags>
+        <tag>raspberry</tag>
+        <tag>stm32</tag>
+        <tag>Arduino</tag>
+        <tag>robot</tag>
+        <tag>loomo</tag>
+        <tag>openCV</tag>
+        <tag>机械手</tag>
+        <tag>tf</tag>
+        <tag>python</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>代码量统计平台:基于Django+echarts+datatable+bs4+bootstrap</title>
+    <url>/2022/09/24/%E4%BB%A3%E7%A0%81%E9%87%8F%E7%BB%9F%E8%AE%A1%E5%B9%B3%E5%8F%B0-%E5%9F%BA%E4%BA%8EDjango-echarts-datatable-bs4-bootstrap/</url>
+    <content><![CDATA[<h1 id="codecode"><a href="#codecode" class="headerlink" title="codecode"></a>codecode</h1><h2 id="代码统计相关"><a href="#代码统计相关" class="headerlink" title="代码统计相关"></a>代码统计相关</h2><p><img src="/2022/09/24/代码量统计平台-基于Django-echarts-datatable-bs4-bootstrap/image/readme/1648966424737.png" alt></p>
+<h2 id="Django"><a href="#Django" class="headerlink" title="Django"></a>Django</h2><h3 id="MVC"><a href="#MVC" class="headerlink" title="MVC"></a>MVC</h3><p>Django项目由一系列应用程序组成，新建monthReport应用</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">python manage.py startapp month_report</span><br></pre></td></tr></table></figure>
+<p>数据库迁移</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">python manage.py makemigrations</span><br><span class="line"></span><br><span class="line">python manage.py migrate</span><br></pre></td></tr></table></figure>
+<p>启动</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">python manage.py runserver 0.0.0.0:8001 --insecure</span><br></pre></td></tr></table></figure>
+<h3 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h3><ul>
+<li>解决Invalid HTTP_HOST header: ‘xxx.xx.xxx.xxx:8000’. You may need to add ‘xxx.xx’ to ALLOWED_HOSTS！-CSDN博客<br><a href="https://blog.csdn.net/lezeqe/article/details/83820621" target="_blank" rel="noopener">https://blog.csdn.net/lezeqe/article/details/83820621</a></li>
+</ul>
+<h2 id="Docker服务器部署"><a href="#Docker服务器部署" class="headerlink" title="Docker服务器部署"></a>Docker服务器部署</h2><p>服务器用了两个镜像，一个用于mysql数据库的，另一个用于django服务。</p>
+<h3 id="搭建mysql服务"><a href="#搭建mysql服务" class="headerlink" title="搭建mysql服务"></a>搭建mysql服务</h3><p>mysql镜像使用服务器上原有的镜像mysql:1.0<br>创建并启动了一个叫xxxx-mysql容器</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">docker run -p 3309:3306 --name xxxx-mysql -e MYSQL_ROOT_PASSWORD=****** -d mysql:1.0</span><br></pre></td></tr></table></figure>
+<p>进入sql数据库创建用户和相关数据库code</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">docker <span class="built_in">exec</span> -it xxxx-mysql bash</span><br><span class="line">&gt; mysql -uroot -p******</span><br><span class="line">&gt; grant all privileges on *.* to <span class="string">'xxxx'</span>@<span class="string">'%'</span> identified by <span class="string">'******'</span> with grant option;</span><br><span class="line"><span class="comment">#  *.*是 数据库名.表名,数据库名为*表示所有数据库，表名为*表示所有表，*.*是表示root权限，即满权限</span></span><br><span class="line"><span class="comment">#  %是 主机名，表示本地和远程均可连接，localhost表示仅允许本地连接，</span></span><br><span class="line"><span class="comment">#  flush privileges；表示刷新权限，使授权生效</span></span><br><span class="line">&gt; CREATE DATABASE code;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>使用Docker搭建MySQL服务 - sablier - 博客园<br><a href="https://www.cnblogs.com/sablier/p/11605606.html" target="_blank" rel="noopener">https://www.cnblogs.com/sablier/p/11605606.html</a></li>
+</ul>
+<h3 id="搭建djongo服务"><a href="#搭建djongo服务" class="headerlink" title="搭建djongo服务"></a>搭建djongo服务</h3><p>服务器不具有联网功能，所以需要在本地打包镜像上传到服务器。</p>
+<p>准备Dockerfile和requirements.txt文件</p>
+<figure class="highlight dockerfile"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Pure Python</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">FROM</span> python:<span class="number">3.7</span></span><br><span class="line"><span class="keyword">LABEL</span><span class="bash"> author=<span class="string">"xxxx"</span></span></span><br><span class="line"></span><br><span class="line"><span class="comment"># RUN apt-get update</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">ENV</span> PYTHONIOENCODING=utf-<span class="number">8</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Build folder</span></span><br><span class="line"><span class="keyword">RUN</span><span class="bash"> mkdir -p /deploy/app</span></span><br><span class="line"><span class="keyword">WORKDIR</span><span class="bash"> /deploy/app</span></span><br><span class="line"><span class="keyword">COPY</span><span class="bash"> /requirements.txt /deploy/app/requirements.txt</span></span><br><span class="line"><span class="keyword">RUN</span><span class="bash"> pip install -r requirements.txt</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">CMD</span><span class="bash"> [<span class="string">"/bin/bash"</span>]</span></span><br></pre></td></tr></table></figure>
+<p>requirements.txt文件生成</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">pip freeze &gt; requirements.txt</span><br></pre></td></tr></table></figure>
+<p>本地打包镜像</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">docker build -t imagexxx:latest .</span><br><span class="line">docker save imagexxx:latest -o imagexxx.tar</span><br></pre></td></tr></table></figure>
+<p><img src="/2022/09/24/代码量统计平台-基于Django-echarts-datatable-bs4-bootstrap/image/readme/1638794164288.png" alt></p>
+<p>上传镜像到服务器，部署</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> /data/xxxx/</span><br><span class="line">ls</span><br><span class="line"><span class="comment"># 加载镜像</span></span><br><span class="line">docker load -i image20211204001_37_1.tar</span><br><span class="line"><span class="comment"># 查看镜像</span></span><br><span class="line">docker image ls</span><br><span class="line"><span class="comment"># 创建并启动code容器</span></span><br><span class="line">docker run -it -p 8000:8000 --name code -v /data/xxxx/codecode:/deploy/app image20211204001:3.7</span><br><span class="line"><span class="comment"># 查看所有的容器</span></span><br><span class="line">docker ps -a</span><br><span class="line"><span class="comment"># 启动code容器</span></span><br><span class="line">docker start code</span><br><span class="line"><span class="comment"># 进入code容器</span></span><br><span class="line">docker attach code</span><br><span class="line"><span class="comment"># 停止mysql容器</span></span><br><span class="line">docker stop xxxx-mysql</span><br></pre></td></tr></table></figure>
+<p><img src="/2022/09/24/代码量统计平台-基于Django-echarts-datatable-bs4-bootstrap/image/readme/1638795079680.png" alt></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">&gt; python manage.py runserver 0.0.0.0:8001</span><br></pre></td></tr></table></figure>
+<p>attach进入容器，使用Ctrl+c退出容器后会发送一个SINKILL信号停止容器运行，如果不想容器退出，可以使用CTRL+p CTRL+q.</p>
+<h3 id="搭建redis服务"><a href="#搭建redis服务" class="headerlink" title="搭建redis服务"></a>搭建redis服务</h3><ul>
+<li>Docker 安装 Redis | 菜鸟教程<br><a href="https://www.runoob.com/docker/docker-install-redis.html" target="_blank" rel="noopener">https://www.runoob.com/docker/docker-install-redis.html</a></li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 拉取官方最新镜像</span></span><br><span class="line">docker pull redis:latest</span><br><span class="line"><span class="comment"># 查看本地镜像</span></span><br><span class="line">docker image ls</span><br><span class="line"><span class="comment"># 运行容器</span></span><br><span class="line">docker run -itd --name xxxx-redis -p 6379:6379 redis:latest</span><br><span class="line"><span class="comment"># 进入容器并通过redis-cli连接测试</span></span><br><span class="line">docker <span class="built_in">exec</span> -it xxxx-redis /bin/bashs <span class="comment"># win10</span></span><br><span class="line">docker <span class="built_in">exec</span> -it xxxx-redis bash <span class="comment"># linux</span></span><br><span class="line">root@bf719c39c2cf:/data<span class="comment"># redis-cli</span></span><br><span class="line">127.0.0.1:6379&gt; <span class="built_in">set</span> <span class="built_in">test</span> 1</span><br><span class="line">OK</span><br><span class="line"><span class="comment"># 设置redis密码</span></span><br><span class="line">127.0.0.1:6379&gt; config <span class="built_in">set</span> requirepass ********</span><br><span class="line">OK</span><br><span class="line"><span class="comment"># 查看redis密码</span></span><br><span class="line">127.0.0.1:6379&gt; config get requirepass</span><br><span class="line">1) <span class="string">"requirepass"</span></span><br><span class="line">2) <span class="string">"********"</span></span><br></pre></td></tr></table></figure>
+<p>在settings.py文件中添加CACHE配置</p>
+<figure class="highlight py"><table><tr><td class="code"><pre><span class="line">CACHES = &#123;</span><br><span class="line">  <span class="string">"default"</span>:&#123;</span><br><span class="line">    <span class="string">"BACKEND"</span>:<span class="string">"django_redis.cache.RedisCache"</span>,</span><br><span class="line">    <span class="string">"LOCATION"</span>:<span class="string">"redis://127.0.0.1:6379/1"</span>,  <span class="comment"># DB设为1</span></span><br><span class="line">    <span class="string">"TIMEOUT"</span>:<span class="literal">None</span>,  <span class="comment"># 永久缓存，默认300秒</span></span><br><span class="line">    <span class="string">"OPTIONS"</span>:&#123;</span><br><span class="line">      <span class="string">"CLIENT_CLASS"</span>:<span class="string">"django_redis.client.DefaultClient"</span>,</span><br><span class="line">      <span class="string">"PASSWORD"</span>:<span class="string">"******"</span> <span class="comment"># 密码</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>测试缓存是否成功</p>
+<figure class="highlight py"><table><tr><td class="code"><pre><span class="line">(base) D:\Workplace\codecode&gt;activate my_django_env</span><br><span class="line"></span><br><span class="line">(my_django_env) D:\Workplace\codecode&gt;python manage.py shell</span><br><span class="line">Python <span class="number">3.7</span><span class="number">.11</span> (default, Jul <span class="number">27</span> <span class="number">2021</span>, <span class="number">09</span>:<span class="number">42</span>:<span class="number">29</span>) [MSC v<span class="number">.1916</span> <span class="number">64</span> bit (AMD64)] on win32</span><br><span class="line">Type <span class="string">"help"</span>, <span class="string">"copyright"</span>, <span class="string">"credits"</span> <span class="keyword">or</span> <span class="string">"license"</span> <span class="keyword">for</span> more information.</span><br><span class="line">(InteractiveConsole)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">from</span> django.core.cache <span class="keyword">import</span> cache </span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>cache.set(<span class="string">'v'</span>, <span class="string">'123'</span>, <span class="number">60</span>*<span class="number">60</span>)</span><br><span class="line"><span class="literal">True</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>cache.has_key(<span class="string">'V'</span>)        </span><br><span class="line"><span class="literal">False</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>cache.has_key(<span class="string">'v'</span>) </span><br><span class="line"><span class="literal">True</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>cache.get(<span class="string">'v'</span>)   </span><br><span class="line"><span class="string">'123'</span></span><br><span class="line">&gt;&gt;&gt;</span><br></pre></td></tr></table></figure>
+<p><img src="/2022/09/24/代码量统计平台-基于Django-echarts-datatable-bs4-bootstrap/image/readme/1638963468079.png" alt></p>
+<h3 id="Docker常用命令"><a href="#Docker常用命令" class="headerlink" title="Docker常用命令"></a>Docker常用命令</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 删除镜像</span></span><br><span class="line">$ docker rmi image_id</span><br><span class="line"><span class="comment"># 停止容器</span></span><br><span class="line">$ docker stop container_name</span><br><span class="line"><span class="comment"># 删除容器</span></span><br><span class="line">$ docker rm container_id</span><br></pre></td></tr></table></figure>
+<h2 id="前端相关"><a href="#前端相关" class="headerlink" title="前端相关"></a>前端相关</h2><h3 id="Bootstrap"><a href="#Bootstrap" class="headerlink" title="Bootstrap"></a>Bootstrap</h3><p>下载地址:</p>
+<ul>
+<li><a href="https://v3.bootcss.com/getting-started/#download" target="_blank" rel="noopener">https://v3.bootcss.com/getting-started/#download</a></li>
+</ul>
+<p>选择第二个,下载带有源码的bootstrap</p>
+<ul>
+<li>Django中引入bootstrap的方法_grfstc的博客-CSDN博客_bootstrap django<br><a href="https://blog.csdn.net/grfstc/article/details/124581471" target="_blank" rel="noopener">https://blog.csdn.net/grfstc/article/details/124581471</a></li>
+</ul>
+<h2 id="定时作业"><a href="#定时作业" class="headerlink" title="定时作业"></a>定时作业</h2><h3 id="APScheduler"><a href="#APScheduler" class="headerlink" title="APScheduler"></a>APScheduler</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">pip install django-apscheduler</span><br></pre></td></tr></table></figure>
+<ul>
+<li>Django定时任务四种实现方法总结_Yale曼陀罗的博客-CSDN博客_django 定时任务<br><a href="https://blog.csdn.net/weixin_42782150/article/details/123212604" target="_blank" rel="noopener">https://blog.csdn.net/weixin_42782150/article/details/123212604</a></li>
+</ul>
+<h2 id="404相关"><a href="#404相关" class="headerlink" title="404相关"></a>404相关</h2><p>当debug=Fasle时，如果仍希望静态资源应用程序提供静态资源，Django提供了insecure参数来强制处理静态资源，但是这样处理静态资源效率非常低，而且极不安全。因此，仅用于本地开发，不要在生产环境中使用。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">python manage.py runserver 0.0.0.0:8001 --insecure</span><br></pre></td></tr></table></figure>
+<h2 id="python"><a href="#python" class="headerlink" title="python"></a>python</h2><h3 id="json-和-dict"><a href="#json-和-dict" class="headerlink" title="json 和 dict"></a>json 和 dict</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">data = <span class="string">"&#123;'小曹': 208, '小李': 0, '小邓': 196, '小张': 18, '小付': 143, '小郭': 3, '小王': 154, '小白': 6, '小刘': 70, '小德': 13&#125;"</span></span><br><span class="line">data = data.replace(<span class="string">"'"</span>,<span class="string">'"'</span>)</span><br><span class="line">adict = json.loads(data)</span><br><span class="line">ajson = json.dumps(adict)</span><br></pre></td></tr></table></figure>
+<h3 id="datetime"><a href="#datetime" class="headerlink" title="datetime"></a>datetime</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment"># datetime.datetime</span></span><br><span class="line"><span class="comment"># 获取当天</span></span><br><span class="line">dt = datetime.datetime.now()</span><br><span class="line"></span><br><span class="line"><span class="comment"># string转date</span></span><br><span class="line">dt = datetime.datetime.fromtimestamp(time.mktime(time.strptime(<span class="string">"2022-07-20"</span>,<span class="string">"%Y-%m-%d"</span>))) </span><br><span class="line"></span><br><span class="line"><span class="comment"># 5天前</span></span><br><span class="line">dt - datetime.timedelta(days=<span class="number">5</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># date转String</span></span><br><span class="line">dt.strftime(<span class="string">"%Y-%m-%d"</span>)    </span><br><span class="line"></span><br><span class="line"><span class="comment"># 获取星期</span></span><br><span class="line">dt.weekday() + <span class="number">1</span></span><br></pre></td></tr></table></figure>
+<h1 id="可视化大屏"><a href="#可视化大屏" class="headerlink" title="可视化大屏"></a>可视化大屏</h1><h2 id="技术准备"><a href="#技术准备" class="headerlink" title="技术准备"></a>技术准备</h2><ul>
+<li>pyecharts</li>
+<li>Django</li>
+<li>Jquery/JS</li>
+<li>HTML+CSS</li>
+</ul>
+<h2 id="技术实现"><a href="#技术实现" class="headerlink" title="技术实现"></a>技术实现</h2><h3 id="0-明确设计和展示内容"><a href="#0-明确设计和展示内容" class="headerlink" title="0. 明确设计和展示内容"></a>0. 明确设计和展示内容</h3><h3 id="1-Pyecharts制作可视化大屏"><a href="#1-Pyecharts制作可视化大屏" class="headerlink" title="1. Pyecharts制作可视化大屏"></a>1. Pyecharts制作可视化大屏</h3><p>1.1 使用pyecharts.charts.Page生成Demo</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">page.render(<span class="string">r'.\fine_report\templates\test.html'</span>)</span><br><span class="line"><span class="keyword">return</span> render(request, <span class="string">'test.html'</span>, &#123;&#125;)</span><br></pre></td></tr></table></figure>
+<p>1.2 调整布局，保存chart_config.json文件，并利用它生成最终展示页面的静态版本 report.html</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">page.render(<span class="string">r'.\fine_report\templates\test.html'</span>)</span><br><span class="line"><span class="comment"># return render(request, 'test.html', &#123;&#125;)</span></span><br><span class="line"></span><br><span class="line">page.save_resize_html(<span class="string">r'.\fine_report\templates\test.html'</span>, cfg_file=<span class="string">r'.\fine_report\templates\chart_config.json'</span>, dest=<span class="string">r'.\fine_report\templates\report.html'</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">return</span> render(request, <span class="string">'report.html'</span>, &#123;&#125;)</span><br></pre></td></tr></table></figure>
+<ul>
+<li>全文3000字，Pyecharts制作可视化大屏全流程 - 知乎<br><a href="https://zhuanlan.zhihu.com/p/438014813" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/438014813</a></li>
+</ul>
+<h3 id="2-ajax动态刷新数据"><a href="#2-ajax动态刷新数据" class="headerlink" title="2. ajax动态刷新数据"></a>2. ajax动态刷新数据</h3><p>2.1 Django定时任务，定时更新数据库数据</p>
+<p>2.2 修改report.html，添加ajax访问后台刷新数据脚本</p>
+<ul>
+<li>使用Django利用pyecharts进行Ajax异步请求_Alex抱着爆米花的博客-CSDN博客<br><a href="https://blog.csdn.net/qq_41080854/article/details/114639603" target="_blank" rel="noopener">https://blog.csdn.net/qq_41080854/article/details/114639603</a></li>
+</ul>
+]]></content>
+  </entry>
+  <entry>
     <title>元胞自动机与空间演化博弈</title>
     <url>/2019/11/12/%E6%95%B0%E6%A8%A1%EF%BC%9A%E5%85%83%E8%83%9E%E8%87%AA%E5%8A%A8%E6%9C%BA%E4%B8%8E%E7%A9%BA%E9%97%B4%E6%BC%94%E5%8C%96%E5%8D%9A%E5%BC%88/</url>
     <content><![CDATA[<p><img src="/2019/11/12/数模：元胞自动机与空间演化博弈/203.gif">  </p>
@@ -437,349 +631,6 @@ x_{i, j}^{t+1}=f\left(x_{i-1, j}^{t}, x_{i+1, j}^{t} x_{i, j}^{t}, x_{i, j-1}^{t
       </tags>
   </entry>
   <entry>
-    <title>眼动追踪推荐眼镜</title>
-    <url>/2019/09/19/%E7%9C%BC%E5%8A%A8%E8%BF%BD%E8%B8%AA%E6%8E%A8%E8%8D%90%E7%9C%BC%E9%95%9C/</url>
-    <content><![CDATA[<div align="center">
-<img src="/2019/09/19/眼动追踪推荐眼镜/000.png">
-</div>
-
-<a id="more"></a>
-<the rest of contents | 余下全文>
-
-<h1 id="SUMMARY"><a href="#SUMMARY" class="headerlink" title="SUMMARY"></a>SUMMARY</h1><h2 id="WHY"><a href="#WHY" class="headerlink" title="WHY"></a>WHY</h2><p>眼睛是人类面部最为显著的特征之一，眼睛及其运动在用户的认知、兴趣、情绪表达等过程中有着至关重要的作用。  </p>
-<p>眼动追踪技术通过追踪人体眼球运动，来识别用户所处的环境，预测用户的需求及状态，并进行响应，以实现用眼睛控制设备、完成一些操作。</p>
-<p>AR眼镜自诞生起就为人类更加直观地理解眼前的世界提供了诸多便利。结合眼动追踪技术，AR眼镜可以更加了解用户的兴趣点和需求，提供更精准的信息推荐，为用户带来更加自然的交互体验。</p>
-<h2 id="WHAT"><a href="#WHAT" class="headerlink" title="WHAT"></a>WHAT</h2><p>本文涉及一种人眼注视点的实时估计眼镜，该系统通过提取人眼信息，建立人眼与兴趣点映射关系，实现用户关注信息的实时推荐功能。</p>
-<p>本文主要从以下三个方面进行研究：</p>
-<ul>
-<li>首先是人眼关键点的检测问题，通过多级级联的回归树进行眼眶和通孔的检测，得到关键点特征信息；  </li>
-<li>其次是兴趣点的估计问题，通过梯度提升回归算法建立人眼关键点和兴趣点的映射关系；  </li>
-<li>最后是兴趣点处的目标识别问题，通过yolo目标检测网络对检测视野中的待推荐目标，判断兴趣点是否落在识别框中。</li>
-</ul>
-<h2 id="HOW"><a href="#HOW" class="headerlink" title="HOW"></a>HOW</h2><p>step1. 眼镜上部署两个ip摄像头，camera1获取用户视野图像，camera2获取用户眼睛图像，图像实时回传至中央处理器cpu；<br>step2.1 眼动信息处理，提取camera2中用户眼眶和眼球的关键点信息；<br>step2.2 兴趣点估计，由step2中的关键点特征估算camera1中人眼注视点；<br>step3. 用户视野图像目标检测，实时检测camera1中的待推荐目标，记录相应位置信息；<br>step4. 识别与信息推荐，判断step2中计算的兴趣点是否落在step3中计算的识别框中，进行语音信息推荐。</p>
-<div align="center">
-<img src="/2019/09/19/眼动追踪推荐眼镜/detect.gif" width="500" height="150">
-</div>
-
-
-<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><ul>
-<li>一文读懂眼动追踪技术及应用<br><a href="https://mp.weixin.qq.com/s?src=11&amp;timestamp=1569225062&amp;ver=1869&amp;signature=ML2J84rjyrwpwNWYIXxrqaJIq7YZdGRAfzd8*q-v2vtSxIpREhSF0MpcjruTuYEFfgRR15F9IfmkCg1iQ1HY4hZtzFGT3gOF8LGyVoxKTtr89LIuel9h6XbniBG2y-w0&amp;new=1" target="_blank" rel="noopener">https://mp.weixin.qq.com/s?src=11&amp;timestamp=1569225062&amp;ver=1869&amp;signature=ML2J84rjyrwpwNWYIXxrqaJIq7YZdGRAfzd8*q-v2vtSxIpREhSF0MpcjruTuYEFfgRR15F9IfmkCg1iQ1HY4hZtzFGT3gOF8LGyVoxKTtr89LIuel9h6XbniBG2y-w0&amp;new=1</a>   </li>
-</ul>
-<h1 id="眼动追踪推荐眼镜一：硬件篇"><a href="#眼动追踪推荐眼镜一：硬件篇" class="headerlink" title="眼动追踪推荐眼镜一：硬件篇"></a>眼动追踪推荐眼镜一：硬件篇</h1><p>硬件组成部分主要就是眼镜架、摄像头和供电系统。</p>
-<p>可以参考的开源方案有</p>
-<ul>
-<li>Pupil Labs<br><a href="https://pupil-labs.com/" target="_blank" rel="noopener">https://pupil-labs.com/</a></li>
-</ul>
-<p>当前设计使用的是USB摄像头直接连接电脑的方案：240°鱼眼摄像头被固定在眼镜框正前方负责采集用户视野图像，720P摄像头则固定在右前方伸出的支架上负责采集右眼图像，摄像头通过USB与计算机连接完成图像传输。</p>
-<p>以下是对ip摄像头的测试，计划下一步用于眼镜的改进。</p>
-<html>
-<head><meta name="generator" content="Hexo 3.8.0">
-<meta charset="utf-8"> 
-<title>title_test</title> 
-<script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js">
-</script>
-<script>
-$(document).ready(function(){
-    $(document).on('click', '.fold_hider', function(){
-        $('>.fold', this.parentNode).slideToggle();
-        $('>:first', this).toggleClass('open');
-    });
-    $("div.fold").css("display","none");
-});
-</script>
-</head>
-</html>
-
-<h2 id="ip摄像头"><a href="#ip摄像头" class="headerlink" title="ip摄像头"></a>ip摄像头</h2><p>45元的WIFI摄像头模块，能玩出什么花样？ - 知乎<br><a href="https://zhuanlan.zhihu.com/p/60565132" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/60565132</a></p>
-<p>ip摄像头选用ESP32-CAM模块，包括ESP32wifi模块和一个OV2640的200W像素摄像头。</p>
-<h3 id="烧录固件"><a href="#烧录固件" class="headerlink" title="烧录固件"></a>烧录固件</h3><p>硬件连接，注意需要将GPIO0和边上的GND短接进入烧录模式</p>
-<div class="table-container">
-<table>
-<thead>
-<tr>
-<th style="text-align:center">USB-TTL</th>
-<th style="text-align:center">ESP32-CAM</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">3.3V</td>
-<td style="text-align:center">VCC</td>
-</tr>
-<tr>
-<td style="text-align:center">GND</td>
-<td style="text-align:center">GND</td>
-</tr>
-<tr>
-<td style="text-align:center">RX</td>
-<td style="text-align:center">U0T</td>
-</tr>
-<tr>
-<td style="text-align:center">TX</td>
-<td style="text-align:center">U0R</td>
-</tr>
-<tr>
-<td style="text-align:center"></td>
-<td style="text-align:center">IO0和GND短接</td>
-</tr>
-</tbody>
-</table>
-</div>
-<p><img src="/2019/09/19/眼动追踪推荐眼镜/01.jpg"></p>
-<p>烧录工具我们用的是Arduino IDE，首先需要添加ESP32的芯片支持<br>打开首选项，在附加开发板管理器网址里填上：<a href="https://dl.espressif.com/dl/package_esp32_index.json" target="_blank" rel="noopener">https://dl.espressif.com/dl/package_esp32_index.json</a> ，然后单击 好 。<br><img src="/2019/09/19/眼动追踪推荐眼镜/04.png"></p>
-<p>然后在工具里打开开发板管理器，等待索引做完之后找到ESP32并安装。<br><img src="/2019/09/19/眼动追踪推荐眼镜/00.png"></p>
-<p>在github下载示例代码。  </p>
-<ul>
-<li>RuiSantosdotme/arduino-esp32-CameraWebServer: CameraWebServer for ESP32-CAM in Arduino IDE<br><a href="https://github.com/RuiSantosdotme/arduino-esp32-CameraWebServer" target="_blank" rel="noopener">https://github.com/RuiSantosdotme/arduino-esp32-CameraWebServer</a></li>
-</ul>
-<p>打开CameraWebServer.ino文件，进行一些设置<br><figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="comment">// Select camera model</span></span><br><span class="line"><span class="comment">//#define CAMERA_MODEL_WROVER_KIT</span></span><br><span class="line"><span class="comment">//#define CAMERA_MODEL_M5STACK_PSRAM</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> CAMERA_MODEL_AI_THINKER</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">char</span>* ssid = <span class="string">"REPLACE_WITH_YOUR_SSID"</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">char</span>* password = <span class="string">"REPLACE_WITH_YOUR_PASSWORD"</span>;</span><br></pre></td></tr></table></figure></p>
-<p>在开发板里面选对我们需要的开发板和相关设置，然后点击上传就好。</p>
-<p><img src="/2019/09/19/眼动追踪推荐眼镜/02.png"></p>
-<h3 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h3><p>通过浏览器输入ESP32-CAM的IP地址，就能看到设置页面了。</p>
-<p>点击Start Stream就能看到实时影像了。</p>
-<p>通过python脚本读取图像。</p>
-<body>
-<div>
-    <div class="fold_hider">
-        <div class="close hider_title">点击显示/隐藏代码</div>
-    </div>
-    <div class="fold">
-
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2</span><br><span class="line"><span class="keyword">import</span> urllib.request</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">host = <span class="string">"192.168.0.100:81"</span> <span class="comment"># 在这里记得修改ip，否则是无法调用的，刚刚浏览器输入的地址</span></span><br><span class="line">hoststr = <span class="string">'http://'</span> + host + <span class="string">'/stream'</span></span><br><span class="line">print(<span class="string">'Streaming '</span> + hoststr)</span><br><span class="line">print(<span class="string">'Print Esc to quit'</span>)</span><br><span class="line">stream=urllib.request.urlopen(hoststr)</span><br><span class="line">bytes=bytes()</span><br><span class="line"><span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">    bytes+=stream.read(<span class="number">1024</span>)</span><br><span class="line">    a = bytes.find(<span class="string">b'\xff\xd8'</span>)</span><br><span class="line">    b = bytes.find(<span class="string">b'\xff\xd9'</span>)</span><br><span class="line">    i = <span class="number">0</span></span><br><span class="line">    <span class="keyword">if</span> a!=<span class="number">-1</span> <span class="keyword">and</span> b!=<span class="number">-1</span>:</span><br><span class="line">        jpg = bytes[a:b+<span class="number">2</span>]</span><br><span class="line">        bytes= bytes[b+<span class="number">2</span>:]</span><br><span class="line">        <span class="comment">#flags = 1 for color image</span></span><br><span class="line">        <span class="keyword">try</span>:</span><br><span class="line">            i = cv2.imdecode(np.fromstring(jpg, dtype=np.uint8),flags=<span class="number">1</span>)</span><br><span class="line">            <span class="comment"># print i.shape</span></span><br><span class="line">            cv2.imshow(<span class="string">"wjw"</span>,i)</span><br><span class="line">            <span class="keyword">if</span> cv2.waitKey(<span class="number">1</span>) &amp; <span class="number">0xFF</span> == ord(<span class="string">'q'</span>):</span><br><span class="line">                exit(<span class="number">0</span>)</span><br><span class="line">        <span class="keyword">except</span> Exception <span class="keyword">as</span> e:</span><br><span class="line">            print(<span class="string">'保存失败'</span>, e)</span><br></pre></td></tr></table></figure>
-
-</div>
-</div>
-<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"position":"right","width":200,"height":400,"hOffset":50,"vOffset":-95},"mobile":{"show":false},"react":{"opacity":0.7},"log":false});</script></body>
-
-<div align="center">
-<img src="/2019/09/19/眼动追踪推荐眼镜/06.png">
-</div>
-
-
-<h3 id="问题记录"><a href="#问题记录" class="headerlink" title="问题记录"></a>问题记录</h3><ul>
-<li>编译项目报错 “sketch\app_httpd.cpp:23:20: fatal error: dl_lib.h: No such file or directory”</li>
-</ul>
-<p>app_httpd.cpp 中注释相应库<br><figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="comment">//#include "dl_lib.h"</span></span><br></pre></td></tr></table></figure></p>
-<ul>
-<li>编译项目报错 “ “WiFi.h” 对应多个库<br>已使用： C:\Users\Administrator\AppData\Local\Arduino15\packages\esp32\hardware\esp32\1.0.3\libraries\WiFi<br>未使用：H:\Program Files\arduino-1.8.3\libraries\WiFi<br>exit status 1 ”</li>
-</ul>
-<p>移除文件夹 H:\Program Files\arduino-1.8.3\libraries\WiFi</p>
-<ul>
-<li>点击Start Stream没有反应。</li>
-</ul>
-<p><div align="center">
-<img src="/2019/09/19/眼动追踪推荐眼镜/03.png">
-</div><br>使用Chrome浏览器。</p>
-<ul>
-<li>注意供电。</li>
-</ul>
-<h1 id="眼动追踪推荐眼镜二：软件篇"><a href="#眼动追踪推荐眼镜二：软件篇" class="headerlink" title="眼动追踪推荐眼镜二：软件篇"></a>眼动追踪推荐眼镜二：软件篇</h1><p>软件部分主要解决下面三个问题：</p>
-<ul>
-<li>首先是人眼关键点的检测问题，通过多级级联的回归树进行眼眶和通孔的检测，得到关键点特征信息；  </li>
-<li>其次是兴趣点的估计问题，通过梯度提升回归算法建立人眼关键点和兴趣点的映射关系；  </li>
-<li>最后是兴趣点处的目标识别问题，通过yolo目标检测网络对检测视野中的待推荐目标，判断兴趣点是否落在识别框中。</li>
-</ul>
-<h2 id="人眼关键点检测"><a href="#人眼关键点检测" class="headerlink" title="人眼关键点检测"></a>人眼关键点检测</h2><p>首先使用人眼摄像头采集人眼图像数据，然后使用dlib自带的image数据库标注工具制作数据集，最后通过dlib的官方代码训练出模型，并对模型进行测试。</p>
-<p>模型分别对眼眶和眼珠进行识别，并检测它们的位置。</p>
-<ul>
-<li>dlib train_object_detector<br><a href="http://dlib.net/train_object_detector.py.html" target="_blank" rel="noopener">http://dlib.net/train_object_detector.py.html</a></li>
-</ul>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"><span class="keyword">import</span> glob</span><br><span class="line"><span class="keyword">import</span> dlib</span><br><span class="line"></span><br><span class="line">options = dlib.simple_object_detector_training_options()</span><br><span class="line"><span class="comment"># 单个眼睛不是左右对称的</span></span><br><span class="line"><span class="comment"># options.add_left_right_image_flips = True</span></span><br><span class="line"><span class="comment"># 支持向量机的C参数，通常默认取为5.自己适当更改参数以达到最好的效果</span></span><br><span class="line">options.C = <span class="number">5</span></span><br><span class="line"><span class="comment"># 线程数，你电脑有4核的话就填4</span></span><br><span class="line">options.num_threads = <span class="number">4</span></span><br><span class="line">options.be_verbose = <span class="literal">True</span></span><br><span class="line"></span><br><span class="line">training_xml_path = <span class="string">"pupil.xml"</span></span><br><span class="line">dlib.train_simple_object_detector(training_xml_path, <span class="string">"pupil.svm"</span>, options)</span><br><span class="line">print(<span class="string">"Training accuracy: &#123;&#125;"</span>.format(</span><br><span class="line">    dlib.test_simple_object_detector(training_xml_path, <span class="string">"pupil.svm"</span>)))</span><br><span class="line"></span><br><span class="line">training_xml_path = <span class="string">"eye.xml"</span></span><br><span class="line">dlib.train_simple_object_detector(training_xml_path, <span class="string">"eye.svm"</span>, options)</span><br><span class="line">print(<span class="string">"Training accuracy: &#123;&#125;"</span>.format(</span><br><span class="line">    dlib.test_simple_object_detector(training_xml_path, <span class="string">"eye.svm"</span>)))</span><br></pre></td></tr></table></figure>
-<h2 id="兴趣点映射估计"><a href="#兴趣点映射估计" class="headerlink" title="兴趣点映射估计"></a>兴趣点映射估计</h2><p>分别采集人眼图像中眼眶和眼珠的坐标数据和视野图像中目标点的坐标数据，通过sklearn中的梯度提升回归算法建立人眼关键点数据和兴趣点数据的映射关系。  </p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 读取数据</span></span><br><span class="line">point = pd.read_csv(<span class="string">"csv_data/points_p.csv"</span>)</span><br><span class="line">world_x = point[<span class="string">"world_x"</span>]</span><br><span class="line">world_y = point[<span class="string">"world_y"</span>]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 读取数据中的标签列</span></span><br><span class="line">eye = point[[<span class="string">'eye_x'</span>, <span class="string">'eye_y'</span>, <span class="string">'pipil_x'</span>, <span class="string">'pupil_y'</span>, <span class="string">'pupil_w'</span>, <span class="string">'pupil_h'</span>]]</span><br><span class="line">print(eye)</span><br><span class="line"></span><br><span class="line">clf = GBR(max_depth=<span class="number">10</span>)</span><br><span class="line"><span class="comment"># clf = SGDR(loss='huber',penalty='l2',alpha=0.9,max_iter=1000)</span></span><br><span class="line"><span class="comment"># clf = KNeighborsRegressor(n_neighbors=20, weights="distance", algorithm="ball_tree", leaf_size=50)</span></span><br><span class="line"></span><br><span class="line">clf.fit(eye, world_x)</span><br><span class="line">joblib.dump(clf, <span class="string">"model/world_x.pkl"</span>)</span><br><span class="line">print(<span class="string">'得分：'</span>,clf.score(eye, world_x))</span><br><span class="line"></span><br><span class="line">clf.fit(eye, world_y)</span><br><span class="line">joblib.dump(clf, <span class="string">"model/world_y.pkl"</span>)</span><br><span class="line">print(<span class="string">'得分：'</span>,clf.score(eye, world_y))</span><br></pre></td></tr></table></figure>
-<h2 id="目标检测"><a href="#目标检测" class="headerlink" title="目标检测"></a>目标检测</h2><h3 id="yolov3"><a href="#yolov3" class="headerlink" title="yolov3"></a>yolov3</h3><p>制作voc格式数据集，使用keras版本yolov3训练识别模型</p>
-<h3 id="ImageAI"><a href="#ImageAI" class="headerlink" title="ImageAI"></a>ImageAI</h3><p>使用ImageAI提供的方法对视野图像进行目标检测。</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># coding:utf-8</span></span><br><span class="line"><span class="comment">#  imageai下载地址：https://github.com/OlafenwaMoses/ImageAI</span></span><br><span class="line"><span class="comment">#  resnet50_coco_best_v2.1.0.h5 模型下载地址：https://github.com/fizyr/keras-retinanet/releases/</span></span><br><span class="line"><span class="keyword">from</span> imageai.Detection <span class="keyword">import</span> ObjectDetection  <span class="comment"># 导入了 ImageAI 目标检测类</span></span><br><span class="line"><span class="keyword">import</span> cv2</span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line">os.environ[<span class="string">'TF_CPP_MIN_LOG_LEVEL'</span>] = <span class="string">'2'</span></span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">targetDetection</span><span class="params">(imgArray,model_path)</span>:</span></span><br><span class="line">    <span class="string">"""</span></span><br><span class="line"><span class="string">    :param imgArray: 图片数据，类型为ndarray</span></span><br><span class="line"><span class="string">    :param model_path: retinanet模型路径</span></span><br><span class="line"><span class="string">    :return:</span></span><br><span class="line"><span class="string">    """</span></span><br><span class="line">    path = os.path.abspath(model_path)</span><br><span class="line">    detector = ObjectDetection()  <span class="comment"># 定义了目标检测类</span></span><br><span class="line">    detector.setModelTypeAsRetinaNet()  <span class="comment"># 模型的类型设置为 RetinaNet</span></span><br><span class="line">    detector.setModelPath(path)  <span class="comment"># 将模型路径设置为 RetinaNet 模型的路径</span></span><br><span class="line">    detector.loadModel()  <span class="comment"># 模型加载到的目标检测类</span></span><br><span class="line">    <span class="comment"># 调用目标检测函数，解析输入的和输出的图像路径。</span></span><br><span class="line">    detections = detector.detectObjectsFromImage(input_image=imgArray,</span><br><span class="line">                                                 input_type=<span class="string">'array'</span>,output_type=<span class="string">'array'</span>)</span><br><span class="line">    <span class="keyword">return</span> detections</span><br><span class="line"></span><br><span class="line">data = plt.imread(<span class="string">'../img_classify/05-30.jpg'</span>)</span><br><span class="line">model_path = (<span class="string">'../model/resnet50_coco_best_v2.1.0.h5'</span>)</span><br><span class="line">t1 = time.time()</span><br><span class="line">imgInfo = targetDetection(data,model_path)</span><br><span class="line">t2 = time.time()</span><br><span class="line">print(t2-t1)</span><br><span class="line">plt.imshow(imgInfo[<span class="number">0</span>])</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
-<h3 id="dlib（hog-svm）"><a href="#dlib（hog-svm）" class="headerlink" title="dlib（hog+svm）"></a>dlib（hog+svm）</h3><p>首先使用dlib自带的image数据库标注工具制作数据集，然后通过dlib的官方代码对每一个待检测目标依次训练模型，最后将模型合并进行测试。</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">df = pd.DataFrame(</span><br><span class="line">    <span class="number">100</span>*np.ones((<span class="number">6</span>, <span class="number">6</span>)),</span><br><span class="line">    columns=[<span class="string">"name"</span>, <span class="string">"x"</span>, <span class="string">"y"</span>, <span class="string">"w"</span>, <span class="string">"h"</span>, <span class="string">"confidences"</span>],</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">detector1 = dlib.fhog_object_detector(<span class="string">"../model/sz.svm"</span>)</span><br><span class="line">detector2 = dlib.fhog_object_detector(<span class="string">"../model/cz.svm"</span>)</span><br><span class="line">detector3 = dlib.fhog_object_detector(<span class="string">"../model/dp.svm"</span>)</span><br><span class="line">detector4 = dlib.fhog_object_detector(<span class="string">"../model/pb.svm"</span>)</span><br><span class="line">detector5 = dlib.fhog_object_detector(<span class="string">"../model/zb.svm"</span>)</span><br><span class="line">detector6 = dlib.fhog_object_detector(<span class="string">"../model/mf.svm"</span>)</span><br><span class="line"></span><br><span class="line">detectors = [detector1, detector2,detector3, detector4,detector5, detector6]</span><br><span class="line"></span><br><span class="line">[boxes, confidences, detector_idxs] = dlib.fhog_object_detector.run_multiple(detectors, image, upsample_num_times=<span class="number">1</span>, adjust_threshold=<span class="number">0.0</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(len(boxes)):</span><br><span class="line">    <span class="comment"># print("detector &#123;&#125; found box &#123;&#125; with confidence &#123;&#125;.".format(detector_idxs[i], boxes[i], confidences[i]))</span></span><br><span class="line">    df.iloc[i, <span class="number">0</span>] = detector_idxs[i]</span><br><span class="line">    df.iloc[i, <span class="number">1</span>] = boxes[i].left()</span><br><span class="line">    df.iloc[i, <span class="number">2</span>] = boxes[i].top()</span><br><span class="line">    df.iloc[i, <span class="number">3</span>] = boxes[i].right() - boxes[i].left()</span><br><span class="line">    df.iloc[i, <span class="number">4</span>] = boxes[i].bottom() - boxes[i].top()</span><br><span class="line">    df.iloc[i, <span class="number">5</span>] = round(confidences[i], <span class="number">6</span>)</span><br></pre></td></tr></table></figure>
-</the>]]></content>
-  </entry>
-  <entry>
-    <title>那些年做的机器人</title>
-    <url>/2021/02/12/Robot%EF%BC%9A%E9%82%A3%E4%BA%9B%E5%B9%B4%E5%81%9A%E7%9A%84%E6%9C%BA%E5%99%A8%E4%BA%BA/</url>
-    <content><![CDATA[<p>Q: 如何才能有很多作品，参加很多比赛？</p>
-<div align="center">
-<img src="/2021/02/12/Robot：那些年做的机器人/作业检查机器人/002.png" width="700" height="450">
-</div>
-
-<a id="more"></a>
-<the rest of contents | 余下全文>
-
-<h1 id="小派舞蹈机器人"><a href="#小派舞蹈机器人" class="headerlink" title="小派舞蹈机器人"></a>小派舞蹈机器人</h1><p><img src="/2021/02/12/Robot：那些年做的机器人/小派双足机器人\photo01.jpg"></p>
-<p>小pi舞蹈机器人，最初制作是参加2015年的iCAN大赛时，参考了BoB机器人的机械机构设计。</p>
-<p>电路控制部分用的mega2560，挂载啦很多其他功能模块，诸如led、超声波、音乐播放等。</p>
-<p>特别感谢当时的队友杜总小宇洋神，在806一起成长的日子十分难忘。</p>
-<h3 id="模型"><a href="#模型" class="headerlink" title="模型"></a>模型</h3><p>littlePi by Binjun - Thingiverse <a href="https://www.thingiverse.com/thing:1811095" target="_blank" rel="noopener">https://www.thingiverse.com/thing:1811095</a></p>
-<h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><p><a href="https://github.com/leebinjun/littlepi-robot" target="_blank" rel="noopener">https://github.com/leebinjun/littlepi-robot</a></p>
-<h1 id="桌面冰球机器人"><a href="#桌面冰球机器人" class="headerlink" title="桌面冰球机器人"></a>桌面冰球机器人</h1><h2 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h2><ul>
-<li>桌上冰球机器人 opencv3 + arduino mega2560  </li>
-</ul>
-<p><a href="https://blog.csdn.net/x_a_little_story/article/details/88747280" target="_blank" rel="noopener">https://blog.csdn.net/x_a_little_story/article/details/88747280</a></p>
-<p>在闲鱼上面发现这个机器人感觉得很有趣，如果使用强化学习做人机对战是一个很好的项目。<br>查到了资料发现代码模型都很全，就按开源项目的设计和代码在端午小假期DIY了一个。<br>目前还是个人工智障，主要有以下问题待解决：</p>
-<ul>
-<li>笔记本性能不够，帧数最多只到9，反应速度不够快；</li>
-<li>电机没有加Y轴，所以理论上只能防守；</li>
-<li>机械结构上做了一些trick，比如倾斜“场地”和封死机器人的“球门”；</li>
-<li>算法上还是常规几何推理的方法，并没有想好怎么使用RL，大概可以参考一下gym里的breakout？</li>
-</ul>
-<h2 id="Demo"><a href="#Demo" class="headerlink" title="Demo"></a>Demo</h2><div align="center">
-<img src="/2021/02/12/Robot：那些年做的机器人/桌面冰球机器人\001.gif" width="600" height="350">
-</div>
-
-<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><p>感谢故里草木深和JJulio两位前辈提供的资料。  </p>
-<ul>
-<li>桌上冰球机器人 opencv3 + arduino mega2560  </li>
-</ul>
-<p><a href="https://blog.csdn.net/x_a_little_story/article/details/88747280" target="_blank" rel="noopener">https://blog.csdn.net/x_a_little_story/article/details/88747280</a></p>
-<ul>
-<li>JJulio/AHRobot: Air Hockey Robot Project  </li>
-</ul>
-<p><a href="https://github.com/JJulio/AHRobot" target="_blank" rel="noopener">https://github.com/JJulio/AHRobot</a></p>
-<h1 id="loomo多服务机器人"><a href="#loomo多服务机器人" class="headerlink" title="loomo多服务机器人"></a>loomo多服务机器人</h1><h2 id="设计思路"><a href="#设计思路" class="headerlink" title="设计思路"></a>设计思路</h2><p><img src="/2021/02/12/Robot：那些年做的机器人/loomo多服务机器人开发\设计思路-201905.png" width="600" height="300"></p>
-<h2 id="一些资料"><a href="#一些资料" class="headerlink" title="一些资料"></a>一些资料</h2><ul>
-<li>机器人 · 3D打印的假肢，像真手一样听你指挥！<br><a href="https://mp.weixin.qq.com/s/qumdZIXXGmF-blSeHLu1tw" target="_blank" rel="noopener">https://mp.weixin.qq.com/s/qumdZIXXGmF-blSeHLu1tw</a></li>
-</ul>
-<h1 id="100以内加减法（小学二年级）算数机器人"><a href="#100以内加减法（小学二年级）算数机器人" class="headerlink" title="100以内加减法（小学二年级）算数机器人"></a>100以内加减法（小学二年级）算数机器人</h1><h2 id="当前的功能"><a href="#当前的功能" class="headerlink" title="当前的功能"></a>当前的功能</h2><p>拍一张答题纸，画四个点，透射变换为标准尺寸后进行算式分割，对每张算式图片检测识别数字后进行计算，并打印结果;<br>手指指到相应算式下方，语音播报该计算结果。</p>
-<h2 id="待解决的问题"><a href="#待解决的问题" class="headerlink" title="待解决的问题"></a>待解决的问题</h2><ul>
-<li>阴影下识别出错</li>
-</ul>
-<h2 id="接下来的工作"><a href="#接下来的工作" class="headerlink" title="接下来的工作"></a>接下来的工作</h2><ul>
-<li>写字机器人接入?</li>
-<li>更复杂的算式？</li>
-</ul>
-<h2 id="Demo-1"><a href="#Demo-1" class="headerlink" title="Demo"></a>Demo</h2><div align="center">
-<iframe height="498" width="510" src="http://player.youku.com/embed/XNDIyNzA4NDM0MA==">
-</iframe>
-</div>
-
-<ul>
-<li>算数-其他-高清完整正版视频在线观看-优酷  </li>
-</ul>
-<p><a href="https://v.youku.com/v_show/id_XNDIyNzA4NDM0MA==.html" target="_blank" rel="noopener">https://v.youku.com/v_show/id_XNDIyNzA4NDM0MA==.html</a></p>
-<h2 id="愉快地一天"><a href="#愉快地一天" class="headerlink" title="愉快地一天"></a>愉快地一天</h2><p>Q: 如何才能有很多作品，参加很多比赛？</p>
-<div align="center">
-<img src="/2021/02/12/Robot：那些年做的机器人/作业检查机器人/002.png" width="700" height="450">
-</div>
-
-
-<h1 id="简单手势分类器"><a href="#简单手势分类器" class="headerlink" title="简单手势分类器"></a>简单手势分类器</h1><p>树莓派+摄像头作为一个视觉传感器，串口实时返回手势分类结果。</p>
-<h2 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h2><h3 id="安装tensorflow"><a href="#安装tensorflow" class="headerlink" title="安装tensorflow"></a>安装tensorflow</h3><p>维护树莓派交叉编译版本的github项目</p>
-<ul>
-<li>samjabrahams/tensorflow-on-raspberry-pi: TensorFlow for Raspberry Pi<br><a href="https://github.com/samjabrahams/tensorflow-on-raspberry-pi" target="_blank" rel="noopener">https://github.com/samjabrahams/tensorflow-on-raspberry-pi</a><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo apt install libatlas-base-dev</span><br><span class="line">pip3 install tensorflow</span><br><span class="line">``` </span><br><span class="line">安装旧版本</span><br><span class="line">``` bash </span><br><span class="line">$ wget https://github.com/samjabrahams/tensorflow-on-raspberry-pi/releases/download/v0.11.0/tensorflow-0.11.0-py3-none-any.whl</span><br><span class="line">$ sudo pip3 install tensorflow-0.11.0-py3-none-any.whl</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<h3 id="安装serial"><a href="#安装serial" class="headerlink" title="安装serial"></a>安装serial</h3><p>安装串口模块<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ sudo apt-get install python-serial</span><br><span class="line">$ pip install serial</span><br><span class="line">$ pip install pyserial</span><br></pre></td></tr></table></figure></p>
-<p>如果需要指定位置<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ sudo pip install --target=/usr/<span class="built_in">local</span>/lib/python3.5/dist-packages pyserial</span><br></pre></td></tr></table></figure></p>
-<h3 id="一些包"><a href="#一些包" class="headerlink" title="一些包"></a>一些包</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">pip install pillow</span><br><span class="line">pip install matplotlib</span><br></pre></td></tr></table></figure>
-<h2 id="数据处理"><a href="#数据处理" class="headerlink" title="数据处理"></a>数据处理</h2><p>使用OpenCV的BackgroundSubtractor类，分割前景和背景，获得手势灰度图<br><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">camera = cv2.VideoCapture(<span class="number">0</span>) <span class="comment"># 参数0表示第一个摄像头</span></span><br><span class="line">bs = cv2.createBackgroundSubtractorKNN(detectShadows=<span class="literal">True</span>)</span><br><span class="line">es = cv2.getStructuringElement(cv2.MORPH_ELLIPSE, (<span class="number">3</span>, <span class="number">3</span>))</span><br><span class="line"><span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">    grabbed, frame_lwpCV = camera.read()</span><br><span class="line">    fgmask = bs.apply(frame_lwpCV) <span class="comment"># 背景分割器，该函数计算了前景掩码</span></span><br><span class="line">    <span class="comment"># 二值化阈值处理，前景掩码含有前景的白色值以及阴影的灰色值，在阈值化图像中，将非纯白色（244~255）的所有像素都设为0，而不是255</span></span><br><span class="line">    th = cv2.threshold(fgmask.copy(), <span class="number">244</span>, <span class="number">255</span>, cv2.THRESH_BINARY)[<span class="number">1</span>]</span><br><span class="line">    <span class="comment"># 下面就跟基本运动检测中方法相同，识别目标，检测轮廓，在原始帧上绘制检测结果</span></span><br><span class="line">    dilated = cv2.dilate(th, es, iterations=<span class="number">2</span>) <span class="comment"># 形态学膨胀</span></span><br><span class="line">    image, contours, hierarchy = cv2.findContours(dilated, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE) <span class="comment"># 该函数计算一幅图像中目标的轮廓</span></span><br><span class="line">    <span class="comment"># rasp</span></span><br><span class="line">    <span class="comment"># contours, hierarchy = cv2.findContours(dilated, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE) # 该函数计算一幅图像中目标的轮廓</span></span><br><span class="line">    <span class="keyword">for</span> c <span class="keyword">in</span> contours:</span><br><span class="line">        <span class="keyword">if</span> cv2.contourArea(c) &gt; <span class="number">2000</span>: <span class="comment">#1600:</span></span><br><span class="line">            (x, y, w, h) = cv2.boundingRect(c)</span><br><span class="line">            cv2.rectangle(frame_lwpCV, (x, y), (x + w, y + h), (<span class="number">255</span>, <span class="number">255</span>, <span class="number">0</span>), <span class="number">2</span>)</span><br><span class="line">    cv2.imshow(<span class="string">'detection'</span>, frame_lwpCV)</span><br><span class="line">    <span class="comment"># 按'q'健退出循环</span></span><br><span class="line"><span class="comment"># When everything done, release the capture</span></span><br></pre></td></tr></table></figure></p>
-<h2 id="模型和训练"><a href="#模型和训练" class="headerlink" title="模型和训练"></a>模型和训练</h2><p>通过一个小的卷积网络来实现分类，两层卷积+两层全连接<br><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">model</span><span class="params">(x, keep_prob)</span>:</span></span><br><span class="line">    <span class="string">'''Build the classify model</span></span><br><span class="line"><span class="string">    Args:</span></span><br><span class="line"><span class="string">      x: Input, tf.placeholder, the dimension is [-1, 784]</span></span><br><span class="line"><span class="string">      keep_prob: </span></span><br><span class="line"><span class="string">    Returns:</span></span><br><span class="line"><span class="string">      y: Classification probability</span></span><br><span class="line"><span class="string">    '''</span></span><br><span class="line">    x_image = tf.reshape(x, [<span class="number">-1</span>, w, h, <span class="number">1</span>])</span><br><span class="line">    <span class="comment"># Conv1</span></span><br><span class="line">    <span class="keyword">with</span> tf.name_scope(<span class="string">'conv1'</span>):</span><br><span class="line">        W_conv1 = weight_variable([<span class="number">3</span>, <span class="number">3</span>, <span class="number">1</span>, <span class="number">16</span>], name=<span class="string">"weight"</span>)</span><br><span class="line">        b_conv1 = bias_variable([<span class="number">16</span>], name=<span class="string">'bias'</span>)</span><br><span class="line">        h_conv1 = tf.nn.relu(tf.nn.conv2d(x_image, W_conv1, strides=[<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>], padding=<span class="string">"SAME"</span>, name=<span class="string">'conv'</span>)+ b_conv1)</span><br><span class="line">        h_pool1 = tf.nn.max_pool(h_conv1, ksize=[<span class="number">1</span>,<span class="number">2</span>,<span class="number">2</span>,<span class="number">1</span>], strides=[<span class="number">1</span>,<span class="number">2</span>,<span class="number">2</span>,<span class="number">1</span>], padding=<span class="string">"SAME"</span>, name=<span class="string">"pool"</span>)</span><br><span class="line">    <span class="comment"># Conv2</span></span><br><span class="line">    <span class="keyword">with</span> tf.name_scope(<span class="string">'conv2'</span>):</span><br><span class="line">        W_conv2 = weight_variable([<span class="number">3</span>, <span class="number">3</span>, <span class="number">16</span>, <span class="number">32</span>], name=<span class="string">"weight"</span>)</span><br><span class="line">        b_conv2 = bias_variable([<span class="number">32</span>], name=<span class="string">'bias'</span>)</span><br><span class="line">        h_conv2 = tf.nn.relu(tf.nn.conv2d(h_pool1, W_conv2, strides=[<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>], padding=<span class="string">"SAME"</span>, name=<span class="string">'conv'</span>)+ b_conv2)</span><br><span class="line">        h_pool2 = tf.nn.max_pool(h_conv2, ksize=[<span class="number">1</span>,<span class="number">2</span>,<span class="number">2</span>,<span class="number">1</span>], strides=[<span class="number">1</span>,<span class="number">2</span>,<span class="number">2</span>,<span class="number">1</span>], padding=<span class="string">"SAME"</span>, name=<span class="string">"pool"</span>)</span><br><span class="line">    <span class="comment"># fc1</span></span><br><span class="line">    <span class="keyword">with</span> tf.name_scope(<span class="string">'fc1'</span>):</span><br><span class="line">        W_fc1 = weight_variable([<span class="number">7</span>*<span class="number">7</span>*<span class="number">32</span>, <span class="number">256</span>], name=<span class="string">"weight"</span>)</span><br><span class="line">        b_fc1 = bias_variable([<span class="number">256</span>], name=<span class="string">'bias'</span>)</span><br><span class="line">        h_pool2_flat = tf.reshape(h_pool2, [<span class="number">-1</span>, <span class="number">7</span>*<span class="number">7</span>*<span class="number">32</span>])</span><br><span class="line">        h_fc1 = tf.nn.relu(tf.matmul(h_pool2_flat, W_fc1)+b_fc1)</span><br><span class="line">    <span class="comment"># Dropout</span></span><br><span class="line">    h_fc1_drop = tf.nn.dropout(h_fc1, keep_prob)</span><br><span class="line">    <span class="comment"># fc2</span></span><br><span class="line">    <span class="keyword">with</span> tf.name_scope(<span class="string">'fc2'</span>):</span><br><span class="line">        W_fc2 = weight_variable([<span class="number">256</span>, <span class="number">4</span>], name=<span class="string">"weight"</span>)</span><br><span class="line">        b_fc2 = bias_variable([<span class="number">4</span>], name=<span class="string">'bias'</span>)</span><br><span class="line">        y = tf.nn.softmax(tf.matmul(h_fc1_drop, W_fc2)+b_fc2, name=<span class="string">"output"</span>)</span><br><span class="line">    <span class="keyword">return</span> y</span><br></pre></td></tr></table></figure></p>
-<h2 id="HC-05蓝牙串口"><a href="#HC-05蓝牙串口" class="headerlink" title="HC-05蓝牙串口"></a>HC-05蓝牙串口</h2><h3 id="蓝牙配对"><a href="#蓝牙配对" class="headerlink" title="蓝牙配对"></a>蓝牙配对</h3><p>连接(rt反接)</p>
-<ul>
-<li>usb-ttl ————— bluetooth</li>
-<li>RXD &nbsp;&nbsp;&nbsp;&nbsp;————— TXD</li>
-<li>TXD &nbsp;&nbsp;&nbsp;&nbsp;————— RXD</li>
-</ul>
-<p>按住复位键插USB，进入AT模式<br>打开串口助手，设置波特率38400，数据位8位，停止位1位，无校验位，加回车换行(发送消息包含换行符)<br>修改名称<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">→ AT+ NAME=xxx</span><br><span class="line">→ AT+ NAME?</span><br></pre></td></tr></table></figure></p>
-<p>设置蓝牙密码，注意两块蓝牙的密码都要一样<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">→ AT+ PSWD=1234</span><br><span class="line">→ AT+ PSWD?</span><br></pre></td></tr></table></figure></p>
-<p>设置主从模式<br>串口调试助手A，将蓝牙A配置为主机模式<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">→ AT+ ROLE=1</span><br><span class="line">→ AT+ ROLE?</span><br></pre></td></tr></table></figure></p>
-<p>串口调试助手B，将蓝牙B配置为从机模式<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">→ AT+ ROLE=0</span><br></pre></td></tr></table></figure></p>
-<p>设置波特率9600，无校验位，1停止位<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">→ AT+ UART:9600,0,0</span><br><span class="line">→ AT+ UART?</span><br></pre></td></tr></table></figure></p>
-<p>设置连接模式<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">→ AT+ CMODE=0</span><br><span class="line">→ AT+ CMODE?</span><br></pre></td></tr></table></figure></p>
-<p>查询蓝牙地址，并相互绑定，注意把地址的冒号换成逗号<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">→ AT+ ADDR?</span><br><span class="line">→ AT+ BIND=98d3,32,307440</span><br></pre></td></tr></table></figure></p>
-<h2 id="结果"><a href="#结果" class="headerlink" title="结果"></a>结果</h2><p>查看端口<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ ls /dev/tty*</span><br></pre></td></tr></table></figure></p>
-<p>运行<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ python run.py --serial /dev/ttyUSB0</span><br></pre></td></tr></table></figure></p>
-<p><img src="/2021/02/12/Robot：那些年做的机器人/简单手势分类器\02.png" width="600" height="300"><br><img src="/2021/02/12/Robot：那些年做的机器人/简单手势分类器\01.png" width="600" height="300"></p>
-<h2 id="参考博客"><a href="#参考博客" class="headerlink" title="参考博客"></a>参考博客</h2><ul>
-<li>【Python+OpenCV】目标跟踪-背景分割器：KNN、MOG2和GMG - CSDN博客<br><a href="https://blog.csdn.net/lwplwf/article/details/73551648" target="_blank" rel="noopener">https://blog.csdn.net/lwplwf/article/details/73551648</a></li>
-<li>Tensorflow+树莓派，自制“猜拳神器” - Lauyeed的博客 - CSDN博客<br><a href="https://blog.csdn.net/Lauyeed/article/details/79345685" target="_blank" rel="noopener">https://blog.csdn.net/Lauyeed/article/details/79345685</a></li>
-<li>蓝牙模块HC-05使用说明_图文_百度文库<br><a href="http://wenku.baidu.com/link?url=tDhQ1eN2RBFS4-iA9dFZuuYUUb21nx3ZpahLARbDaesVM0HkHMeiLc0NzfR7W6NVqc5F57p0x8t6c_3T3JN4ne9NCEB540mwEYV5kLpFSfq" target="_blank" rel="noopener">http://wenku.baidu.com/link?url=tDhQ1eN2RBFS4-iA9dFZuuYUUb21nx3ZpahLARbDaesVM0HkHMeiLc0NzfR7W6NVqc5F57p0x8t6c_3T3JN4ne9NCEB540mwEYV5kLpFSfq</a></li>
-<li>AttributeError: module ‘serial’ has no attribute ‘Serial’ - m0_37827405的博客 - CSDN博客<br><a href="https://blog.csdn.net/m0_37827405/article/details/80879678" target="_blank" rel="noopener">https://blog.csdn.net/m0_37827405/article/details/80879678</a></li>
-</ul>
-<h1 id="果实采摘机器人"><a href="#果实采摘机器人" class="headerlink" title="果实采摘机器人"></a>果实采摘机器人</h1><h1 id="解魔方机器人"><a href="#解魔方机器人" class="headerlink" title="解魔方机器人"></a>解魔方机器人</h1></the>]]></content>
-      <tags>
-        <tag>raspberry</tag>
-        <tag>stm32</tag>
-        <tag>Arduino</tag>
-        <tag>robot</tag>
-        <tag>loomo</tag>
-        <tag>openCV</tag>
-        <tag>机械手</tag>
-        <tag>tf</tag>
-        <tag>python</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>FDM3D打印电吉他琴体，制作电吉他</title>
-    <url>/2022/06/24/%E6%97%A5%E5%B8%B8%EF%BC%9AFDM3D%E6%89%93%E5%8D%B0%E7%94%B5%E5%90%89%E4%BB%96%E7%90%B4%E4%BD%93%EF%BC%8C%E5%88%B6%E4%BD%9C%E7%94%B5%E5%90%89%E4%BB%96/</url>
-    <content><![CDATA[<!-- ** FDM3D打印电吉他琴体，制作电吉他 ** <Excerpt in index | 首页摘要> -->
-<p>记录一把电吉他的制作：琴体部分完全采用FDM3D打印制作<br>多图预警</p>
-<h2 id="展示"><a href="#展示" class="headerlink" title="展示"></a>展示</h2><p><img alt="00" src="/2022/06/24/日常：FDM3D打印电吉他琴体，制作电吉他/00.jpg" width="400">  </p>
-<a id="more"></a>
-<the rest of contents | 余下全文>
-
-<h2 id="模型"><a href="#模型" class="headerlink" title="模型"></a>模型</h2><ul>
-<li>Stratocaster/Les Paul Hybrid Guitar by TheWhaleBiologist - Thingiverse<br><a href="https://www.thingiverse.com/thing:352349" target="_blank" rel="noopener">https://www.thingiverse.com/thing:352349</a></li>
-</ul>
-<p>TheWhaleBiologist大神的模型是一个琴体整体，并提供了可使用Inventor修改的.ipt原始文件。<br>我在琴体模型上添加了自己的logo，并将整个模型切分成22个小块，便于使用不同颜色进行打印。</p>
-<ul>
-<li>Guitar by Binjun - Thingiverse<br><a href="https://www.thingiverse.com/thing:3709391" target="_blank" rel="noopener">https://www.thingiverse.com/thing:3709391</a></li>
-</ul>
-<p><img alt="01" src="/2022/06/24/日常：FDM3D打印电吉他琴体，制作电吉他/01.jpg" width="400">  </p>
-<h2 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h2><p><img alt="02" src="/2022/06/24/日常：FDM3D打印电吉他琴体，制作电吉他/02.jpg" width="400">  </p>
-<p>除了琴体外，还需要购买电吉他的其他配件。在某宝上可以购买到整套电吉他的DIY组装材料，主要包括：  </p>
-<ul>
-<li>琴颈</li>
-<li>弦准</li>
-<li>压弦扣</li>
-<li>琴弦</li>
-<li>连接加强板</li>
-<li>下驹后盖板</li>
-<li>尾钉</li>
-<li>护板</li>
-<li>琴码</li>
-<li>拾音器等电子配件</li>
-</ul>
-<p><img alt="03" src="/2022/06/24/日常：FDM3D打印电吉他琴体，制作电吉他/03.jpg" width="400">  </p>
-<p>工具准备</p>
-<ul>
-<li>手钻</li>
-<li>胶水(502、AB胶、亚克力胶水)</li>
-<li>打磨工具（锉刀、剪刀、美工刀）</li>
-<li>螺丝刀</li>
-</ul>
-<h2 id="组装"><a href="#组装" class="headerlink" title="组装"></a>组装</h2><p>1.用胶水和剪刀将3D打印出来的塑料小块进行粘贴拼接，完成琴体的制作。</p>
-<p><img alt="04" src="/2022/06/24/日常：FDM3D打印电吉他琴体，制作电吉他/04.jpg" width="400">  </p>
-<p>2.在上弦枕底部涂抹胶水粘在指板的开槽处。<br>3.组装弦准，在琴头上打孔安装旋钮和压弦扣。</p>
-<p><img alt="05" src="/2022/06/24/日常：FDM3D打印电吉他琴体，制作电吉他/05.jpg" width="400">  </p>
-<p>4.连接琴柄和3D打印琴体，调整好琴柄和琴体开槽处的尺寸和高度，根据加强板螺丝孔的位置开孔，用螺丝将琴柄、琴身和加强板连在一起。</p>
-<p><img alt="06" src="/2022/06/24/日常：FDM3D打印电吉他琴体，制作电吉他/06.jpg" width="400">  </p>
-<p>5.将电路部分连接好，预留接地线和音频输出线，安装护板。</p>
-<p><img alt="07" src="/2022/06/24/日常：FDM3D打印电吉他琴体，制作电吉他/07.jpg" width="400"></p>
-<p>6.安装琴码。  </p>
-<p><img alt="08" src="/2022/06/24/日常：FDM3D打印电吉他琴体，制作电吉他/08.jpg" width="400"> </p>
-<p>7.焊接插座线，安装插座片。  </p>
-<p><img alt="09" src="/2022/06/24/日常：FDM3D打印电吉他琴体，制作电吉他/09.jpg" width="400">  </p>
-<p><img alt="10" src="/2022/06/24/日常：FDM3D打印电吉他琴体，制作电吉他/10.jpg" width="400">  </p>
-<p>8.安装下驹在琴体背面的部件，焊接好接地线并固定好弹簧。</p>
-<p><img alt="11" src="/2022/06/24/日常：FDM3D打印电吉他琴体，制作电吉他/11.jpg" width="400">  </p>
-<p><img alt="12" src="/2022/06/24/日常：FDM3D打印电吉他琴体，制作电吉他/12.jpg" width="400">  </p>
-<p>9.安装琴弦并调音，摇把只是摆设可以不装。</p>
-<p><img alt="13" src="/2022/06/24/日常：FDM3D打印电吉他琴体，制作电吉他/13.jpg" width="400">  </p>
-<p>10.买个琴箱，完成。</p>
-<p><img alt="14" src="/2022/06/24/日常：FDM3D打印电吉他琴体，制作电吉他/14.jpg" width="400">  </p>
-<h2 id="一些乐理知识"><a href="#一些乐理知识" class="headerlink" title="一些乐理知识"></a>一些乐理知识</h2><h3 id="有效弦长-Scale-Length"><a href="#有效弦长-Scale-Length" class="headerlink" title="有效弦长 Scale Length"></a>有效弦长 Scale Length</h3><p>有效弦长是弦枕与第12品之间长度的二倍，这段长度也正好是一个八度的音程，琴桥的位置也由此确定，即琴桥必须调整到一个正确的位置，让这把琴得到一个正确的有效弦长。</p>
-<h3 id="电吉他LP型和ST型"><a href="#电吉他LP型和ST型" class="headerlink" title="电吉他LP型和ST型"></a>电吉他LP型和ST型</h3><p>所以为什么用LP的琴体配上ST的琴颈呢？因为当时还不知道这些。</p>
-<h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><ul>
-<li>3D打印电吉他 撩妹技能Get起来！|3D学堂|3D虎<br><a href="http://www.3dhoo.com/news/xuetang/39430.html" target="_blank" rel="noopener">http://www.3dhoo.com/news/xuetang/39430.html</a></li>
-</ul>
-</the>]]></content>
-      <tags>
-        <tag>3D打印</tag>
-        <tag>吉他</tag>
-        <tag>随笔</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>机器博弈平台</title>
     <url>/2019/05/05/%E6%9C%BA%E5%99%A8%E5%8D%9A%E5%BC%88%E5%B9%B3%E5%8F%B0/</url>
     <content><![CDATA[<div align="center">
@@ -1017,6 +868,235 @@ $(document).ready(function(){
       <tags>
         <tag>机器博弈</tag>
         <tag>alphazero</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>眼动追踪推荐眼镜</title>
+    <url>/2019/09/19/%E7%9C%BC%E5%8A%A8%E8%BF%BD%E8%B8%AA%E6%8E%A8%E8%8D%90%E7%9C%BC%E9%95%9C/</url>
+    <content><![CDATA[<div align="center">
+<img src="/2019/09/19/眼动追踪推荐眼镜/000.png">
+</div>
+
+<a id="more"></a>
+<the rest of contents | 余下全文>
+
+<h1 id="SUMMARY"><a href="#SUMMARY" class="headerlink" title="SUMMARY"></a>SUMMARY</h1><h2 id="WHY"><a href="#WHY" class="headerlink" title="WHY"></a>WHY</h2><p>眼睛是人类面部最为显著的特征之一，眼睛及其运动在用户的认知、兴趣、情绪表达等过程中有着至关重要的作用。  </p>
+<p>眼动追踪技术通过追踪人体眼球运动，来识别用户所处的环境，预测用户的需求及状态，并进行响应，以实现用眼睛控制设备、完成一些操作。</p>
+<p>AR眼镜自诞生起就为人类更加直观地理解眼前的世界提供了诸多便利。结合眼动追踪技术，AR眼镜可以更加了解用户的兴趣点和需求，提供更精准的信息推荐，为用户带来更加自然的交互体验。</p>
+<h2 id="WHAT"><a href="#WHAT" class="headerlink" title="WHAT"></a>WHAT</h2><p>本文涉及一种人眼注视点的实时估计眼镜，该系统通过提取人眼信息，建立人眼与兴趣点映射关系，实现用户关注信息的实时推荐功能。</p>
+<p>本文主要从以下三个方面进行研究：</p>
+<ul>
+<li>首先是人眼关键点的检测问题，通过多级级联的回归树进行眼眶和通孔的检测，得到关键点特征信息；  </li>
+<li>其次是兴趣点的估计问题，通过梯度提升回归算法建立人眼关键点和兴趣点的映射关系；  </li>
+<li>最后是兴趣点处的目标识别问题，通过yolo目标检测网络对检测视野中的待推荐目标，判断兴趣点是否落在识别框中。</li>
+</ul>
+<h2 id="HOW"><a href="#HOW" class="headerlink" title="HOW"></a>HOW</h2><p>step1. 眼镜上部署两个ip摄像头，camera1获取用户视野图像，camera2获取用户眼睛图像，图像实时回传至中央处理器cpu；<br>step2.1 眼动信息处理，提取camera2中用户眼眶和眼球的关键点信息；<br>step2.2 兴趣点估计，由step2中的关键点特征估算camera1中人眼注视点；<br>step3. 用户视野图像目标检测，实时检测camera1中的待推荐目标，记录相应位置信息；<br>step4. 识别与信息推荐，判断step2中计算的兴趣点是否落在step3中计算的识别框中，进行语音信息推荐。</p>
+<div align="center">
+<img src="/2019/09/19/眼动追踪推荐眼镜/detect.gif" width="500" height="150">
+</div>
+
+
+<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><ul>
+<li>一文读懂眼动追踪技术及应用<br><a href="https://mp.weixin.qq.com/s?src=11&amp;timestamp=1569225062&amp;ver=1869&amp;signature=ML2J84rjyrwpwNWYIXxrqaJIq7YZdGRAfzd8*q-v2vtSxIpREhSF0MpcjruTuYEFfgRR15F9IfmkCg1iQ1HY4hZtzFGT3gOF8LGyVoxKTtr89LIuel9h6XbniBG2y-w0&amp;new=1" target="_blank" rel="noopener">https://mp.weixin.qq.com/s?src=11&amp;timestamp=1569225062&amp;ver=1869&amp;signature=ML2J84rjyrwpwNWYIXxrqaJIq7YZdGRAfzd8*q-v2vtSxIpREhSF0MpcjruTuYEFfgRR15F9IfmkCg1iQ1HY4hZtzFGT3gOF8LGyVoxKTtr89LIuel9h6XbniBG2y-w0&amp;new=1</a>   </li>
+</ul>
+<h1 id="眼动追踪推荐眼镜一：硬件篇"><a href="#眼动追踪推荐眼镜一：硬件篇" class="headerlink" title="眼动追踪推荐眼镜一：硬件篇"></a>眼动追踪推荐眼镜一：硬件篇</h1><p>硬件组成部分主要就是眼镜架、摄像头和供电系统。</p>
+<p>可以参考的开源方案有</p>
+<ul>
+<li>Pupil Labs<br><a href="https://pupil-labs.com/" target="_blank" rel="noopener">https://pupil-labs.com/</a></li>
+</ul>
+<p>当前设计使用的是USB摄像头直接连接电脑的方案：240°鱼眼摄像头被固定在眼镜框正前方负责采集用户视野图像，720P摄像头则固定在右前方伸出的支架上负责采集右眼图像，摄像头通过USB与计算机连接完成图像传输。</p>
+<p>以下是对ip摄像头的测试，计划下一步用于眼镜的改进。</p>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+<meta charset="utf-8"> 
+<title>title_test</title> 
+<script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js">
+</script>
+<script>
+$(document).ready(function(){
+    $(document).on('click', '.fold_hider', function(){
+        $('>.fold', this.parentNode).slideToggle();
+        $('>:first', this).toggleClass('open');
+    });
+    $("div.fold").css("display","none");
+});
+</script>
+</head>
+</html>
+
+<h2 id="ip摄像头"><a href="#ip摄像头" class="headerlink" title="ip摄像头"></a>ip摄像头</h2><p>45元的WIFI摄像头模块，能玩出什么花样？ - 知乎<br><a href="https://zhuanlan.zhihu.com/p/60565132" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/60565132</a></p>
+<p>ip摄像头选用ESP32-CAM模块，包括ESP32wifi模块和一个OV2640的200W像素摄像头。</p>
+<h3 id="烧录固件"><a href="#烧录固件" class="headerlink" title="烧录固件"></a>烧录固件</h3><p>硬件连接，注意需要将GPIO0和边上的GND短接进入烧录模式</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">USB-TTL</th>
+<th style="text-align:center">ESP32-CAM</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">3.3V</td>
+<td style="text-align:center">VCC</td>
+</tr>
+<tr>
+<td style="text-align:center">GND</td>
+<td style="text-align:center">GND</td>
+</tr>
+<tr>
+<td style="text-align:center">RX</td>
+<td style="text-align:center">U0T</td>
+</tr>
+<tr>
+<td style="text-align:center">TX</td>
+<td style="text-align:center">U0R</td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center">IO0和GND短接</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><img src="/2019/09/19/眼动追踪推荐眼镜/01.jpg"></p>
+<p>烧录工具我们用的是Arduino IDE，首先需要添加ESP32的芯片支持<br>打开首选项，在附加开发板管理器网址里填上：<a href="https://dl.espressif.com/dl/package_esp32_index.json" target="_blank" rel="noopener">https://dl.espressif.com/dl/package_esp32_index.json</a> ，然后单击 好 。<br><img src="/2019/09/19/眼动追踪推荐眼镜/04.png"></p>
+<p>然后在工具里打开开发板管理器，等待索引做完之后找到ESP32并安装。<br><img src="/2019/09/19/眼动追踪推荐眼镜/00.png"></p>
+<p>在github下载示例代码。  </p>
+<ul>
+<li>RuiSantosdotme/arduino-esp32-CameraWebServer: CameraWebServer for ESP32-CAM in Arduino IDE<br><a href="https://github.com/RuiSantosdotme/arduino-esp32-CameraWebServer" target="_blank" rel="noopener">https://github.com/RuiSantosdotme/arduino-esp32-CameraWebServer</a></li>
+</ul>
+<p>打开CameraWebServer.ino文件，进行一些设置<br><figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="comment">// Select camera model</span></span><br><span class="line"><span class="comment">//#define CAMERA_MODEL_WROVER_KIT</span></span><br><span class="line"><span class="comment">//#define CAMERA_MODEL_M5STACK_PSRAM</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> CAMERA_MODEL_AI_THINKER</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">char</span>* ssid = <span class="string">"REPLACE_WITH_YOUR_SSID"</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">char</span>* password = <span class="string">"REPLACE_WITH_YOUR_PASSWORD"</span>;</span><br></pre></td></tr></table></figure></p>
+<p>在开发板里面选对我们需要的开发板和相关设置，然后点击上传就好。</p>
+<p><img src="/2019/09/19/眼动追踪推荐眼镜/02.png"></p>
+<h3 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h3><p>通过浏览器输入ESP32-CAM的IP地址，就能看到设置页面了。</p>
+<p>点击Start Stream就能看到实时影像了。</p>
+<p>通过python脚本读取图像。</p>
+<body>
+<div>
+    <div class="fold_hider">
+        <div class="close hider_title">点击显示/隐藏代码</div>
+    </div>
+    <div class="fold">
+
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2</span><br><span class="line"><span class="keyword">import</span> urllib.request</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">host = <span class="string">"192.168.0.100:81"</span> <span class="comment"># 在这里记得修改ip，否则是无法调用的，刚刚浏览器输入的地址</span></span><br><span class="line">hoststr = <span class="string">'http://'</span> + host + <span class="string">'/stream'</span></span><br><span class="line">print(<span class="string">'Streaming '</span> + hoststr)</span><br><span class="line">print(<span class="string">'Print Esc to quit'</span>)</span><br><span class="line">stream=urllib.request.urlopen(hoststr)</span><br><span class="line">bytes=bytes()</span><br><span class="line"><span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">    bytes+=stream.read(<span class="number">1024</span>)</span><br><span class="line">    a = bytes.find(<span class="string">b'\xff\xd8'</span>)</span><br><span class="line">    b = bytes.find(<span class="string">b'\xff\xd9'</span>)</span><br><span class="line">    i = <span class="number">0</span></span><br><span class="line">    <span class="keyword">if</span> a!=<span class="number">-1</span> <span class="keyword">and</span> b!=<span class="number">-1</span>:</span><br><span class="line">        jpg = bytes[a:b+<span class="number">2</span>]</span><br><span class="line">        bytes= bytes[b+<span class="number">2</span>:]</span><br><span class="line">        <span class="comment">#flags = 1 for color image</span></span><br><span class="line">        <span class="keyword">try</span>:</span><br><span class="line">            i = cv2.imdecode(np.fromstring(jpg, dtype=np.uint8),flags=<span class="number">1</span>)</span><br><span class="line">            <span class="comment"># print i.shape</span></span><br><span class="line">            cv2.imshow(<span class="string">"wjw"</span>,i)</span><br><span class="line">            <span class="keyword">if</span> cv2.waitKey(<span class="number">1</span>) &amp; <span class="number">0xFF</span> == ord(<span class="string">'q'</span>):</span><br><span class="line">                exit(<span class="number">0</span>)</span><br><span class="line">        <span class="keyword">except</span> Exception <span class="keyword">as</span> e:</span><br><span class="line">            print(<span class="string">'保存失败'</span>, e)</span><br></pre></td></tr></table></figure>
+
+</div>
+</div>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"position":"right","width":200,"height":400,"hOffset":50,"vOffset":-95},"mobile":{"show":false},"react":{"opacity":0.7},"log":false});</script></body>
+
+<div align="center">
+<img src="/2019/09/19/眼动追踪推荐眼镜/06.png">
+</div>
+
+
+<h3 id="问题记录"><a href="#问题记录" class="headerlink" title="问题记录"></a>问题记录</h3><ul>
+<li>编译项目报错 “sketch\app_httpd.cpp:23:20: fatal error: dl_lib.h: No such file or directory”</li>
+</ul>
+<p>app_httpd.cpp 中注释相应库<br><figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="comment">//#include "dl_lib.h"</span></span><br></pre></td></tr></table></figure></p>
+<ul>
+<li>编译项目报错 “ “WiFi.h” 对应多个库<br>已使用： C:\Users\Administrator\AppData\Local\Arduino15\packages\esp32\hardware\esp32\1.0.3\libraries\WiFi<br>未使用：H:\Program Files\arduino-1.8.3\libraries\WiFi<br>exit status 1 ”</li>
+</ul>
+<p>移除文件夹 H:\Program Files\arduino-1.8.3\libraries\WiFi</p>
+<ul>
+<li>点击Start Stream没有反应。</li>
+</ul>
+<p><div align="center">
+<img src="/2019/09/19/眼动追踪推荐眼镜/03.png">
+</div><br>使用Chrome浏览器。</p>
+<ul>
+<li>注意供电。</li>
+</ul>
+<h1 id="眼动追踪推荐眼镜二：软件篇"><a href="#眼动追踪推荐眼镜二：软件篇" class="headerlink" title="眼动追踪推荐眼镜二：软件篇"></a>眼动追踪推荐眼镜二：软件篇</h1><p>软件部分主要解决下面三个问题：</p>
+<ul>
+<li>首先是人眼关键点的检测问题，通过多级级联的回归树进行眼眶和通孔的检测，得到关键点特征信息；  </li>
+<li>其次是兴趣点的估计问题，通过梯度提升回归算法建立人眼关键点和兴趣点的映射关系；  </li>
+<li>最后是兴趣点处的目标识别问题，通过yolo目标检测网络对检测视野中的待推荐目标，判断兴趣点是否落在识别框中。</li>
+</ul>
+<h2 id="人眼关键点检测"><a href="#人眼关键点检测" class="headerlink" title="人眼关键点检测"></a>人眼关键点检测</h2><p>首先使用人眼摄像头采集人眼图像数据，然后使用dlib自带的image数据库标注工具制作数据集，最后通过dlib的官方代码训练出模型，并对模型进行测试。</p>
+<p>模型分别对眼眶和眼珠进行识别，并检测它们的位置。</p>
+<ul>
+<li>dlib train_object_detector<br><a href="http://dlib.net/train_object_detector.py.html" target="_blank" rel="noopener">http://dlib.net/train_object_detector.py.html</a></li>
+</ul>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"><span class="keyword">import</span> glob</span><br><span class="line"><span class="keyword">import</span> dlib</span><br><span class="line"></span><br><span class="line">options = dlib.simple_object_detector_training_options()</span><br><span class="line"><span class="comment"># 单个眼睛不是左右对称的</span></span><br><span class="line"><span class="comment"># options.add_left_right_image_flips = True</span></span><br><span class="line"><span class="comment"># 支持向量机的C参数，通常默认取为5.自己适当更改参数以达到最好的效果</span></span><br><span class="line">options.C = <span class="number">5</span></span><br><span class="line"><span class="comment"># 线程数，你电脑有4核的话就填4</span></span><br><span class="line">options.num_threads = <span class="number">4</span></span><br><span class="line">options.be_verbose = <span class="literal">True</span></span><br><span class="line"></span><br><span class="line">training_xml_path = <span class="string">"pupil.xml"</span></span><br><span class="line">dlib.train_simple_object_detector(training_xml_path, <span class="string">"pupil.svm"</span>, options)</span><br><span class="line">print(<span class="string">"Training accuracy: &#123;&#125;"</span>.format(</span><br><span class="line">    dlib.test_simple_object_detector(training_xml_path, <span class="string">"pupil.svm"</span>)))</span><br><span class="line"></span><br><span class="line">training_xml_path = <span class="string">"eye.xml"</span></span><br><span class="line">dlib.train_simple_object_detector(training_xml_path, <span class="string">"eye.svm"</span>, options)</span><br><span class="line">print(<span class="string">"Training accuracy: &#123;&#125;"</span>.format(</span><br><span class="line">    dlib.test_simple_object_detector(training_xml_path, <span class="string">"eye.svm"</span>)))</span><br></pre></td></tr></table></figure>
+<h2 id="兴趣点映射估计"><a href="#兴趣点映射估计" class="headerlink" title="兴趣点映射估计"></a>兴趣点映射估计</h2><p>分别采集人眼图像中眼眶和眼珠的坐标数据和视野图像中目标点的坐标数据，通过sklearn中的梯度提升回归算法建立人眼关键点数据和兴趣点数据的映射关系。  </p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 读取数据</span></span><br><span class="line">point = pd.read_csv(<span class="string">"csv_data/points_p.csv"</span>)</span><br><span class="line">world_x = point[<span class="string">"world_x"</span>]</span><br><span class="line">world_y = point[<span class="string">"world_y"</span>]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 读取数据中的标签列</span></span><br><span class="line">eye = point[[<span class="string">'eye_x'</span>, <span class="string">'eye_y'</span>, <span class="string">'pipil_x'</span>, <span class="string">'pupil_y'</span>, <span class="string">'pupil_w'</span>, <span class="string">'pupil_h'</span>]]</span><br><span class="line">print(eye)</span><br><span class="line"></span><br><span class="line">clf = GBR(max_depth=<span class="number">10</span>)</span><br><span class="line"><span class="comment"># clf = SGDR(loss='huber',penalty='l2',alpha=0.9,max_iter=1000)</span></span><br><span class="line"><span class="comment"># clf = KNeighborsRegressor(n_neighbors=20, weights="distance", algorithm="ball_tree", leaf_size=50)</span></span><br><span class="line"></span><br><span class="line">clf.fit(eye, world_x)</span><br><span class="line">joblib.dump(clf, <span class="string">"model/world_x.pkl"</span>)</span><br><span class="line">print(<span class="string">'得分：'</span>,clf.score(eye, world_x))</span><br><span class="line"></span><br><span class="line">clf.fit(eye, world_y)</span><br><span class="line">joblib.dump(clf, <span class="string">"model/world_y.pkl"</span>)</span><br><span class="line">print(<span class="string">'得分：'</span>,clf.score(eye, world_y))</span><br></pre></td></tr></table></figure>
+<h2 id="目标检测"><a href="#目标检测" class="headerlink" title="目标检测"></a>目标检测</h2><h3 id="yolov3"><a href="#yolov3" class="headerlink" title="yolov3"></a>yolov3</h3><p>制作voc格式数据集，使用keras版本yolov3训练识别模型</p>
+<h3 id="ImageAI"><a href="#ImageAI" class="headerlink" title="ImageAI"></a>ImageAI</h3><p>使用ImageAI提供的方法对视野图像进行目标检测。</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># coding:utf-8</span></span><br><span class="line"><span class="comment">#  imageai下载地址：https://github.com/OlafenwaMoses/ImageAI</span></span><br><span class="line"><span class="comment">#  resnet50_coco_best_v2.1.0.h5 模型下载地址：https://github.com/fizyr/keras-retinanet/releases/</span></span><br><span class="line"><span class="keyword">from</span> imageai.Detection <span class="keyword">import</span> ObjectDetection  <span class="comment"># 导入了 ImageAI 目标检测类</span></span><br><span class="line"><span class="keyword">import</span> cv2</span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line">os.environ[<span class="string">'TF_CPP_MIN_LOG_LEVEL'</span>] = <span class="string">'2'</span></span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">targetDetection</span><span class="params">(imgArray,model_path)</span>:</span></span><br><span class="line">    <span class="string">"""</span></span><br><span class="line"><span class="string">    :param imgArray: 图片数据，类型为ndarray</span></span><br><span class="line"><span class="string">    :param model_path: retinanet模型路径</span></span><br><span class="line"><span class="string">    :return:</span></span><br><span class="line"><span class="string">    """</span></span><br><span class="line">    path = os.path.abspath(model_path)</span><br><span class="line">    detector = ObjectDetection()  <span class="comment"># 定义了目标检测类</span></span><br><span class="line">    detector.setModelTypeAsRetinaNet()  <span class="comment"># 模型的类型设置为 RetinaNet</span></span><br><span class="line">    detector.setModelPath(path)  <span class="comment"># 将模型路径设置为 RetinaNet 模型的路径</span></span><br><span class="line">    detector.loadModel()  <span class="comment"># 模型加载到的目标检测类</span></span><br><span class="line">    <span class="comment"># 调用目标检测函数，解析输入的和输出的图像路径。</span></span><br><span class="line">    detections = detector.detectObjectsFromImage(input_image=imgArray,</span><br><span class="line">                                                 input_type=<span class="string">'array'</span>,output_type=<span class="string">'array'</span>)</span><br><span class="line">    <span class="keyword">return</span> detections</span><br><span class="line"></span><br><span class="line">data = plt.imread(<span class="string">'../img_classify/05-30.jpg'</span>)</span><br><span class="line">model_path = (<span class="string">'../model/resnet50_coco_best_v2.1.0.h5'</span>)</span><br><span class="line">t1 = time.time()</span><br><span class="line">imgInfo = targetDetection(data,model_path)</span><br><span class="line">t2 = time.time()</span><br><span class="line">print(t2-t1)</span><br><span class="line">plt.imshow(imgInfo[<span class="number">0</span>])</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+<h3 id="dlib（hog-svm）"><a href="#dlib（hog-svm）" class="headerlink" title="dlib（hog+svm）"></a>dlib（hog+svm）</h3><p>首先使用dlib自带的image数据库标注工具制作数据集，然后通过dlib的官方代码对每一个待检测目标依次训练模型，最后将模型合并进行测试。</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">df = pd.DataFrame(</span><br><span class="line">    <span class="number">100</span>*np.ones((<span class="number">6</span>, <span class="number">6</span>)),</span><br><span class="line">    columns=[<span class="string">"name"</span>, <span class="string">"x"</span>, <span class="string">"y"</span>, <span class="string">"w"</span>, <span class="string">"h"</span>, <span class="string">"confidences"</span>],</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">detector1 = dlib.fhog_object_detector(<span class="string">"../model/sz.svm"</span>)</span><br><span class="line">detector2 = dlib.fhog_object_detector(<span class="string">"../model/cz.svm"</span>)</span><br><span class="line">detector3 = dlib.fhog_object_detector(<span class="string">"../model/dp.svm"</span>)</span><br><span class="line">detector4 = dlib.fhog_object_detector(<span class="string">"../model/pb.svm"</span>)</span><br><span class="line">detector5 = dlib.fhog_object_detector(<span class="string">"../model/zb.svm"</span>)</span><br><span class="line">detector6 = dlib.fhog_object_detector(<span class="string">"../model/mf.svm"</span>)</span><br><span class="line"></span><br><span class="line">detectors = [detector1, detector2,detector3, detector4,detector5, detector6]</span><br><span class="line"></span><br><span class="line">[boxes, confidences, detector_idxs] = dlib.fhog_object_detector.run_multiple(detectors, image, upsample_num_times=<span class="number">1</span>, adjust_threshold=<span class="number">0.0</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(len(boxes)):</span><br><span class="line">    <span class="comment"># print("detector &#123;&#125; found box &#123;&#125; with confidence &#123;&#125;.".format(detector_idxs[i], boxes[i], confidences[i]))</span></span><br><span class="line">    df.iloc[i, <span class="number">0</span>] = detector_idxs[i]</span><br><span class="line">    df.iloc[i, <span class="number">1</span>] = boxes[i].left()</span><br><span class="line">    df.iloc[i, <span class="number">2</span>] = boxes[i].top()</span><br><span class="line">    df.iloc[i, <span class="number">3</span>] = boxes[i].right() - boxes[i].left()</span><br><span class="line">    df.iloc[i, <span class="number">4</span>] = boxes[i].bottom() - boxes[i].top()</span><br><span class="line">    df.iloc[i, <span class="number">5</span>] = round(confidences[i], <span class="number">6</span>)</span><br></pre></td></tr></table></figure>
+</the>]]></content>
+  </entry>
+  <entry>
+    <title>FDM3D打印电吉他琴体，制作电吉他</title>
+    <url>/2022/06/24/%E6%97%A5%E5%B8%B8%EF%BC%9AFDM3D%E6%89%93%E5%8D%B0%E7%94%B5%E5%90%89%E4%BB%96%E7%90%B4%E4%BD%93%EF%BC%8C%E5%88%B6%E4%BD%9C%E7%94%B5%E5%90%89%E4%BB%96/</url>
+    <content><![CDATA[<!-- ** FDM3D打印电吉他琴体，制作电吉他 ** <Excerpt in index | 首页摘要> -->
+<p>记录一把电吉他的制作：琴体部分完全采用FDM3D打印制作<br>多图预警</p>
+<h2 id="展示"><a href="#展示" class="headerlink" title="展示"></a>展示</h2><p><img alt="00" src="/2022/06/24/日常：FDM3D打印电吉他琴体，制作电吉他/00.jpg" width="400">  </p>
+<a id="more"></a>
+<the rest of contents | 余下全文>
+
+<h2 id="模型"><a href="#模型" class="headerlink" title="模型"></a>模型</h2><ul>
+<li>Stratocaster/Les Paul Hybrid Guitar by TheWhaleBiologist - Thingiverse<br><a href="https://www.thingiverse.com/thing:352349" target="_blank" rel="noopener">https://www.thingiverse.com/thing:352349</a></li>
+</ul>
+<p>TheWhaleBiologist大神的模型是一个琴体整体，并提供了可使用Inventor修改的.ipt原始文件。<br>我在琴体模型上添加了自己的logo，并将整个模型切分成22个小块，便于使用不同颜色进行打印。</p>
+<ul>
+<li>Guitar by Binjun - Thingiverse<br><a href="https://www.thingiverse.com/thing:3709391" target="_blank" rel="noopener">https://www.thingiverse.com/thing:3709391</a></li>
+</ul>
+<p><img alt="01" src="/2022/06/24/日常：FDM3D打印电吉他琴体，制作电吉他/01.jpg" width="400">  </p>
+<h2 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h2><p><img alt="02" src="/2022/06/24/日常：FDM3D打印电吉他琴体，制作电吉他/02.jpg" width="400">  </p>
+<p>除了琴体外，还需要购买电吉他的其他配件。在某宝上可以购买到整套电吉他的DIY组装材料，主要包括：  </p>
+<ul>
+<li>琴颈</li>
+<li>弦准</li>
+<li>压弦扣</li>
+<li>琴弦</li>
+<li>连接加强板</li>
+<li>下驹后盖板</li>
+<li>尾钉</li>
+<li>护板</li>
+<li>琴码</li>
+<li>拾音器等电子配件</li>
+</ul>
+<p><img alt="03" src="/2022/06/24/日常：FDM3D打印电吉他琴体，制作电吉他/03.jpg" width="400">  </p>
+<p>工具准备</p>
+<ul>
+<li>手钻</li>
+<li>胶水(502、AB胶、亚克力胶水)</li>
+<li>打磨工具（锉刀、剪刀、美工刀）</li>
+<li>螺丝刀</li>
+</ul>
+<h2 id="组装"><a href="#组装" class="headerlink" title="组装"></a>组装</h2><p>1.用胶水和剪刀将3D打印出来的塑料小块进行粘贴拼接，完成琴体的制作。</p>
+<p><img alt="04" src="/2022/06/24/日常：FDM3D打印电吉他琴体，制作电吉他/04.jpg" width="400">  </p>
+<p>2.在上弦枕底部涂抹胶水粘在指板的开槽处。<br>3.组装弦准，在琴头上打孔安装旋钮和压弦扣。</p>
+<p><img alt="05" src="/2022/06/24/日常：FDM3D打印电吉他琴体，制作电吉他/05.jpg" width="400">  </p>
+<p>4.连接琴柄和3D打印琴体，调整好琴柄和琴体开槽处的尺寸和高度，根据加强板螺丝孔的位置开孔，用螺丝将琴柄、琴身和加强板连在一起。</p>
+<p><img alt="06" src="/2022/06/24/日常：FDM3D打印电吉他琴体，制作电吉他/06.jpg" width="400">  </p>
+<p>5.将电路部分连接好，预留接地线和音频输出线，安装护板。</p>
+<p><img alt="07" src="/2022/06/24/日常：FDM3D打印电吉他琴体，制作电吉他/07.jpg" width="400"></p>
+<p>6.安装琴码。  </p>
+<p><img alt="08" src="/2022/06/24/日常：FDM3D打印电吉他琴体，制作电吉他/08.jpg" width="400"> </p>
+<p>7.焊接插座线，安装插座片。  </p>
+<p><img alt="09" src="/2022/06/24/日常：FDM3D打印电吉他琴体，制作电吉他/09.jpg" width="400">  </p>
+<p><img alt="10" src="/2022/06/24/日常：FDM3D打印电吉他琴体，制作电吉他/10.jpg" width="400">  </p>
+<p>8.安装下驹在琴体背面的部件，焊接好接地线并固定好弹簧。</p>
+<p><img alt="11" src="/2022/06/24/日常：FDM3D打印电吉他琴体，制作电吉他/11.jpg" width="400">  </p>
+<p><img alt="12" src="/2022/06/24/日常：FDM3D打印电吉他琴体，制作电吉他/12.jpg" width="400">  </p>
+<p>9.安装琴弦并调音，摇把只是摆设可以不装。</p>
+<p><img alt="13" src="/2022/06/24/日常：FDM3D打印电吉他琴体，制作电吉他/13.jpg" width="400">  </p>
+<p>10.买个琴箱，完成。</p>
+<p><img alt="14" src="/2022/06/24/日常：FDM3D打印电吉他琴体，制作电吉他/14.jpg" width="400">  </p>
+<h2 id="一些乐理知识"><a href="#一些乐理知识" class="headerlink" title="一些乐理知识"></a>一些乐理知识</h2><h3 id="有效弦长-Scale-Length"><a href="#有效弦长-Scale-Length" class="headerlink" title="有效弦长 Scale Length"></a>有效弦长 Scale Length</h3><p>有效弦长是弦枕与第12品之间长度的二倍，这段长度也正好是一个八度的音程，琴桥的位置也由此确定，即琴桥必须调整到一个正确的位置，让这把琴得到一个正确的有效弦长。</p>
+<h3 id="电吉他LP型和ST型"><a href="#电吉他LP型和ST型" class="headerlink" title="电吉他LP型和ST型"></a>电吉他LP型和ST型</h3><p>所以为什么用LP的琴体配上ST的琴颈呢？因为当时还不知道这些。</p>
+<h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><ul>
+<li>3D打印电吉他 撩妹技能Get起来！|3D学堂|3D虎<br><a href="http://www.3dhoo.com/news/xuetang/39430.html" target="_blank" rel="noopener">http://www.3dhoo.com/news/xuetang/39430.html</a></li>
+</ul>
+</the>]]></content>
+      <tags>
+        <tag>3D打印</tag>
+        <tag>吉他</tag>
+        <tag>随笔</tag>
       </tags>
   </entry>
   <entry>
