@@ -5,25 +5,25 @@
   
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <link rel="dns-prefetch" href="http://blog.binjun.icu">
-  <title>代码量统计平台:基于Django+echarts+datatable+bs4+bootstrap | Binjun</title>
+  <link rel="dns-prefetch" href="http://blog.binjun.fun">
+  <title>代码量统计平台:定时作业、数据大屏和钉钉机器人 | Binjun</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="codecode代码统计相关">
 <meta property="og:type" content="article">
-<meta property="og:title" content="代码量统计平台:基于Django+echarts+datatable+bs4+bootstrap">
-<meta property="og:url" content="http://blog.binjun.icu/2022/09/24/代码量统计平台-基于Django-echarts-datatable-bs4-bootstrap/index.html">
+<meta property="og:title" content="代码量统计平台:定时作业、数据大屏和钉钉机器人">
+<meta property="og:url" content="http://blog.binjun.fun/2022/09/24/代码量统计平台-基于Django-echarts-datatable-bs4-bootstrap/index.html">
 <meta property="og:site_name" content="Binjun">
 <meta property="og:description" content="codecode代码统计相关">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://blog.binjun.icu/2022/09/24/代码量统计平台-基于Django-echarts-datatable-bs4-bootstrap/image/readme/1648966424737.png">
-<meta property="og:image" content="http://blog.binjun.icu/2022/09/24/代码量统计平台-基于Django-echarts-datatable-bs4-bootstrap/image/readme/1638794164288.png">
-<meta property="og:image" content="http://blog.binjun.icu/2022/09/24/代码量统计平台-基于Django-echarts-datatable-bs4-bootstrap/image/readme/1638795079680.png">
-<meta property="og:image" content="http://blog.binjun.icu/2022/09/24/代码量统计平台-基于Django-echarts-datatable-bs4-bootstrap/image/readme/1638963468079.png">
-<meta property="og:updated_time" content="2022-09-30T14:24:30.818Z">
+<meta property="og:image" content="http://blog.binjun.fun/2022/09/24/代码量统计平台-基于Django-echarts-datatable-bs4-bootstrap/image/readme/1648966424737.png">
+<meta property="og:image" content="http://blog.binjun.fun/2022/09/24/代码量统计平台-基于Django-echarts-datatable-bs4-bootstrap/image/readme/1638794164288.png">
+<meta property="og:image" content="http://blog.binjun.fun/2022/09/24/代码量统计平台-基于Django-echarts-datatable-bs4-bootstrap/image/readme/1638795079680.png">
+<meta property="og:image" content="http://blog.binjun.fun/2022/09/24/代码量统计平台-基于Django-echarts-datatable-bs4-bootstrap/image/readme/1638963468079.png">
+<meta property="og:updated_time" content="2022-10-26T15:47:35.578Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="代码量统计平台:基于Django+echarts+datatable+bs4+bootstrap">
+<meta name="twitter:title" content="代码量统计平台:定时作业、数据大屏和钉钉机器人">
 <meta name="twitter:description" content="codecode代码统计相关">
-<meta name="twitter:image" content="http://blog.binjun.icu/2022/09/24/代码量统计平台-基于Django-echarts-datatable-bs4-bootstrap/image/readme/1648966424737.png">
+<meta name="twitter:image" content="http://blog.binjun.fun/2022/09/24/代码量统计平台-基于Django-echarts-datatable-bs4-bootstrap/image/readme/1648966424737.png">
   
     <link rel="alternative" href="/atom.xml" title="Binjun" type="application/atom+xml">
   
@@ -315,7 +315,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      代码量统计平台:基于Django+echarts+datatable+bs4+bootstrap
+      代码量统计平台:定时作业、数据大屏和钉钉机器人
     </h1>
   
 
@@ -411,6 +411,30 @@
 <ul>
 <li>使用Django利用pyecharts进行Ajax异步请求_Alex抱着爆米花的博客-CSDN博客<br><a href="https://blog.csdn.net/qq_41080854/article/details/114639603" target="_blank" rel="noopener">https://blog.csdn.net/qq_41080854/article/details/114639603</a></li>
 </ul>
+<h1 id="每日定时发送钉钉图片到群聊"><a href="#每日定时发送钉钉图片到群聊" class="headerlink" title="每日定时发送钉钉图片到群聊"></a>每日定时发送钉钉图片到群聊</h1><h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><ol>
+<li><p>访问内网网页，使用wkhtmltoimage生成图片。</p>
+</li>
+<li><p>上传图片到外网服务器上。</p>
+</li>
+<li><p>钉钉机器人自动发送图片链接到群聊。 </p>
+</li>
+</ol>
+<h2 id="环境准备"><a href="#环境准备" class="headerlink" title="环境准备"></a>环境准备</h2><h3 id="外网图片服务器"><a href="#外网图片服务器" class="headerlink" title="外网图片服务器"></a>外网图片服务器</h3><p>使用阿里云免费一个月的ECS，启动一个django WEB应用，用于接收图片并展示。</p>
+<p>云服务器配置安全组规则，端口使用80，使用其他端口时使用公司电脑访问被拒绝。</p>
+<p>启动Django项目并使其在后台一直运行</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nohup python3 manage.py runserver 0.0.0.0:80 &amp;</span><br></pre></td></tr></table></figure>
+<h3 id="本地作业应用"><a href="#本地作业应用" class="headerlink" title="本地作业应用"></a>本地作业应用</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">conda create --name ding_env python=3.7.11</span><br><span class="line">conda activate ding_env</span><br><span class="line"></span><br><span class="line"><span class="comment"># django</span></span><br><span class="line">pip install Django==3.2.9</span><br><span class="line">pip install django-apscheduler==0.6.2</span><br><span class="line"></span><br><span class="line">pip install requests==2.28.1</span><br><span class="line">pip install requests-toolbelt==0.9.1</span><br><span class="line"></span><br><span class="line"><span class="comment"># imgkit</span></span><br><span class="line">pip install imgkit</span><br><span class="line">pip install pdfkit</span><br></pre></td></tr></table></figure>
+<h3 id="Django项目创建和启动"><a href="#Django项目创建和启动" class="headerlink" title="Django项目创建和启动"></a>Django项目创建和启动</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 创建项目</span></span><br><span class="line">django-admin startproject dingrobot</span><br><span class="line"><span class="comment"># 创建应用</span></span><br><span class="line">python manage.py startapp daily_picture</span><br><span class="line"></span><br><span class="line"><span class="comment"># 数据库迁移</span></span><br><span class="line">python manage.py makemigrations</span><br><span class="line">python manage.py migrate</span><br><span class="line"></span><br><span class="line"><span class="comment"># 启动</span></span><br><span class="line">python manage.py runserver 127.0.0.1:8009</span><br></pre></td></tr></table></figure>
+<h2 id="技术细节"><a href="#技术细节" class="headerlink" title="技术细节"></a>技术细节</h2><h3 id="定时作业使用django-apscheduler"><a href="#定时作业使用django-apscheduler" class="headerlink" title="定时作业使用django-apscheduler"></a>定时作业使用django-apscheduler</h3><ul>
+<li>Django定时任务四种实现方法总结_Yale曼陀罗的博客-CSDN博客_django 定时任务<br><a href="https://blog.csdn.net/weixin_42782150/article/details/123212604" target="_blank" rel="noopener">https://blog.csdn.net/weixin_42782150/article/details/123212604</a></li>
+</ul>
+<h3 id="钉钉机器人相关"><a href="#钉钉机器人相关" class="headerlink" title="钉钉机器人相关"></a>钉钉机器人相关</h3><ul>
+<li>钉钉机器人文档说明<br><a href="https://ding-doc.dingtalk.com/doc#/serverapi2/qf2nxq" target="_blank" rel="noopener">https://ding-doc.dingtalk.com/doc#/serverapi2/qf2nxq</a><br><a href="https://open.dingtalk.com/document/robots/customize-robot-security-settings" target="_blank" rel="noopener">https://open.dingtalk.com/document/robots/customize-robot-security-settings</a><br><a href="https://open.dingtalk.com/document/robots/custom-robot-access" target="_blank" rel="noopener">https://open.dingtalk.com/document/robots/custom-robot-access</a></li>
+</ul>
+<h3 id="图片生成"><a href="#图片生成" class="headerlink" title="图片生成"></a>图片生成</h3><p>放弃了pyechats渲染方案，使用WKHTMLTOPDF将HTML转成图片</p>
+<ul>
+<li>【Python】Python将HTML转成图片、PDF - 灰信网（软件开发博客聚合）<br><a href="https://www.freesion.com/article/73311337680/" target="_blank" rel="noopener">https://www.freesion.com/article/73311337680/</a></li>
+</ul>
 </the>
       
 
@@ -469,7 +493,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://blog.binjun.icu/2022/09/24/代码量统计平台-基于Django-echarts-datatable-bs4-bootstrap/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://blog.binjun.fun/2022/09/24/代码量统计平台-基于Django-echarts-datatable-bs4-bootstrap/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -512,7 +536,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#codecode"><span class="toc-number">1.</span> <span class="toc-text">codecode</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#代码统计相关"><span class="toc-number">1.1.</span> <span class="toc-text">代码统计相关</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Django"><span class="toc-number">1.2.</span> <span class="toc-text">Django</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#MVC"><span class="toc-number">1.2.1.</span> <span class="toc-text">MVC</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#问题"><span class="toc-number">1.2.2.</span> <span class="toc-text">问题</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Docker服务器部署"><span class="toc-number">1.3.</span> <span class="toc-text">Docker服务器部署</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#搭建mysql服务"><span class="toc-number">1.3.1.</span> <span class="toc-text">搭建mysql服务</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#搭建djongo服务"><span class="toc-number">1.3.2.</span> <span class="toc-text">搭建djongo服务</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#搭建redis服务"><span class="toc-number">1.3.3.</span> <span class="toc-text">搭建redis服务</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Docker常用命令"><span class="toc-number">1.3.4.</span> <span class="toc-text">Docker常用命令</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#前端相关"><span class="toc-number">1.4.</span> <span class="toc-text">前端相关</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Bootstrap"><span class="toc-number">1.4.1.</span> <span class="toc-text">Bootstrap</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#定时作业"><span class="toc-number">1.5.</span> <span class="toc-text">定时作业</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#APScheduler"><span class="toc-number">1.5.1.</span> <span class="toc-text">APScheduler</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#404相关"><span class="toc-number">1.6.</span> <span class="toc-text">404相关</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#python"><span class="toc-number">1.7.</span> <span class="toc-text">python</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#json-和-dict"><span class="toc-number">1.7.1.</span> <span class="toc-text">json 和 dict</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#datetime"><span class="toc-number">1.7.2.</span> <span class="toc-text">datetime</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#可视化大屏"><span class="toc-number">2.</span> <span class="toc-text">可视化大屏</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#技术准备"><span class="toc-number">2.1.</span> <span class="toc-text">技术准备</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#技术实现"><span class="toc-number">2.2.</span> <span class="toc-text">技术实现</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#0-明确设计和展示内容"><span class="toc-number">2.2.1.</span> <span class="toc-text">0. 明确设计和展示内容</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-Pyecharts制作可视化大屏"><span class="toc-number">2.2.2.</span> <span class="toc-text">1. Pyecharts制作可视化大屏</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-ajax动态刷新数据"><span class="toc-number">2.2.3.</span> <span class="toc-text">2. ajax动态刷新数据</span></a></li></ol></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#codecode"><span class="toc-number">1.</span> <span class="toc-text">codecode</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#代码统计相关"><span class="toc-number">1.1.</span> <span class="toc-text">代码统计相关</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Django"><span class="toc-number">1.2.</span> <span class="toc-text">Django</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#MVC"><span class="toc-number">1.2.1.</span> <span class="toc-text">MVC</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#问题"><span class="toc-number">1.2.2.</span> <span class="toc-text">问题</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Docker服务器部署"><span class="toc-number">1.3.</span> <span class="toc-text">Docker服务器部署</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#搭建mysql服务"><span class="toc-number">1.3.1.</span> <span class="toc-text">搭建mysql服务</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#搭建djongo服务"><span class="toc-number">1.3.2.</span> <span class="toc-text">搭建djongo服务</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#搭建redis服务"><span class="toc-number">1.3.3.</span> <span class="toc-text">搭建redis服务</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Docker常用命令"><span class="toc-number">1.3.4.</span> <span class="toc-text">Docker常用命令</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#前端相关"><span class="toc-number">1.4.</span> <span class="toc-text">前端相关</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Bootstrap"><span class="toc-number">1.4.1.</span> <span class="toc-text">Bootstrap</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#定时作业"><span class="toc-number">1.5.</span> <span class="toc-text">定时作业</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#APScheduler"><span class="toc-number">1.5.1.</span> <span class="toc-text">APScheduler</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#404相关"><span class="toc-number">1.6.</span> <span class="toc-text">404相关</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#python"><span class="toc-number">1.7.</span> <span class="toc-text">python</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#json-和-dict"><span class="toc-number">1.7.1.</span> <span class="toc-text">json 和 dict</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#datetime"><span class="toc-number">1.7.2.</span> <span class="toc-text">datetime</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#可视化大屏"><span class="toc-number">2.</span> <span class="toc-text">可视化大屏</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#技术准备"><span class="toc-number">2.1.</span> <span class="toc-text">技术准备</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#技术实现"><span class="toc-number">2.2.</span> <span class="toc-text">技术实现</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#0-明确设计和展示内容"><span class="toc-number">2.2.1.</span> <span class="toc-text">0. 明确设计和展示内容</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-Pyecharts制作可视化大屏"><span class="toc-number">2.2.2.</span> <span class="toc-text">1. Pyecharts制作可视化大屏</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-ajax动态刷新数据"><span class="toc-number">2.2.3.</span> <span class="toc-text">2. ajax动态刷新数据</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#每日定时发送钉钉图片到群聊"><span class="toc-number">3.</span> <span class="toc-text">每日定时发送钉钉图片到群聊</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#思路"><span class="toc-number">3.1.</span> <span class="toc-text">思路</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#环境准备"><span class="toc-number">3.2.</span> <span class="toc-text">环境准备</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#外网图片服务器"><span class="toc-number">3.2.1.</span> <span class="toc-text">外网图片服务器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#本地作业应用"><span class="toc-number">3.2.2.</span> <span class="toc-text">本地作业应用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Django项目创建和启动"><span class="toc-number">3.2.3.</span> <span class="toc-text">Django项目创建和启动</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#技术细节"><span class="toc-number">3.3.</span> <span class="toc-text">技术细节</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#定时作业使用django-apscheduler"><span class="toc-number">3.3.1.</span> <span class="toc-text">定时作业使用django-apscheduler</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#钉钉机器人相关"><span class="toc-number">3.3.2.</span> <span class="toc-text">钉钉机器人相关</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#图片生成"><span class="toc-number">3.3.3.</span> <span class="toc-text">图片生成</span></a></li></ol></li></ol></li></ol>
                     </div>
                 </span>
             </div>
@@ -526,7 +550,7 @@
   
   <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="代码量统计平台-基于Django-echarts-datatable-bs4-bootstrap" data-title="代码量统计平台:基于Django+echarts+datatable+bs4+bootstrap" data-url="http://blog.binjun.icu/2022/09/24/代码量统计平台-基于Django-echarts-datatable-bs4-bootstrap/"></div>
+	<div class="ds-thread" data-thread-key="代码量统计平台-基于Django-echarts-datatable-bs4-bootstrap" data-title="代码量统计平台:定时作业、数据大屏和钉钉机器人" data-url="http://blog.binjun.fun/2022/09/24/代码量统计平台-基于Django-echarts-datatable-bs4-bootstrap/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">
@@ -561,7 +585,7 @@
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2022 Binjun
+    		&copy; 2023 Binjun
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
@@ -702,10 +726,6 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">数模</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">机器博弈</a>
               </li>
              
@@ -714,7 +734,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
+                <a href="javascript:void(0)" class="js-tag color3">数模</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -723,6 +743,10 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">吉他</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
               </li>
             
             <div class="clearfix"></div>
